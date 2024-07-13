@@ -985,6 +985,11 @@ section .container {
 }
 
 .portfolio-details .portfolio-title {
+
+  /* MY CSS */
+  color: #18d26e;
+  /* END: My CSS */
+
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
@@ -1010,8 +1015,8 @@ section .container {
   margin-top: 10px;
 }
 
-/* Underline links in "portfolio-project.html".
-Line 70 of HTML file */
+/* Underline links in "project-bookfinder.html".
+Line 70 of HTML file. And Line 30 of 'style.css' */
 .portfolio-details .portfolio-info ul li a:hover {
   text-decoration: underline;
 }
