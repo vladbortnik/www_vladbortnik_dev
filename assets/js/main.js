@@ -174,47 +174,38 @@
         slidesPerView: 4,
         spaceBetween: 20
       }
-    }    
-    // pagination: {
-    //   el: '.swiper-pagination',
-    //   clickable: true,
-    // },
-    // autoplay: {
-    //   delay: 3000,
-    //   disableOnInteraction: false,
-    // },
-    // loop: true,
+    }
   });
   
 
   /**
-   * Testimonials slider
+   * Testimonials slider (UNUSED Default Code)
    */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
+  // new Swiper('.testimonials-slider', {
+  //   speed: 600,
+  //   loop: true,
+  //   autoplay: {
+  //     delay: 5000,
+  //     disableOnInteraction: false
+  //   },
+  //   slidesPerView: 'auto',
+  //   pagination: {
+  //     el: '.swiper-pagination',
+  //     type: 'bullets',
+  //     clickable: true
+  //   },
+  //   breakpoints: {
+  //     320: {
+  //       slidesPerView: 1,
+  //       spaceBetween: 20
+  //     },
 
-      1200: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      }
-    }
-  });
+  //     1200: {
+  //       slidesPerView: 3,
+  //       spaceBetween: 20
+  //     }
+  //   }
+  // });
 
   /**
    * Porfolio isotope and filter
@@ -282,4 +273,8 @@
    */
   new PureCounter();
 
+  // General Info
+  document.getElementById("fone").innerText = atob("KDkyOSkgODQyIDQyMjg=");
+  document.getElementById("mail").innerText = atob("am9iQHZsYWRib3J0bmlrLmRldg==");
+  
 })()
