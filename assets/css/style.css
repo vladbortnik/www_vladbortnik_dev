@@ -985,24 +985,35 @@ section .container {
 }
 
 .portfolio-details .portfolio-title {
-
-  /* MY CSS */
   color: #18d26e;
-  /* END: My CSS */
-
   font-size: 26px;
   font-weight: 700;
   margin-bottom: 20px;
 }
 
+/* OPTIONAL CODE: ADD IMAGE HOVER EFFECT */
+
+/* .portfolio-details-image {
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.portfolio-details-image:hover {
+  transform: scale(1.1);
+} */
+
+/* END: OPTIONAL CODE */
+
 .portfolio-details .portfolio-info {
   padding-top: 45px;
+  /* padding-bottom: 40px; */
 }
 
 .portfolio-details .portfolio-info h3 {
   font-size: 22px;
   font-weight: 400;
-  margin-bottom: 20px;
+  padding-top: 50px;  
+  margin-bottom: 40px;
 }
 
 .portfolio-details .portfolio-info ul {
@@ -1048,10 +1059,24 @@ Line 70 of HTML file. And Line 30 of 'style.css' */
   background-color: #18d26e;
 }
 
+/* MY CODE: FIX IMAGES OVERLAPING  */
+
+.portfolio-details-slider .swiper-slide {
+  height: 500px; /* Set a fixed height for the slides */
+}
+
+.portfolio-details-slider .swiper-slide img {
+  width: 100%; /* Make the image responsive */
+  height: 100%; /* Ensure the image fills the slide height */
+  object-fit: cover; /* Maintain aspect ratio and cover the slide */
+}
+
+/* END: MY CODE */
+
 /*--------------------------------------------------------------
 # Contact
 --------------------------------------------------------------*/
-.contact .info-box {
+/* .contact .info-box {
   color: #444444;
   padding: 20px;
   width: 100%;
@@ -1203,12 +1228,12 @@ Line 70 of HTML file. And Line 30 of 'style.css' */
   100% {
     transform: rotate(360deg);
   }
-}
+} */
 
 /*--------------------------------------------------------------
 # Credits
 --------------------------------------------------------------*/
-.credits {
+/* .credits {
   position: fixed;
   right: 0;
   left: 0;
@@ -1235,4 +1260,4 @@ Line 70 of HTML file. And Line 30 of 'style.css' */
 
 .credits a:hover {
   color: #fff;
-}
+} */
