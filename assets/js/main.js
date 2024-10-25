@@ -149,7 +149,7 @@
   }
 
   /**
-   * Testimonials slider
+   * Technologies Carousel
    */
   new Swiper('.technologies-slider', {
     speed: 600,
@@ -170,7 +170,17 @@
         spaceBetween: 20
       },
 
-      1200: {
+      430: {
+        slidesPerView: 2,
+        spaceBetween: 20
+      },
+
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
+
+      1000: {
         slidesPerView: 4,
         spaceBetween: 20
       }
@@ -179,7 +189,7 @@
   
 
   /**
-   * Testimonials slider (UNUSED Default Code)
+   * Testimonials slider (UNUSED: Default Code)
    */
   // new Swiper('.testimonials-slider', {
   //   speed: 600,
@@ -273,8 +283,8 @@
    */
   new PureCounter();
 
-  // General Info
-  document.getElementById("fone").innerText = atob("KDkyOSkgODQyIDQyMjg=");
-  document.getElementById("mail").innerText = atob("am9iQHZsYWRib3J0bmlrLmRldg==");
+  // Email & Phone in Base64
+  document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
+  document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
   
 })()
