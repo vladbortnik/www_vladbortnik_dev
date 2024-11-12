@@ -1,6 +1,6 @@
-/*--------------------------------------------------------------
-# General
---------------------------------------------------------------*/
+/*======================
+######  GENERAL  #######
+======================*/
 body {
   font-family: "Open Sans", sans-serif;
   background-color: #040404;
@@ -47,9 +47,9 @@ h6 {
   font-family: "Raleway", sans-serif;
 }
 
-/*--------------------------------------------------------------
-# Header
---------------------------------------------------------------*/
+/*======================
+####### Header #########
+======================*/
 #header {
   transition: ease-in-out 0.3s;
   position: relative;
@@ -141,7 +141,7 @@ h6 {
   }
 }
 
-/* Header Top */
+/* HEADER TOP */
 #header.header-top {
   height: 80px;
   position: fixed;
@@ -185,12 +185,11 @@ h6 {
   }
 }
 
-/*--------------------------------------------------------------
-# Navigation Menu
---------------------------------------------------------------*/
-/**
-* Desktop Navigation 
-*/
+/*======================
+### NAVIGATION MENU ####
+======================*/
+
+/* DESKTOP NAVIGATION */
 .navbar {
   padding: 0;
   margin-top: 35px;
@@ -260,9 +259,7 @@ h6 {
   color: #fff;
 }
 
-/**
-* Mobile Navigation 
-*/
+/* MOBILE NAVIGATION */
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -331,9 +328,9 @@ h6 {
   position: relative;
 }
 
-/*--------------------------------------------------------------
-# Sections General
---------------------------------------------------------------*/
+/*======================
+### SECTIONS GENERAL ###
+======================*/
 section {
   overflow: hidden;
   position: absolute;
@@ -398,9 +395,9 @@ section .container {
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# About
---------------------------------------------------------------*/
+/*======================
+######## ABOUT ########
+======================*/
 .about-me .content h3 {
   font-weight: 700;
   font-size: 26px;
@@ -433,9 +430,9 @@ section .container {
   margin-bottom: 0;
 }
 
-/*--------------------------------------------------------------
-# Counts
---------------------------------------------------------------*/
+/*======================
+######## COUNTS ########
+======================*/
 .counts {
   padding: 70px 0 60px;
 }
@@ -475,9 +472,9 @@ section .container {
   font-size: 14px;
 }
 
-/*--------------------------------------------------------------
-# Skills
---------------------------------------------------------------*/
+/*======================
+######## SKILLS ########
+======================*/
 .skills .progress {
   height: 60px;
   display: block;
@@ -511,9 +508,9 @@ section .container {
   background-color: #18d26e;
 }
 
-/*--------------------------------------------------------------
-# Interests
---------------------------------------------------------------*/
+/*======================
+###### INTERESTS ######
+======================*/
 .interests .icon-box {
   display: flex;
   align-items: center;
@@ -541,9 +538,9 @@ section .container {
   background: rgba(255, 255, 255, 0.12);
 }
 
-/*--------------------------------------------------------------
-Technologies Carousel
---------------------------------------------------------------*/
+/*=========================
+## TECHNOLOGIES CAROUSEL ##
+=========================*/
 .technology-item {
   text-align: center;
   transition: transform 0.3s;
@@ -579,96 +576,10 @@ Technologies Carousel
 .technologies .swiper-pagination .swiper-pagination-bullet-active {
   background-color: #18d26e;
 }
-/*--------------------------------------------------------------
-# END: Technologies Carousel
---------------------------------------------------------------*/
 
-
-/*--------------------------------------------------------------
-# LEGACY: Testimonials
---------------------------------------------------------------*/
-/* .testimonials .testimonials-carousel,
-.testimonials .testimonials-slider {
-  overflow: hidden;
-}
-
-.testimonials .testimonial-item {
-  box-sizing: content-box;
-  min-height: 320px;
-}
-
-.testimonials .testimonial-item .testimonial-img {
-  width: 90px;
-  border-radius: 50%;
-  margin: -40px 0 0 40px;
-  position: relative;
-  z-index: 2;
-  border: 6px solid rgba(255, 255, 255, 0.12);
-}
-
-.testimonials .testimonial-item h3 {
-  font-size: 18px;
-  font-weight: bold;
-  margin: 10px 0 5px 45px;
-  color: #fff;
-}
-
-.testimonials .testimonial-item h4 {
-  font-size: 14px;
-  color: #999;
-  margin: 0 0 0 45px;
-}
-
-.testimonials .testimonial-item .quote-icon-left,
-.testimonials .testimonial-item .quote-icon-right {
-  color: rgba(255, 255, 255, 0.25);
-  font-size: 26px;
-}
-
-.testimonials .testimonial-item .quote-icon-left {
-  display: inline-block;
-  left: -5px;
-  position: relative;
-}
-
-.testimonials .testimonial-item .quote-icon-right {
-  display: inline-block;
-  right: -5px;
-  position: relative;
-  top: 10px;
-}
-
-.testimonials .testimonial-item p {
-  font-style: italic;
-  margin: 0 15px 0 15px;
-  padding: 20px 20px 60px 20px;
-  background: rgba(255, 255, 255, 0.1);
-  position: relative;
-  border-radius: 6px;
-  position: relative;
-  z-index: 1;
-}
-
-.testimonials .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet {
-  width: 12px;
-  height: 12px;
-  opacity: 1;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.testimonials .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #18d26e;
-} */
-
-
-/*--------------------------------------------------------------
-# Resume
---------------------------------------------------------------*/
+/*======================
+######## RESUME ########
+======================*/
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -727,9 +638,9 @@ Technologies Carousel
   border: 2px solid #18d26e;
 }
 
-/*--------------------------------------------------------------
-# Services
---------------------------------------------------------------*/
+/*======================
+###### SERVICES ########
+======================*/
 .services .icon-box {
   text-align: center;
   background: rgba(204, 204, 204, 0.1);
@@ -807,9 +718,9 @@ Technologies Carousel
   color: #fff;
 }
 
-/*--------------------------------------------------------------
-# Portfolio
---------------------------------------------------------------*/
+/*======================
+###### PORTFOLIO #######
+======================*/
 .portfolio .portfolio-item {
   margin-top: 15px;
   margin-bottom: 15px;
@@ -860,7 +771,7 @@ Technologies Carousel
 .portfolio .portfolio-wrap::before {
   content: "";
   /* background: rgba(0, 0, 0, 0.6); */
-  background: rgba(22, 38, 211, 0.9);
+  background: rgba(5, 7, 20, 0.9);
   position: absolute;
   left: 30px;
   right: 30px;
@@ -968,9 +879,9 @@ Technologies Carousel
   right: 15px;
 }
 
-/*--------------------------------------------------------------
-# Portfolio Details
---------------------------------------------------------------*/
+/*===========================
+#### PORTFOLIO DETAILS ######
+===========================*/
 .portfolio-details {
   padding-top: 40px;
   background: rgba(0, 0, 0, 0.8);
@@ -994,7 +905,7 @@ Technologies Carousel
   margin-bottom: 20px;
 }
 
-/* OPTIONAL CODE: ADD IMAGE HOVER EFFECT */
+/* OPTIONAL CODE: Add image hover effect */
 
 /* .portfolio-details-image {
   text-align: center;
@@ -1004,8 +915,7 @@ Technologies Carousel
 .portfolio-details-image:hover {
   transform: scale(1.1);
 } */
-
-/* END: OPTIONAL CODE */
+/* END: Optional Code */
 
 .portfolio-details .portfolio-info {
   padding-top: 45px;
@@ -1030,7 +940,7 @@ Technologies Carousel
 }
 
 /* Underline links in "project-bookfinder.html".
-Line 70 of HTML file. And Line 30 of 'style.css' */
+Line 70 of "index.html". And Line 30 of 'style.css' */
 .portfolio-details .portfolio-info ul li a:hover {
   text-decoration: underline;
 }
@@ -1062,23 +972,20 @@ Line 70 of HTML file. And Line 30 of 'style.css' */
   background-color: #18d26e;
 }
 
-/* MY CODE: FIX IMAGES OVERLAPING  */
-
+/* FIX: IMAGES OVERLAPING  */
 .portfolio-details-slider .swiper-slide {
   height: 500px; /* Set a fixed height for the slides */
 }
 
 .portfolio-details-slider .swiper-slide img {
-  width: 100%; /* Make the image responsive */
-  height: 100%; /* Ensure the image fills the slide height */
-  object-fit: cover; /* Maintain aspect ratio and cover the slide */
-}
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}/* END: Fix */
 
-/* END: MY CODE */
-
-/*--------------------------------------------------------------
-# Contact
---------------------------------------------------------------*/
+/*======================
+####### CONTACT ########
+======================*/
 /* .contact .info-box {
   color: #444444;
   padding: 20px;
@@ -1231,36 +1138,4 @@ Line 70 of HTML file. And Line 30 of 'style.css' */
   100% {
     transform: rotate(360deg);
   }
-} */
-
-/*--------------------------------------------------------------
-# Credits
---------------------------------------------------------------*/
-/* .credits {
-  position: fixed;
-  right: 0;
-  left: 0;
-  bottom: 0;
-  padding: 15px;
-  text-align: right;
-  font-size: 13px;
-  color: #fff;
-  z-index: 999999;
-}
-
-@media (max-width: 992px) {
-  .credits {
-    text-align: center;
-    padding: 10px;
-    background: rgba(0, 0, 0, 0.8);
-  }
-}
-
-.credits a {
-  color: #18d26e;
-  transition: 0.3s;
-}
-
-.credits a:hover {
-  color: #fff;
 } */

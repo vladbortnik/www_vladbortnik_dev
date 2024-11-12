@@ -186,36 +186,6 @@
       }
     }
   });
-  
-
-  /**
-   * Testimonials slider (UNUSED: Default Code)
-   */
-  // new Swiper('.testimonials-slider', {
-  //   speed: 600,
-  //   loop: true,
-  //   autoplay: {
-  //     delay: 5000,
-  //     disableOnInteraction: false
-  //   },
-  //   slidesPerView: 'auto',
-  //   pagination: {
-  //     el: '.swiper-pagination',
-  //     type: 'bullets',
-  //     clickable: true
-  //   },
-  //   breakpoints: {
-  //     320: {
-  //       slidesPerView: 1,
-  //       spaceBetween: 20
-  //     },
-
-  //     1200: {
-  //       slidesPerView: 3,
-  //       spaceBetween: 20
-  //     }
-  //   }
-  // });
 
   /**
    * Porfolio isotope and filter
@@ -283,7 +253,7 @@
    */
   new PureCounter();
 
-  // Email & Phone in Base64
+  /* Email & Phone in Base64 */
   document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
   document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
   
