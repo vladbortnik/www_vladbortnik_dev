@@ -12,7 +12,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  background: #040404 url("../img/bg.jpg") top right no-repeat;
+  background: #040404 url("../img/background.jpg") top right no-repeat;
   background-size: cover;
   left: 0;
   right: 0;
@@ -828,7 +828,8 @@ section .container {
 
 .portfolio .portfolio-wrap .portfolio-info h4 {
   font-size: 20px;
-  color: #fff;
+  /* color: #fff; */
+  color: #08c25f;
   font-weight: 600;
 }
 
@@ -900,9 +901,10 @@ section .container {
 
 .portfolio-details .portfolio-title {
   color: #18d26e;
-  font-size: 26px;
+  font-size: 45px;
   font-weight: 700;
   margin-bottom: 20px;
+  text-align: center;
 }
 
 /* OPTIONAL CODE: Add image hover effect */
@@ -918,7 +920,7 @@ section .container {
 /* END: Optional Code */
 
 .portfolio-details .portfolio-info {
-  padding-top: 45px;
+  padding-top: 5px;
   /* padding-bottom: 40px; */
 }
 
@@ -926,7 +928,7 @@ section .container {
   font-size: 22px;
   font-weight: 400;
   padding-top: 50px;  
-  margin-bottom: 40px;
+  /* margin-bottom: 40px; */
 }
 
 .portfolio-details .portfolio-info ul {
