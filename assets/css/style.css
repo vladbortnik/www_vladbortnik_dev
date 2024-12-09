@@ -561,6 +561,16 @@ section .container {
   width: 120px;
 }
 
+.technology-item #nginx-icon {
+  margin: 10px 0px 20px;
+  width: 85px;
+}
+
+.technology-item #git-icon {
+  margin: 15px 0px 20px;
+  width: 90px;
+}
+
 .technologies .swiper-pagination {
   margin-top: 20px;
   position: relative;
@@ -984,6 +994,21 @@ Line 70 of "index.html". And Line 30 of 'style.css' */
   height: 100%;
   object-fit: cover;
 }/* END: Fix */
+
+/*======================
+## Server-Setup.html ###
+======================*/
+#font-green {
+  font-weight: 700;
+  font-size: 26px;
+  color: #18d26e;
+}
+
+/* #font-green h3 {
+  font-weight: 700;
+  font-size: 26px;
+  color: #18d26e;
+} */
 
 /*======================
 ####### CONTACT ########
