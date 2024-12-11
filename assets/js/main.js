@@ -256,5 +256,17 @@
   /* Email & Phone in Base64 */
   document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
   document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
+
+  /**********************************
+   ******* SERVER SETUP PAGE ********
+   *********************************/
+  // const lightbox = GLightbox({
+  //   selector: '.glightbox',
+  //   touchNavigation: true,
+  //   loop: false,
+  //   autoplayVideos: true,
+  //   closeButton: true
+  // });
+  
   
 })()
