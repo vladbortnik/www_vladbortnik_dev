@@ -69,7 +69,7 @@
 
 
   <!-- ################### -->
-  <!-- OVERVIEW    Section -->
+  <!-- OVERVIEW    SECTION -->
   <!-- ################### -->
   <section class="overview" id="overview">
     <div class="container">
@@ -135,7 +135,7 @@
     <div class="architecture container">
       <div class="section-title">
         <h2>Technical Details</h2>
-        <h4>ARCHITECTURE</h4>
+        <h4>Architecture</h4>
       </div>
 
       <div class="diagram-container" data-aos="zoom-in">
@@ -146,28 +146,82 @@
              style="cursor: pointer;">
       </div>
 
-      <div class="diagram-description mt-4" data-aos="fade-up">
-          <h4>Key Components:</h4>
-          <div class="row">
-            <div class="col-md-6">
-              <ul class="component-list">
-                <li><i class="bi bi-check-circle"></i> Nginx Reverse Proxy Configuration</li>
-                <li><i class="bi bi-check-circle"></i> SSL/TLS Termination with Let's Encrypt</li>
-                <li><i class="bi bi-check-circle"></i> UFW Firewall Protection</li>
-              </ul>
+      <!-- INTERACTIVE HOTSPOTS -->
+      <div class="hotspot-container">
+        <!-- Nginx hotspot -->
+        <div class="hotspot nginx-area" 
+            style="top: 30%; left: 45%; width: 15%; height: 20%;">
+            <div class="hotspot-popup">
+                <h5>Nginx Server</h5>
+                <ul>
+                    <li>Reverse proxy for multiple applications</li>
+                    <li>SSL/TLS termination point</li>
+                    <li>Virtual hosts configuration</li>
+                </ul>
             </div>
-            <div class="col-md-6">
-              <ul class="component-list">
-                <li><i class="bi bi-check-circle"></i> Docker Container Isolation</li>
-                <li><i class="bi bi-check-circle"></i> Multiple Web Applications</li>
-                <li><i class="bi bi-check-circle"></i> External API Integration</li>
+        </div>
+
+        <!-- Docker hotspot -->
+        <div class="hotspot docker-area" 
+            style="top: 45%; right: 25%; width: 20%; height: 25%;">
+            <div class="hotspot-popup">
+                <h5>Docker Environment</h5>
+                <ul>
+                    <li>Container orchestration</li>
+                    <li>Network isolation</li>
+                    <li>Resource management</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Add more hotspots for other areas -->
+      </div>
+
+    <!-- Replacing diagram-description with new grid -->
+    <!-- <div class="architecture-grid mt-4" data-aos="fade-up">
+      <div class="row g-4"> -->
+        <!-- Cloud Platform -->
+        <!-- <div class="col-md-4">
+          <div class="arch-item">
+            <img src="assets/img/portfolio/technologies-icons/digitalocean.webp" alt="Cloud Platform">
+            <h5>Cloud Platform</h5>
+            <div class="hover-content">
+              <ul>
+                <li>DigitalOcean Droplet (Shared Virtual Server)</li>
+                <li>Ubuntu 24.04 LTS (64-bit) as base OS</li>
+                <li>2GB Memory / 1vCPU / 25GB SSD</li>
+                <li>NYC3 Data Center location</li>
+                <li>UFW Firewall enabled</li>
               </ul>
             </div>
           </div>
-        </div>
+        </div> -->
+
+        <!-- Nginx Server -->
+        <!-- <div class="col-md-4">
+          <div class="arch-item">
+            <img src="assets/img/portfolio/technologies-icons/nginx.png" alt="Nginx Server">
+            <h5>Nginx Server</h5>
+            <div class="hover-content">
+              <ul>
+                <li>Reverse proxy for multiple applications</li>
+                <li>SSL/TLS termination point</li>
+                <li>Virtual hosts configuration</li>
+                <li>Static content serving</li>
+                <li>Load balancing & request routing</li>
+              </ul>
+            </div>
+          </div>
+        </div> -->
+
+        <!-- Continue with Docker, Domain, Security... -->
+        <!-- Similar structure for remaining items -->
+
+      <!-- </div>
+    </div> -->
+
     
-    
-     </div>
+    </div>
   </section>
   <!-- END:: ARCHITECTURE Section -->
 
@@ -181,7 +235,7 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Project</h2>
+          <h2>Technical Details</h2>
           <h4>Docker Infrastructure</h4>
       </div>
 
@@ -204,7 +258,7 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Project</h2>
+          <h2>Technical Details</h2>
           <h4>Security Implementation</h4>
       </div>
 
@@ -228,7 +282,7 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Project</h2>
+          <h2>Technical Details</h2>
           <h4>Nginx Configuration</h4>
       </div>
 
