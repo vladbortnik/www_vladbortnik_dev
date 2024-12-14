@@ -29,71 +29,33 @@
 
 
   <!-- Main CSS File -->
-  <link href="assets/css/server-setup.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
 </head>
 
 <body>
-  <!-- ====================== -->
-  <!-- ======= HEADER ======= -->
-  <!-- ====================== -->
-  <header id="header">
-    <!-- <header> -->
-    <div class="container">
-
-      <h1><a href="server-setup.html">Server Setup</a></h1>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <!-- <h2>I'm a passionate <span>backend developer</span> from New York</h2> -->
-
-      <nav id="navbar" class="navbar">
-        <ul>
-          <!-- <li><a class="nav-link active" href="#header">Home</a></li> -->
-          <li><a class="nav-link" href="#overview">Overview</a></li>
-          <li><a class="nav-link" href="#architecture">Architecture</a></li>
-          <li><a class="nav-link" href="#docker">Docker</a></li>
-          <li><a class="nav-link" href="#security">Security</a></li>
-          <li><a class="nav-link" href="#nginx">Nginx</a></li>
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
-
-      <!-- <div class="social-links"> -->
-        <!-- <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github"><i class="bi bi-github"></i></a> -->
-        <!-- <a href="#" class="facebook"><i class="bi bi-facebook"></i></a> -->
-        <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
-        <!-- <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin"><i class="bi bi-linkedin"></i></a> -->
-      <!-- </div> -->
-
-    </div>
-  </header><!-- END: HEADER -->
-
-
-  <!-- ################### -->
-  <!-- OVERVIEW    Section -->
-  <!-- ################### -->
-  <section class="overview" id="overview">
-    <div class="container">
-      <!--  Section Title -->
+  <section class="section-show" id="server-setup">
+    <!-- Hero Section -->
+    <div class="hero-section container">
       <div class="section-title">
-          <h2>Project</h2>
-          <h4>Overview</h4>
+        <h2>Project</h2>
+        <p>SERVER SETUP</p>
       </div>
 
   
 
       <div class="row align-items-center">
         <div class="col-lg-7" data-aos="fade-right">
-          <!-- <div class="overview-image">
+          <!-- <div class="hero-image">
             <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid" alt="server setup image">
-            <div class="overview-overlay">
+            <div class="hero-overlay">
               <h3 class="text-gradient">From the ground up</h3>
             </div>
           </div> -->
-          <div class="overview-image">
+          <div class="hero-image">
             <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" 
                  class="img-fluid" 
                  alt="server setup image">
-            <div class="overview-overlay">
+            <div class="hero-overlay">
               <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.png" 
                    alt="server setup overlay"
                    class="overlay-image">
@@ -102,7 +64,7 @@
           
         </div>
         <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
-          <div class="overview-content">
+          <div class="hero-content">
             <h3>Overview</h3>
             <p>
               This project involved configuring a DigitalOcean shared server with Nginx on Ubuntu to host my static portfolio website and multiple web applications on subdomains. I manually set up SSL for secure connections, configured DNS, and deployed applications using Docker containers for isolated environments.
@@ -119,20 +81,10 @@
           </div>
         </div>
       </div>
-    
-
-
     </div>
-  </section>
-  <!-- END:: SERVER SETUP Section -->
 
-
-
-  <!-- #################### -->
-  <!-- ARCHITECTURE Section -->
-  <!-- #################### -->
-  <section class="architecture" id="architecture">
-    <div class="architecture container">
+    <!-- Architecture Section -->
+    <div class="architecture-section container">
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>ARCHITECTURE</h4>
@@ -165,82 +117,16 @@
             </div>
           </div>
         </div>
-    
-    
-     </div>
-  </section>
-  <!-- END:: ARCHITECTURE Section -->
-
-
-
-
-  <!-- ############################# -->
-  <!-- DOCKER INFRASTRUCTURE Section -->
-  <!-- ############################# -->
-  <section class="docker" id="docker">
-    <div class="container">
-      <!--  Section Title -->
-      <div class="section-title">
-          <h2>Project</h2>
-          <h4>Docker Infrastructure</h4>
       </div>
-
-
-
-
-
     </div>
-  </section>
-  <!-- END:: DOCKER INFRASTRUCTURE Section -->
-
-
-
-
-
-  <!-- ############################### -->
-  <!-- SECURITY IMPLEMENTATION Section -->
-  <!-- ############################### -->
-  <section class="security" id="security">
-    <div class="container">
-      <!--  Section Title -->
-      <div class="section-title">
-          <h2>Project</h2>
-          <h4>Security Implementation</h4>
-      </div>
-
-
-
-
-
-    </div>
-  </section>
-  <!-- END:: SECURITY IMPLEMENTATION Section -->
 
 
 
 
 
 
-  <!-- ########################### -->
-  <!-- NGINX CONFIGURATION Section -->
-  <!-- ########################### -->
-  <section class="nginx" id="nginx">
-    <div class="container">
-      <!--  Section Title -->
-      <div class="section-title">
-          <h2>Project</h2>
-          <h4>Nginx Configuration</h4>
-      </div>
-
-
-
-
-
-    </div>
-  </section>
-  <!-- END:: NGINX CONFIGURATION Section -->
-
-
+    </section>
+    <!-- END: SERVER SETUP Section -->
 
     <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
     <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
@@ -254,12 +140,12 @@
 
     <!-- Linking AOS JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
-    <!-- <script>
+    <script>
         AOS.init();
-    </script> -->
+    </script>
 
     <!-- Diagram Animation -->
-    <!-- <script>
+    <script>
       function openFullscreen(img) {
           // Create overlay
           const overlay = document.createElement('div');
@@ -297,12 +183,12 @@
               if (e.key === 'Escape') closeFullscreen();
           });
       }
-      </script> -->
+      </script>
       
       
 
 
-    <script src="assets/js/server-setup.js"></script>
+    <script src="assets/js/main.js"></script>
 
 <body>
 
