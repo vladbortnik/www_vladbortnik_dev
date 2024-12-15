@@ -645,18 +645,22 @@ section .container {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
+  pointer-events: none; /* This allows clicks to pass through to the image */
 }
 
 .hotspot {
   position: absolute;
-  pointer-events: auto;
+  pointer-events: auto; /* Re-enable pointer events only for hotspots */
   cursor: pointer;
+  /* Remove background for invisible hotspots */
   background: transparent;
-  transition: all 0.3s ease;
+  transition: background 0.3s ease;
 }
 
-/* Popup Styling */
+.hotspot:hover {
+  background: rgba(24, 210, 110, 0.2);
+}
+
 .hotspot-popup {
   position: absolute;
   visibility: hidden;
@@ -665,123 +669,46 @@ section .container {
   border: 1px solid #18d26e;
   border-radius: 8px;
   padding: 15px;
-  min-width: 200px;
-  max-width: 300px;
+  width: 250px;
   z-index: 100;
   transition: all 0.3s ease;
-  pointer-events: none;
-  white-space: nowrap;
+  pointer-events: none; /* Prevent popup from interfering with hover */
 }
 
-.hotspot-popup h5 {
-  color: #18d26e;
-  margin-bottom: 10px;
-  font-size: 1rem;
+.hotspot:hover .hotspot-popup {
+  visibility: visible;
+  opacity: 1;
 }
 
-.hotspot-popup ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-}
-
-.hotspot-popup ul li {
-  color: #fff;
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-  padding-left: 15px;
-  position: relative;
-}
-
-.hotspot-popup ul li:before {
-  content: "•";
-  color: #18d26e;
-  position: absolute;
-  left: 0;
-}
-
-/* ################ */
-/* HIGHLIGHT EFFECT */
-/* ################ */
-
-/* SIMPLE HIGHLIGHT */
-/* .hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-} */
-
-/* GLOWING BORDER */
-.hotspot:hover {
-  box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
-  border: 1px solid rgba(24, 210, 110, 0.5);
-}
-
-
-/* PULSE EFFECT */
-/* .hotspot:hover {
-  animation: pulse 1.5s infinite;
-}
-
-@keyframes pulse {
-  0% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.4);
-  }
-  70% {
-      box-shadow: 0 0 0 10px rgba(24, 210, 110, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
-  }
-} */
-
-/* FADE-IN BORDER */
-/* .hotspot {
-  border: 1px solid transparent;
-}
-
-.hotspot:hover {
-  border-color: rgba(24, 210, 110, 0.5);
-  background: rgba(24, 210, 110, 0.1);
-} */
-
-
-
-
-/* ###################### */
-/* #### POP-UP AREA ##### */
-/* ###################### */
-
-/* Top popup */
-/* .popup-top .hotspot-popup {
+/* Position popups based on hotspot location */
+.nginx-area .hotspot-popup {
   bottom: 100%;
   left: 50%;
   transform: translateX(-50%);
   margin-bottom: 10px;
-} */
+}
 
-/* Bottom popup */
-/* .popup-bottom .hotspot-popup {
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-} */
-
-/* Right popup */
-/* .popup-right .hotspot-popup {
-  left: 100%;
+.docker-area .hotspot-popup {
   top: 50%;
+  left: 100%;
   transform: translateY(-50%);
   margin-left: 10px;
-} */
+}
 
-/* Left popup */
-/* .popup-left .hotspot-popup {
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 10px;
-} */
-
+/* Make sure popups stay within viewport */
+@media (max-width: 768px) {
+  .hotspot-popup {
+      width: 200px;
+  }
+  
+  /* Adjust popup positions for mobile */
+  .hotspot:hover .hotspot-popup {
+      left: 50%;
+      bottom: 100%;
+      transform: translateX(-50%);
+      margin-bottom: 10px;
+  }
+}
 
 
 
