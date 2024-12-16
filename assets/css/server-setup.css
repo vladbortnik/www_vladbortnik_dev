@@ -623,10 +623,6 @@ section .container {
   box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
 }
 
-/* ---------------------------- */
-/*    INTERACTIVE HOTSPOTS      */
-/* ---------------------------- */
-
 .diagram-container {
   position: relative;
   width: 100%;
@@ -638,6 +634,10 @@ section .container {
   height: auto;
   cursor: pointer;
 }
+
+/* ---------------------------- */
+/*    INTERACTIVE HOTSPOTS      */
+/* ---------------------------- */
 
 .hotspot-container {
   position: absolute;
@@ -652,11 +652,17 @@ section .container {
   position: absolute;
   pointer-events: auto;
   cursor: pointer;
+
+  /* background-color: #18d26e; */
+  /* opacity: 0.5; */
   background: transparent;
+  
   transition: all 0.3s ease;
 }
 
-/* Popup Styling */
+/* ============= */
+/* POPUP STYLING */
+/* ============= */
 .hotspot-popup {
   position: absolute;
   visibility: hidden;
@@ -671,6 +677,41 @@ section .container {
   transition: all 0.3s ease;
   pointer-events: none;
   white-space: nowrap;
+}
+
+.popup-left {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.popup-right {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.popup-top {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup-bottom {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Show popup on hover */
+.hotspot:hover .hotspot-popup {
+  visibility: visible;
+  opacity: 1;
+}
+
+.hotspot:hover {
+  background: rgba(24, 210, 110, 0.2);
+  border-radius: 4px;
 }
 
 .hotspot-popup h5 {
@@ -709,15 +750,16 @@ section .container {
   background: rgba(24, 210, 110, 0.2);
 } */
 
+
 /* GLOWING BORDER */
-.hotspot:hover {
+/* .hotspot:hover {
   box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
   border: 1px solid rgba(24, 210, 110, 0.5);
-}
+} */
 
 
 /* PULSE EFFECT */
-/* .hotspot:hover {
+.hotspot:hover {
   animation: pulse 1.5s infinite;
 }
 
@@ -731,7 +773,7 @@ section .container {
   100% {
       box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
   }
-} */
+}
 
 /* FADE-IN BORDER */
 /* .hotspot {
@@ -743,115 +785,4 @@ section .container {
   background: rgba(24, 210, 110, 0.1);
 } */
 
-
-
-
-/* ###################### */
-/* #### POP-UP AREA ##### */
-/* ###################### */
-
-/* Top popup */
-/* .popup-top .hotspot-popup {
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 10px;
-} */
-
-/* Bottom popup */
-/* .popup-bottom .hotspot-popup {
-  top: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-top: 10px;
-} */
-
-/* Right popup */
-/* .popup-right .hotspot-popup {
-  left: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-left: 10px;
-} */
-
-/* Left popup */
-/* .popup-left .hotspot-popup {
-  right: 100%;
-  top: 50%;
-  transform: translateY(-50%);
-  margin-right: 10px;
-} */
-
-
-
-
-/* ---------------------------- */
-/*      ARCHITECTURE GRID       */
-/* ---------------------------- */
-
-/* .architecture-grid {
-  margin-top: 2rem;
-}
-
-.arch-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-  min-height: 200px;
-}
-
-.arch-item img {
-  height: 60px;
-  margin-bottom: 1rem;
-}
-
-.arch-item h5 {
-  color: #18d26e;
-  margin-bottom: 0.5rem;
-}
-
-.hover-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 8px;
-  padding: 1rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.arch-item:hover .hover-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-.hover-content ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: left;
-}
-
-.hover-content ul li {
-  color: #fff;
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
-  position: relative;
-}
-
-.hover-content ul li:before {
-  content: "•";
-  color: #18d26e;
-  position: absolute;
-  left: 0;
-}
-
-
- */
+/* ========================== */
