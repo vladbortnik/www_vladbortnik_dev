@@ -7,13 +7,16 @@
 
   <title>About | Server Setup</title>
   <meta name="description" content="Learn about our custom server solution">
-  <meta name="keywords" content="Personal Backend Development Project, Nginx Configuration, Ubuntu Server Setup, DigitalOcean Deployment, SSL Certificate Installation, DNS Configuration, Static Website Deployment, Subdomain Management, Docker Web Apps, Shared Server Environment, DigitalOcean Droplet, Web App Deployment, Full Stack Development, Server Management, Backend Developer Portfolio, Cloud Hosting Solutions, Custom Server Setup, Web Application Hosting, DevOps Practices, Manual Server Configuration">
+  <meta name="keywords"
+    content="Personal Backend Development Project, Nginx Configuration, Ubuntu Server Setup, DigitalOcean Deployment, SSL Certificate Installation, DNS Configuration, Static Website Deployment, Subdomain Management, Docker Web Apps, Shared Server Environment, DigitalOcean Droplet, Web App Deployment, Full Stack Development, Server Management, Backend Developer Portfolio, Cloud Hosting Solutions, Custom Server Setup, Web Application Hosting, DevOps Practices, Manual Server Configuration">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/img/favicon.ico">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -61,8 +64,8 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Project</h2>
-          <h4>Overview</h4>
+        <h2>Project</h2>
+        <h4>Overview</h4>
       </div>
 
       <div class="row align-items-center">
@@ -74,36 +77,39 @@
             </div>
           </div> -->
           <div class="overview-image">
-            <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" 
-                 class="img-fluid" 
-                 alt="server setup image">
+            <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid"
+              alt="server setup image">
             <div class="overview-overlay">
-              <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.png" 
-                   alt="server setup overlay"
-                   class="overlay-image">
+              <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.png" alt="server setup overlay"
+                class="overlay-image">
             </div>
           </div>
-          
+
         </div>
         <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-content">
             <h3>Overview</h3>
             <p>
-              This project involved configuring a DigitalOcean shared server with Nginx on Ubuntu to host my static portfolio website and multiple web applications on subdomains. I manually set up SSL for secure connections, configured DNS, and deployed applications using Docker containers for isolated environments.
+              This project involved configuring a DigitalOcean shared server with Nginx on Ubuntu to host my static
+              portfolio website and multiple web applications on subdomains. I manually set up SSL for secure
+              connections, configured DNS, and deployed applications using Docker containers for isolated environments.
             </p>
             <div class="tech-overview">
               <h3>Tech Stack</h3>
               <ul class="tech-list">
-                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual Server)</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Security:</strong> <span>SSL, Firewall, HTTPS</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual
+                    Server)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Security:</strong> <span>SSL, Firewall, HTTPS</span>
+                </li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Deployment:</strong> <span>Docker, SFTP</span></li>
-                <li><i class="bi bi-chevron-right"></i> <strong>Configuration:</strong> <span>DNS, LetsEncrypt, SSH, Nginx</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Configuration:</strong> <span>DNS, LetsEncrypt, SSH,
+                    Nginx</span></li>
               </ul>
             </div>
           </div>
         </div>
       </div>
-    
+
     </div>
   </section>
   <!-- END:: OVERVIEW SECTION -->
@@ -122,112 +128,108 @@
 
       <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
       <div class="diagram-container" data-aos="zoom-in">
-        <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" 
-             class="img-fluid base-diagram" 
-             alt="Server Architecture Diagram"
-             onclick="openFullscreen(this)">
+        <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" class="img-fluid base-diagram"
+          alt="Server Architecture Diagram" onclick="openFullscreen(this)">
 
         <!-- HOTSPOTS ON HOVER -->
         <div class="hotspot-container">
 
-    <!-- Security Block (Fail2ban + UFW) -->
-    <div class="hotspot security-area" style="top: 32%; left: 35.5%; width: 6%; height: 33%;">
-        <div class="hotspot-popup popup-left">
-            <h5>Security Layer</h5>
-            <ul>
+          <!-- Security Block (Fail2ban + UFW) -->
+          <div class="hotspot security-area" style="top: 32%; left: 35.5%; width: 6%; height: 33%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Security Layer</h5>
+              <ul>
                 <li>Fail2Ban intrusion prevention</li>
                 <li>UFW firewall rules</li>
                 <li>IP-based access control</li>
                 <li>Brute-force protection</li>
                 <li>Custom security policies</li>
-            </ul>
-        </div>
-    </div>
+              </ul>
+            </div>
+          </div>
 
-    <!-- Nginx Block -->
-    <div class="hotspot nginx-area" style="top: 27%; left: 48%; width: 6%; height: 40%;">
-        <div class="hotspot-popup popup-top">
-            <h5>Nginx Server</h5>
-            <ul>
+          <!-- Nginx Block -->
+          <div class="hotspot nginx-area" style="top: 27%; left: 48%; width: 6%; height: 40%;">
+            <div class="hotspot-popup popup-top">
+              <h5>Nginx Server</h5>
+              <ul>
                 <li>Load balancing configuration</li>
                 <li>Request caching system</li>
                 <li>Reverse proxy setup</li>
                 <li>SSL termination point</li>
                 <li>Virtual hosts management</li>
-            </ul>
-        </div>
-    </div>
+              </ul>
+            </div>
+          </div>
 
-    <!-- Portfolio Block -->
-    <div class="hotspot portfolio-area" style="top: 36%; left: 60%; width: 9%; height: 24%;">
-        <div class="hotspot-popup popup-left">
-            <h5>Portfolio Website</h5>
-            <ul>
+          <!-- Portfolio Block -->
+          <div class="hotspot portfolio-area" style="top: 36.5%; left: 60.3%; width: 8.8%; height: 21.6%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Portfolio Website</h5>
+              <ul>
                 <li>Static content serving</li>
                 <li>Server-side caching</li>
                 <li>Custom domain configuration</li>
                 <li>Performance optimization</li>
-            </ul>
-        </div>
-    </div>    
-   
-            <!-- Bookfinder Block -->
-            <div class="hotspot bookfinder-area" 
-                 style="top: 30.5%; right: 10%; width: 17.3%; height: 11.7%;">
-                <div class="hotspot-popup popup-top">
-                    <h5>Bookfinder Application</h5>
-                    <ul>
-                        <li>Flask/Gunicorn application</li>
-                        <li>MySQL database integration</li>
-                        <li>Docker container isolation</li>
-                        <li>Azure Vision API integration</li>
-                        <li>Custom network configuration</li>
-                    </ul>
-                </div>
+              </ul>
             </div>
-    
-            <!-- Recipe Block -->
-            <div class="hotspot recipe-area" 
-                 style="top: 53.5%; right: 10%; width: 17.5%; height: 12%;">
-                <div class="hotspot-popup popup-top">
-                    <h5>Recipe Application</h5>
-                    <ul>
-                        <li>Flask/Gunicorn setup</li>
-                        <li>PostgreSQL database</li>
-                        <li>Containerized deployment</li>
-                        <li>Spoonacular API integration</li>
-                        <li>Volume persistence</li>
-                    </ul>
-                </div>
+          </div>
+
+          <!-- Bookfinder Block -->
+          <div class="hotspot bookfinder-area" style="top: 30.5%; right: 10%; width: 17.3%; height: 11.7%;">
+            <div class="hotspot-popup popup-top">
+              <h5>Bookfinder Application</h5>
+              <ul>
+                <li>Flask/Gunicorn application</li>
+                <li>MySQL database integration</li>
+                <li>Docker container isolation</li>
+                <li>Azure Vision API integration</li>
+                <li>Custom network configuration</li>
+              </ul>
             </div>
-    
-            <!-- APIs Area -->
-            <div class="hotspot apis-area" 
-                 style="bottom: 5%; right: 6%; width: 25%; height: 11%;">
-                <div class="hotspot-popup popup-left">
-                    <h5>External APIs</h5>
-                    <ul>
-                        <li>Azure Vision - Image Recognition</li>
-                        <li>Spoonacular - Recipe Database</li>
-                        <li>Secure API key management</li>
-                        <li>Rate limiting implementation</li>
-                    </ul>
-                </div>
+          </div>
+
+          <!-- Recipe Block -->
+          <div class="hotspot recipe-area" style="top: 53.5%; right: 10%; width: 17.5%; height: 12%;">
+            <div class="hotspot-popup popup-top">
+              <h5>Recipe Application</h5>
+              <ul>
+                <li>Flask/Gunicorn setup</li>
+                <li>PostgreSQL database</li>
+                <li>Containerized deployment</li>
+                <li>Spoonacular API integration</li>
+                <li>Volume persistence</li>
+              </ul>
             </div>
-    
-            <!-- DigitalOcean Logo -->
-            <div class="hotspot do-area" 
-                 style="top: 10.3%; right: 26%; width: 15%; height: 6%;">
-                <div class="hotspot-popup popup-left">
-                    <h5>Cloud Infrastructure</h5>
-                    <ul>
-                        <li>DigitalOcean Droplet</li>
-                        <li>Ubuntu 24.04 LTS</li>
-                        <li>2GB RAM / 1vCPU / 25GB SSD</li>
-                        <li>NYC3 Data Center</li>
-                    </ul>
-                </div>
+          </div>
+
+          <!-- APIs Area -->
+          <div class="hotspot apis-area" style="bottom: 5%; right: 6%; width: 25%; height: 11%;">
+            <div class="hotspot-popup popup-left">
+              <h5>External APIs</h5>
+              <ul>
+                <li>Azure Vision - Image Recognition</li>
+                <li>Spoonacular - Recipe Database</li>
+                <li>Secure API key management</li>
+                <li>Rate limiting implementation</li>
+              </ul>
             </div>
+          </div>
+
+          <!-- DigitalOcean Logo -->
+          <div class="hotspot do-area" style="top: 10.3%; right: 26%; width: 15%; height: 6%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Cloud Infrastructure</h5>
+              <ul>
+                <li>DigitalOcean Droplet</li>
+                <li>Ubuntu 24.04 LTS</li>
+                <li>2GB RAM / 1vCPU / 25GB SSD</li>
+                <li>NYC3 Data Center</li>
+              </ul>
+            </div>
+          </div>
+
+
         </div>
       </div>
     </div>
@@ -240,19 +242,146 @@
   <!-- ############################# -->
   <!-- DOCKER INFRASTRUCTURE Section -->
   <!-- ############################# -->
-  <section class="docker" id="docker">
-    <div class="container">
-      <!--  Section Title -->
-      <div class="section-title">
+  <!-- <section class="docker" id="docker">
+    <div class="container"> -->
+  <!--  Section Title -->
+  <!-- <div class="section-title">
           <h2>Technical Details</h2>
           <h4>Docker Infrastructure</h4>
+      </div> -->
+
+  <!-- Replace your current docker section opening with this -->
+  <section class="docker" id="docker">
+    <div class="container">
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Technical Details</h2>
+        <h4>Docker Infrastructure</h4>
+      </div>
+
+      <!-- Project Context Banner -->
+      <div class="project-context" data-aos="fade-up">
+        <div class="context-note">
+          <i class="bi bi-info-circle me-2"></i>
+          <span>This section details the Docker Infrastructure of the "Server Setup" Project, not an individual web application.</span>
+        </div>
+        <div class="context-links">
+          <a href="https://vladbortnik.dev" target="_blank" class="btn-link">
+            <i class="bi bi-globe"></i> Live Server
+          </a>
+          <a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank"
+            class="btn-link"><i class="bi bi-github"></i> Project Details
+          </a>
+        </div>
+      </div>
+
+      <!-- Rest of your content -->
+
+
+      <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
+      <div class="diagram-container" data-aos="zoom-in">
+        <img src="assets/img/portfolio/server-setup/docker-diagram.webp" class="img-fluid base-diagram" alt="Server Architecture Diagram" onclick="openFullscreen(this)">
+
+        <!-- HOTSPOTS ON HOVER -->
+        <div class="hotspot-container">
+
+          <!-- Network Segregation -->
+          <div class="hotspot network-segregation" style="top: 26%; left: 46.5%; width: 17%; height: 5.7%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Network Segregation</h5>
+              <ul>
+                <li>Network access restrictions</li>
+                <li>Backend network for DB-only access</li>
+                <li>Port exposure control (5002:5002)</li>
+                <li>DB port isolation from Internet (5432)</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Container Resourse Management -->
+          <div class="hotspot container-resourse-management"
+            style="top: 30.5%; left: 67.5%; width: 24.5%; height: 5.4%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Container Resourse Management</h5>
+              <ul>
+                <li>Memory limit: 384m per service</li>
+                <li>Memory reservation: 192m guaranteed</li>
+                <li>CPU quota: 0.3 cores allocated</li>
+                <li>Resource scaling capabilities</li>
+                <li>Performance optimization</li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Docker Named Volume -->
+          <div class="hotspot docker-named-volume" style="top: 72.7%; left: 80.5%; width: 13%; height: 6.4%;">
+            <div class="hotspot-popup popup-left">
+              <h5>Docker Named Volume</h5>
+              <ul>
+                <li>postgres_data volume persistence</li>
+                <li>Database state preservation</li>
+                <li>Volume mount path configuration</li>
+                <li>Data backup capability</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </div>
 
 
 
+      <!-- DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
+      <div class="compose-container" data-aos="fade-up">
+        <h4>Docker Compose Configuration</h4>
+
+        <div class="compose-wrapper">
+          <img src="assets/img/portfolio/server-setup/docker-compose.webp" class="img-fluid compose-image" alt="Docker Compose Configuration" onclick="openFullscreen(this)">
+
+          <!-- Highlight Overlays -->
+          <div class="highlight-container">
+            <div class="highlight network" data-title="Network Segregation" style="top: 15%; height: 25%;">
+              <div class="highlight-info">
+                <h5>Network Configuration</h5>
+                <ul>
+                  <li>Frontend network exposure</li>
+                  <li>Backend network isolation</li>
+                  <li>Port 5002 for web traffic</li>
+                  <li>DB port 5432 protection</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight resources" data-title="Resource Management" style="top: 45%; height: 20%;">
+              <div class="highlight-info">
+                <h5>Resource Limits</h5>
+                <ul>
+                  <li>Memory: 384MB limit</li>
+                  <li>Reserved: 192MB</li>
+                  <li>CPU: 0.3 cores</li>
+                  <li>Controlled scaling</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="highlight volumes" data-title="Volume Management" style="top: 70%; height: 15%;">
+              <div class="highlight-info">
+                <h5>Data Persistence</h5>
+                <ul>
+                  <li>Named volume mapping</li>
+                  <li>Database persistence</li>
+                  <li>Backup capability</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div><!-- End compose-container -->
 
 
-    </div>
+
+
   </section>
   <!-- END:: DOCKER INFRASTRUCTURE Section -->
 
@@ -267,8 +396,8 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Technical Details</h2>
-          <h4>Security Implementation</h4>
+        <h2>Technical Details</h2>
+        <h4>Security Implementation</h4>
       </div>
 
 
@@ -291,8 +420,8 @@
     <div class="container">
       <!--  Section Title -->
       <div class="section-title">
-          <h2>Technical Details</h2>
-          <h4>Nginx Configuration</h4>
+        <h2>Technical Details</h2>
+        <h4>Nginx Configuration</h4>
       </div>
 
 
@@ -304,21 +433,21 @@
   <!-- END:: NGINX CONFIGURATION Section -->
 
 
-    <!-- Vendor JS -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-    <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
+  <!-- Vendor JS -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
-    <!-- Custom JS -->
-    <script src="assets/js/server-setup.js"></script>
+  <!-- AOS JS -->
+  <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 
-<body>
+  <!-- Custom JS -->
+  <script src="assets/js/server-setup.js"></script>
+
+  <body>
 
 </html>
