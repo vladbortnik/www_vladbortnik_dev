@@ -1,4 +1,4 @@
-(function() {
+(function () {
   "use strict";
 
   // AOS JavaScript Init
@@ -44,7 +44,7 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
@@ -53,7 +53,7 @@
   /**
    * Scrool with ofset on links with a class name .scrollto
    */
-  on('click', '#navbar .nav-link', function(e) {
+  on('click', '#navbar .nav-link', function (e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -86,7 +86,7 @@
 
       if (!header.classList.contains('header-top')) {
         header.classList.add('header-top')
-        setTimeout(function() {
+        setTimeout(function () {
           sections.forEach((item) => {
             item.classList.remove('section-show')
           })
@@ -128,7 +128,7 @@
           }
         })
 
-        setTimeout(function() {
+        setTimeout(function () {
           initial_nav.classList.add('section-show')
         }, 350);
 
@@ -246,36 +246,96 @@ function openFullscreen(img) {
   // Create overlay
   const overlay = document.createElement('div');
   overlay.className = 'fullscreen-overlay';
-  
+
   // Create close button
   const closeBtn = document.createElement('span');
   closeBtn.className = 'close-button';
   closeBtn.innerHTML = '×';
-  
+
   // Create fullscreen image
   const fullImg = document.createElement('img');
   fullImg.src = img.src;
   fullImg.className = 'fullscreen-image';
-  
+
   // Add elements to overlay
   overlay.appendChild(closeBtn);
   overlay.appendChild(fullImg);
   document.body.appendChild(overlay);
-  
+
   // Show overlay with fade effect
   setTimeout(() => overlay.style.display = 'block', 0);
-  
+
   // Close handlers
   const closeFullscreen = () => {
-      overlay.style.display = 'none';
-      overlay.remove();
+    overlay.style.display = 'none';
+    overlay.remove();
   };
-  
+
   closeBtn.onclick = closeFullscreen;
   overlay.onclick = (e) => {
-      if (e.target === overlay) closeFullscreen();
+    if (e.target === overlay) closeFullscreen();
   };
   document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeFullscreen();
+    if (e.key === 'Escape') closeFullscreen();
   });
+}
+
+// DOCKER COMPOSE. CODE SNIPPETS POPUPs
+function showCodeSnippet(type) {
+  if (type === 'networks') {
+    const codeSnippet = 
+    `# NETWORK SEGREGATION
+    networks: 
+      frontend:        <span class="comment"># Public-facing network</span>
+      backend:         <span class="comment"># Private, internal network</span>
+
+    services:
+      web:
+        ...
+        networks:
+          - frontend       <span class="comment"># For communication with Internet</span>
+          - backend        <span class="comment"># For communication with DB only</span>
+        ports:
+          "5002:5002"      <span class="comment"># The only necessary external</span>
+        ...
+        ...
+
+      db:
+        ...
+        ...
+        networks:
+          - backend          <span class="comment"># Only Web Service have access to DB</span>
+        # ports:
+        #  - "5432:5432"     <span class="comment"># Port is not exposed to the Host (Isolated from Internet)</span>
+        ...
+        ...`;
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'code-overlay';
+
+    // Create code container
+    const codeContainer = document.createElement('div');
+    codeContainer.className = 'code-container';
+    codeContainer.innerHTML = `<pre><code>${codeSnippet}</code></pre>`;
+
+    // Initialize Prism.js or highlight.js
+    // Prism.highlightElement(codeContainer.querySelector('code'));
+    // or
+    // hljs.highlightElement(codeContainer.querySelector('code'));
+
+    overlay.appendChild(codeContainer);
+    document.body.appendChild(overlay);
+
+    // Show with fade effect
+    setTimeout(() => overlay.classList.add('active'), 0);
+
+    // Close on click outside
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => overlay.remove(), 300);
+      }
+    });
+  }
 }

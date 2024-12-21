@@ -824,89 +824,241 @@ section .container {
 }
 
 /* Add to your style.css */
-.compose-container {
+/* .compose-container {
   margin: 3rem 0;
-}
+} */
 
 .compose-container h4 {
   /* color: #18d26e; */
   margin-bottom: 1.5rem;
 }
 
-.compose-wrapper {
+/* ================ */
+
+.compose-container {
+  margin-bottom: 30px;
   position: relative;
-  border-radius: 8px;
-  overflow: hidden;
-  background: rgba(0, 0, 0, 0.5);
-  box-shadow: 0 0 20px rgba(24, 210, 110, 0.1);
+  width: 100%;
+  display: inline-block;
 }
 
 .compose-image {
   width: 100%;
-  transition: transform 0.3s ease;
+  height: auto;
   cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+  transition: transform 0.3s ease;
 }
 
-.highlight-container {
+.compose-image:hover {
+  transform: scale(1.02);
+}
+
+
+/* ========================== */
+/* COMPOSE SS. NETWORK HOVER. */
+
+.compose-wrapper {
+  /* width: 85%; */
+  margin: 0 auto;
+  /* transition: transform 0.3s ease; */
+  position: relative;
+}
+
+/* .compose-wrapper:hover {
+  transform: scale(1.02);
+} */
+
+.code-section.networks {
   position: absolute;
+  top: 15%;  /* Adjust based on your image */
+  left: 0;
+  width: 100%;
+  height: 80px;  /* Adjust based on your image */
+  cursor: pointer;
+  background: rgba(24, 210, 110, 0.1);  /* Subtle green highlight */
+  border-left: 2px solid #18d26e;
+  transition: background 0.3s ease;
+}
+
+.code-section.networks:hover {
+  background: rgba(24, 210, 110, 0.2);
+}
+
+.code-overlay {
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-}
-
-.highlight {
-  position: absolute;
-  width: 100%;
-  background: rgba(24, 210, 110, 0);
-  transition: background 0.3s ease;
-  /* cursor: pointer; */
-}
-
-.highlight:hover {
-  background: rgba(24, 210, 110, 0.1);
-}
-
-.highlight-info {
-  position: absolute;
-  right: 0;
-  top: 50%;
-  transform: translateY(-50%);
   background: rgba(0, 0, 0, 0.9);
-  padding: 1rem;
-  border-left: 3px solid #18d26e;
-  width: 250px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.code-overlay.active {
+  opacity: 1;
+}
+
+.code-container {
+  background: #0c0c0c;
+  border: 1px solid #18d26e;
+  border-radius: 8px;
+  padding: 2rem;
+  font-family: 'Monaco', monospace;
+  color: #18d26e;
+  font-size: 1.2rem;
+  max-width: 80%;
+}
+
+.code-container pre {
+  margin: 0;
+}
+
+/* ==================== */
+
+/* Styling To Match Prism's Dark Theme */
+
+/* .code-container {
+  background: #2d2d2d;
+  border: 1px solid #18d26e;
+  border-radius: 8px;
+  padding: 2rem;
+  font-family: 'Monaco', monospace;
+  font-size: 1.2rem;
+  max-width: 80%;
+}
+
+.code-container pre {
+  margin: 0;
+  background: transparent;
+}
+
+.code-container code {
+  background: transparent;
+} */
+
+/* ======== Above  OR  Below ============ */
+
+
+/* Override Prism.js styles to match your screenshot */
+/* .code-container {
+  background: #1e1e1e; 
+  border: 1px solid #18d26e;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 90%;
+  font-family: 'Monaco', monospace;
+}
+
+.code-container pre {
+  margin: 0;
+  background: transparent;
+}
+
+.code-container code {
+  background: transparent;
+  color: #ffffff !important;
+  font-size: 1.1rem;
+  line-height: 1.5;
+}
+
+
+.code-container .token.comment {
+  color: #6A9955 !important;
+  font-style: normal !important;
+}
+
+
+.code-container .token.punctuation {
+  color: #ffffff !important;
+}
+
+.code-container .token.property {
+  color: #ffffff !important;
+}
+
+.code-container .token.string {
+  color: #ffffff !important;
+}
+
+.code-container code {
+  white-space: pre !important;
+} */
+
+
+/* ======== Above  OR  Below ============ */
+
+
+
+.code-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
   opacity: 0;
   transition: opacity 0.3s ease;
 }
 
-.highlight:hover .highlight-info {
+.code-overlay.active {
   opacity: 1;
 }
 
-.highlight-info h5 {
-  color: #18d26e;
-  margin-bottom: 0.5rem;
-  font-size: 0.9rem;
+.code-container {
+  background: #1e1e1e;
+  border: 1px solid #18d26e;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 1000px;
 }
 
-.highlight-info ul {
-  /* list-style: none; */
-  list-style:armenian
-  padding: 0;
+.code-container pre {
   margin: 0;
-  font-size: 0.85rem;
-  color: rgba(255, 255, 255, 0.8);
+  font-family: 'Monaco', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #18d26e;
+  white-space: pre;
 }
 
-.highlight-info li {
-  margin-bottom: 0.3rem;
+.code-container .comment {
+  color: #ffffff;
 }
 
-.highlight-container {
-  pointer-events: none; /* Let clicks pass through to the image */
+
+
+
+
+/* END:: NETWORK HOVER. */
+/* ========================== */
+
+/* ==================== */
+
+/* Option A - Subtle Glow Border: */
+/* .compose-wrapper {
+  position: relative;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  cursor: pointer;
 }
 
-.highlight {
-  pointer-events: auto; /* Re-enable clicks only for the highlight areas */
-}
+.compose-wrapper::before {
+  content: '';
+  position: absolute;
+  inset: -2px;
+  border-radius: 6px;
+  background: linear-gradient(45deg, #18d26e33, transparent);
+  z-index: -1;
+} */
+/* END:: Subtle Glow Border: */
