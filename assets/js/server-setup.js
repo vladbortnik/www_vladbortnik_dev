@@ -282,21 +282,23 @@ function openFullscreen(img) {
 
 // DOCKER COMPOSE. CODE SNIPPETS POPUPs
 function showCodeSnippet(type) {
+  let codeSnippet = '';
+
   if (type === 'networks') {
-    const codeSnippet = 
+    codeSnippet = 
     `# NETWORK SEGREGATION
     networks: 
-      frontend:        <span class="comment"># Public-facing network</span>
-      backend:         <span class="comment"># Private, internal network</span>
+      frontend:              <span class="comment"># Public-facing network</span>
+      backend:               <span class="comment"># Private, internal network</span>
 
     services:
       web:
         ...
         networks:
-          - frontend       <span class="comment"># For communication with Internet</span>
-          - backend        <span class="comment"># For communication with DB only</span>
+          - frontend         <span class="comment"># For communication with Internet</span>
+          - backend          <span class="comment"># For communication with DB only</span>
         ports:
-          "5002:5002"      <span class="comment"># The only necessary external</span>
+          "5002:5002"        <span class="comment"># The only necessary external</span>
         ...
         ...
 
@@ -306,9 +308,51 @@ function showCodeSnippet(type) {
         networks:
           - backend          <span class="comment"># Only Web Service have access to DB</span>
         # ports:
-        #  - "5432:5432"     <span class="comment"># Port is not exposed to the Host (Isolated from Internet)</span>
+        #  - "5432:5432"     <span class="comment"># Port is not exposed to the Host</span>
         ...
         ...`;
+
+  } else if (type === 'resource-management') {
+    codeSnippet = 
+    `# RESOURCE MANAGEMENT
+
+    services:
+      web:
+        ...
+        mem_limit: 384m            <span class="comment"># Docker Container Resource Limits</span>
+        mem_reservation: 192m
+        cpus: 0.3
+        ...
+        ...
+
+      db:
+        ...
+        mem_limit: 384m            <span class="comment"># Docker Container Resource Limits</span>
+        mem_reservation: 192m
+        cpus: 0.3
+        ...
+        ...`;
+
+  } else if (type === 'persistent-volumes') {
+          codeSnippet = 
+          `# PERSISTENT VOLUMES
+
+          services:
+            web:
+              ...
+              ...
+      
+            db:
+              ...
+              ...
+              volumes:
+                - postgres_data:/var/lib/postgresql/data
+              ...
+              ...
+
+          volumes:
+            postgres_data:`;
+  }
 
     // Create overlay
     const overlay = document.createElement('div');
@@ -318,11 +362,6 @@ function showCodeSnippet(type) {
     const codeContainer = document.createElement('div');
     codeContainer.className = 'code-container';
     codeContainer.innerHTML = `<pre><code>${codeSnippet}</code></pre>`;
-
-    // Initialize Prism.js or highlight.js
-    // Prism.highlightElement(codeContainer.querySelector('code'));
-    // or
-    // hljs.highlightElement(codeContainer.querySelector('code'));
 
     overlay.appendChild(codeContainer);
     document.body.appendChild(overlay);
@@ -338,4 +377,3 @@ function showCodeSnippet(type) {
       }
     });
   }
-}

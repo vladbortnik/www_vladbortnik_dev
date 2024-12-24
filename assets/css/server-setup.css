@@ -791,7 +791,10 @@ section .container {
 /* ##### DOCKER SECTION ######## */
 /* ############################# */
 
-/* Add to your style.css */
+.diagram-container {
+  margin-bottom: 70px;
+}
+
 .project-context {
   background: rgba(24, 210, 110, 0.05);
   border-left: 3px solid #18d26e;
@@ -828,18 +831,22 @@ section .container {
   margin: 3rem 0;
 } */
 
-.compose-container h4 {
+/* .compose-container h4 { */
   /* color: #18d26e; */
-  margin-bottom: 1.5rem;
-}
+  /* margin-bottom: 1.5rem; */
+/* } */
 
 /* ================ */
 
 .compose-container {
-  margin-bottom: 30px;
+  margin-top: 30px;
   position: relative;
   width: 100%;
   display: inline-block;
+}
+
+.compose-container h4 {
+  text-align: center;
 }
 
 .compose-image {
@@ -870,19 +877,35 @@ section .container {
   transform: scale(1.02);
 } */
 
-.code-section.networks {
-  position: absolute;
-  top: 15%;  /* Adjust based on your image */
-  left: 0;
-  width: 100%;
-  height: 80px;  /* Adjust based on your image */
+.code-section {
+  position: absolute; 
+  left: 50%;
+  width: 50%;
+  height: 80px;
   cursor: pointer;
-  background: rgba(24, 210, 110, 0.1);  /* Subtle green highlight */
-  border-left: 2px solid #18d26e;
+  background: rgba(24, 210, 110, 0.1); 
+  border-right: 2px solid #18d26e;
   transition: background 0.3s ease;
 }
 
-.code-section.networks:hover {
+.code-section.networks {
+  top: 15%;
+}
+
+.code-section.resource-management {
+  top: 35%;
+}
+
+.code-section.persistent-volumes {
+  top: 55%;
+}
+
+.code-section p {
+  text-align:center;
+  margin: 30px;
+}
+
+.code-section:hover {
   background: rgba(24, 210, 110, 0.2);
 }
 

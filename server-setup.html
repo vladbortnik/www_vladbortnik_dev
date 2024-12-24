@@ -277,8 +277,6 @@
         </div>
       </div>
 
-      <!-- Rest of your content -->
-
 
       <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
       <div class="diagram-container" data-aos="zoom-in">
@@ -331,20 +329,29 @@
         </div>
       </div>
 
-
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Docker Compose</h2>
+        <h4>docker-compose.yaml</h4>
+      </div>
 
       <!-- DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
       <div class="compose-container" data-aos="fade-up">
-        <h4>docker-compose.yaml</h4>
+        <!-- <h4>docker-compose.yaml</h4> -->
 
         <div class="compose-wrapper">
-          <img src="assets/img/portfolio/server-setup/docker-compose.webp" class="img-fluid compose-image"
+          <img src="assets/img/portfolio/server-setup/docker-compose.png" class="img-fluid compose-image"
             alt="Docker Compose Configuration" onclick="openFullscreen(this)">
 
           <!-- Highlight Overlays -->
-          <!-- Adding clickable network section -->
           <div class="code-section networks" onclick="showCodeSnippet('networks')">
-            <!-- This div will be positioned over the network config part of the image -->
+             <p>Network Segregation</p>
+          </div>
+          <div class="code-section resource-management" onclick="showCodeSnippet('resource-management')">
+            <p>Resource Management</p>
+          </div>
+          <div class="code-section persistent-volumes" onclick="showCodeSnippet('persistent-volumes')">
+            <p>Persistent Volumes</p>
           </div>
 
         </div> 
@@ -353,8 +360,7 @@
   
 
     </div><!-- LAST DIV BEFORE SECTION ENDS -->
-  </section>
-  <!-- END:: DOCKER INFRASTRUCTURE Section -->
+  </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
 
 
 
