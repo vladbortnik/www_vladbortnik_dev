@@ -395,58 +395,35 @@ section .container {
   color: #fff;
 }
 
-/*=========================
-## TECHNOLOGIES CAROUSEL ##
-=========================*/
-.technology-item {
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.technology-item:hover {
-  transform: scale(1.1);
-}
-
-.technology-icon {
-  margin: 20px 0px;
-  width: 80px;
-  height: auto;
-}
-
-.technology-item #docker-icon {
-  margin: 8px 0px 0px 0px;
-  width: 120px;
-}
-
-.technology-item #nginx-icon {
-  margin: 10px 0px 20px;
-  width: 85px;
-}
-
-.technology-item #git-icon {
-  margin: 15px 0px 20px;
-  width: 90px;
-}
-
-.technologies .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.technologies .swiper-pagination .swiper-pagination-bullet {
-  width: 7px;
-  height: 7px;
-  opacity: 0.7;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.technologies .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #18d26e;
-}
-
 /*======================================
 ########## SERVER SETUP PAGE ##########
 ======================================*/
+
+/* ############################# */
+/* ##### CUSTOM  STYLES    ##### */
+
+#section-container {
+  margin-bottom: 70px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+}
+
+#image-shadow {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.25);
+}
+
+#image-shadow-light {
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+}
+
+/* #### END:: CUSTOM  STYLES ##### */
+/* ############################### */
+
+
 
 /* ############################# */
 /* ##### ANIMATION CLASSES ##### */
@@ -741,9 +718,9 @@ section .container {
   left: 0;
 }
 
-/* ################ */
-/* HIGHLIGHT EFFECT */
-/* ################ */
+/* ######################## */
+/* HIGHLIGHT EFFECT OPTIONS */
+/* ######################## */
 
 /* SIMPLE HIGHLIGHT */
 /* .hotspot:hover {
@@ -775,25 +752,9 @@ section .container {
   }
 }
 
-/* FADE-IN BORDER */
-/* .hotspot {
-  border: 1px solid transparent;
-}
-
-.hotspot:hover {
-  border-color: rgba(24, 210, 110, 0.5);
-  background: rgba(24, 210, 110, 0.1);
-} */
-
-/* ========================== */
-
 /* ############################# */
 /* ##### DOCKER SECTION ######## */
 /* ############################# */
-
-.diagram-container {
-  margin-bottom: 70px;
-}
 
 .project-context {
   background: rgba(24, 210, 110, 0.05);
@@ -826,27 +787,13 @@ section .container {
   color: #35e888;
 }
 
-/* Add to your style.css */
-/* .compose-container {
-  margin: 3rem 0;
-} */
-
-/* .compose-container h4 { */
-  /* color: #18d26e; */
-  /* margin-bottom: 1.5rem; */
-/* } */
-
 /* ================ */
 
 .compose-container {
-  margin-top: 30px;
+  /* margin-top: 30px; */
   position: relative;
   width: 100%;
   display: inline-block;
-}
-
-.compose-container h4 {
-  text-align: center;
 }
 
 .compose-image {
@@ -862,9 +809,9 @@ section .container {
   transform: scale(1.02);
 }
 
-
 /* ========================== */
-/* COMPOSE SS. NETWORK HOVER. */
+/* Docker Compose HOVER. */
+/* ========================== */
 
 .compose-wrapper {
   /* width: 85%; */
@@ -872,10 +819,6 @@ section .container {
   /* transition: transform 0.3s ease; */
   position: relative;
 }
-
-/* .compose-wrapper:hover {
-  transform: scale(1.02);
-} */
 
 .code-section {
   position: absolute; 
@@ -943,81 +886,10 @@ section .container {
   margin: 0;
 }
 
-/* ==================== */
 
-/* Styling To Match Prism's Dark Theme */
-
-/* .code-container {
-  background: #2d2d2d;
-  border: 1px solid #18d26e;
-  border-radius: 8px;
-  padding: 2rem;
-  font-family: 'Monaco', monospace;
-  font-size: 1.2rem;
-  max-width: 80%;
-}
-
-.code-container pre {
-  margin: 0;
-  background: transparent;
-}
-
-.code-container code {
-  background: transparent;
-} */
-
-/* ======== Above  OR  Below ============ */
-
-
-/* Override Prism.js styles to match your screenshot */
-/* .code-container {
-  background: #1e1e1e; 
-  border: 1px solid #18d26e;
-  border-radius: 12px;
-  padding: 2rem;
-  max-width: 90%;
-  font-family: 'Monaco', monospace;
-}
-
-.code-container pre {
-  margin: 0;
-  background: transparent;
-}
-
-.code-container code {
-  background: transparent;
-  color: #ffffff !important;
-  font-size: 1.1rem;
-  line-height: 1.5;
-}
-
-
-.code-container .token.comment {
-  color: #6A9955 !important;
-  font-style: normal !important;
-}
-
-
-.code-container .token.punctuation {
-  color: #ffffff !important;
-}
-
-.code-container .token.property {
-  color: #ffffff !important;
-}
-
-.code-container .token.string {
-  color: #ffffff !important;
-}
-
-.code-container code {
-  white-space: pre !important;
-} */
-
-
-/* ======== Above  OR  Below ============ */
-
-
+/* ========================== */
+/* `docker-compose` HOVER - 2 */
+/* ========================== */
 
 .code-overlay {
   position: fixed;
@@ -1059,29 +931,101 @@ section .container {
   color: #ffffff;
 }
 
-
-
-
-
-/* END:: NETWORK HOVER. */
+/* END:: `docker-compose` HOVER. */
 /* ========================== */
 
-/* ==================== */
 
-/* Option A - Subtle Glow Border: */
-/* .compose-wrapper {
+/* ====================== */
+/* = MASONRY GRID GALLERY = */
+/* ====================== */
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 2rem;
+  padding: 2rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
   position: relative;
-  border: 1px solid transparent;
-  border-radius: 4px;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
   cursor: pointer;
 }
 
-.compose-wrapper::before {
-  content: '';
-  position: absolute;
-  inset: -2px;
-  border-radius: 6px;
-  background: linear-gradient(45deg, #18d26e33, transparent);
-  z-index: -1;
-} */
-/* END:: Subtle Glow Border: */
+.gallery-item:hover img {
+  transform: scale(1.02);
+}
+
+.caption {
+  color: #18d26e;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+      column-count: 2;
+  }
+}
+
+/* END:: MASONRY GRID GALLERY */
+/* ======================== */
+
+
+/*=========================
+## TECHNOLOGIES CAROUSEL ##
+=========================*/
+.technology-item {
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.technology-item:hover {
+  transform: scale(1.1);
+}
+
+.technology-icon {
+  margin: 20px 0px;
+  width: 80px;
+  height: auto;
+}
+
+.technology-item #docker-icon {
+  margin: 8px 0px 0px 0px;
+  width: 120px;
+}
+
+.technology-item #nginx-icon {
+  margin: 10px 0px 20px;
+  width: 85px;
+}
+
+.technology-item #git-icon {
+  margin: 15px 0px 20px;
+  width: 90px;
+}
+
+.technologies .swiper-pagination {
+  margin-top: 20px;
+  position: relative;
+}
+
+.technologies .swiper-pagination .swiper-pagination-bullet {
+  width: 7px;
+  height: 7px;
+  opacity: 0.7;
+  background-color: rgba(255, 255, 255, 0.3);
+}
+
+.technologies .swiper-pagination .swiper-pagination-bullet-active {
+  background-color: #18d26e;
+}
+
+/* ## END:: TECHNOLOGIES CAROUSEL ##
+==================================*/

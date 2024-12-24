@@ -46,7 +46,7 @@
         <ul>
           <!-- <li><a class="nav-link active" href="#header">Home</a></li> -->
           <li><a class="nav-link" href="#overview">Overview</a></li>
-          <li><a class="nav-link" href="#architecture">Architecture</a></li>
+          <li><a class="nav-link" href="#architecture">Architecture & DNS</a></li>
           <li><a class="nav-link" href="#docker">Docker</a></li>
           <li><a class="nav-link" href="#security">Security</a></li>
           <li><a class="nav-link" href="#nginx">Nginx</a></li>
@@ -63,11 +63,12 @@
   <!-- ################### -->
   <section class="overview" id="overview">
     <div class="container">
+
       <!--  Section Title -->
       <div class="section-title">
         <h2>Project</h2>
         <h4>Overview</h4>
-      </div>
+      </div><!-- END:: Section Title -->
 
       <div class="row align-items-center">
         <div class="col-lg-7" data-aos="fade-right">
@@ -77,7 +78,7 @@
               <h3 class="text-gradient">From the ground up</h3>
             </div>
           </div> -->
-          <div class="overview-image">
+          <div class="overview-image" id="image-shadow-light">
             <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid"
               alt="server setup image">
             <div class="overview-overlay">
@@ -122,13 +123,15 @@
   <!-- #################### -->
   <section class="architecture" id="architecture">
     <div class="architecture container">
+
+      <!-- Section Title -->
       <div class="section-title">
         <h2>Technical Details</h2>
-        <h4>Architecture</h4>
-      </div>
+        <h4>Architecture & DNS</h4>
+      </div><!-- END:: Section Title -->
 
       <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
-      <div class="diagram-container" data-aos="zoom-in">
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" class="img-fluid base-diagram"
           alt="Server Architecture Diagram" onclick="openFullscreen(this)">
 
@@ -230,12 +233,50 @@
             </div>
           </div>
 
+        </div><!-- END:: HOTSPOTS ON HOVER -->
+      </div><!-- END:: DIAGRAM WITH FULLSCREEN EFFECT -->
 
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- END:: ARCHITECTURE SECTION -->
+
+
+      <!-- ############################# -->
+      <!-- DNS DNS DNS DNS DNS DNS DNS -->
+      
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Domain Name System</h2>
+        <h4>DNS Setup</h4>
+      </div><!-- END:: Section Title -->
+
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+        <img src="assets/img/portfolio/server-setup/DNS/dns-dashboard.png" 
+             class="img-fluid base-diagram"
+             data-fullscreen-src="assets/img/portfolio/server-setup/DNS/dns-dashboard-fullscreen.png"
+             alt="DNS Details" 
+             onclick="openFullscreen(this)">
+      </div><!-- END:::::  DNS DNS DNS DNS DNS -->
+
+      
+      <!-- ############################# -->
+      <!-- DROPLET DASHBOARD -->
+      
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Droplet Dashboard</h2>
+        <h4>Dashboard</h4>
+      </div><!-- END:: Section Title -->
+
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+        <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png" 
+             class="img-fluid base-diagram"
+             data-fullscreen-src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-fullscreen.png"
+             alt="Droplet Dashboard" 
+             onclick="openFullscreen(this)">
+      </div><!-- END::::: DROPLET DASHBOARD -->
+
+
+
+    </div><!-- END:: Architecture Container -->
+  </section><!-- END:: ARCHITECTURE SECTION -->
 
 
 
@@ -243,22 +284,9 @@
   <!-- ############################# -->
   <!-- DOCKER INFRASTRUCTURE Section -->
   <!-- ############################# -->
-  <!-- <section class="docker" id="docker">
-    <div class="container"> -->
-  <!--  Section Title -->
-  <!-- <div class="section-title">
-          <h2>Technical Details</h2>
-          <h4>Docker Infrastructure</h4>
-      </div> -->
 
-  <!-- Replace your current docker section opening with this -->
   <section class="docker" id="docker">
     <div class="container">
-      <!-- Section Title -->
-      <div class="section-title">
-        <h2>Technical Details</h2>
-        <h4>Docker Infrastructure</h4>
-      </div>
 
       <!-- Project Context Banner -->
       <div class="project-context" data-aos="fade-up">
@@ -279,8 +307,15 @@
 
 
       <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
-      <div class="diagram-container" data-aos="zoom-in">
-        <img src="assets/img/portfolio/server-setup/docker-diagram.webp" class="img-fluid base-diagram"
+
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Technical Details</h2>
+        <h4>Docker Infrastructure</h4>
+      </div><!-- END:: Section Title -->
+      
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+        <img src="assets/img/portfolio/server-setup/docker/docker-diagram.webp" class="img-fluid base-diagram"
           alt="Server Architecture Diagram" onclick="openFullscreen(this)">
 
         <!-- HOTSPOTS ON HOVER -->
@@ -329,18 +364,21 @@
         </div>
       </div>
 
+
+      <!-- =========================  -->
+      <!-- DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
+
       <!-- Section Title -->
       <div class="section-title">
         <h2>Docker Compose</h2>
         <h4>docker-compose.yaml</h4>
-      </div>
+      </div><!-- END:: Section Title -->
 
-      <!-- DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
-      <div class="compose-container" data-aos="fade-up">
+      <div class="compose-container" id="section-container" data-aos="fade-up">
         <!-- <h4>docker-compose.yaml</h4> -->
 
         <div class="compose-wrapper">
-          <img src="assets/img/portfolio/server-setup/docker-compose.png" class="img-fluid compose-image"
+          <img src="assets/img/portfolio/server-setup/docker/docker-compose.png" class="img-fluid compose-image"
             alt="Docker Compose Configuration" onclick="openFullscreen(this)">
 
           <!-- Highlight Overlays -->
@@ -354,10 +392,45 @@
             <p>Persistent Volumes</p>
           </div>
 
-        </div> 
-        <!-- END OF:: Highlight Overlay -->
+        </div><!-- END:: Highlight Overlay -->
+      </div><!-- END:: DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
+
+      
+      <!-- =========================  -->
+      <!-- === MASONRY GRID GALLERY === -->
+      <!-- ========================== -->
+
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Screenshots</h2>
+        <h4>Details</h4>
+      </div><!-- END:: Section Title -->
+
+      <div class="screenshots-gallery" data-aos="fade-up">
+        <!-- <h4>Additional Configuration Screenshots</h4> -->
+        <div class="masonry-grid">
+            <div class="gallery-item" id="image-shadow">
+                <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" alt="Docker Network Details" onclick="openFullscreen(this)">
+                <div class="caption">Network Details</div>
+            </div>
+            <!-- More items -->
+            <div class="gallery-item" id="image-shadow">
+              <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" alt="Docker Running Containers Details" onclick="openFullscreen(this)">
+              <div class="caption">Containers Details</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" alt="Docker Volumes Details" onclick="openFullscreen(this)">
+            <div class="caption">Volume Details</div>
+        </div>
+        <!-- More items ??? -->
+
+        </div>
       </div>
-  
+      <!-- ============================= -->
+      <!-- END:: MASONRY GRID GALLERY      -->
+      <!-- ============================= -->
+    
 
     </div><!-- LAST DIV BEFORE SECTION ENDS -->
   </section><!-- END:: DOCKER INFRASTRUCTURE Section -->

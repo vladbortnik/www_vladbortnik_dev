@@ -254,7 +254,8 @@ function openFullscreen(img) {
 
   // Create fullscreen image
   const fullImg = document.createElement('img');
-  fullImg.src = img.src;
+  // Check if there's a different image specified for fullscreen
+  fullImg.src = img.dataset.fullscreenSrc || img.src;
   fullImg.className = 'fullscreen-image';
 
   // Add elements to overlay
@@ -273,14 +274,15 @@ function openFullscreen(img) {
 
   closeBtn.onclick = closeFullscreen;
   overlay.onclick = (e) => {
-    if (e.target === overlay) closeFullscreen();
+    if (e.target === overlay || e.target === fullImg) closeFullscreen();
   };
   document.addEventListener('keydown', (e) => {
     if (e.key === 'Escape') closeFullscreen();
   });
+  // fullImg.addEventListener('onclick', closeFullscreen);
 }
 
-// DOCKER COMPOSE. CODE SNIPPETS POPUPs
+// `docker-compose. yaml` CODE SNIPPETS POPUPs
 function showCodeSnippet(type) {
   let codeSnippet = '';
 
