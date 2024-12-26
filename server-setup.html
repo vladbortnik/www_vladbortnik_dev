@@ -112,10 +112,8 @@
         </div>
       </div>
 
-    </div>
-  </section>
-  <!-- END:: OVERVIEW SECTION -->
-
+    </div><!-- END:: OVERVIEW Container -->
+  </section><!-- END:: OVERVIEW SECTION -->
 
 
   <!-- #################### -->
@@ -124,13 +122,12 @@
   <section class="architecture" id="architecture">
     <div class="architecture container">
 
+      <!-- ARCHITECTURE DIAGRAM -->
       <!-- Section Title -->
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>Architecture & DNS</h4>
       </div><!-- END:: Section Title -->
-
-      <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" 
         class="img-fluid base-diagram"
@@ -236,19 +233,14 @@
           </div>
 
         </div><!-- END:: HOTSPOTS ON HOVER -->
-      </div><!-- END:: DIAGRAM WITH FULLSCREEN EFFECT -->
+      </div><!-- END:: ARCHITECTURE DIAGRAM -->
 
-
-
-      <!-- ############################# -->
       <!-- DNS DNS DNS DNS DNS DNS DNS -->
-      
       <!-- Section Title -->
       <div class="section-title">
         <h2>Domain Name System</h2>
         <h4>DNS Setup</h4>
       </div><!-- END:: Section Title -->
-
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/DNS/dns-dashboard.png" 
              class="img-fluid base-diagram"
@@ -257,16 +249,12 @@
              onclick="openFullscreen(this)">
       </div><!-- END:::::  DNS DNS DNS DNS DNS -->
 
-      
-      <!-- ############################# -->
-      <!-- DROPLET DASHBOARD -->
-      
+      <!-- DROPLET DASHBOARD -->      
       <!-- Section Title -->
       <div class="section-title">
         <h2>Droplet Dashboard</h2>
         <h4>Dashboard</h4>
       </div><!-- END:: Section Title -->
-
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png" 
              class="img-fluid base-diagram"
@@ -275,22 +263,17 @@
              onclick="openFullscreen(this)">
       </div><!-- END::::: DROPLET DASHBOARD -->
 
-
-
     </div><!-- END:: Architecture Container -->
   </section><!-- END:: ARCHITECTURE SECTION -->
-
-
 
 
   <!-- ############################# -->
   <!-- DOCKER INFRASTRUCTURE Section -->
   <!-- ############################# -->
-
   <section class="docker" id="docker">
     <div class="container">
 
-      <!-- Project Context Banner -->
+      <!-- ^^INFO^^: Project Context Banner -->
       <div class="project-context" data-aos="fade-up">
         <div class="context-note">
           <i class="bi bi-info-circle me-2"></i>
@@ -307,15 +290,12 @@
         </div>
       </div>
 
-
-      <!-- DIAGRAM WITH FULLSCREEN EFFECT -->
-
+      <!-- DOCKER DIAGRAM -->
       <!-- Section Title -->
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>Docker Infrastructure</h4>
-      </div><!-- END:: Section Title -->
-      
+      </div><!-- END:: Section Title --> 
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/docker/docker-diagram.webp" class="img-fluid base-diagram"
           alt="Server Architecture Diagram" onclick="openFullscreen(this)">
@@ -366,16 +346,12 @@
         </div>
       </div>
 
-
-      <!-- =========================  -->
-      <!-- DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
-
+      <!-- DOCKER-COMPOSE SCREENSHOT -->
       <!-- Section Title -->
       <div class="section-title">
         <h2>Docker Compose</h2>
         <h4>docker-compose.yaml</h4>
       </div><!-- END:: Section Title -->
-
       <div class="compose-container" id="section-container" data-aos="fade-up">
         <!-- <h4>docker-compose.yaml</h4> -->
 
@@ -397,53 +373,58 @@
         </div><!-- END:: Highlight Overlay -->
       </div><!-- END:: DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
 
-      
-      <!-- =========================  -->
-      <!-- === GALLERY: Docker other screenshots === -->
-      <!-- ========================== -->
-
+      <!-- === DOCKER. OTHER SCREENSHOTS. === -->
       <!-- Section Title -->
       <div class="section-title">
         <h2>Screenshots</h2>
         <h4>Details</h4>
       </div><!-- END:: Section Title -->
-
       <div class="screenshots-gallery" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
+          <!-- First item -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" alt="Docker Network Details" onclick="openFullscreen(this)">
-            <div class="caption">Network Details</div>
+            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.png" 
+            alt="Docker Networks Diagram" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Networks Diagram</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" alt="Docker Running Containers Details" onclick="openFullscreen(this)">
-            <div class="caption">Containers Details</div>
+            <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" 
+            alt="Docker Running Containers Details" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Container/Port Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" alt="Docker Volumes Details" onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" 
+            alt="Docker Volumes Details" 
+            onclick="openFullscreen(this)">
             <div class="caption">Volume Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.png" alt="Docker Networks Diagram" onclick="openFullscreen(this)">
-            <div class="caption">Networks Diagram</div>
+            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" 
+            alt="Docker Network Details" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Network Details</div>
           </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-stats.png" 
+            alt="Docker Stats" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Container Stats</div>
+          </div>          
           <!-- More items ??? -->
 
         </div>
-      </div>
-      <!-- ============================= -->
-      <!-- END:: MASONRY GRID GALLERY      -->
-      <!-- ============================= -->
+      </div><!-- END:: MASONRY GRID GALLERY    -->
     
 
     </div><!-- LAST DIV BEFORE SECTION ENDS -->
   </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
-
-
-
 
 
   <!-- ############################### -->
@@ -451,23 +432,15 @@
   <!-- ############################### -->
   <section class="security" id="security">
     <div class="container">
-      <!--  Section Title -->
-      <!-- <div class="section-title">
-        <h2>Security Details</h2>
-        <h4>SSL & LetsEncrypt</h4>
-      </div> -->
-
 
       <!-- =========================  -->
       <!-- === SSL & LetsEncrypt === -->
       <!-- ========================== -->
-
       <!-- Section Title -->
       <div class="section-title">
         <h2>Security Details</h2>
         <h4>SSL & LetsEncrypt</h4>
       </div><!-- END:: Section Title -->
-
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -475,14 +448,14 @@
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test.png" 
             alt="SSL Lab Test" 
             onclick="openFullscreen(this)">
-            <div class="caption">SSL Lab Test</div>
+            <div class="caption">SSL Lab Test (Qualys)</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/browser-padlock-certificate-info.png" 
-            alt="SSL Certificate" 
+            <img src="assets/img/portfolio/server-setup/security/ssl/systemctl-status-certbot-timer.png" 
+            alt="Certbot Timer" 
             onclick="openFullscreen(this)">
-            <div class="caption">SSL Certificate</div>
+            <div class="caption">Certbot Timer</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
@@ -514,10 +487,10 @@
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/systemctl-status-certbot-timer.png" 
-            alt="Certbot Timer" 
+            <img src="assets/img/portfolio/server-setup/security/ssl/browser-padlock-certificate-info.png" 
+            alt="SSL Certificate" 
             onclick="openFullscreen(this)">
-            <div class="caption">Certbot Timer</div>
+            <div class="caption">SSL Certificate</div>
           </div>
           <!-- More items -->
           <!-- <div class="gallery-item" id="image-shadow">
@@ -681,7 +654,7 @@
 
 
     </div><!-- LAST DIV BEFORE SECTION ENDS -->
-  </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
+  </section><!-- END:: NGINX CONFIGURATION Section -->
 
 
   <!-- Vendor JS -->
