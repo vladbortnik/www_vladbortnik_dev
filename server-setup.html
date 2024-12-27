@@ -90,7 +90,7 @@
         </div>
         <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-content">
-            <h3>Overview</h3>
+            <!-- <h3>Overview</h3> -->
             <p>
               This project involved configuring a DigitalOcean shared server with Nginx on Ubuntu to host my static
               portfolio website and multiple web applications on subdomains. I manually set up SSL for secure
@@ -452,6 +452,13 @@
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification.png" 
+            alt="SSL Verification" 
+            onclick="openFullscreen(this)">
+            <div class="caption">SSL Verification</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-config.png" 
             alt="SSL Config Details" 
             onclick="openFullscreen(this)">
@@ -487,17 +494,17 @@
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification-protocol-n-cipher-certificate-chain.png" 
-            alt="Cipher Certificate Chain" 
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-certificate-chain.png" 
+            alt="SSL Certificate Chain" 
             onclick="openFullscreen(this)">
-            <div class="caption">Cipher Certificate Chain</div>
+            <div class="caption">SSL Certificate Chain</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/browser-padlock-certificate-info.png" 
             alt="SSL Certificate" 
             onclick="openFullscreen(this)">
-            <div class="caption">SSL Certificate</div>
+            <div class="caption">SSL Certificate (Browser Padlock)</div>
           </div>
           <!-- More items -->
           <!-- <div class="gallery-item" id="image-shadow">
@@ -595,7 +602,7 @@
 
 
       <!-- =========================  -->
-      <!-- === GALLERY: UFW & fail2ban === -->
+      <!-- === UFW & fail2ban === -->
       <!-- ========================== -->
       <!-- Section Title -->
       <div class="section-title">
@@ -635,27 +642,194 @@
   </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
 
 
-
-
-
-
   <!-- ########################### -->
   <!-- NGINX CONFIGURATION Section -->
   <!-- ########################### -->
   <section class="nginx" id="nginx">
-    <div class="container">
+    <div class="nginx container">
+
+      <!-- 1. REVERSE PROXY -->
       <!--  Section Title -->
       <div class="section-title">
         <h2>Technical Details</h2>
-        <h4>Nginx Configuration</h4>
-      </div>
+        <h4>Nginx as Reverse Proxy</h4>
+      </div><!-- END:: Section Title -->
+          
+      <div class="row align-items-center" id="section-container">
+        <p>
+          Nginx reverse proxy acts as an intermediary server that forwards client requests to appropriate backend servers. It handles incoming requests and distributes them to backend applications while providing an additional layer of abstraction and security.
+        </p>
+        <div class="col-lg-7" data-aos="fade-right">
+            <!-- <h3>Nginx as Reverse Proxy</h3> -->
+          <div class="overview-content">
+
+            <div class="tech-overview">
+              <h4>Key Benefits</h4>
+                <ul class="tech-list">
+                  <li><i class="bi bi-chevron-right"></i> <span>Hides backend server architecture</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Provides SSL termination</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Enables caching and compression</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Enhances security through IP masking</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Simplifies backend maintenance</span></li>
+                </ul>
+            </div><!-- END:: class="tech-overview" -->
+          </div><!-- END:: class="overview-content" -->
+        </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+        
+        <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
+          <div class="overview-image" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.png"
+            class="img-fluid base-diagram"
+            alt="Reverse Proxy Configuration" 
+            onclick="openFullscreen(this)">
+          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+      
+      </div><!-- END:: 1. Reverse Proxy (class="row") -->
 
 
 
 
+      <!-- 2. LOAD BALANCER -->
+      <!--  Section Title -->
+      <div class="section-title">
+        <h2>Technical Details</h2>
+        <h4>Load Balancer</h4>
+      </div><!-- END:: Section Title -->
+          
+      <div class="row align-items-center" id="section-container">
+        <p>
+          Nginx load balancer distributes incoming network traffic across multiple backend servers, ensuring no single server bears too much load. It monitors servers' health and automatically removes failed ones from the pool.
+        </p>
+        
+        <div class="col-lg-7 pt-4 pt-lg-0" data-aos="fade-left">
+          <div class="overview-image" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/nginx/load-balancer.png"
+            class="img-fluid base-diagram"
+            alt="Load Balancer Configuration" 
+            onclick="openFullscreen(this)">
+          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
 
-    </div><!-- LAST DIV BEFORE SECTION ENDS -->
+        <div class="col-lg-5" data-aos="fade-right">
+          <!-- <h3>Nginx as Reverse Proxy</h3> -->
+        <div class="overview-content" id="load-balancer">
+
+          <div class="tech-overview">
+            <h4>Key Benefits</h4>
+              <ul class="tech-list" id="load-balancer-list">
+                <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
+              </ul>
+          </div><!-- END:: class="tech-overview" -->
+        </div><!-- END:: class="overview-content" -->
+      </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+      
+      </div><!-- END::2. Load Balancer (class="row") -->
+
+
+
+
+      <!-- 3. SERVER BLOCKS -->
+      <!--  Section Title -->
+      <div class="section-title">
+        <h2>Technical Details</h2>
+        <h4>Server Blocks</h4>
+      </div><!-- END:: Section Title -->
+          
+      <div class="row align-items-center" id="section-container">
+        <p>
+          Server blocks (virtual hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
+        </p>
+        <div class="col-lg-7" data-aos="fade-right">
+            <!-- <h3>Nginx as Reverse Proxy</h3> -->
+          <div class="overview-content">
+
+            <div class="tech-overview">
+              <h4>Key Benefits</h4>
+                <ul class="tech-list">
+                  <li><i class="bi bi-chevron-right"></i> <span>Host multiple domains on one server</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Domain-specific configurations</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Separate logging per domain</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Individual SSL certificates</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Resource isolation</span></li>
+                </ul>
+            </div><!-- END:: class="tech-overview" -->
+          </div><!-- END:: class="overview-content" -->
+        </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+        
+        <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
+          <div class="overview-image" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.png"
+            class="img-fluid base-diagram"
+            alt="Reverse Proxy Configuration" 
+            onclick="openFullscreen(this)">
+          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+      
+      </div><!-- END:: 3. Server Blocks (class="row") -->   
+      
+      
+
+
+      <!-- === 4. NGINX. OTHER SCREENSHOTS. === -->
+      <!-- Section Title -->
+      <div class="section-title">
+        <h2>Screenshots</h2>
+        <h4>Details</h4>
+      </div><!-- END:: Section Title -->
+      <div class="screenshots-gallery" data-aos="fade-up">
+        <!-- <h4>Additional Configuration Screenshots</h4> -->
+        <div class="masonry-grid">
+          <!-- First item -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.png" 
+            alt="Docker Networks Diagram" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Networks Diagram</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" 
+            alt="Docker Running Containers Details" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Container/Port Details</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" 
+            alt="Docker Volumes Details" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Volume Details</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" 
+            alt="Docker Network Details" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Network Details</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/docker/docker-stats.png" 
+            alt="Docker Stats" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Container Stats</div>
+          </div>          
+          <!-- More items ??? -->
+
+        </div>
+      </div><!-- END:: MASONRY GRID GALLERY    -->
+
+      
+
+    </div><!-- END:: 0. nginx container -->
   </section><!-- END:: NGINX CONFIGURATION Section -->
+
+
 
 
   <!-- Vendor JS -->
