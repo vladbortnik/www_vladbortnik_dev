@@ -651,7 +651,7 @@
       <!-- 1. REVERSE PROXY -->
       <!--  Section Title -->
       <div class="section-title">
-        <h2>Technical Details</h2>
+        <h2>Key Benefits</h2>
         <h4>Nginx as Reverse Proxy</h4>
       </div><!-- END:: Section Title -->
           
@@ -659,7 +659,7 @@
         <p>
           Nginx reverse proxy acts as an intermediary server that forwards client requests to appropriate backend servers. It handles incoming requests and distributes them to backend applications while providing an additional layer of abstraction and security.
         </p>
-        <div class="col-lg-7" data-aos="fade-right">
+        <div class="col-lg-5" data-aos="fade-right">
             <!-- <h3>Nginx as Reverse Proxy</h3> -->
           <div class="overview-content">
 
@@ -676,7 +676,7 @@
           </div><!-- END:: class="overview-content" -->
         </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
         
-        <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
+        <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.png"
             class="img-fluid base-diagram"
@@ -688,16 +688,14 @@
       </div><!-- END:: 1. Reverse Proxy (class="row") -->
 
 
-
-
       <!-- 2. LOAD BALANCER -->
       <!--  Section Title -->
       <div class="section-title">
-        <h2>Technical Details</h2>
+        <h2>Nginx. Key Benefits</h2>
         <h4>Load Balancer</h4>
       </div><!-- END:: Section Title -->
           
-      <div class="row align-items-center" id="section-container">
+      <div class="row align-items-center" id="load-balancer-section">
         <p>
           Nginx load balancer distributes incoming network traffic across multiple backend servers, ensuring no single server bears too much load. It monitors servers' health and automatically removes failed ones from the pool.
         </p>
@@ -713,11 +711,11 @@
 
         <div class="col-lg-5" data-aos="fade-right">
           <!-- <h3>Nginx as Reverse Proxy</h3> -->
-        <div class="overview-content" id="load-balancer">
+        <div class="overview-content">
 
           <div class="tech-overview">
-            <h4>Key Benefits</h4>
-              <ul class="tech-list" id="load-balancer-list">
+            <h4>Features</h4>
+              <ul class="tech-list">
                 <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
                 <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
                 <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
@@ -728,9 +726,7 @@
         </div><!-- END:: class="overview-content" -->
       </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
       
-      </div><!-- END::2. Load Balancer (class="row") -->
-
-
+      </div><!-- END:: 2. LOAD BALANCER -->
 
 
       <!-- 3. SERVER BLOCKS -->
@@ -739,17 +735,16 @@
         <h2>Technical Details</h2>
         <h4>Server Blocks</h4>
       </div><!-- END:: Section Title -->
-          
       <div class="row align-items-center" id="section-container">
         <p>
-          Server blocks (virtual hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
+          Server Blocks (or Virtual Hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
         </p>
-        <div class="col-lg-7" data-aos="fade-right">
+        <div class="col-lg-5" data-aos="fade-right">
             <!-- <h3>Nginx as Reverse Proxy</h3> -->
           <div class="overview-content">
 
             <div class="tech-overview">
-              <h4>Key Benefits</h4>
+              <h4>Main Purpose</h4>
                 <ul class="tech-list">
                   <li><i class="bi bi-chevron-right"></i> <span>Host multiple domains on one server</span></li>
                   <li><i class="bi bi-chevron-right"></i> <span>Domain-specific configurations</span></li>
@@ -761,19 +756,17 @@
           </div><!-- END:: class="overview-content" -->
         </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
         
-        <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
+        <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.png"
+            <img src="assets/img/portfolio/server-setup/nginx/server-blocks.png"
             class="img-fluid base-diagram"
-            alt="Reverse Proxy Configuration" 
+            alt="Server Blocks Configuration" 
             onclick="openFullscreen(this)">
           </div><!-- END:: class="overview-image" id="image-shadow-light" -->
         </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
       
       </div><!-- END:: 3. Server Blocks (class="row") -->   
       
-      
-
 
       <!-- === 4. NGINX. OTHER SCREENSHOTS. === -->
       <!-- Section Title -->
@@ -786,65 +779,55 @@
         <div class="masonry-grid">
           <!-- First item -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.png" 
-            alt="Docker Networks Diagram" 
+            <img src="assets/img/portfolio/server-setup/nginx/load-balancer-logs.png" 
+            alt="Load Balancer Logs" 
             onclick="openFullscreen(this)">
-            <div class="caption">Networks Diagram</div>
+            <div class="caption">Load Balancer Logs</div>
           </div>
           <!-- More items -->
-          <div class="gallery-item" id="image-shadow">
+          <!-- <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" 
             alt="Docker Running Containers Details" 
             onclick="openFullscreen(this)">
             <div class="caption">Container/Port Details</div>
-          </div>
+          </div> -->
           <!-- More items -->
-          <div class="gallery-item" id="image-shadow">
+          <!-- <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" 
             alt="Docker Volumes Details" 
             onclick="openFullscreen(this)">
             <div class="caption">Volume Details</div>
-          </div>
+          </div> -->
           <!-- More items -->
-          <div class="gallery-item" id="image-shadow">
+          <!-- <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" 
             alt="Docker Network Details" 
             onclick="openFullscreen(this)">
             <div class="caption">Network Details</div>
-          </div>
+          </div> -->
           <!-- More items -->
-          <div class="gallery-item" id="image-shadow">
+          <!-- <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/docker/docker-stats.png" 
             alt="Docker Stats" 
             onclick="openFullscreen(this)">
             <div class="caption">Container Stats</div>
-          </div>          
+          </div>           -->
           <!-- More items ??? -->
 
-        </div>
+        </div><!-- END:: class="masonry-grid" -->
       </div><!-- END:: MASONRY GRID GALLERY    -->
 
       
-
     </div><!-- END:: 0. nginx container -->
   </section><!-- END:: NGINX CONFIGURATION Section -->
-
-
 
 
   <!-- Vendor JS -->
   <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
   <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-  <!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
-
-  <!-- Add Prism.js core -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script> -->
-  <!-- Add YAML language support -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script> -->
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
@@ -852,6 +835,6 @@
   <!-- Custom JS -->
   <script src="assets/js/server-setup.js"></script>
 
-  <body>
-
+<body>
+  
 </html>
