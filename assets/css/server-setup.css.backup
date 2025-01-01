@@ -395,58 +395,35 @@ section .container {
   color: #fff;
 }
 
-/*=========================
-## TECHNOLOGIES CAROUSEL ##
-=========================*/
-.technology-item {
-  text-align: center;
-  transition: transform 0.3s;
-}
-
-.technology-item:hover {
-  transform: scale(1.1);
-}
-
-.technology-icon {
-  margin: 20px 0px;
-  width: 80px;
-  height: auto;
-}
-
-.technology-item #docker-icon {
-  margin: 8px 0px 0px 0px;
-  width: 120px;
-}
-
-.technology-item #nginx-icon {
-  margin: 10px 0px 20px;
-  width: 85px;
-}
-
-.technology-item #git-icon {
-  margin: 15px 0px 20px;
-  width: 90px;
-}
-
-.technologies .swiper-pagination {
-  margin-top: 20px;
-  position: relative;
-}
-
-.technologies .swiper-pagination .swiper-pagination-bullet {
-  width: 7px;
-  height: 7px;
-  opacity: 0.7;
-  background-color: rgba(255, 255, 255, 0.3);
-}
-
-.technologies .swiper-pagination .swiper-pagination-bullet-active {
-  background-color: #18d26e;
-}
-
 /*======================================
 ########## SERVER SETUP PAGE ##########
 ======================================*/
+
+/* ############################# */
+/* ##### CUSTOM  STYLES    ##### */
+
+#section-container {
+  margin-bottom: 70px;
+}
+
+.section-title {
+  margin-bottom: 25px;
+}
+
+#image-shadow {
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.25);
+}
+
+#image-shadow-light {
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+}
+
+/* #### END:: CUSTOM  STYLES ##### */
+/* ############################### */
+
+
 
 /* ############################# */
 /* ##### ANIMATION CLASSES ##### */
@@ -501,7 +478,7 @@ section .container {
   }
 
   .overview-content {
-    margin-top: 20px;
+    margin-top: auto;
   }
 }
 
@@ -540,6 +517,13 @@ section .container {
 }
 
 .overview-content h3 {
+  color: #18d26e;
+  font-weight: 700;
+  font-size: 26px;
+  margin-bottom: 20px;
+}
+
+.overview-content h4 {
   color: #18d26e;
   font-weight: 700;
   font-size: 26px;
@@ -623,10 +607,6 @@ section .container {
   box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
 }
 
-/* ---------------------------- */
-/*    INTERACTIVE HOTSPOTS      */
-/* ---------------------------- */
-
 .diagram-container {
   position: relative;
   width: 100%;
@@ -639,28 +619,34 @@ section .container {
   cursor: pointer;
 }
 
+/* ---------------------------- */
+/*    INTERACTIVE HOTSPOTS      */
+/* ---------------------------- */
+
 .hotspot-container {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none; /* This allows clicks to pass through to the image */
+  pointer-events: none;
 }
 
 .hotspot {
   position: absolute;
-  pointer-events: auto; /* Re-enable pointer events only for hotspots */
+  pointer-events: auto;
   cursor: pointer;
-  /* Remove background for invisible hotspots */
+
+  /* background-color: #18d26e; */
+  /* opacity: 0.5; */
   background: transparent;
-  transition: background 0.3s ease;
+  
+  transition: all 0.3s ease;
 }
 
-.hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-}
-
+/* ============= */
+/* POPUP STYLING */
+/* ============= */
 .hotspot-popup {
   position: absolute;
   visibility: hidden;
@@ -669,116 +655,359 @@ section .container {
   border: 1px solid #18d26e;
   border-radius: 8px;
   padding: 15px;
-  width: 250px;
+  min-width: 200px;
+  max-width: 300px;
   z-index: 100;
   transition: all 0.3s ease;
-  pointer-events: none; /* Prevent popup from interfering with hover */
+  pointer-events: none;
+  white-space: nowrap;
 }
 
+.popup-left {
+  right: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.popup-right {
+  left: calc(100% + 10px);
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.popup-top {
+  bottom: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.popup-bottom {
+  top: calc(100% + 10px);
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Show popup on hover */
 .hotspot:hover .hotspot-popup {
   visibility: visible;
   opacity: 1;
 }
 
-/* Position popups based on hotspot location */
-.nginx-area .hotspot-popup {
-  bottom: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-  margin-bottom: 10px;
+.hotspot:hover {
+  background: rgba(24, 210, 110, 0.2);
+  border-radius: 4px;
 }
 
-.docker-area .hotspot-popup {
-  top: 50%;
-  left: 100%;
-  transform: translateY(-50%);
-  margin-left: 10px;
-}
-
-/* Make sure popups stay within viewport */
-@media (max-width: 768px) {
-  .hotspot-popup {
-      width: 200px;
-  }
-  
-  /* Adjust popup positions for mobile */
-  .hotspot:hover .hotspot-popup {
-      left: 50%;
-      bottom: 100%;
-      transform: translateX(-50%);
-      margin-bottom: 10px;
-  }
-}
-
-
-
-/* ---------------------------- */
-/*      ARCHITECTURE GRID       */
-/* ---------------------------- */
-
-/* .architecture-grid {
-  margin-top: 2rem;
-}
-
-.arch-item {
-  background: rgba(255, 255, 255, 0.05);
-  padding: 1.5rem;
-  border-radius: 8px;
-  text-align: center;
-  position: relative;
-  transition: all 0.3s ease;
-  min-height: 200px;
-}
-
-.arch-item img {
-  height: 60px;
-  margin-bottom: 1rem;
-}
-
-.arch-item h5 {
+.hotspot-popup h5 {
   color: #18d26e;
-  margin-bottom: 0.5rem;
+  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
-.hover-content {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: rgba(0, 0, 0, 0.95);
-  border-radius: 8px;
-  padding: 1rem;
-  opacity: 0;
-  visibility: hidden;
-  transition: all 0.3s ease;
-}
-
-.arch-item:hover .hover-content {
-  opacity: 1;
-  visibility: visible;
-}
-
-.hover-content ul {
+.hotspot-popup ul {
   list-style: none;
   padding: 0;
   margin: 0;
-  text-align: left;
 }
 
-.hover-content ul li {
+.hotspot-popup ul li {
   color: #fff;
-  margin-bottom: 0.5rem;
-  padding-left: 1rem;
+  margin-bottom: 5px;
+  font-size: 0.9rem;
+  padding-left: 15px;
   position: relative;
 }
 
-.hover-content ul li:before {
+.hotspot-popup ul li:before {
   content: "•";
   color: #18d26e;
   position: absolute;
   left: 0;
 }
 
+/* ######################## */
+/* HIGHLIGHT EFFECT OPTIONS */
+/* ######################## */
 
- */
+/* SIMPLE HIGHLIGHT */
+/* .hotspot:hover {
+  background: rgba(24, 210, 110, 0.2);
+} */
+
+
+/* GLOWING BORDER */
+/* .hotspot:hover {
+  box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
+  border: 1px solid rgba(24, 210, 110, 0.5);
+} */
+
+
+/* PULSE EFFECT */
+.hotspot:hover {
+  animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.4);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(24, 210, 110, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
+  }
+}
+
+/* ############################# */
+/* ##### DOCKER SECTION ######## */
+/* ############################# */
+
+.project-context {
+  background: rgba(24, 210, 110, 0.05);
+  border-left: 3px solid #18d26e;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 0 4px 4px 0;
+}
+
+.context-note {
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 0.8rem;
+}
+
+.context-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.btn-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #18d26e;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.btn-link:hover {
+  color: #35e888;
+}
+
+/* ================ */
+
+.compose-container {
+  /* margin-top: 30px; */
+  position: relative;
+  width: 100%;
+  display: inline-block;
+}
+
+.compose-image {
+  width: 100%;
+  height: auto;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+  transition: transform 0.3s ease;
+}
+
+.compose-image:hover {
+  transform: scale(1.02);
+}
+
+/* ========================== */
+/* Docker Compose HOVER. */
+/* ========================== */
+
+.compose-wrapper {
+  /* width: 85%; */
+  margin: 0 auto;
+  /* transition: transform 0.3s ease; */
+  position: relative;
+}
+
+.code-section {
+  position: absolute; 
+  left: 50%;
+  width: 50%;
+  height: 80px;
+  cursor: pointer;
+  background: rgba(24, 210, 110, 0.1); 
+  border-right: 2px solid #18d26e;
+  transition: background 0.3s ease;
+}
+
+.code-section.networks {
+  top: 15%;
+}
+
+.code-section.resource-management {
+  top: 35%;
+}
+
+.code-section.persistent-volumes {
+  top: 55%;
+}
+
+.code-section p {
+  text-align:center;
+  margin: 30px;
+}
+
+.code-section:hover {
+  background: rgba(24, 210, 110, 0.2);
+}
+
+.code-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: 1000;
+}
+
+.code-overlay.active {
+  opacity: 1;
+}
+
+.code-container {
+  background: #0c0c0c;
+  border: 1px solid #18d26e;
+  border-radius: 8px;
+  padding: 2rem;
+  font-family: 'Monaco', monospace;
+  color: #18d26e;
+  font-size: 1.2rem;
+  max-width: 80%;
+}
+
+.code-container pre {
+  margin: 0;
+}
+
+
+/* ========================== */
+/* `docker-compose` HOVER - 2 */
+/* ========================== */
+
+.code-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.code-overlay.active {
+  opacity: 1;
+}
+
+.code-container {
+  background: #1e1e1e;
+  border: 1px solid #18d26e;
+  border-radius: 12px;
+  padding: 2.5rem;
+  width: 90%;
+  max-width: 1000px;
+}
+
+.code-container pre {
+  margin: 0;
+  font-family: 'Monaco', monospace;
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #18d26e;
+  white-space: pre;
+}
+
+.code-container .comment {
+  color: #ffffff;
+}
+
+/* END:: `docker-compose` HOVER. */
+/* ========================== */
+
+
+/* ====================== */
+/* = MASONRY GRID GALLERY = */
+/* ====================== */
+
+.masonry-grid {
+  column-count: 3;
+  column-gap: 2rem;
+  padding: 2rem;
+}
+
+.gallery-item {
+  break-inside: avoid;
+  margin-bottom: 2rem;
+  position: relative;
+}
+
+.gallery-item img {
+  width: 100%;
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.02);
+}
+
+.caption {
+  color: #18d26e;
+  padding: 0.5rem 0 0.5rem 0.5rem;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 768px) {
+  .masonry-grid {
+      column-count: 2;
+  }
+}
+
+/* END:: MASONRY GRID GALLERY */
+/* ======================== */
+
+
+
+/*=========================
+## LOAD BALANCER ##########
+=========================*/
+
+#load-balancer-section {
+  margin-bottom: 70px;
+}
+
+#load-balancer-section .tech-overview {
+  text-align: right;
+}
+
+#load-balancer-section .tech-list li {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#load-balancer-section .tech-list li i {
+  margin-right: 5px;
+}
+
+
+/* END: LOAD BALANCER
+===========================*/
