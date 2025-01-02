@@ -173,13 +173,22 @@ h6 {
   color: #4CAF50;
   font-size: 30px;
   padding: 0px 0px 5px;
-  animation: fadeFirst 8s infinite;
+  animation: fadeFirst 12s infinite;
   animation-timing-function: ease-in-out;
-  /* align-items: center; */
 }
 
-#project-title-2 {
+/* #project-title-2 {
   animation: fadeSecond 8s infinite;
+  animation-timing-function: ease-in-out;
+} */
+
+/* #project-title-1 {
+  animation: fadeFirst 8s infinite;
+  animation-timing-function: ease-in-out;
+} */
+
+#project-title-2 {
+  animation: fadeSecond 12s infinite;
   animation-timing-function: ease-in-out;
 }
 
@@ -188,7 +197,48 @@ h6 {
   margin-left: auto;
 }
 
+/* @keyframes fadeFirst {
+  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
+  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+}
+
+@keyframes fadeSecond {
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+} */
+
+/* @keyframes fadeFirst {
+  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
+  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+}
+
+@keyframes fadeSecond {
+  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  15% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
+} */
+
 @keyframes fadeFirst {
+  0%, 30% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  45%, 90% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+}
+
+@keyframes fadeSecond {
+  0%, 40% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+  50%, 80% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
+  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+}
+
+/* WORKS !!! */
+/* @keyframes fadeFirst {
   0%, 45% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   50%, 95% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
   100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
@@ -198,7 +248,10 @@ h6 {
   0%, 45% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
   50%, 95% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-}
+} */
+
+
+
 
 /* @keyframes fadeFirst {
   0%, 45% { opacity: 1; }
@@ -990,10 +1043,10 @@ section .container {
   opacity: 1;
 }
 
-.hotspot:hover {
+/* .hotspot:hover {
   background: rgba(24, 210, 110, 0.2);
   border-radius: 4px;
-}
+} */
 
 .hotspot-popup h5 {
   color: #18d26e;
@@ -1040,11 +1093,11 @@ section .container {
 
 
 /* PULSE EFFECT */
-.hotspot:hover {
+/* .hotspot:hover {
   animation: pulse 1.5s infinite;
-}
+} */
 
-@keyframes pulse {
+/* @keyframes pulse {
   0% {
       box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.4);
   }
@@ -1054,7 +1107,80 @@ section .container {
   100% {
       box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
   }
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* NEW NEW NEW NEW */
+
+/* Overlay styling */
+.diagram-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  opacity: 0;
+  /* opacity: 1 !important; */
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+  border-radius: 5px;
 }
+
+/* .hotspot {
+  z-index: 101;
+} */
+
+.hotspot:hover {
+  animation: pulse 1.5s infinite;
+  z-index: 102;
+}
+
+.hotspot:hover ~ .diagram-overlay {
+  opacity: 1;
+}
+
+.hotspot:hover {
+  background: rgba(24, 210, 110, 0.3);
+  border-radius: 4px;
+  box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
+}
+
+.hotspot-popup {
+  z-index: 102;
+}
+
+@keyframes pulse {
+  0% {
+      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.6);
+  }
+  70% {
+      box-shadow: 0 0 0 10px rgba(24, 210, 110, 0);
+  }
+  100% {
+      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
+  }
+}
+
+/* NEW NEW NEW NEW */
+
+
+
+
+
+
+
 
 /* ############################# */
 /* ##### DOCKER SECTION ######## */

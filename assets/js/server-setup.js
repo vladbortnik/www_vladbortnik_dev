@@ -234,7 +234,6 @@
 
   // ####### MY JS ########
 
-
   /* Email & Phone in Base64 */
   // document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
   // document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
