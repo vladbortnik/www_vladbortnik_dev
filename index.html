@@ -26,6 +26,7 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/style.css" rel="stylesheet">
+  <!-- <link href="assets/css/style-carusel.css" rel="stylesheet"> -->
 
 </head>
 
@@ -39,7 +40,7 @@
       <h1><a href="index.html">Vlad Bortnik</a></h1>
       <!-- Uncomment below if you prefer to use an image logo -->
       <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
-      <h2>I'm a passionate <span>backend developer</span> from New York</h2>
+      <h2>I'm a passionate <span>backend engineer</span> from New York</h2>
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -47,7 +48,19 @@
           <li><a class="nav-link" href="#about">About</a></li>
           <li><a class="nav-link" href="#resume">Resume</a></li>
           <!-- <li><a class="nav-link" href="#services">Services</a></li> -->
-          <li><a class="nav-link" href="#portfolio">Portfolio</a></li>
+          <!-- <li><a class="nav-link" href="#portfolio">Portfolio</a></li> -->
+          <!-- <li> -->
+          <li class="dropdown">
+            <a class="nav-link" href="#portfolio">Portfolio</a>
+            <ul class="dropdown-menu">
+                <li><a href="server-setup.html">Nginx. Server Setup</a></li>
+                <li><a href="https://github.com/vladbortnik/recipe-web-app">Recipe Web App</a></li>
+                <li><a href="https://github.com/vladbortnik/book-finder-web-app">Book Exchange Platform</a></li>
+                <li><a href="https://github.com/vladbortnik/www_vladbortnik_dev">Portfolio Website</a></li>
+            </ul>
+         </li>
+         <!-- </li> -->
+
           <!-- <li><a class="nav-link" href="#contact">Contact</a></li> -->
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
@@ -81,7 +94,7 @@
           <img src="assets/img/me.jpg" class="img-fluid" alt="profile image">
         </div>
         <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
-          <h3>Backend Developer</h3>
+          <h3>Backend Engineer</h3>
           <p class="fst-italic">
             Driven CIS undergrad eager to launch a career in software development. Strong foundation in algorithms, system architecture, and a deep understanding of low-level software processes. Passionate about coding and solving complex problems with a mathematical approach and advanced technical intuition.
           </p>
@@ -613,18 +626,6 @@
       <!-- PORTFOLIO GALLERY -->
       <div class="row portfolio-container">
 
-        <!-- Item: RECIPES -->
-        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
-          <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/recipe/recipe-portfolio-main.jpg" class="img-fluid" alt="Recipe App Homepage Image">
-            <div class="portfolio-info">
-              <h4>Recipes Web App</h4>
-              <span>About: <a href="https://github.com/vladbortnik/recipe-web-app" target="_blank">github/README.md</a></span>
-              <span>Live: <a href="https://recipe.vladbortnik.dev" target="_blank">recipes.vladbortnik.dev</a></span>
-            </div>
-          </div>
-        </div>
-
         <!-- Item: SERVER ARCHITECTURE -->
         <div class="col-lg-4 col-md-6 portfolio-item filter-app">
           <div class="portfolio-wrap">
@@ -633,6 +634,18 @@
               <h4>Server: Setup & Config</h4>
               <span>About: <a href="https://vladbortnik.dev/server-setup.html" target="_blank">about.html</a></span>
               <span>Live: <a href="https://vladbortnik.dev" target="_blank">www.vladbortnik.dev</a></span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Item: RECIPES -->
+        <div class="col-lg-4 col-md-6 portfolio-item filter-app">
+          <div class="portfolio-wrap">
+            <img src="assets/img/portfolio/recipe/recipe-portfolio-main.jpg" class="img-fluid" alt="Recipe App Homepage Image">
+            <div class="portfolio-info">
+              <h4>Recipes Web App</h4>
+              <span>About: <a href="https://github.com/vladbortnik/recipe-web-app" target="_blank">github/README.md</a></span>
+              <span>Live: <a href="https://recipe.vladbortnik.dev" target="_blank">recipes.vladbortnik.dev</a></span>
             </div>
           </div>
         </div>
@@ -649,17 +662,14 @@
           </div>
         </div>
 
-        <!-- Item #4 -->
+        <!-- Item PORTFOLIO WEBSITE -->
         <div class="col-lg-4 col-md-6 portfolio-item filter-card">
           <div class="portfolio-wrap">
-            <img src="assets/img/portfolio/portfolio-templates/portfolio-4.jpg" class="img-fluid" alt="">
+            <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.png" class="img-fluid" alt="Portfolio Website Homepage Image">
             <div class="portfolio-info">
-              <h4>Card 2</h4>
-              <p>Card</p>
-              <div class="portfolio-links">
-                <a href="assets/img/portfolio/portfolio-templates/portfolio-4.jpg" data-gallery="portfolioGallery" class="portfolio-lightbox" title="Card 2"><i class="bx bx-plus"></i></a>
-                <a href="portfolio-details.html" data-gallery="portfolioDetailsGallery" data-glightbox="type: external" class="portfolio-details-lightbox" title="Portfolio Details"><i class="bx bx-link"></i></a>
-              </div>
+              <h4>Portfolio</h4>
+              <span>About: <a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">github/README.md</a></span>
+              <span>Live: <a href="https://vladbortnik.dev" target="_blank">www.vladbortnik.dev</a></span>
             </div>
           </div>
         </div>
@@ -696,9 +706,9 @@
 
       </div>
 
-    </div><!-- END: PORFOLIO GALLERY -->
+    </div><!-- END: PORTFOLIO GALLERY -->
 
-    <!-- ======= TECHNOLOGIES SLIDER on PORTFOLIO GALERY PAGE ======= -->
+    <!-- ======= TECHNOLOGIES SLIDER on PORTFOLIO GALLERY PAGE ======= -->
     <div class="technologies container">
 
       <div class="section-title">

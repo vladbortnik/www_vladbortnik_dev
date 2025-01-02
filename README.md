@@ -1,3 +1,3 @@
-#### Personal Portfolio Website
+### Personal Portfolio Website
 
- **host**: [link](www.vladbortnik.dev)
+ **Live**: [portfolio](https://vladbortnik.dev)
