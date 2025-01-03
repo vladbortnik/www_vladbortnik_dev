@@ -642,6 +642,67 @@ section .container {
 /*======================
 ######## RESUME ########
 ======================*/
+
+/* === Resume New Classes === */
+
+.container #resume-section-title p {
+  margin-bottom: 40px;
+}
+
+.container #resume-head-row {
+  align-items: baseline;
+  margin-bottom: 25px;
+}
+
+.resume-list {
+  list-style: none;
+  padding: 0;
+}
+
+.resume-list li {
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+}
+
+.resume-list li a {
+  color: #fff;
+}
+
+.resume-list li a:hover {
+  color:#08c25f
+}
+
+.resume-list i {
+  color: #18d26e;
+  font-size: 16px;
+  margin-right: 5px;
+}
+
+.resume-list strong {
+  margin-right: 10px;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.container #section-sub-title p {
+  text-transform: capitalize;
+  font-size: 24px;
+}
+
+
+/* margin: 0;
+margin: -15px 0 15px 0;
+font-size: 36px;
+font-weight: 700;
+text-transform: uppercase;
+font-family: "Poppins", sans-serif;
+color: #fff; */
+
+
+/* === END: Resume New Classes === */
+
+
+
 .resume .resume-title {
   font-size: 26px;
   font-weight: 700;
@@ -1296,28 +1357,6 @@ Line 70 of "index.html". And Line 30 of 'style.css' */
   font-weight: 700;
   font-size: 26px;
   margin-bottom: 20px;
-}
-
-.tech-list {
-  list-style: none;
-  padding: 0;
-}
-
-.tech-list li {
-  margin-bottom: 15px;
-  display: flex;
-  align-items: center;
-}
-
-.tech-list i {
-  color: #18d26e;
-  font-size: 16px;
-  margin-right: 5px;
-}
-
-.tech-list strong {
-  margin-right: 10px;
-  color: rgba(255, 255, 255, 0.8);
 } */
 
 /* Architecture Section Styles */

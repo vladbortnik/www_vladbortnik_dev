@@ -1,4 +1,4 @@
-(function() {
+(function () {
   "use strict";
 
   // AOS JavaScript Init
@@ -44,16 +44,16 @@
   /**
    * Mobile nav toggle
    */
-  on('click', '.mobile-nav-toggle', function(e) {
+  on('click', '.mobile-nav-toggle', function (e) {
     select('#navbar').classList.toggle('navbar-mobile')
     this.classList.toggle('bi-list')
     this.classList.toggle('bi-x')
   })
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
-  on('click', '#navbar .nav-link', function(e) {
+  on('click', '#navbar .nav-link', function (e) {
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -86,7 +86,7 @@
 
       if (!header.classList.contains('header-top')) {
         header.classList.add('header-top')
-        setTimeout(function() {
+        setTimeout(function () {
           sections.forEach((item) => {
             item.classList.remove('section-show')
           })
@@ -128,7 +128,7 @@
           }
         })
 
-        setTimeout(function() {
+        setTimeout(function () {
           initial_nav.classList.add('section-show')
         }, 350);
 
@@ -194,48 +194,20 @@
   });
 
   /**
-   * Porfolio isotope and filter
-   */
-  // window.addEventListener('load', () => {
-  //   let portfolioContainer = select('.portfolio-container');
-  //   if (portfolioContainer) {
-  //     let portfolioIsotope = new Isotope(portfolioContainer, {
-  //       itemSelector: '.portfolio-item',
-  //       layoutMode: 'fitRows'
-  //     });
-
-  //     let portfolioFilters = select('#portfolio-flters li', true);
-
-  //     on('click', '#portfolio-flters li', function(e) {
-  //       e.preventDefault();
-  //       portfolioFilters.forEach(function(el) {
-  //         el.classList.remove('filter-active');
-  //       });
-  //       this.classList.add('filter-active');
-
-  //       portfolioIsotope.arrange({
-  //         filter: this.getAttribute('data-filter')
-  //       });
-  //     }, true);
-  //   }
-
-  // });
-
-  /**
    * Initiate portfolio lightbox 
    */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
+  // const portfolioLightbox = GLightbox({
+  //   selector: '.portfolio-lightbox'
+  // });
 
   /**
    * Initiate portfolio details lightbox 
    */
-  const portfolioDetailsLightbox = GLightbox({
-    selector: '.portfolio-details-lightbox',
-    width: '90%',
-    height: '90vh'
-  });
+  // const portfolioDetailsLightbox = GLightbox({
+  //   selector: '.portfolio-details-lightbox',
+  //   width: '90%',
+  //   height: '90vh'
+  // });
 
   /**
    * Portfolio details slider
@@ -259,59 +231,155 @@
    */
   new PureCounter();
 
+
+  // ####### MY JS ########
+
   /* Email & Phone in Base64 */
   // document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
   // document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
-
-  /**********************************
-   ******* SERVER SETUP PAGE ********
-   *********************************/
-  // const lightbox = GLightbox({
-  //   selector: '.glightbox',
-  //   touchNavigation: true,
-  //   loop: false,
-  //   autoplayVideos: true,
-  //   closeButton: true
-  // });
-  
-  
 })()
+
+
+/**********************************
+******* SERVER SETUP SPECIFIC *****
+**********************************/
 
 /* ##### DIAGRAM ANIMATION ##### */
 function openFullscreen(img) {
   // Create overlay
   const overlay = document.createElement('div');
   overlay.className = 'fullscreen-overlay';
-  
+
   // Create close button
   const closeBtn = document.createElement('span');
   closeBtn.className = 'close-button';
   closeBtn.innerHTML = '×';
-  
+
   // Create fullscreen image
   const fullImg = document.createElement('img');
-  fullImg.src = img.src;
+  // Check if there's a different image specified for fullscreen
+  fullImg.src = img.dataset.fullscreenSrc || img.src;
   fullImg.className = 'fullscreen-image';
-  
+
   // Add elements to overlay
   overlay.appendChild(closeBtn);
   overlay.appendChild(fullImg);
   document.body.appendChild(overlay);
-  
+
   // Show overlay with fade effect
   setTimeout(() => overlay.style.display = 'block', 0);
-  
+
   // Close handlers
   const closeFullscreen = () => {
-      overlay.style.display = 'none';
-      overlay.remove();
+    overlay.style.display = 'none';
+    overlay.remove();
   };
-  
+
   closeBtn.onclick = closeFullscreen;
   overlay.onclick = (e) => {
-      if (e.target === overlay) closeFullscreen();
+    if (e.target === overlay || e.target === fullImg) closeFullscreen();
   };
   document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeFullscreen();
+    if (e.key === 'Escape') closeFullscreen();
   });
+  // fullImg.addEventListener('onclick', closeFullscreen);
 }
+
+// `docker-compose. yaml` CODE SNIPPETS POPUPs
+function showCodeSnippet(type) {
+  let codeSnippet = '';
+
+  if (type === 'networks') {
+    codeSnippet = 
+    `# NETWORK SEGREGATION
+    networks: 
+      frontend:              <span class="comment"># Public-facing network</span>
+      backend:               <span class="comment"># Private, internal network</span>
+
+    services:
+      web:
+        ...
+        networks:
+          - frontend         <span class="comment"># For communication with Internet</span>
+          - backend          <span class="comment"># For communication with DB only</span>
+        ports:
+          "5002:5002"        <span class="comment"># The only necessary external</span>
+        ...
+        ...
+
+      db:
+        ...
+        ...
+        networks:
+          - backend          <span class="comment"># Only Web Service have access to DB</span>
+        # ports:
+        #  - "5432:5432"     <span class="comment"># Port is not exposed to the Host</span>
+        ...
+        ...`;
+
+  } else if (type === 'resource-management') {
+    codeSnippet = 
+    `# RESOURCE MANAGEMENT
+
+    services:
+      web:
+        ...
+        mem_limit: 384m            <span class="comment"># Docker Container Resource Limits</span>
+        mem_reservation: 192m
+        cpus: 0.3
+        ...
+        ...
+
+      db:
+        ...
+        mem_limit: 384m            <span class="comment"># Docker Container Resource Limits</span>
+        mem_reservation: 192m
+        cpus: 0.3
+        ...
+        ...`;
+
+  } else if (type === 'persistent-volumes') {
+          codeSnippet = 
+          `# PERSISTENT VOLUMES
+
+          services:
+            web:
+              ...
+              ...
+      
+            db:
+              ...
+              ...
+              volumes:
+                - postgres_data:/var/lib/postgresql/data
+              ...
+              ...
+
+          volumes:
+            postgres_data:`;
+  }
+
+    // Create overlay
+    const overlay = document.createElement('div');
+    overlay.className = 'code-overlay';
+
+    // Create code container
+    const codeContainer = document.createElement('div');
+    codeContainer.className = 'code-container';
+    codeContainer.innerHTML = `<pre><code>${codeSnippet}</code></pre>`;
+
+    overlay.appendChild(codeContainer);
+    document.body.appendChild(overlay);
+
+    // Show with fade effect
+    setTimeout(() => overlay.classList.add('active'), 0);
+
+    // Close on click outside
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove('active');
+        setTimeout(() => overlay.remove(), 300);
+      }
+    });
+  }
+

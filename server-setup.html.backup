@@ -40,11 +40,31 @@
   <!-- ====================== -->
   <header id="header">
     <div class="container">
-      <h1><a href="server-setup.html">Server Setup</a></h1>
+      <!-- <h1><a href="server-setup.html">Server Setup</a></h1> -->
+      <a href="index.html" class="floating-home">
+        <!-- <i class="bi bi-house-door"></i> Home -->
+         <!-- <i class="bi bi-house-door"></i> Back -->
+        <i class="bi bi-arrow-return-left"></i> Home
+        <!-- <i class="bi bi-arrow-left"></i> Back -->
+        <!-- <i class="bi bi-chevron-left"></i> Back -->
+        <!-- <i class="bi bi-chevron-double-left"></i> Back -->
+        <!-- <i class="bi bi-arrow-return-left"></i> Back -->
+      </a>
+      <!-- <a id="project-title" href="server-setup.html">Project. Server Setup.</a> -->
+
+      <div class="title-container">
+        <a id="project-title-1" href="server-setup.html">Nginx. From the ground up.</a>
+        <a id="project-title-2" href="server-setup.html">"Server Setup" Project</a>
+      </div>
 
       <nav id="navbar" class="navbar">
+        <!-- <h1><a href="server-setup.html">Server Setup</a></h1> -->
+        <!-- <a href="index.html" class="floating-home">
+          <i class="bi bi-house-door"></i> Home
+        </a> -->
         <ul>
           <!-- <li><a class="nav-link active" href="#header">Home</a></li> -->
+          <!-- <li><a class="nav-link" href="server-setup.html">Server Setup:</a></li> -->
           <li><a class="nav-link" href="#overview">Overview</a></li>
           <li><a class="nav-link" href="#architecture">Architecture & DNS</a></li>
           <li><a class="nav-link" href="#docker">Docker</a></li>
@@ -67,11 +87,12 @@
       <!--  Section Title -->
       <div class="section-title">
         <h2>Project</h2>
-        <h4>Overview</h4>
+        <h4>NGINX. From the ground up.</h4>
       </div><!-- END:: Section Title -->
 
-      <div class="row align-items-center">
-        <div class="col-lg-7" data-aos="fade-right">
+      <!-- <div class="row align-items-center" id="overview-content"> -->
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+        <!-- <div class="col-lg-12" data-aos="fade-right"> -->
           <!-- <div class="overview-image">
             <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid" alt="server setup image">
             <div class="overview-overlay">
@@ -79,23 +100,29 @@
             </div>
           </div> -->
           <div class="overview-image" id="image-shadow-light">
-            <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid"
+            <img src="assets/img/portfolio/server-setup/server-setup-title-img.png" class="img-fluid"
               alt="server setup image">
             <div class="overview-overlay">
-              <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.png" alt="server setup overlay"
+              <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.jpg" alt="server setup overlay"
                 class="overlay-image">
             </div>
           </div>
 
-        </div>
-        <div class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left">
+        <!-- </div> END:: Class Col-12 -->
+      </div><!-- END:: class="diagram-container" -->
+      <div class="row align-items-center" id="overview-content">
+        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-content">
-            <!-- <h3>Overview</h3> -->
+            <h3>Overview</h3>
             <p>
               This project involved configuring a DigitalOcean shared server with Nginx on Ubuntu to host my static
               portfolio website and multiple web applications on subdomains. I manually set up SSL for secure
               connections, configured DNS, and deployed applications using Docker containers for isolated environments.
             </p>
+          </div>
+        </div><!-- END:: Class Col-6 -->
+        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+          <div class="overview-content">
             <div class="tech-overview">
               <h3>Tech Stack</h3>
               <ul class="tech-list">
@@ -109,8 +136,8 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+        </div><!-- END:: Class Col-6 -->
+      </div><!-- END:: Class Row -->
 
     </div><!-- END:: OVERVIEW Container -->
   </section><!-- END:: OVERVIEW SECTION -->
@@ -232,7 +259,12 @@
             </div>
           </div>
 
+          <!-- Blur Background when Hotspot Pops up -->
+          <div class="diagram-overlay"></div>
+
         </div><!-- END:: HOTSPOTS ON HOVER -->
+        <!-- Blur Background when Hotspot Pops up -->
+        <!-- <div class="diagram-overlay"></div> -->
       </div><!-- END:: ARCHITECTURE DIAGRAM -->
 
       <!-- DNS DNS DNS DNS DNS DNS DNS -->
@@ -277,17 +309,16 @@
       <div class="project-context" data-aos="fade-up">
         <div class="context-note">
           <i class="bi bi-info-circle me-2"></i>
-          <span>This section details the Docker Infrastructure of the "Server Setup" Project, not an individual web
-            application.</span>
+          <span>This section details the Docker Infrastructure related the "Server Setup" Project only.</span>
         </div>
-        <div class="context-links">
+        <!-- <div class="context-links">
           <a href="https://vladbortnik.dev" target="_blank" class="btn-link">
             <i class="bi bi-globe"></i> Live Server
           </a>
           <a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank" class="btn-link"><i
               class="bi bi-github"></i> Project Details
           </a>
-        </div>
+        </div> -->
       </div>
 
       <!-- DOCKER DIAGRAM -->
@@ -343,8 +374,12 @@
               </ul>
             </div>
           </div>
-        </div>
-      </div>
+
+          <!-- Blur Background when Hotspot Pops up -->
+          <div class="diagram-overlay"></div>
+
+        </div><!-- END: Hotspot -->
+      </div><!-- END: DOCKER DIAGRAM -->
 
       <!-- DOCKER-COMPOSE SCREENSHOT -->
       <!-- Section Title -->
@@ -831,6 +866,11 @@
 
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- GSAP -->
+  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script> -->
+  <!-- <script>initTitleAnimation();</script> -->
+  <!-- <script src="assets/js/title-animation.js" defer></script> -->
 
   <!-- Custom JS -->
   <script src="assets/js/server-setup.js"></script>

@@ -413,332 +413,191 @@
   <section id="resume" class="resume">
     <div class="container">
 
-      <!-- TITLE with Green Line -->
-      <!-- <div class="section-title" id="resume-section-title"> -->
-        <div class="section-title">
+      <div class="section-title">
         <h2>Resume</h2>
         <p>Check My Resume</p>
-      </div><!-- END: class="section-title" -->
+      </div>
 
-      <h3>Summary</h3>
-      <!-- ROW-1: SUMMARY -->
-      <!-- <div class="row" id="resume-head-row"> -->
       <div class="row">
-        <!-- COL-1: FIO -->
-        <div class="col-lg-12">
-          <h3 class="resume-title"></h3>
+        <div class="col-lg-6">
+          <h3 class="resume-title">Summary</h3>
           <div class="resume-item pb-0">
             <h4>Vlad Bortnik</h4>
-          </div>
-        </div><!-- END: Col-1 - Fio -->
-
-        <!-- COL-2: CONTACTS & SOCIAL MEDIA -->
-        <div class="col-lg-12">
-          <!-- <h3 class="resume-title">Summary</h3> -->
-          <div class="resume-list">
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <span><a href="https://github.com/vladbortnik" target="_blank">Github</a></span></li>
-            </ul>
-          </div>
-        </div><!-- END: Col-2 (Contacts & Social Media) -->
-
-        <!-- COL-3: CONTACTS & SOCIAL MEDIA -->
-        <div class="col-lg-12">
-          <!-- <h3 class="resume-title">Summary</h3> -->
-          <div class="resume-list">
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <span><a href="https://linkedin.com/in/vladbortnik" target="_blank">LinkedIn</a></span></li>
-            </ul>
-          </div>
-        </div><!-- END: Col-3 (Contacts & Social Media) -->
-
-        <!-- COL-4: CONTACTS & SOCIAL MEDIA -->
-        <div class="col-lg-12">
-          <!-- <h3 class="resume-title">Summary</h3> -->
-          <div class="resume-list">
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <span><a href="https://vladbortnik.dev" target="_blank">Portfolio</a></span></li>
-            </ul>
-          </div>
-        </div><!-- END: Col-4 (Contacts & Social Media) -->
-
-        <!-- COL-5: CONTACTS & SOCIAL MEDIA -->
-        <div class="col-lg-12">
-          <!-- <h3 class="resume-title">Summary</h3> -->
-          <div class="resume-list">
-            <ul>
-              <li><i class="bi bi-chevron-right"></i> <span><a href="https://maps.app.goo.gl/xhPmY2ajCtFRoA77A" target="_blank">NYC Metropolitan Area</a></span></li>
-            </ul>
-          </div>
-        </div><!-- END: Col-5 (Contacts & Social Media) -->
-
-      </div><!-- END: Row-1 (Summary) -->
-
-      <h3> `</h3>
-      <h3>Featured Projects</h3>
-      <!-- ROW-2: ...... -->
-      <div class="row">
-        <div class="col-lg-9">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>PRODUCTION-GRADE MULTI-APPLICATION SERVER</h4>
-            <p>Robust server infrastructure with load balancing, security layers, and containerized applications.</p>
+            <p>Driven CS undergrad eager to launch a career in software development. Strong foundation in algorithms, system architecture, and a deep understanding of low-level software processes. Passionate about coding and solving complex problems with a mathematical approach and advanced technical intuition.</p>
             <p>
             <ul>
-              <li>Configured Nginx as reverse proxy with load balancing and caching for optimal performance</li>
-              <li>Implemented comprehensive security layers: UFW firewall, fail2ban, SSL/TLS (A+), Security Headers (A+)</li>
-              <li>Orchestrated routing system managing three distinct applications across multiple subdomains</li>
-              <li>Established secure communication channels for external API integrations (Azure Vision, Spoonacular)</li>
-              <li>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</li>
+              <li><em>Location:</em> New York, NY</li>
+              <li><em>Phone:</em> <span id="fone"></span></li>
+              <li><em>Email:</em> <span id="mail"></li>
+              <li><em>Website:</em> www.vladbortnik.dev</li>
+              <li><em>Projects:</em></li>
+                <ul>
+                  <li>Book Finder</li>
+                  <li>placeholder</li>
+                  <li>placeholder</li>
+                </ul>
             </ul>
             </p>
-            <div class="project-links">
-              <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span>
-              <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">Live</a></span>
-              <!-- <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik" target="_blank">Github</a></span> -->
-            </div>
           </div>
-        </div><!-- END: Col - Project Server-Setup -->
 
-        <div class="col-lg-3">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item">            
-            <p>
-              <h5>Tech Stack</h5>
-              <ul>
-                <li>Nginx</li>
-                <!-- <li>Ubuntu</li> -->
-                <li>Docker</li>
-                <li>SSL/TLS</li>
-                <li>DNS</li>
-                <li>Load Balancer</li>
-                <li>Security Headers</li>
-                <li>DigitalOcean</li>
-              </ul>
-              </p>
-          </div>
-        </div><!-- END: Col - Tech Stack -->
-      </div><!-- END: Row-2 -->
-
-      <!-- ROW-3: RECIPE WEB APP -->
-      <div class="row">
-        <div class="col-lg-9">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>RECIPE WEB APP</h4>
-            <p>Full-stack Flask App integrating Azure Vision API for ingredient recognition and Spoonacular API for recipe generation.</p>
+          <h3 class="resume-title">Education</h3>
+          <div class="resume-item">
+            <h4>BS in Computer Science</h4>
+            <h5>2017 - 2019</h5>
+            <p><em>Brooklyn College | City University of New York</em></p>
+            <!-- <p><em>New York, NY </em></p> -->
             <p>
             <ul>
-              <li>Implemented comprehensive user system with secure authentication, password hashing (Bcrypt), and CSRF protection</li>
-              <li>Designed PostgreSQL database schema with SQLAlchemy ORM, implementing automated migrations for version control</li>
-              <li>Containerized application using Docker Compose, orchestrating web service and PostgreSQL database deployment</li>
-              <li>Configured Gunicorn WSGI server for concurrent request handling and production-grade performance</li>
-              <!-- <li>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</li> -->
+              <li>Degree GPA: <b>3.93</b>/4.0</li>
+              <li>Honors:</li>
+              <ul>
+                <li>Upsilon Pi Epsilon Honor Society for CIS</li>
+                <li>Dean's List</li>
+                <li>HackerRank.com: Gold Star (Python)</li>
+              </ul>
+              <li>Relevant Coursework:
+                <ul>
+                  <li>Algorithms</li>
+                  <li>Data Structures</li>
+                  <li>Comp. Architecture</li>
+                  <li>Software Engineering</li>
+                  <li>Operating Systems</li>
+                  <li>OOP (Graduate Level, Java)</li>
+                  <li>Software Development of Large Scale Projects (Java)</li>
+                </ul>
+              <!-- <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li> -->
             </ul>
             </p>
-            <div class="project-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/recipe-web-app" target="_blank">Github</a></span>
-              <i class="bi bi-globe"></i> <span><a href="https://recipe.vladbortnik.dev/" target="_blank">Live</a></span>
-            </div>
+            <!-- <p>Qui deserunt veniam. Et sed aliquam labore tempore sed quisquam iusto autem sit. Ea vero voluptatum qui ut dignissimos deleniti nerada porti sand markend</p> -->
           </div>
-        </div><!-- END: Col - Recipe -->
-
-        <div class="col-lg-3">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item">            
-            <p>
-              <h5>Tech Stack</h5>
-              <ul>
-                <li>Flask</li>
-                <li>PostgreSQL</li>
-                <!-- <li>SQLAlchemy</li> -->
-                <li>Docker</li>
-                <li>Gunicorn</li>
-                <li>Azure Vision API</li>
-                <li>Spoonacular API</li>
-                <!-- <li>Security Headers</li> -->
-              </ul>
-              </p>
-          </div>
-
-        </div><!-- END: Col - Tech Stack -->
-      </div><!-- END: Row-3 -->
-
-      <!-- ROW-4: STUDENT BOOK EXCHANGE PLATFORM -->
-      <div class="row">
-        <div class="col-lg-9">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>STUDENT BOOK EXCHANGE PLATFORM</h4>
-            <p>Full-stack marketplace application using Flask/Gunicorn and SQLite for student textbook exchange.</p>
-            <p>
-            <ul>
-              <li>Implemented comprehensive user system with secure authentication (Flask-Login) and password encryption (Bcrypt)</li>
-              <li>Created CRUD functionality for book listings with image upload capability and form validation (Flask-WTF)</li>
-              <li>Containerized application using Docker Compose and deployed with Nginx reverse proxy on DigitalOcean</li>
-              <li>Designed responsive UI with Bootstrap and Jinja2 templating for optimal user experience</li>
-              <!-- <li>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</li> -->
-            </ul>
-            </p>
-            <div class="project-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/book-finder-web-app" target="_blank">Github</a></span>
-              <i class="bi bi-globe"></i> <span><a href="https://bookfinder.vladbortnik.dev" target="_blank">Live</a></span>
-            </div>
-          </div>
-        </div><!-- END: Col - Bookfinder -->
-
-        <div class="col-lg-3">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item">            
-            <p>
-              <h5>Tech Stack</h5>
-              <ul>
-                <li>Flask</li>
-                <li>SQLite</li>
-                <li>SQLAlchemy</li>
-                <li>Docker</li>
-                <li>Bootstrap</li>
-                <!-- <li>SQLAlchemy</li> -->
-                <li>Jinja2</li>
-                <!-- <li>Security Headers</li> -->
-              </ul>
-              </p>
-          </div>
-        </div><!-- END: Col - Tech Stack -->
-      </div><!-- END: Row-4 -->
-
-      <!-- ROW-5: PORTFOLIO WEBSITE -->
-      <div class="row">
-        <div class="col-lg-9">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>PROFESSIONAL PORTFOLIO WEBSITE</h4>
-            <p>Adapted professional HTML template to create personalized portfolio website.</p>
-            <p>
-            <ul>
-              <!-- <li>Adapted professional HTML template to create personalized portfolio website</li> -->
-              <li>Code modified: HTML 70%, CSS 55%, JavaScript 40%</li>
-              <li>Modified existing CSS styles and JavaScript functionality to match requirements</li>
-              <li>Customized content structure and layout for optimal presentation of projects</li>
-              <li>Maintained clean, organized codebase using modern HTML5 and CSS3 standards</li>
-              <!-- <li>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</li> -->
-            </ul>
-            </p>
-            <div class="project-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">Github</a></span>
-              <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Live</a></span>
-            </div>
-          </div>
-        </div><!-- END: Col - Portfolio Website  -->
-
-        <div class="col-lg-3">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item">            
-            <p>
-              <h5>Tech Stack</h5>
-              <ul>
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>SCSS</li>
-                <li>JavaScript</li>
-                <li>Bootstrap</li>
-                <!-- <li>SQLAlchemy</li> -->
-                <!-- <li>Jinja2</li> -->
-                <!-- <li>Security Headers</li> -->
-              </ul>
-              </p>
-          </div>
-        </div><!-- END: Col - Tech Stack -->
-      </div><!-- END: Row-5 -->
-
-      <h3>`</h3>
-      <h3>`</h3>
-      <h3>`</h3>
-
-      <!-- ROW-6: TECH SKILLS -->
-      <h3>Technical Skills</h3>
-      <div class="row">
-        <div class="col-lg-4">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>Languages & Frameworks</h4>
-            <!-- <p>Adapted professional HTML template to create personalized portfolio website.</p> -->
-            <p>
-            <ul>
-              <!-- <h5>Languages & Frameworks: </h5> -->
-              <li>Flask</li>
-              <li>Python</li>
-              <li>HTML</li>
-              <li>CSS</li>
-              <li>JavaScript</li>
-              <li>Bootstrap</li>
-              <li>Jinja2</li>
-            </ul>
-            </p>
-            <div class="project-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <!-- <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">Github</a></span> -->
-              <!-- <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Live</a></span> -->
-            </div>
-          </div>
-        </div><!-- END: Col - TECHNICAL SKILLS  -->
-
-        <div class="col-lg-4">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">       
-            <h4>Databases & APIs</h4>     
-            <p>
-              <!-- <h5>Brooklyn College</h5> -->
-              <ul>
-                <li>PostgreSQL</li>
-                <li>SQLite</li>
-                <li>RESTful APIs</li>
-                <li>Azure Vision API</li>
-                <li>Spoonacular API</li>
-              </ul>
-              </p>
-          </div>
-        </div><!-- END: Col - Education -->
-
-        <div class="col-lg-4">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">       
-            <h4>DevOps & Tools</h4>     
-            <p>
-              <!-- <h5>Brooklyn College</h5> -->
-              <ul>
-                <li>Docker</li>
-                <li>Nginx</li>
-                <li>Git</li>
-                <li>Ubuntu/Linux</li>
-                <li>SSL/HTTPS</li>
-                <li>DigitalOcean</li>
-              </ul>
-              </p>
-          </div>
-        </div><!-- END: Col - Education -->
-      </div><!-- END: Row-6 -->
-
-
-      <h3>`</h3>
-      <h3>`</h3>
-      <h3>`</h3>
-      <!-- ROW-7: EDUCATION -->
-      <h3>EDUCATION</h3>
-      <div class="row">
-        <div class="col-lg-12">
-          <h3 class="resume-title"></h3>
-          <div class="resume-item pb-0">
-            <h4>Brooklyn College | City University of New York</h4>
-            <p>Bachelor of Science in Computer Science | 2019 | GPA: 3.87/4.0</p>
+          <!-- <div class="resume-item">
+            <h4>Bachelor of Fine Arts &amp; Graphic Design</h4>
+            <h5>2010 - 2014</h5>
+            <p><em>Rochester Institute of Technology, Rochester, NY</em></p>
+            <p>Quia nobis sequi est occaecati aut. Repudiandae et iusto quae reiciendis et quis Eius vel ratione eius unde vitae rerum voluptates asperiores voluptatem Earum molestiae consequatur neque etlon sader mart dila</p>
+          </div> -->
+        </div>
+        
+        <div class="col-lg-6">
+          <h3 class="resume-title">Skills</h3>
+          <div class="resume-item">
+            <h4>Technical Skills</h4>
+            <!-- <h5>2019 - Present</h5> -->
+            <!-- <p><em>Experion, New York, NY </em></p> -->
             
-        </div><!-- END: Col - Education -->
-      </div><!-- END: Row-7 -->
+            <p>
+              <h5>Advanced</h5>
+              <ul>
+                <li><em>Languages &amp; Frameworks:</em> Python, C++, Flask, SQLAlchemy, REST</li>
+                <li><em>Version Control &amp; CI/CD:</em> git, Docker, docker-compose</li>
+                <li><em>Networking &amp; Security:</em> Nginx/Linux &amp; DNS config, SSL &amp; Load Balancer Setup, SSH</li>
+                
+                <li><em>Databases:</em> Postgres, SQLite</li>
+                <li><em>OS &amp; Tools:</em> Linux/Unix, Bash, VS Code</li>
+                
+                <!-- <li><b>Databases:</b> Postgres, SQLite</li>
+                <li><b>OS &amp; Tools:</b> Linux/Unix, Bash, VS Code</li> -->
+                <!-- <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li> -->
+              </ul>
+              </p>
+            <p>
+              <h5>Intermediate &amp; Other</h5>
+              <ul>
+                <li><em>Languages &amp; Frameworks:</em> HTML, CSS, JavaScript, SQL, Java, Bootstrap</li>
+                <li><em>Methodologies:</em> Agile, Scrum</li>
+                <li><em>Computer Science Fundamentals:</em> Advanced understanding of Algorithms &amp; Data Structures, System Architecture</li>
+                <li><em>Low-Level Software Processes:</em> In-depth knowledge of Code Compilation, Interpretation, Memory Allocation, Memory Leakage, etc.</li>
+              </ul>
+            </p>
+            <!-- <p>
+              <h5>Other</h5>
+              <ul>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              </ul>
+            </p> -->
+            <!-- <p>
+              <h5>Other</h5>
+              <ul>
+                <li>Lead in the design, development, and implementation of the graphic, layout, and production communication materials</li>
+                <li>Delegate tasks to the 7 members of the design team and provide counsel on all aspects of the project. </li>
+                <li>Supervise the assessment of all graphic materials in order to ensure quality and accuracy of the design</li>
+                <li>Oversee the efficient use of production project budgets ranging from $2,000 - $25,000</li>
+              </ul>
+            </p> -->
+          </div>
+          <div class="resume-item">
+            <h4>Soft Skills</h4>
+            <!-- <h5>2019 - Present</h5> -->
+            <!-- <p><em>Experion, New York, NY </em></p> -->
+            <p>
+            <ul>
+              <li><em>Effective Communication:</em> Skilled in clearly articulating complex technical concepts to diverse audiences, ensuring mutual understanding and cooperation in team settings</li>
+              <li><em>Critical Thinking:</em> Proven ability to approach problems methodically and devise innovative solutions, enhancing project outcomes and efficiency</li>
+              <li><em>Adaptability and Independence:</em> Quickly adjusts to new technologies and shifting project priorities, demonstrating flexibility and the ability to work autonomously or as part of a team in high-pressure environments</li>
+              <li><em>Team Collaboration:</em> Committed to contributing to team efforts and achieving common goals through shared ideas and combined strengths</li>
+              <li><em>Time Management:</em> Competent in managing time efficiently, prioritizing tasks, and consistently meeting deadlines in both academic and voluntary capacities</li>
+              <li><em>Technical Intuition:</em> Demonstrated ability to quickly grasp new technologies and understand underlying processes, ensuring effective problem-solving and implementation</li>
+            </ul>
+            </p>
+          </div>
+          <!-- <h3 class="resume-title">Professional Experience</h3>
+          <div class="resume-item">
+            <h4>Graphic design specialist</h4>
+            <h5>2017 - 2018</h5>
+            <p><em>Stepping Stone Advertising, New York, NY</em></p>
+            <p>
+            <ul>
+              <li>Developed numerous marketing programs (logos, brochures,infographics, presentations, and advertisements).</li>
+              <li>Managed up to 5 projects or tasks at a given time while under pressure</li>
+              <li>Recommended and consulted with clients on the most appropriate graphic design</li>
+              <li>Created 4+ design presentations and proposals a month for clients and account managers</li>
+            </ul>
+            </p>
+          </div> -->
+        </div>
+      </div>
 
-    </div><!-- END: class="container" -->
+      <div class="row">
+        <h3 class="resume-title">Experience &amp; Volunteer</h3>
+        <div class="col-lg-6">
+          <div class="resume-item">
+            <h4>Volunteer Mentor</h4>
+            <h5>2020 - Present</h5>
+            <p><em>Strive for College | Non-Profit</em></p>
+            <p>
+            <ul>
+              <li>Provided one-on-one mentoring, resulting in a 20% improvement in student confidence and academic performance</li>
+              <li>Helped over 50 high school graduates & freshmen adapt to the new environment</li>
+              <li>Directed 30+ young men to choose the right direction in future career paths</li>
+              <li>Organized and led workshops on college readiness and career planning</li>
+              <!-- <li>Provided one-on-one mentoring, resulting in a 20% improvement in student confidence and academic performance</li> -->
+            </ul>
+            </p>
+          </div>
+        </div>  
+
+        <div class="col-lg-6">
+          <div class="resume-item">
+            <h4>Uber Driver</h4>
+            <h5>2017 - Present</h5>
+            <p><em>Uber Technologies, Inc.</em></p>
+            <p>
+            <ul>
+              <li>Utilized GPS and mapping software to optimize routes, demonstrating strong technical skills and adaptability</li>
+              <li>Managed time efficiently to meet tight schedules, achieving a 95% on-time rate</li>
+              <li>Provided exceptional customer service, maintaining a 4.9/5.0 driver rating</li>
+              <li>Handled electronic transactions accurately, with a 100% accuracy rate</li>
+              <!-- <li>Adapted quickly to new technologies and updates in the Uber app, demonstrating adaptability and tech-savviness</li> -->
+            </ul>
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </section><!-- ======= END: RESUME Section ============ -->
 
   <!-- ======================================== -->
@@ -913,7 +772,7 @@
       </div>
 
     </div><!-- ======= END: TECHNOLOGIES SLIDER on PORTFOLIO GALERY PAGE ======= -->
-  </section><!-- =======END: PORTFOLIO GALLERY Section ======= -->
+  </section><!-- =======END: PORTFOLIO GALERY Section ======= -->
 
   <!-- ============================================ -->
   <!-- ======= CONTACT Section ==================== -->
