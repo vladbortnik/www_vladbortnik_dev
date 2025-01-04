@@ -24,10 +24,7 @@
   <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Add Prism.js CSS -->
-  <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" /> -->
-
-  <!-- Linking AOS CSS -->
+  <!-- AOS CSS -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.css">
 
   <!-- Main CSS File -->
@@ -37,34 +34,18 @@
 <body>
   <!-- ====================== -->
   <!-- ======= HEADER ======= -->
-  <!-- ====================== -->
   <header id="header">
     <div class="container">
-      <!-- <h1><a href="server-setup.html">Server Setup</a></h1> -->
-      <a href="index.html" class="floating-home">
-        <!-- <i class="bi bi-house-door"></i> Home -->
-         <!-- <i class="bi bi-house-door"></i> Back -->
-        <i class="bi bi-arrow-return-left"></i> Home
-        <!-- <i class="bi bi-arrow-left"></i> Back -->
-        <!-- <i class="bi bi-chevron-left"></i> Back -->
-        <!-- <i class="bi bi-chevron-double-left"></i> Back -->
-        <!-- <i class="bi bi-arrow-return-left"></i> Back -->
-      </a>
-      <!-- <a id="project-title" href="server-setup.html">Project. Server Setup.</a> -->
+      <a href="index.html" class="floating-home"><i class="bi bi-arrow-return-left"></i> Home</a>
 
       <div class="title-container">
-        <a id="project-title-1" href="server-setup.html">Nginx. From the ground up.</a>
+        <a id="project-title-1" href="server-setup.html">Nginx. From the ground up</a>
         <a id="project-title-2" href="server-setup.html">"Server Setup" Project</a>
       </div>
 
       <nav id="navbar" class="navbar">
-        <!-- <h1><a href="server-setup.html">Server Setup</a></h1> -->
-        <!-- <a href="index.html" class="floating-home">
-          <i class="bi bi-house-door"></i> Home
-        </a> -->
         <ul>
           <!-- <li><a class="nav-link active" href="#header">Home</a></li> -->
-          <!-- <li><a class="nav-link" href="server-setup.html">Server Setup:</a></li> -->
           <li><a class="nav-link" href="#overview">Overview</a></li>
           <li><a class="nav-link" href="#architecture">Architecture & DNS</a></li>
           <li><a class="nav-link" href="#docker">Docker</a></li>
@@ -75,30 +56,20 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- END: HEADER -->
+  </header><!-- end: HEADER -->
 
 
-  <!-- ################### -->
-  <!-- OVERVIEW    SECTION -->
-  <!-- ################### -->
+  <!-- ================ -->
+  <!-- OVERVIEW Section -->
   <section class="overview" id="overview">
     <div class="container">
 
-      <!--  Section Title -->
       <div class="section-title">
         <h2>Project</h2>
         <h4>NGINX. From the ground up.</h4>
-      </div><!-- END:: Section Title -->
+      </div>
 
-      <!-- <div class="row align-items-center" id="overview-content"> -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
-        <!-- <div class="col-lg-12" data-aos="fade-right"> -->
-          <!-- <div class="overview-image">
-            <img src="assets/img/portfolio/server-setup/server-setup-title-img.jpg" class="img-fluid" alt="server setup image">
-            <div class="overview-overlay">
-              <h3 class="text-gradient">From the ground up</h3>
-            </div>
-          </div> -->
           <div class="overview-image" id="image-shadow-light">
             <img src="assets/img/portfolio/server-setup/server-setup-title-img.png" class="img-fluid"
               alt="server setup image">
@@ -107,9 +78,8 @@
                 class="overlay-image">
             </div>
           </div>
+      </div><!-- end: class="diagram-container" -->
 
-        <!-- </div> END:: Class Col-12 -->
-      </div><!-- END:: class="diagram-container" -->
       <div class="row align-items-center" id="overview-content">
         <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-content">
@@ -120,7 +90,8 @@
               connections, configured DNS, and deployed applications using Docker containers for isolated environments.
             </p>
           </div>
-        </div><!-- END:: Class Col-6 -->
+        </div><!-- end: Class Col-6 -->
+
         <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-content">
             <div class="tech-overview">
@@ -136,32 +107,31 @@
               </ul>
             </div>
           </div>
-        </div><!-- END:: Class Col-6 -->
-      </div><!-- END:: Class Row -->
+        </div><!-- end: Class Col-6 -->
+      </div><!-- end: Class Row -->
 
-    </div><!-- END:: OVERVIEW Container -->
-  </section><!-- END:: OVERVIEW SECTION -->
+    </div><!-- end: Overview Container -->
+  </section><!-- end: Overview Section -->
 
 
-  <!-- #################### -->
+  <!-- ==================== -->
   <!-- ARCHITECTURE Section -->
-  <!-- #################### -->
   <section class="architecture" id="architecture">
     <div class="architecture container">
 
-      <!-- ARCHITECTURE DIAGRAM -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>Architecture & DNS</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
+      <!-- Architecture Diagram -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" 
         class="img-fluid base-diagram"
         alt="Server Architecture Diagram" 
         onclick="openFullscreen(this)">
 
-        <!-- HOTSPOTS ON HOVER -->
+        <!-- Hotspot On Hover -->
         <div class="hotspot-container">
 
           <!-- Security Block (Fail2ban + UFW) -->
@@ -259,49 +229,46 @@
             </div>
           </div>
 
-          <!-- Blur Background when Hotspot Pops up -->
+          <!-- Blur Background when a Hotspot Pops up -->
           <div class="diagram-overlay"></div>
 
-        </div><!-- END:: HOTSPOTS ON HOVER -->
-        <!-- Blur Background when Hotspot Pops up -->
-        <!-- <div class="diagram-overlay"></div> -->
-      </div><!-- END:: ARCHITECTURE DIAGRAM -->
+        </div><!-- end: Hotspot On Hover -->
+      </div><!-- end: Architecture Diagram -->
 
-      <!-- DNS DNS DNS DNS DNS DNS DNS -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>Domain Name System</h2>
         <h4>DNS Setup</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
+      <!-- DNS DNS DNS -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/DNS/dns-dashboard.png" 
              class="img-fluid base-diagram"
              data-fullscreen-src="assets/img/portfolio/server-setup/DNS/dns-dashboard-fullscreen.png"
              alt="DNS Details" 
              onclick="openFullscreen(this)">
-      </div><!-- END:::::  DNS DNS DNS DNS DNS -->
+      </div><!-- end: DNS -->
 
-      <!-- DROPLET DASHBOARD -->      
-      <!-- Section Title -->
+      <!-- Droplet Dashboard -->
       <div class="section-title">
         <h2>Droplet Dashboard</h2>
         <h4>Dashboard</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png" 
              class="img-fluid base-diagram"
              data-fullscreen-src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-fullscreen.png"
              alt="Droplet Dashboard" 
              onclick="openFullscreen(this)">
-      </div><!-- END::::: DROPLET DASHBOARD -->
+      </div><!-- end: Droplet Dashboard -->
 
-    </div><!-- END:: Architecture Container -->
-  </section><!-- END:: ARCHITECTURE SECTION -->
+    </div><!-- end: Architecture Container -->
+  </section><!-- end: Architecture Section -->
 
 
-  <!-- ############################# -->
+  <!-- ============================= -->
   <!-- DOCKER INFRASTRUCTURE Section -->
-  <!-- ############################# -->
   <section class="docker" id="docker">
     <div class="container">
 
@@ -321,17 +288,17 @@
         </div> -->
       </div>
 
-      <!-- DOCKER DIAGRAM -->
-      <!-- Section Title -->
+      <!-- Docker Diagram -->
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>Docker Infrastructure</h4>
-      </div><!-- END:: Section Title --> 
+      </div>
+
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/docker/docker-diagram.webp" class="img-fluid base-diagram"
           alt="Server Architecture Diagram" onclick="openFullscreen(this)">
 
-        <!-- HOTSPOTS ON HOVER -->
+        <!-- Hotspots On Hover -->
         <div class="hotspot-container">
 
           <!-- Network Segregation -->
@@ -347,11 +314,11 @@
             </div>
           </div>
 
-          <!-- Container Resourse Management -->
+          <!-- Container Resource Management -->
           <div class="hotspot container-resourse-management"
             style="top: 30.5%; left: 67.5%; width: 24.5%; height: 5.4%;">
             <div class="hotspot-popup popup-left">
-              <h5>Container Resourse Management</h5>
+              <h5>Container Resource Management</h5>
               <ul>
                 <li>Memory limit: 384m per service</li>
                 <li>Memory reservation: 192m guaranteed</li>
@@ -378,19 +345,18 @@
           <!-- Blur Background when Hotspot Pops up -->
           <div class="diagram-overlay"></div>
 
-        </div><!-- END: Hotspot -->
-      </div><!-- END: DOCKER DIAGRAM -->
+        </div><!-- end: Hotspot -->
+      </div><!-- end: Docker Diagram -->
 
-      <!-- DOCKER-COMPOSE SCREENSHOT -->
-      <!-- Section Title -->
+      <!-- Docker-Compose Screenshot -->
       <div class="section-title">
         <h2>Docker Compose</h2>
         <h4>docker-compose.yaml</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+      
       <div class="compose-container" id="section-container" data-aos="fade-up">
-        <!-- <h4>docker-compose.yaml</h4> -->
-
         <div class="compose-wrapper">
+
           <img src="assets/img/portfolio/server-setup/docker/docker-compose.png" class="img-fluid compose-image"
             alt="Docker Compose Configuration" onclick="openFullscreen(this)">
 
@@ -405,15 +371,14 @@
             <p>Persistent Volumes</p>
           </div>
 
-        </div><!-- END:: Highlight Overlay -->
-      </div><!-- END:: DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
+        </div><!-- end: Highlight Overlay -->
+      </div><!-- end: DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
 
-      <!-- === DOCKER. OTHER SCREENSHOTS. === -->
-      <!-- Section Title -->
+      <!-- === Docker. Other Screenshots. === -->
       <div class="section-title">
         <h2>Screenshots</h2>
         <h4>Details</h4>
-      </div><!-- END:: Section Title -->
+      </div>
       <div class="screenshots-gallery" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -455,27 +420,23 @@
           <!-- More items ??? -->
 
         </div>
-      </div><!-- END:: MASONRY GRID GALLERY    -->
-    
+      </div><!--end: Masonry Grid Gallery    -->
+  
+    </div><!-- Last Div Before Section Ends -->
+  </section><!-- end: Docker Infrastructure Section -->
 
-    </div><!-- LAST DIV BEFORE SECTION ENDS -->
-  </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
 
-
-  <!-- ############################### -->
+  <!-- =============================== -->
   <!-- SECURITY IMPLEMENTATION Section -->
-  <!-- ############################### -->
   <section class="security" id="security">
     <div class="container">
 
-      <!-- =========================  -->
       <!-- === SSL & LetsEncrypt === -->
-      <!-- ========================== -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>Security Details</h2>
         <h4>SSL & LetsEncrypt</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -549,17 +510,16 @@
           <!-- More items ??? -->
 
         </div>
-      </div><!-- END:: MASONRY GRID GALLERY  -->
+      </div><!-- end: Masonry Grid Gallery  -->
 
 
-      <!-- =========================  -->
+      <!-- =================================  -->
       <!-- === HTTP Observatory (Mozilla) === -->
-      <!-- ========================== -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>HTTP Observatory</h2>
         <h4>MDN Report</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -594,19 +554,19 @@
             onclick="openFullscreen(this)">
             <div class="caption">Benchmark</div>
           </div>
+          <!-- More items ??? -->
 
         </div>
-      </div><!-- END:: MASONRY GRID GALLERY  -->
+      </div><!-- end: Masonry Grid Gallery  -->
 
 
       <!-- =========================  -->
       <!-- === Security Headers === -->
-      <!-- ========================== -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>Headers</h2>
         <h4>Security Headers</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -632,18 +592,18 @@
             <div class="caption">Certbot Certificates</div>
           </div> -->
           <!-- More items ??? -->
+
         </div>
-      </div><!-- END:: MASONRY GRID GALLERY  -->
+      </div><!-- end: Masonry Grid Gallery  -->
 
 
-      <!-- =========================  -->
+      <!-- =====================  -->
       <!-- === UFW & fail2ban === -->
-      <!-- ========================== -->
-      <!-- Section Title -->
       <div class="section-title">
         <h2>Firewall</h2>
         <h4>UFW & fail2ban</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -671,24 +631,22 @@
           <!-- More items ??? -->
 
         </div>
-      </div><!-- END:: MASONRY GRID GALLERY  -->
+      </div><!-- end: Masonry Grid Gallery  -->
 
-    </div><!-- LAST DIV BEFORE SECTION ENDS -->
-  </section><!-- END:: DOCKER INFRASTRUCTURE Section -->
+    </div><!-- Last Div Before Section Ends -->
+  </section><!-- end: Docker Infrastructure Section -->
 
 
-  <!-- ########################### -->
+  <!-- =========================== -->
   <!-- NGINX CONFIGURATION Section -->
-  <!-- ########################### -->
   <section class="nginx" id="nginx">
     <div class="nginx container">
 
-      <!-- 1. REVERSE PROXY -->
-      <!--  Section Title -->
+      <!-- 1. Reverse Proxy -->
       <div class="section-title">
         <h2>Key Benefits</h2>
         <h4>Nginx as Reverse Proxy</h4>
-      </div><!-- END:: Section Title -->
+      </div>
           
       <div class="row align-items-center" id="section-container">
         <p>
@@ -707,9 +665,9 @@
                   <li><i class="bi bi-chevron-right"></i> <span>Enhances security through IP masking</span></li>
                   <li><i class="bi bi-chevron-right"></i> <span>Simplifies backend maintenance</span></li>
                 </ul>
-            </div><!-- END:: class="tech-overview" -->
-          </div><!-- END:: class="overview-content" -->
-        </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+            </div><!-- end: class="tech-overview" -->
+          </div><!-- end: class="overview-content" -->
+        </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
         
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
@@ -717,18 +675,17 @@
             class="img-fluid base-diagram"
             alt="Reverse Proxy Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
-        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+          </div><!-- end: class="overview-image" id="image-shadow-light" -->
+        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
       
-      </div><!-- END:: 1. Reverse Proxy (class="row") -->
+      </div><!-- end: 1. Reverse Proxy (class="row") -->
 
 
-      <!-- 2. LOAD BALANCER -->
-      <!--  Section Title -->
+      <!-- 2. Load Balancer -->
       <div class="section-title">
         <h2>Nginx. Key Benefits</h2>
         <h4>Load Balancer</h4>
-      </div><!-- END:: Section Title -->
+      </div>
           
       <div class="row align-items-center" id="load-balancer-section">
         <p>
@@ -741,8 +698,8 @@
             class="img-fluid base-diagram"
             alt="Load Balancer Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
-        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+          </div><!-- end: class="overview-image" id="image-shadow-light" -->
+        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
 
         <div class="col-lg-5" data-aos="fade-right">
           <!-- <h3>Nginx as Reverse Proxy</h3> -->
@@ -757,19 +714,19 @@
                 <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
                 <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
               </ul>
-          </div><!-- END:: class="tech-overview" -->
-        </div><!-- END:: class="overview-content" -->
-      </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+          </div><!-- end: class="tech-overview" -->
+        </div><!-- end: class="overview-content" -->
+      </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
       
-      </div><!-- END:: 2. LOAD BALANCER -->
+      </div><!-- end: 2. Load Balancer -->
 
 
-      <!-- 3. SERVER BLOCKS -->
-      <!--  Section Title -->
+      <!-- 3. Server Blocks -->
       <div class="section-title">
         <h2>Technical Details</h2>
         <h4>Server Blocks</h4>
-      </div><!-- END:: Section Title -->
+      </div>
+
       <div class="row align-items-center" id="section-container">
         <p>
           Server Blocks (or Virtual Hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
@@ -787,9 +744,9 @@
                   <li><i class="bi bi-chevron-right"></i> <span>Individual SSL certificates</span></li>
                   <li><i class="bi bi-chevron-right"></i> <span>Resource isolation</span></li>
                 </ul>
-            </div><!-- END:: class="tech-overview" -->
-          </div><!-- END:: class="overview-content" -->
-        </div><!-- END:: class="col-lg-7" data-aos="fade-right" -->
+            </div><!-- end: class="tech-overview" -->
+          </div><!-- end: class="overview-content" -->
+        </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
         
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
@@ -797,18 +754,17 @@
             class="img-fluid base-diagram"
             alt="Server Blocks Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- END:: class="overview-image" id="image-shadow-light" -->
-        </div><!-- END:: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+          </div><!-- end: class="overview-image" id="image-shadow-light" -->
+        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
       
-      </div><!-- END:: 3. Server Blocks (class="row") -->   
+      </div><!-- end: 3. Server Blocks (class="row") -->   
       
 
-      <!-- === 4. NGINX. OTHER SCREENSHOTS. === -->
-      <!-- Section Title -->
+      <!-- === 4. Nginx. Other Screenshots. === -->
       <div class="section-title">
         <h2>Screenshots</h2>
         <h4>Details</h4>
-      </div><!-- END:: Section Title -->
+      </div>
       <div class="screenshots-gallery" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
@@ -826,35 +782,14 @@
             onclick="openFullscreen(this)">
             <div class="caption">Container/Port Details</div>
           </div> -->
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" 
-            alt="Docker Volumes Details" 
-            onclick="openFullscreen(this)">
-            <div class="caption">Volume Details</div>
-          </div> -->
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.png" 
-            alt="Docker Network Details" 
-            onclick="openFullscreen(this)">
-            <div class="caption">Network Details</div>
-          </div> -->
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-stats.png" 
-            alt="Docker Stats" 
-            onclick="openFullscreen(this)">
-            <div class="caption">Container Stats</div>
-          </div>           -->
           <!-- More items ??? -->
 
-        </div><!-- END:: class="masonry-grid" -->
-      </div><!-- END:: MASONRY GRID GALLERY    -->
+        </div><!-- end: class="masonry-grid" -->
+      </div><!-- end: Masonry Grid Gallery    -->
 
       
-    </div><!-- END:: 0. nginx container -->
-  </section><!-- END:: NGINX CONFIGURATION Section -->
+    </div><!-- end: 0. nginx container -->
+  </section><!-- end: Nginx Configuration Section -->
 
 
   <!-- Vendor JS -->
@@ -867,12 +802,7 @@
   <!-- AOS JS -->
   <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
 
-  <!-- GSAP -->
-  <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.4/gsap.min.js"></script> -->
-  <!-- <script>initTitleAnimation();</script> -->
-  <!-- <script src="assets/js/title-animation.js" defer></script> -->
-
-  <!-- Custom JS -->
+  <!-- Main JS -->
   <script src="assets/js/server-setup.js"></script>
 
 <body>

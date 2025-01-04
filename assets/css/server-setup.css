@@ -50,13 +50,6 @@ h6 {
 /*======================
 ####### Header #########
 ======================*/
-
-
-
-
-/* !!!!!!!!!! */
-
-
 /* Home Icon + "Home" */
 .floating-home {
   display: flex;
@@ -73,12 +66,6 @@ h6 {
   align-items: center;
   gap: 5px;
   margin-right: auto;
-
-  /* font-size: 48px; */
-  /* margin: 0; */
-  /* padding: 0; */
-  /* line-height: 1; */
-  /* font-weight: 700; */
   font-family: "Poppins", sans-serif;
 }
 
@@ -90,73 +77,6 @@ h6 {
 .floating-home i {
   font-size: 16px;
 }
-
-/* ############################################################################# */
-
-/* .title-container {
-  text-decoration: none;
-  color: #4CAF50;
-  align-content: center;
-  font-size: 30px;
-  margin-right: auto;
-} */
-
-  /* animation: glow 2s ease-in-out infinite; */
-  /* animation: pulse 4s ease-in-out infinite; */
-  /* animation: shake 2s infinite; */
-  /* animation: colorPulse 4s ease-in-out infinite; */
-  /* animation: breathing 4s ease-in-out infinite; */
-  /* color: #18d26e; */
-
-/* !!!!!!!!!! */
-
-/* #project-title {
-  animation: reveal 5s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-} */
-
-/* .title-container {
-  align-content: center;
-  position: relative;
-  height: 40px;
-  margin-right: auto;
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-#project-title-1, #project-title-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-decoration: none;
-  color: #4CAF50;
-  font-size: 30px;
-}
-
-#project-title-1 {
-  animation: revealFirst 10s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-}
-
-#project-title-2 {
-  animation: revealSecond 10s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-}
-
-@keyframes revealFirst {
-  0%, 45% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  50%, 95% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-@keyframes revealSecond {
-  0%, 45% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  50%, 95% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-/* ############################################################################# */
 
 .title-container {
   flex: 1;
@@ -177,16 +97,6 @@ h6 {
   animation-timing-function: ease-in-out;
 }
 
-/* #project-title-2 {
-  animation: fadeSecond 8s infinite;
-  animation-timing-function: ease-in-out;
-} */
-
-/* #project-title-1 {
-  animation: fadeFirst 8s infinite;
-  animation-timing-function: ease-in-out;
-} */
-
 #project-title-2 {
   animation: fadeSecond 12s infinite;
   animation-timing-function: ease-in-out;
@@ -196,34 +106,6 @@ h6 {
   flex-shrink: 0;
   margin-left: auto;
 }
-
-/* @keyframes fadeFirst {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-}
-
-@keyframes fadeSecond {
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-/* @keyframes fadeFirst {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-}
-
-@keyframes fadeSecond {
-  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  15% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-} */
 
 @keyframes fadeFirst {
   0%, 30% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
@@ -236,59 +118,6 @@ h6 {
   50%, 80% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
   100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
 }
-
-/* WORKS !!! */
-/* @keyframes fadeFirst {
-  0%, 45% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  50%, 95% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-@keyframes fadeSecond {
-  0%, 45% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  50%, 95% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-
-
-
-/* @keyframes fadeFirst {
-  0%, 45% { opacity: 1; }
-  50%, 95% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeSecond {
-  0%, 45% { opacity: 0; }
-  50%, 95% { opacity: 1; }
-  100% { opacity: 0; }
-} */
-
-/* @keyframes fadeFirst {
-    0%, 40% { opacity: 1; }
-    45%, 90% { opacity: 0; }
-    95%, 100% { opacity: 1; }
-}
-
-@keyframes fadeSecond {
-    0%, 40% { opacity: 0; }
-    45%, 90% { opacity: 1; }
-    95%, 100% { opacity: 0; }
-} */
-
-
-
-/* ############################################################################# */
-
-/* TITLE ANIMATION */
-/* @keyframes reveal {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
 
 @keyframes shine {
   to {
@@ -348,15 +177,6 @@ h6 {
   100% { transform: translateX(0); }
 }
 
-/* !!!!!!!!!! */
-
-
-
-
-
-
-
-
 /* Header Continue... */
 #header {
   transition: ease-in-out 0.3s;
@@ -365,8 +185,6 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  /* align-items: center; */
-  /* align-items: end; */
   z-index: 997;
   overflow-y: auto;
 }
@@ -386,16 +204,12 @@ h6 {
 
 #header h1 a,
 #header h1 a:hover {
-  /* color: #fff; */
-  /* color: #c21414; */
   line-height: 1;
   display: inline-block;
 }
 
 #header a,
 #header a:hover {
-  /* color: #fff; */
-  /* color: #c21414; */
   line-height: 1;
   display: inline-block;
 }
@@ -412,14 +226,6 @@ h6 {
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
 }
-
-/* #header h3 a,
-#header h3 a:hover {
-  color: #fff;
-  color: #35e888;
-  line-height: 1;
-  display: inline-block;
-} */
 
 #header img {
   padding: 0;
@@ -486,25 +292,11 @@ h6 {
   display: none;
 }
 
-
-
-
-/* !!!!!!!!!! */
-
-
 #header.header-top h1 {
   /* margin-right: 20px; */
   margin-right: auto;
   font-size: 36px;
 }
-
-/* !!!!!!!!!! */
-
-
-
-
-
-
 
 #header.header-top img {
   max-height: 60px;
@@ -513,9 +305,7 @@ h6 {
 
 #header.header-top .container {
   display: flex;
-  /* align-items: center; */
   justify-content: end;
-  /* align-items: end; */
 }
 
 #header.header-top .navbar {
@@ -535,8 +325,6 @@ h6 {
 /*======================
 ### NAVIGATION MENU ####
 ======================*/
-
-/* DESKTOP NAVIGATION */
 .navbar {
   padding: 0;
   margin-top: 35px;
@@ -606,7 +394,6 @@ h6 {
   color: #fff;
 }
 
-/* MOBILE NAVIGATION */
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -745,10 +532,6 @@ section .container {
 /*======================================
 ########## SERVER SETUP PAGE ##########
 ======================================*/
-
-/* ############################# */
-/* ##### CUSTOM  STYLES    ##### */
-
 #section-container {
   margin-bottom: 70px;
 }
@@ -767,14 +550,7 @@ section .container {
   box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
 }
 
-/* #### END:: CUSTOM  STYLES ##### */
-/* ############################### */
-
-
-
-/* ############################# */
 /* ##### ANIMATION CLASSES ##### */
-/* ############################# */
 [data-aos].fade-initial {
   opacity: 0;
   transition-property: opacity, transform;
@@ -784,7 +560,6 @@ section .container {
   opacity: 1;
 }
 
-/* Rest of the animations should use transform instead of opacity */
 [data-aos='fade-up'] {
   transform: translateY(50px);
   opacity: 0;
@@ -832,7 +607,6 @@ section .container {
 /* ---------------------------- */
 /*   ARCHITECTURE DIAGRAM       */
 /* ---------------------------- */
-
 .overview-image {
   position: relative;
   border-radius: 5px;
@@ -862,9 +636,6 @@ section .container {
   max-height: 100%;
   object-fit: contain;
 }
-
-
-
 
 .overview-content h3 {
   color: #18d26e;
@@ -972,7 +743,6 @@ section .container {
 /* ---------------------------- */
 /*    INTERACTIVE HOTSPOTS      */
 /* ---------------------------- */
-
 .hotspot-container {
   position: absolute;
   top: 0;
@@ -994,9 +764,7 @@ section .container {
   transition: all 0.3s ease;
 }
 
-/* ============= */
 /* POPUP STYLING */
-/* ============= */
 .hotspot-popup {
   position: absolute;
   visibility: hidden;
@@ -1043,11 +811,6 @@ section .container {
   opacity: 1;
 }
 
-/* .hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-  border-radius: 4px;
-} */
-
 .hotspot-popup h5 {
   color: #18d26e;
   margin-bottom: 10px;
@@ -1075,54 +838,6 @@ section .container {
   left: 0;
 }
 
-/* ######################## */
-/* HIGHLIGHT EFFECT OPTIONS */
-/* ######################## */
-
-/* SIMPLE HIGHLIGHT */
-/* .hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-} */
-
-
-/* GLOWING BORDER */
-/* .hotspot:hover {
-  box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
-  border: 1px solid rgba(24, 210, 110, 0.5);
-} */
-
-
-/* PULSE EFFECT */
-/* .hotspot:hover {
-  animation: pulse 1.5s infinite;
-} */
-
-/* @keyframes pulse {
-  0% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.4);
-  }
-  70% {
-      box-shadow: 0 0 0 10px rgba(24, 210, 110, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
-  }
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* NEW NEW NEW NEW */
-
 /* Overlay styling */
 .diagram-overlay {
   position: absolute;
@@ -1137,10 +852,6 @@ section .container {
   pointer-events: none;
   border-radius: 5px;
 }
-
-/* .hotspot {
-  z-index: 101;
-} */
 
 .hotspot:hover {
   animation: pulse 1.5s infinite;
@@ -1173,19 +884,9 @@ section .container {
   }
 }
 
-/* NEW NEW NEW NEW */
-
-
-
-
-
-
-
-
 /* ############################# */
 /* ##### DOCKER SECTION ######## */
 /* ############################# */
-
 .project-context {
   background: rgba(24, 210, 110, 0.05);
   border-left: 3px solid #18d26e;
@@ -1217,8 +918,6 @@ section .container {
   color: #35e888;
 }
 
-/* ================ */
-
 .compose-container {
   /* margin-top: 30px; */
   position: relative;
@@ -1240,9 +939,8 @@ section .container {
 }
 
 /* ========================== */
-/* Docker Compose HOVER. */
+/* Docker Compose Hover.      */
 /* ========================== */
-
 .compose-wrapper {
   /* width: 85%; */
   margin: 0 auto;
@@ -1316,11 +1014,9 @@ section .container {
   margin: 0;
 }
 
-
 /* ========================== */
-/* `docker-compose` HOVER - 2 */
+/*   Docker Compose Hover - 2 */
 /* ========================== */
-
 .code-overlay {
   position: fixed;
   top: 0;
@@ -1361,14 +1057,9 @@ section .container {
   color: #ffffff;
 }
 
-/* END:: `docker-compose` HOVER. */
-/* ========================== */
-
-
 /* ====================== */
-/* = MASONRY GRID GALLERY = */
+/*   MASONRY GRID GALLERY */
 /* ====================== */
-
 .masonry-grid {
   column-count: 3;
   column-gap: 2rem;
@@ -1404,15 +1095,9 @@ section .container {
   }
 }
 
-/* END:: MASONRY GRID GALLERY */
-/* ======================== */
-
-
-
-/*=========================
-## LOAD BALANCER ##########
-=========================*/
-
+/*==========================
+==  Load Balancer Section =
+==========================*/
 #load-balancer-section {
   margin-bottom: 70px;
 }
@@ -1430,26 +1115,3 @@ section .container {
 #load-balancer-section .tech-list li i {
   margin-right: 5px;
 }
-
-
-/* END: LOAD BALANCER
-===========================*/
-
-
-/* #project-title {
-  text-decoration: none;
-  color: #4CAF50;
-  animation: breathing 4s ease-in-out infinite;
-}
-
-@keyframes breathing {
-  0% {
-      opacity: 0.8;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0.8;
-  }
-} */
