@@ -550,6 +550,10 @@ section .container {
   box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
 }
 
+.nginx.container h4 {
+  font-size: 2.0rem;
+}
+
 /* ##### ANIMATION CLASSES ##### */
 [data-aos].fade-initial {
   opacity: 0;
