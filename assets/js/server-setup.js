@@ -342,3 +342,107 @@ function showCodeSnippet(type) {
       }
     });
 }
+
+// OPT 1. FLOATING RETURN BUTTON. ANIMATED APPEAR ON SCROLL
+// window.addEventListener('scroll', function() {
+//   const button = document.querySelector('.floating-return-btn');
+//   if (window.scrollY > 100) {
+//     button.classList.add('visible');
+//   } else {
+//     button.classList.remove('visible');
+//   }
+// });
+
+// OPT 2. FLOATING RETURN BUTTON. ANIMATED APPEAR ON SCROLL
+// Track if button has appeared at least once
+let buttonRevealed = false;
+let scrollTimer;
+
+window.addEventListener('load', function() {
+  const button = document.querySelector('.floating-return-btn');
+  
+  // Initial check on page load
+  if (window.scrollY >= 100) {
+    button.classList.add('visible');
+    buttonRevealed = true;
+  }
+});
+
+window.addEventListener('scroll', function() {
+  const button = document.querySelector('.floating-return-btn');
+  
+  // Clear the existing timeout
+  clearTimeout(scrollTimer);
+  
+  // Make fully opaque while scrolling
+  button.style.opacity = "0.3";
+  
+  // If we've scrolled enough and button hasn't been revealed yet
+  if (window.scrollY >= 100 && !buttonRevealed) {
+    button.classList.add('visible');
+    buttonRevealed = true;
+  }
+  
+  // Set timeout to reduce opacity when scrolling stops
+  scrollTimer = setTimeout(function() {
+    if (buttonRevealed) {
+      button.style.opacity = "1";
+    }
+  }, 1000); // 1000ms after scrolling stops
+});
+
+// TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST
+// OPEN IMG SIDE-by-SIDE
+function openSideBySideFullscreen(img) {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'fullscreen-overlay';
+
+  // Create close button
+  const closeBtn = document.createElement('span');
+  closeBtn.className = 'close-button';
+  closeBtn.innerHTML = '×';
+
+  // Create container for side-by-side images
+  const sideBySideContainer = document.createElement('div');
+  sideBySideContainer.className = 'side-by-side-container';
+  
+  // First image
+  const img1 = document.createElement('img');
+  img1.src = img.dataset.img1Fullscreen || img.src;
+  img1.className = 'side-by-side-image';
+  img1.alt = img.dataset.img1Alt || img.alt;
+  
+  // Second image
+  const img2 = document.createElement('img');
+  img2.src = img.dataset.img2Fullscreen;
+  img2.className = 'side-by-side-image';
+  img2.alt = img.dataset.img2Alt || 'Comparison Image';
+  
+  // Add images to container
+  sideBySideContainer.appendChild(img1);
+  sideBySideContainer.appendChild(img2);
+  
+  // Add container to overlay
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(sideBySideContainer);
+  document.body.appendChild(overlay);
+
+  // Show overlay with fade effect
+  setTimeout(() => overlay.style.display = 'block', 0);
+
+  // Close handlers
+  const closeFullscreen = () => {
+    overlay.style.display = 'none';
+    overlay.remove();
+  };
+
+  closeBtn.onclick = closeFullscreen;
+  overlay.onclick = (e) => {
+    if (e.target !== closeBtn) closeFullscreen();
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFullscreen();
+  });
+}
+// Test-test-test-test-test-test-test-test-test-test-test-test

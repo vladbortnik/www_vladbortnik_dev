@@ -32,16 +32,34 @@
 </head>
 
 <body>
+
+  <!-- FLOATING RETURN BUTTON -->
+  <a href="index.html" class="floating-return-btn">
+    <i class="bi bi-house-door"></i>
+    <span>Back to Portfolio</span>
+  </a>
+  <!-- END: Floating Return Button -->
+
   <!-- ====================== -->
   <!-- ======= HEADER ======= -->
   <header id="header">
     <div class="container">
-      <a href="index.html" class="floating-home"><i class="bi bi-arrow-return-left"></i> Home</a>
 
-      <div class="title-container">
+      <!-- <a href="index.html" class="floating-home"><i class="bi bi-arrow-return-left"></i> Home</a> -->
+
+      <!-- <div class="title-container">
         <a id="project-title-1" href="server-setup.html">Nginx. From the ground up</a>
         <a id="project-title-2" href="server-setup.html">Production-Grade Multi-Application Server</a>
+      </div> -->
+
+      <div class="project-badge pill">
+        <span>PROJECT #1</span>
       </div>
+
+      <div class="project-title">
+        <a href="server-setup.html">Production-Grade Multi-Application Server</a>
+      </div>
+      <!-- <a href="index.html" class="back-to-portfolio"><i class="bi bi-arrow-return-left"></i> Back to Portfolio</a> -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -57,6 +75,10 @@
 
     </div>
   </header><!-- end: HEADER -->
+
+  
+  <!-- ======= PROJECT BANNER ======= -->
+  <!-- ======= END: Project Banner ======= -->
 
 
   <!-- ================ -->
@@ -255,13 +277,27 @@
         <h4>Dashboard</h4>
       </div>
 
-      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+      <!-- <div class="diagram-container" id="section-container" data-aos="zoom-in">
         <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png" 
              class="img-fluid base-diagram"
              data-fullscreen-src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-fullscreen.png"
              alt="Droplet Dashboard" 
              onclick="openFullscreen(this)">
-      </div><!-- end: Droplet Dashboard -->
+      </div> -->
+
+          <!-- OPEN IMG SIDE-by-SIDE -->
+          <div class="diagram-container" id="section-container" data-aos="zoom-in">
+            <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png"
+                class="img-fluid base-diagram"
+                data-img1-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.png"
+                data-img2-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.png"
+                data-img1-alt="Droplet Dashboard 1"
+                data-img2-alt="Droplet Dashboard 2"
+                alt="Droplet Dashboard" 
+                onclick="openSideBySideFullscreen(this)">
+                <!-- <div class="caption">Droplet Dashboard</div> -->
+          </div>
+
 
     </div><!-- end: Architecture Container -->
   </section><!-- end: Architecture Section -->
@@ -438,14 +474,27 @@
       </div>
 
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
+
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test.png" 
-            alt="SSL Lab Test" 
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.png" 
+            alt="SSL Lab Test Score" 
             onclick="openFullscreen(this)">
-            <div class="caption">SSL Lab Test (Qualys)</div>
+            <div class="caption">SSL Lab Test Score</div>
           </div>
+
+          <!-- OPEN IMG SIDE-by-SIDE -->
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test.png"
+                data-img1-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-1.png"
+                data-img2-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-2.png"
+                data-img1-alt="SSL Lab Test 1"
+                data-img2-alt="SSL Lab Test 2"
+                alt="SSL Lab Test" 
+                onclick="openSideBySideFullscreen(this)">
+                <div class="caption">SSL Lab Test (Qualys)</div>
+          </div>
+
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification.png" 
@@ -524,6 +573,14 @@
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.png" 
+            alt="Scoring Details" 
+            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.png"
+            onclick="openFullscreen(this)">
+            <div class="caption">HTTP Observatory Score</div>
+          </div>
+          <!-- More items -->
+          <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score.png" 
             alt="Scoring Details" 
             data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score-fullscreen.png"
@@ -570,6 +627,13 @@
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
         <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
+          <div class="gallery-item" id="image-shadow">
+            <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.png" 
+            alt="Security Headers Score" 
+            onclick="openFullscreen(this)">
+            <div class="caption">Security Headers Score</div>
+          </div>
+          <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-report.png" 
             alt="Security Headers Test" 
