@@ -253,3 +253,44 @@
    */
   new PureCounter();  
 })()
+
+/* ##### openFullscreen(img) ##### */
+function openFullscreen(img) {
+  // Create overlay
+  const overlay = document.createElement('div');
+  overlay.className = 'fullscreen-overlay';
+
+  // Create close button
+  const closeBtn = document.createElement('span');
+  closeBtn.className = 'close-button';
+  closeBtn.innerHTML = '×';
+
+  // Create fullscreen image
+  const fullImg = document.createElement('img');
+  // Check if there's a different image specified for fullscreen
+  fullImg.src = img.dataset.fullscreenSrc || img.src;
+  fullImg.className = 'fullscreen-image';
+
+  // Add elements to overlay
+  overlay.appendChild(closeBtn);
+  overlay.appendChild(fullImg);
+  document.body.appendChild(overlay);
+
+  // Show overlay with fade effect
+  setTimeout(() => overlay.style.display = 'block', 0);
+
+  // Close handlers
+  const closeFullscreen = () => {
+    overlay.style.display = 'none';
+    overlay.remove();
+  };
+
+  closeBtn.onclick = closeFullscreen;
+  overlay.onclick = (e) => {
+    if (e.target === overlay || e.target === fullImg) closeFullscreen();
+  };
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') closeFullscreen();
+  });
+  // fullImg.addEventListener('onclick', closeFullscreen);
+}

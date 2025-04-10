@@ -204,7 +204,7 @@
 ******* SERVER SETUP SPECIFIC *****
 **********************************/
 
-/* ##### DIAGRAM ANIMATION ##### */
+/* ##### openFullscreen(img) ##### */
 function openFullscreen(img) {
   // Create overlay
   const overlay = document.createElement('div');
@@ -391,7 +391,6 @@ window.addEventListener('scroll', function() {
   }, 1000); // 1000ms after scrolling stops
 });
 
-// TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST
 // OPEN IMG SIDE-by-SIDE
 function openSideBySideFullscreen(img) {
   // Create overlay
@@ -445,4 +444,3 @@ function openSideBySideFullscreen(img) {
     if (e.key === 'Escape') closeFullscreen();
   });
 }
-// Test-test-test-test-test-test-test-test-test-test-test-test

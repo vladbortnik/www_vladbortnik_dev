@@ -48,7 +48,7 @@
   })
 
   /**
-   * Scrool with ofset on links with a class name .scrollto
+   * Scroll with offset on links with a class name .scrollto
    */
   on('click', '#navbar .nav-link', function(e) {
     let section = select(this.hash)
@@ -188,7 +188,7 @@
   });
 
   /**
-   * Porfolio isotope and filter
+   * Portfolio isotope and filter
    */
   window.addEventListener('load', () => {
     let portfolioContainer = select('.portfolio-container');
@@ -251,22 +251,5 @@
   /**
    * Initiate Pure Counter 
    */
-  new PureCounter();
-
-  /* Email & Phone in Base64 */
-  document.getElementById("fone").innerText = atob("MTIzNDU2Nzg5MA==");
-  document.getElementById("mail").innerText = atob("bm8tcmVwbHlAZXhhbXBsZS5jb20=");
-
-  /**********************************
-   ******* SERVER SETUP PAGE ********
-   *********************************/
-  // const lightbox = GLightbox({
-  //   selector: '.glightbox',
-  //   touchNavigation: true,
-  //   loop: false,
-  //   autoplayVideos: true,
-  //   closeButton: true
-  // });
-  
-  
+  new PureCounter();  
 })()

@@ -12,7 +12,60 @@ body {
 body::before {
   content: "";
   position: fixed;
+  /* DEFAULT BACKGROUND */
   background: #040404 url("../img/background.jpg") top right no-repeat;
+
+  /* OPTIONS FOR DIFF NAV-BARs */
+
+  /* OPT 1. Nav-Bar 1: Purple/Blue Gradient. Back-Ref: Line 324 */
+  /* ! Deep Space:  */
+  /* background: #0a1129; */
+  /* ! Midnight Slate:  */
+  /* background: #1a1a2e; */
+  /* !!!!! Cosmic Depth:  */
+  background: linear-gradient(135deg, #190d30 0%, #0c1e57 100%);
+  /* !!! Twilight Fade:  */
+  /* background: radial-gradient(circle at top right, #1a1a2e 0%, #0c0a1e 100%); */
+  
+  /* OPT 2. Nav-Bar 2: Green Gradient Back-Ref: Line 327 */
+  /* ! Forest Depth:  */
+  /* background: #0a2017; */
+  /* ! Carbon Moss:  */
+  /* background: #171f1a; */
+  /* !!! Emerald Depths:  */
+  /* background: linear-gradient(135deg, #030a07 0%, #0c4337 100%); */
+  /* !! Biome Fade:  */
+  /* background: radial-gradient(circle at top right, #171f1a 0%, #0d1f14 100%); */
+  /* !!! Biome Fade 2:  */
+  /* background: radial-gradient(circle at top left, #26392e 0%, #236b25 100%); */
+
+  /* OPT 3. Nav-Bar 3: Orange/Red Gradient Back-Ref: Line 330 */
+  /* !! Dark Ember:  */
+  /* background: #221200; */
+  /* ! Charred Carbon:  */
+  /* background: #1a1512; */
+  /* !!! Volcanic Depth:  */
+  /* background: linear-gradient(135deg, #221200 0%, #301500 100%); */
+  /* !! Heat Sink:  */
+  /* background: radial-gradient(circle at top right, #1a1512 0%, #241a12 100%); */
+  /* !!!! Ember Glow:  */
+  /* background: linear-gradient(170deg, #1a0f00 0%, #2d1500 90%, #3d1800 100%); */
+  /* !!! Terracotta Sunset:  */
+  /* background: linear-gradient(125deg, #1c0d00 0%, #261203 85%, #331705 100%); */
+  /* !! Forge Depth:  */
+  /* background: radial-gradient(circle at 75% 25%, #331500 0%, #220e00 50%, #1a0a00 100%); */
+  /* !! Cinnamon Shadow:  */
+  /* background: linear-gradient(90deg, #1e1007 0%, #261209 100%); */
+  /* ! Volcanic Nightfall:  */
+  /* background: linear-gradient(to bottom right, #1f1209 0%, #150d07 50%, #0e0702 100%); */
+  /* !-!!!! Molten Core:  */
+  /* background: radial-gradient(ellipse at bottom, #2c1200 0%, #1a0c00 70%, #140800 100%); */
+
+  /* OPT 4. Nav-Bar-4. */
+  /* !!!!! Cosmic Depth:  */
+  /* background: linear-gradient(135deg, #01052e 0%, #002f30 100%); */
+
+
   background-size: cover;
   left: 0;
   right: 0;
@@ -50,312 +103,92 @@ h6 {
 /*======================
 ####### Header #########
 ======================*/
-
-
-
-
-/* !!!!!!!!!! */
-
-
-/* Home Icon + "Home" */
-.floating-home {
+/* Header container adjustments */
+#header .container {
   display: flex;
+  align-items: center;
   flex-wrap: wrap;
   position: relative;
-  /* top: 20px; */
-  /* left: 20px; */
-  background: rgba(13, 110, 253, 1);
-  padding: 8px 15px;
-  border-radius: 20px;
-  color: #fff;
-  z-index: 998;
-  /* display: inline-block; */
+  padding: 15px 20px;
+}
+
+/* Pill/Rounded Project Badge */
+.project-badge.pill {
+  background-color: #ff5722; /* Orange */
+  color: white;
+  border-radius: 25px;
+  padding: 6px 16px;
+  font-weight: 600;
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-right: 20px;
+  box-shadow: 0 2px 5px rgba(255, 87, 34, 0.3);
+}
+
+.project-badge.pill span {
+  display: inline-block;
+}
+
+/* Project Title */
+.project-title {
+  flex-grow: 1;
+}
+
+.project-title a {
+  color: white;
+  font-size: 18px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.project-title a:hover {
+  color: #ff5722;
+  /* color: rgba(255, 255, 255, 0.8); */
+}
+
+/* Back to Portfolio link */
+.back-to-portfolio {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  display: flex;
   align-items: center;
-  gap: 5px;
-  margin-right: auto;
-
-  /* font-size: 48px; */
-  /* margin: 0; */
-  /* padding: 0; */
-  /* line-height: 1; */
-  /* font-weight: 700; */
-  font-family: "Poppins", sans-serif;
-}
-
-.floating-home:hover {
-  background: rgba(24, 210, 110, 0.4);
-  transform: translateX(5px);
-}
-
-.floating-home i {
-  font-size: 16px;
-}
-
-/* ############################################################################# */
-
-/* .title-container {
-  text-decoration: none;
-  color: #4CAF50;
-  align-content: center;
-  font-size: 30px;
-  margin-right: auto;
-} */
-
-  /* animation: glow 2s ease-in-out infinite; */
-  /* animation: pulse 4s ease-in-out infinite; */
-  /* animation: shake 2s infinite; */
-  /* animation: colorPulse 4s ease-in-out infinite; */
-  /* animation: breathing 4s ease-in-out infinite; */
-  /* color: #18d26e; */
-
-/* !!!!!!!!!! */
-
-/* #project-title {
-  animation: reveal 5s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-} */
-
-/* .title-container {
-  align-content: center;
-  position: relative;
-  height: 40px;
-  margin-right: auto;
-  color: #4CAF50;
-  text-decoration: none;
-}
-
-#project-title-1, #project-title-2 {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  text-decoration: none;
-  color: #4CAF50;
-  font-size: 30px;
-}
-
-#project-title-1 {
-  animation: revealFirst 10s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-}
-
-#project-title-2 {
-  animation: revealSecond 10s infinite;
-  animation-timing-function: cubic-bezier(.9, 0, .1, 1);
-}
-
-@keyframes revealFirst {
-  0%, 45% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  50%, 95% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-@keyframes revealSecond {
-  0%, 45% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  50%, 95% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-/* ############################################################################# */
-
-.title-container {
-  flex: 1;
-  /* height: 45px; */
-  position: relative;
-  text-align: center;
-}
-
-#project-title-1, #project-title-2 {
-  position: absolute;
-  left: 0;
-  right: 0;
-  text-decoration: none;
-  color: #4CAF50;
-  font-size: 30px;
-  padding: 0px 0px 5px;
-  animation: fadeFirst 12s infinite;
-  animation-timing-function: ease-in-out;
-}
-
-/* #project-title-2 {
-  animation: fadeSecond 8s infinite;
-  animation-timing-function: ease-in-out;
-} */
-
-/* #project-title-1 {
-  animation: fadeFirst 8s infinite;
-  animation-timing-function: ease-in-out;
-} */
-
-#project-title-2 {
-  animation: fadeSecond 12s infinite;
-  animation-timing-function: ease-in-out;
-}
-
-.navbar {
-  flex-shrink: 0;
   margin-left: auto;
+  font-size: 14px;
+  transition: color 0.3s;
 }
 
-/* @keyframes fadeFirst {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+.back-to-portfolio i {
+  margin-right: 5px;
 }
 
-@keyframes fadeSecond {
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-/* @keyframes fadeFirst {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
+.back-to-portfolio:hover {
+  color: #ff5722; /* Orange hover */
 }
 
-@keyframes fadeSecond {
-  0% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  15% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(0 0, 0 0, 0 100%, 0 100%); }
-} */
-
-@keyframes fadeFirst {
-  0%, 30% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  45%, 90% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-@keyframes fadeSecond {
-  0%, 40% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  50%, 80% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-}
-
-/* WORKS !!! */
-/* @keyframes fadeFirst {
-  0%, 45% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  50%, 95% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  100% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-}
-
-@keyframes fadeSecond {
-  0%, 45% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-  50%, 95% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-
-
-
-/* @keyframes fadeFirst {
-  0%, 45% { opacity: 1; }
-  50%, 95% { opacity: 0; }
-  100% { opacity: 1; }
-}
-
-@keyframes fadeSecond {
-  0%, 45% { opacity: 0; }
-  50%, 95% { opacity: 1; }
-  100% { opacity: 0; }
-} */
-
-/* @keyframes fadeFirst {
-    0%, 40% { opacity: 1; }
-    45%, 90% { opacity: 0; }
-    95%, 100% { opacity: 1; }
-}
-
-@keyframes fadeSecond {
-    0%, 40% { opacity: 0; }
-    45%, 90% { opacity: 1; }
-    95%, 100% { opacity: 0; }
-} */
-
-
-
-/* ############################################################################# */
-
-/* TITLE ANIMATION */
-/* @keyframes reveal {
-  0% { clip-path: polygon(0 0, 0 0, 0 100%, 0% 100%); }
-  15% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  85% { clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%); }
-  100% { clip-path: polygon(100% 0, 100% 0, 100% 100%, 100% 100%); }
-} */
-
-
-@keyframes shine {
-  to {
-      background-position: 200% center;
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  #header .container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .project-badge.pill {
+    margin-bottom: 10px;
+    align-self: flex-start;
+  }
+  
+  .project-title {
+    margin-bottom: 10px;
+    width: 100%;
+  }
+  
+  .back-to-portfolio {
+    margin-left: 0;
+    margin-bottom: 15px;
   }
 }
-
-@keyframes breathing {
-  0% {
-      opacity: 0.8;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0.8;
-  }
-}
-
-@keyframes colorPulse {
-  0% {
-      color: #4CAF50;
-  }
-  50% {
-      color: #2E7D32;
-  }
-  100% {
-      color: #4CAF50;
-  }
-}
-
-@keyframes pulse {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.1); }
-  100% { transform: scale(1); }
-}
-
-@keyframes glow {
-  0% {
-      text-shadow: 0 0 5px rgba(76, 175, 80, 0.1),
-                   0 0 10px rgba(76, 175, 80, 0.1);
-  }
-  50% {
-      text-shadow: 0 0 20px rgba(76, 175, 80, 0.5),
-                   0 0 30px rgba(76, 175, 80, 0.3);
-  }
-  100% {
-      text-shadow: 0 0 5px rgba(76, 175, 80, 0.1),
-                   0 0 10px rgba(76, 175, 80, 0.1);
-  }
-}
-
-@keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(5px); }
-  75% { transform: translateX(-5px); }
-  100% { transform: translateX(0); }
-}
-
-/* !!!!!!!!!! */
-
-
-
-
-
-
-
 
 /* Header Continue... */
 #header {
@@ -365,8 +198,6 @@ h6 {
   display: flex;
   flex-wrap: wrap;
   align-content: center;
-  /* align-items: center; */
-  /* align-items: end; */
   z-index: 997;
   overflow-y: auto;
 }
@@ -386,16 +217,12 @@ h6 {
 
 #header h1 a,
 #header h1 a:hover {
-  /* color: #fff; */
-  /* color: #c21414; */
   line-height: 1;
   display: inline-block;
 }
 
 #header a,
 #header a:hover {
-  /* color: #fff; */
-  /* color: #c21414; */
   line-height: 1;
   display: inline-block;
 }
@@ -412,14 +239,6 @@ h6 {
   border-bottom: 2px solid #18d26e;
   padding-bottom: 6px;
 }
-
-/* #header h3 a,
-#header h3 a:hover {
-  color: #fff;
-  color: #35e888;
-  line-height: 1;
-  display: inline-block;
-} */
 
 #header img {
   padding: 0;
@@ -471,6 +290,80 @@ h6 {
   }
 }
 
+/* ====================== */
+/* Floating Return Button */
+.floating-return-btn {
+
+  /* Option 1: Top-Left Position */
+  position: fixed;
+  top: 90px;
+  left: 30px;
+
+  /* Option 2: Bottom-Right Position */
+  /* position: fixed;
+  bottom: 30px;
+  right: 30px; */
+  /* END ======== */
+
+  background-color: rgba(0, 123, 255, 0.9); /* Blue with slight transparency */
+  color: white;
+  padding: 6px 10px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+
+  /* OPTION: Animated Appear on Scroll. 
+  backref: line 356 in server-setup.js */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.floating-return-btn.visible {
+  /* opacity: 1; */
+  visibility: visible;
+}/* END: Animated Appear on Scroll. */
+
+.floating-return-btn:hover {
+  background-color: rgba(0, 123, 255, 1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.floating-return-btn i {
+  font-size: 0.9rem;
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .floating-return-btn {
+    top: 65px;
+    left: 15px;
+    padding: 5px 8px;
+  }
+  
+  .floating-return-btn span {
+    display: none; /* Hide text on mobile, show only icon */
+  }
+  
+  .floating-return-btn i {
+    font-size: 0.9rem;
+    margin: 0;
+  }
+}
+
+
+
+/* =========== */
 /* HEADER TOP */
 #header.header-top {
   height: 80px;
@@ -479,6 +372,22 @@ h6 {
   top: 0;
   right: 0;
   background: rgba(0, 0, 0, 0.9);
+
+  /* Nav-Bar 1: Purple/Blue Gradient. Back-Ref: Line 15 */
+  background: linear-gradient(90deg, #3a1c71, #4361c2);
+
+  /* Nav-Bar 2: Green Gradient */
+  /* background: linear-gradient(90deg, #0d3b25, #4caf50); */
+
+  /* Nav-Bar 3: Orange/Red Gradient */
+  /* background: linear-gradient(90deg, #5e2c00, #dd4814); */
+
+  /* Nav-Bar-4. */
+  /* background: linear-gradient(90deg, #1a227e, #006164); */
+
+  /* Nav-Bar: other options */
+  /* background: linear-gradient(90deg, #0e1c36, #0080ff); */
+  /* background: linear-gradient(90deg, #101d42, #4caf50); */
 }
 
 #header.header-top .social-links,
@@ -486,25 +395,11 @@ h6 {
   display: none;
 }
 
-
-
-
-/* !!!!!!!!!! */
-
-
 #header.header-top h1 {
   /* margin-right: 20px; */
   margin-right: auto;
   font-size: 36px;
 }
-
-/* !!!!!!!!!! */
-
-
-
-
-
-
 
 #header.header-top img {
   max-height: 60px;
@@ -513,9 +408,7 @@ h6 {
 
 #header.header-top .container {
   display: flex;
-  /* align-items: center; */
   justify-content: end;
-  /* align-items: end; */
 }
 
 #header.header-top .navbar {
@@ -535,8 +428,6 @@ h6 {
 /*======================
 ### NAVIGATION MENU ####
 ======================*/
-
-/* DESKTOP NAVIGATION */
 .navbar {
   padding: 0;
   margin-top: 35px;
@@ -606,7 +497,6 @@ h6 {
   color: #fff;
 }
 
-/* MOBILE NAVIGATION */
 .mobile-nav-toggle {
   color: #fff;
   font-size: 28px;
@@ -674,6 +564,11 @@ h6 {
   font-size: 16px;
   position: relative;
 }
+
+/*======================
+### PROJECT BANNER   ###
+======================*/
+
 
 /*======================
 ### SECTIONS GENERAL ###
@@ -745,10 +640,6 @@ section .container {
 /*======================================
 ########## SERVER SETUP PAGE ##########
 ======================================*/
-
-/* ############################# */
-/* ##### CUSTOM  STYLES    ##### */
-
 #section-container {
   margin-bottom: 70px;
 }
@@ -767,14 +658,11 @@ section .container {
   box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
 }
 
-/* #### END:: CUSTOM  STYLES ##### */
-/* ############################### */
+.nginx.container h4 {
+  font-size: 2.0rem;
+}
 
-
-
-/* ############################# */
 /* ##### ANIMATION CLASSES ##### */
-/* ############################# */
 [data-aos].fade-initial {
   opacity: 0;
   transition-property: opacity, transform;
@@ -784,7 +672,6 @@ section .container {
   opacity: 1;
 }
 
-/* Rest of the animations should use transform instead of opacity */
 [data-aos='fade-up'] {
   transform: translateY(50px);
   opacity: 0;
@@ -832,7 +719,6 @@ section .container {
 /* ---------------------------- */
 /*   ARCHITECTURE DIAGRAM       */
 /* ---------------------------- */
-
 .overview-image {
   position: relative;
   border-radius: 5px;
@@ -862,9 +748,6 @@ section .container {
   max-height: 100%;
   object-fit: contain;
 }
-
-
-
 
 .overview-content h3 {
   color: #18d26e;
@@ -972,7 +855,6 @@ section .container {
 /* ---------------------------- */
 /*    INTERACTIVE HOTSPOTS      */
 /* ---------------------------- */
-
 .hotspot-container {
   position: absolute;
   top: 0;
@@ -994,9 +876,7 @@ section .container {
   transition: all 0.3s ease;
 }
 
-/* ============= */
 /* POPUP STYLING */
-/* ============= */
 .hotspot-popup {
   position: absolute;
   visibility: hidden;
@@ -1043,11 +923,6 @@ section .container {
   opacity: 1;
 }
 
-/* .hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-  border-radius: 4px;
-} */
-
 .hotspot-popup h5 {
   color: #18d26e;
   margin-bottom: 10px;
@@ -1075,54 +950,6 @@ section .container {
   left: 0;
 }
 
-/* ######################## */
-/* HIGHLIGHT EFFECT OPTIONS */
-/* ######################## */
-
-/* SIMPLE HIGHLIGHT */
-/* .hotspot:hover {
-  background: rgba(24, 210, 110, 0.2);
-} */
-
-
-/* GLOWING BORDER */
-/* .hotspot:hover {
-  box-shadow: 0 0 15px rgba(24, 210, 110, 0.5);
-  border: 1px solid rgba(24, 210, 110, 0.5);
-} */
-
-
-/* PULSE EFFECT */
-/* .hotspot:hover {
-  animation: pulse 1.5s infinite;
-} */
-
-/* @keyframes pulse {
-  0% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0.4);
-  }
-  70% {
-      box-shadow: 0 0 0 10px rgba(24, 210, 110, 0);
-  }
-  100% {
-      box-shadow: 0 0 0 0 rgba(24, 210, 110, 0);
-  }
-} */
-
-
-
-
-
-
-
-
-
-
-
-
-
-/* NEW NEW NEW NEW */
-
 /* Overlay styling */
 .diagram-overlay {
   position: absolute;
@@ -1137,10 +964,6 @@ section .container {
   pointer-events: none;
   border-radius: 5px;
 }
-
-/* .hotspot {
-  z-index: 101;
-} */
 
 .hotspot:hover {
   animation: pulse 1.5s infinite;
@@ -1173,19 +996,9 @@ section .container {
   }
 }
 
-/* NEW NEW NEW NEW */
-
-
-
-
-
-
-
-
 /* ############################# */
 /* ##### DOCKER SECTION ######## */
 /* ############################# */
-
 .project-context {
   background: rgba(24, 210, 110, 0.05);
   border-left: 3px solid #18d26e;
@@ -1217,8 +1030,6 @@ section .container {
   color: #35e888;
 }
 
-/* ================ */
-
 .compose-container {
   /* margin-top: 30px; */
   position: relative;
@@ -1240,9 +1051,8 @@ section .container {
 }
 
 /* ========================== */
-/* Docker Compose HOVER. */
+/* Docker Compose Hover.      */
 /* ========================== */
-
 .compose-wrapper {
   /* width: 85%; */
   margin: 0 auto;
@@ -1316,11 +1126,9 @@ section .container {
   margin: 0;
 }
 
-
 /* ========================== */
-/* `docker-compose` HOVER - 2 */
+/*   Docker Compose Hover - 2 */
 /* ========================== */
-
 .code-overlay {
   position: fixed;
   top: 0;
@@ -1361,14 +1169,9 @@ section .container {
   color: #ffffff;
 }
 
-/* END:: `docker-compose` HOVER. */
-/* ========================== */
-
-
 /* ====================== */
-/* = MASONRY GRID GALLERY = */
+/*   MASONRY GRID GALLERY */
 /* ====================== */
-
 .masonry-grid {
   column-count: 3;
   column-gap: 2rem;
@@ -1404,15 +1207,9 @@ section .container {
   }
 }
 
-/* END:: MASONRY GRID GALLERY */
-/* ======================== */
-
-
-
-/*=========================
-## LOAD BALANCER ##########
-=========================*/
-
+/*==========================
+==  Load Balancer Section =
+==========================*/
 #load-balancer-section {
   margin-bottom: 70px;
 }
@@ -1432,24 +1229,46 @@ section .container {
 }
 
 
-/* END: LOAD BALANCER
-===========================*/
 
-
-/* #project-title {
-  text-decoration: none;
-  color: #4CAF50;
-  animation: breathing 4s ease-in-out infinite;
+/* TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST */
+/* OPEN IMG SIDE-by-SIDE */
+.fullscreen-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.9);
+  z-index: 1000;
+  cursor: pointer;
 }
 
-@keyframes breathing {
-  0% {
-      opacity: 0.8;
-  }
-  50% {
-      opacity: 1;
-  }
-  100% {
-      opacity: 0.8;
-  }
-} */
+.close-button {
+  position: absolute;
+  top: 15px;
+  right: 35px;
+  color: #f1f1f1;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.side-by-side-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  padding: 40px;
+  box-sizing: border-box;
+}
+
+.side-by-side-image {
+  max-height: 90%;
+  max-width: 45%;
+  margin: 0 10px;
+  object-fit: contain;
+}
+/* Test-test-test-test-test-test-test-test-test-test-test-test */

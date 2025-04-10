@@ -1051,7 +1051,7 @@ section .container {
 }
 
 /* ========================== */
-/* Docker Compose Hover.      */
+/*    Docker Compose Hover    */
 /* ========================== */
 .compose-wrapper {
   /* width: 85%; */
@@ -1229,9 +1229,9 @@ section .container {
 }
 
 
-
-/* TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST-TEST */
-/* OPEN IMG SIDE-by-SIDE */
+/*==========================
+==  OPEN IMG SIDE-by-SIDE =
+==========================*/
 .fullscreen-overlay {
   display: none;
   position: fixed;
@@ -1271,4 +1271,3 @@ section .container {
   margin: 0 10px;
   object-fit: contain;
 }
-/* Test-test-test-test-test-test-test-test-test-test-test-test */
