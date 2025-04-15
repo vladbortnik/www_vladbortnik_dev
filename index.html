@@ -34,25 +34,24 @@
   <header id="header">
     <div class="container">
 
-      <h1><a href="index.html">Vlad Bortnik</a></h1>
-      <!-- <a href="index.html" class="mr-auto"><img src="assets/img/logo.png" alt="" class="img-fluid"></a> -->
+      <h1><a href="/">Vlad Bortnik</a></h1>
       <h2>I'm a passionate <span>backend engineer</span> from New York</h2>
 
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link active" href="#header">Home</a></li>
           <li><a class="nav-link" href="#about">About</a></li>
-          <li><a class="nav-link" href="#resume">Resume</a></li>
           <!-- <li><a class="nav-link" href="#contact">Contact</a></li> -->
           <li class="dropdown">
             <a class="nav-link" href="#portfolio">Projects<i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul class="dropdown-menu">
-                <li><a href="https://vladbortnik.dev/server-setup.html">1. Production-Grade Multi-Application Server</a></li>
-                <li><a href="https://recipe.vladbortnik.dev" target="_blank">2. Recipe Web App</a></li>
-                <li><a href="https://bookfinder.vladbortnik.dev" target="_blank">3. Student Book Exchange Platform</a></li>
-                <li><a href="https://vladbortnik.dev" target="_blank">4. Professional Portfolio Website</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-1')">1. Production-Grade Multi-Application Server</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-2')">2. Recipe Web App</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-3')">3. Student Book Exchange Platform</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-4')">4. Professional Portfolio Website</a></li>
             </ul>
          </li>
+         <li><a class="nav-link" href="#resume">Resume</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
@@ -64,8 +63,9 @@
         <!-- <a href="#" class="instagram"><i class="bi bi-instagram"></i></a> -->
       </div>
 
-    </div>
-  </header><!-- end: header -->
+    </div><!-- END: div container -->
+  </header><!-- END: Header -->
+
 
   <!-- ============================= -->
   <!-- ======= ABOUT Section ======= -->
@@ -91,7 +91,7 @@
           <div class="row">
             <div class="col-lg-6">
               <ul>
-                <li><i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Portfolio</a></span></li>
+                <li><i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev">Portfolio</a></span></li>
                 <li><i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik" target="_blank">Github</a></span></li>
                 <li><i class="bi bi-linkedin"></i> <span><a href="https://linkedin.com/in/vladbortnik" target="_blank">LinkedIn</a></span></li>
                 <li><i class="bi bi-geo-alt"></i> <span><a href="https://maps.app.goo.gl/SdRioKgXnLUcCLV99" target="_blank">NYC Metropolitan Area</a></span></li>
@@ -107,13 +107,11 @@
             </div>
           </div>
           <p class="fst-italic">
-            <!-- Clear communication turns complex ideas into shared understanding within diverse teams. Methodical problem-solving is driven by genuine curiosity. Adaptability to new technologies supports team endeavors, while independence balances collaborative efforts. Thoughtful prioritization ensures consistent progress and smooth project execution. -->
             I'm particularly drawn to roles that allow me to leverage my full-stack capabilities while deepening my expertise in cloud architecture and infrastructure automation. I'm eager to apply my hands-on experience with complex system design to financial technology solutions that require both technical excellence and attention to security and reliability.
           </p>
         </div>
       </div>
-
-    </div><!-- end About Me -->
+    </div><!-- END: About Me -->
 
     <!-- ======= Counts ======= -->
     <div class="counts container">
@@ -152,7 +150,7 @@
         </div>
 
       </div>
-    </div><!-- end Counts -->
+    </div><!-- END: Counts -->
 
     <!-- ======= Skills  ======= -->
     <div class="skills container">
@@ -162,8 +160,7 @@
       </div>
 
       <div class="row skills-content">
-
-        <div class="col-lg-6">
+        <div class="col-lg-6"><!-- Col #1 -->
 
           <div class="progress">
             <span class="skill">Python<i class="val">80%</i></span>
@@ -200,14 +197,14 @@
             </div>
           </div>
 
-        </div>
+        </div><!-- END: Col #1 -->
 
-        <div class="col-lg-6">
+        <div class="col-lg-6"><!-- Col #2 -->
 
           <div class="progress">
-            <span class="skill">HTML/CSS/JavaScript<i class="val">40%</i></span>
+            <span class="skill">HTML/CSS/JavaScript<i class="val">60%</i></span>
             <div class="progress-bar-wrap">
-              <div class="progress-bar" role="progressbar" aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"></div>
+              <div class="progress-bar" role="progressbar" aria-valuenow="60" aria-valuemin="0" aria-valuemax="100"></div>
             </div>
           </div>
 
@@ -239,11 +236,10 @@
             </div>
           </div>
 
-        </div>
+        </div><!-- END: Col #2 -->
 
-      </div>
-
-    </div><!-- end Skills -->
+      </div><!-- END: Row -->
+    </div><!-- END: Skills -->
 
     <!-- ======= Interests ======= -->
     <div class="interests container">
@@ -327,7 +323,7 @@
         </div>
       </div>
 
-    </div><!-- end Interests -->
+    </div><!-- END: Interests -->
 
     <!-- ======= Technologies Slider On About Page ======= -->
     <div class="technologies container">
@@ -392,9 +388,10 @@
         <div class="swiper-pagination"></div>
       </div>
 
-    </div><!-- ======= end: technologies slider on about page ======= -->
-  </section><!-- end: about Section -->
-  
+    </div><!-- ======= END: technologies slider on about page ======= -->
+  </section><!-- END: about Section -->
+
+
   <!-- ======================================== -->
   <!-- ============== RESUME Section ========== -->
   <section id="resume" class="resume">
@@ -404,7 +401,7 @@
       <div class="section-title">
         <h2>Resume</h2>
         <p>Check My Resume</p>
-      </div><!-- end: class="section-title" -->
+      </div><!-- END: class="section-title" -->
 
       <h3>Summary</h3>
       <div class="row"><!-- Row-1 -->
@@ -414,7 +411,6 @@
             <h4>Vlad Bortnik</h4>
             <p>Backend Engineer with a Computer Science degree, specializing in Production-Grade Flask applications and Cloud Infrastructure. Experienced in building secure, scalable systems with comprehensive DevOps implementation from development to deployment.</p>
             
-
             <div class="row"><!-- Row-0 > Row-2-->
               <div class="col-lg-2"><!-- COL-1 -->
                 <div class="resume-links">
@@ -422,7 +418,7 @@
                     <li><i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik" target="_blank">Github</a></span></li>
                   </ul>
                 </div>
-              </div><!-- end: Col-1 -->
+              </div><!-- END: Col-1 -->
               
               <div class="col-lg-2"><!-- COL-2 -->
                 <div class="resume-links">
@@ -430,7 +426,7 @@
                     <li><i class="bi bi-linkedin"></i> <span><a href="https://linkedin.com/in/vladbortnik" target="_blank">LinkedIn</a></span></li>
                   </ul>
                 </div>
-              </div><!-- end: Col-2 -->
+              </div><!-- END: Col-2 -->
 
               <div class="col-lg-2"><!-- COL-3 -->
                 <div class="resume-links">
@@ -438,7 +434,7 @@
                     <li><i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Portfolio</a></span></li>
                   </ul>
                 </div>
-              </div><!-- end: Col-3 -->
+              </div><!-- END: Col-3 -->
 
               <div class="col-lg-3"><!-- COL-4 -->
                 <div class="resume-links">
@@ -446,12 +442,12 @@
                     <li><i class="bi bi-geo-alt"></i> <span><a href="https://maps.app.goo.gl/SdRioKgXnLUcCLV99" target="_blank">NYC Metropolitan Area</a></span></li>
                   </ul>
                 </div>
-              </div><!-- end: Col-4 -->
-            </div><!-- end: Row-0 > Row-2-->
+              </div><!-- END: Col-4 -->
+            </div><!-- END: Row-0 > Row-2-->
 
-          </div><!-- end: class="resume-item pb-0" -->
-        </div><!-- end: Col-0 -->
-      </div><!-- end: Row-1 -->
+          </div><!-- END: class="resume-item pb-0" -->
+        </div><!-- END: Col-0 -->
+      </div><!-- END: Row-1 -->
 
       
       <h3>Technical Skills</h3>
@@ -460,7 +456,6 @@
           <h3 class="resume-title"></h3>
           <div class="resume-item pb-0">
             <h4>Languages & Frameworks</h4>
-            <!-- <p>Adapted professional HTML template to create personalized portfolio website.</p> -->
             <p>
             <ul>
               <!-- <h5>Languages & Frameworks: </h5> -->
@@ -473,13 +468,8 @@
               <!-- <li>Jinja2</li> -->
             </ul>
             </p>
-            <div class="resume-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <!-- <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">Github</a></span> -->
-              <!-- <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Live</a></span> -->
-            </div>
           </div>
-        </div><!-- end: Col - technical skills  -->
+        </div><!-- END: Col - technical skills  -->
 
         <div class="col-lg-4">
           <h3 class="resume-title"></h3>
@@ -497,7 +487,7 @@
               </ul>
               </p>
           </div>
-        </div><!-- end: Col -->
+        </div><!-- END: Col -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
@@ -514,9 +504,8 @@
               </ul>
               </p>
           </div>
-        </div><!-- end: Col -->
-      </div><!-- end: Row-2 -->
-
+        </div><!-- END: Col -->
+      </div><!-- END: Row-2 -->
 
       <!-- Row-3: Experience -->
       <h3>Experience</h3>
@@ -535,13 +524,13 @@
               <li>Orchestrated routing system managing distinct applications across multiple subdomains</li>
             </ul>
           </div>            
-        </div><!-- end: Col - 1 -->
+        </div><!-- END: Col - 1 -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
               <h5 id="dates">Feb 2022 - Present</h5>
-        </div><!-- end: Col - 2 -->
-      </div><!-- end: Row-3 -->
+        </div><!-- END: Col - 2 -->
+      </div><!-- END: Row-3 -->
 
 
       <h3>Featured Projects</h3>
@@ -561,12 +550,10 @@
             </ul>
             </p>
             <div class="resume-links">
-              <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">Architecture</a></span>
-              <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">Live</a></span>
-              <!-- <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik" target="_blank">Github</a></span> -->
+              <i class="bi bi-info-circle-fill"></i> <span><a href="server-setup.html" target="_blank">Architecture</a></span>
             </div>
           </div>
-        </div><!-- end: Col - Project Server-Setup -->
+        </div><!-- END: Col - Project Server-Setup -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
@@ -585,8 +572,8 @@
               </ul>
               </p>
           </div>
-        </div><!-- end: Col - Tech Stack -->
-      </div><!-- end: Row-4 -->
+        </div><!-- END: Col - Tech Stack -->
+      </div><!-- END: Row-4 -->
 
       <!-- Row-5: Recipe Web App -->
       <div class="row">
@@ -605,12 +592,11 @@
             </ul>
             </p>
             <div class="resume-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/recipe-web-app" target="_blank">Github</a></span>
+              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/recipe-web-app#about" target="_blank">Github</a></span>
               <i class="bi bi-globe"></i> <span><a href="https://recipe.vladbortnik.dev/" target="_blank">Live</a></span>
             </div>
           </div>
-        </div><!-- end: Col - Recipe -->
+        </div><!-- END: Col - Recipe -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
@@ -625,13 +611,12 @@
                 <li>Gunicorn</li>
                 <li>Azure Vision API</li>
                 <li>Spoonacular API</li>
-                <!-- <li>Security Headers</li> -->
               </ul>
               </p>
           </div>
 
-        </div><!-- end: Col - Tech Stack -->
-      </div><!-- end: Row-5 -->
+        </div><!-- END: Col - Tech Stack -->
+      </div><!-- END: Row-5 -->
 
       <!-- Row-6: Student Book Exchange Platform -->
       <div class="row">
@@ -650,12 +635,11 @@
             </ul>
             </p>
             <div class="resume-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
-              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/book-finder-web-app" target="_blank">Github</a></span>
+              <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/book-finder-web-app#about-the-project" target="_blank">Github</a></span>
               <i class="bi bi-globe"></i> <span><a href="https://bookfinder.vladbortnik.dev" target="_blank">Live</a></span>
             </div>
           </div>
-        </div><!-- end: Col - Bookfinder -->
+        </div><!-- END: Col - Bookfinder -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
@@ -668,14 +652,12 @@
                 <li>SQLAlchemy</li>
                 <li>Docker</li>
                 <li>Bootstrap</li>
-                <!-- <li>SQLAlchemy</li> -->
                 <li>Jinja2</li>
-                <!-- <li>Security Headers</li> -->
               </ul>
               </p>
           </div>
-        </div><!-- end: Col - Tech Stack -->
-      </div><!-- end: Row-6 -->
+        </div><!-- END: Col - Tech Stack -->
+      </div><!-- END: Row-6 -->
 
       <!-- Row-7: Portfolio Website -->
       <div class="row">
@@ -686,21 +668,18 @@
             <p>Adapted professional HTML template to create personalized portfolio website.</p>
             <p>
             <ul>
-              <!-- <li>Adapted professional HTML template to create personalized portfolio website</li> -->
-              <li>Code modified: HTML 70%, CSS 55%, JavaScript 40%</li>
+              <li>Code modified: HTML 75%, CSS 80%, JavaScript 65%</li>
               <li>Modified existing CSS styles and JavaScript functionality to match requirements</li>
               <li>Customized content structure and layout for optimal presentation of projects</li>
               <li>Maintained clean, organized codebase using modern HTML5 and CSS3 standards</li>
-              <!-- <li>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</li> -->
             </ul>
             </p>
             <div class="resume-links">
-              <!-- <i class="bi bi-info-circle-fill"></i> <span><a href="https://vladbortnik.dev/server-setup.html" target="_blank">About</a></span> -->
               <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">Github</a></span>
               <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Live</a></span>
             </div>
           </div>
-        </div><!-- end: Col - Portfolio Website  -->
+        </div><!-- END: Col - Portfolio Website  -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
@@ -713,15 +692,11 @@
                 <li>SCSS</li>
                 <li>JavaScript</li>
                 <li>Bootstrap</li>
-                <!-- <li>SQLAlchemy</li> -->
-                <!-- <li>Jinja2</li> -->
-                <!-- <li>Security Headers</li> -->
               </ul>
               </p>
           </div>
-        </div><!-- end: Col - Tech Stack -->
-      </div><!-- end: Row-7 -->
-
+        </div><!-- END: Col - Tech Stack -->
+      </div><!-- END: Row-7 -->
 
       <!-- Row-8: Education -->
       <h3>Education</h3>
@@ -732,20 +707,20 @@
             <h4 id="education">BROOKLYN COLLEGE &nbsp;|&nbsp; City University of New York</h4>
             <p>Bachelor of Science in Computer Science &nbsp;|&nbsp; GPA: &nbsp;3.87 / 4.00</p>
           </div>
-        </div><!-- end: Col - 1 -->
+        </div><!-- END: Col - 1 -->
 
         <div class="col-lg-3">
           <h3 class="resume-title"></h3>
               <h5 id="dates">Jan 2017 - Dec 2019</h5>
-        </div><!-- end: Col - 2 -->
-            
-      </div><!-- end: Row-8 -->
+        </div><!-- END: Col - 2 -->            
+      </div><!-- END: Row-8 -->
 
-    </div><!-- end: class="container" -->
-  </section><!-- ======= end: Resume Section ============ -->
+    </div><!-- END: class="container" -->
+  </section><!-- ======= END: Resume Section ============ -->
+
 
   <!-- ======================================== -->
-  <!-- ======= PROJECTS SECTION ======= -->
+  <!-- ======= PORTFOLIO / PROJECTS SECTION ======= -->
   <section id="portfolio" class="portfolio">
     <div class="container">
 
@@ -754,503 +729,595 @@
         <p>My Works</p>
       </div>
 
+      <!-- PROJECT-1 CONTAINER -->
+      <div class="project container" id="project-1">
 
-    <!-- PROJECT-1 CONTAINER -->
-    <div class="project container">
+        <div class="section-title project-title">
+          <h2>PROJECT #1</h2>
+          <a href="server-setup.html" target="_blank" class="project-title-link">
+            <h4>PRODUCTION-GRADE MULTI-APPLICATION SERVER</h4>
+          </a>
+        </div>
+            
+        <div class="row align-items-center" id="section-container">
+          <h5>
+            Robust server infrastructure with load balancing, security layers, and containerized applications.
+          </h5>
+          <div class="col-lg-10 pt-4 pt-lg-4" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                <h4>Overview</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-chevron-right"></i> <span>Configured Nginx as reverse proxy with load balancing and caching for optimal performance</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive security layers: UFW firewall, fail2ban, SSL/TLS (A+), Security Headers (A+)</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Orchestrated routing system managing three distinct applications across multiple subdomains</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Established secure communication channels for external API integrations (Azure Vision, Spoonacular)</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-10" data-aos="fade-right" -->          
+        </div><!-- END: row align-items-center (class="row") -->
 
-      <div class="section-title project-title">
-        <h2>PROJECT #1</h2>
-        <a href="https://vladbortnik.dev/server-setup.html" class="project-title-link">
-          <h4>PRODUCTION-GRADE MULTI-APPLICATION SERVER</h4>
-        </a>
-      </div>
+
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview" id="tech-stack">
+                <h4>Tech Stack</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Nginx</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Docker</span></li>
+                    <li><i class="bi bi-plus"></i> <span>DNS</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
           
-      <div class="row align-items-center" id="section-container">
-        <h5>
-          Robust server infrastructure with load balancing, security layers, and containerized applications.
-        </h5>
-        <div class="col-lg-10 pt-4 pt-lg-4" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-              <h4>Overview</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>Configured Nginx as reverse proxy with load balancing and caching for optimal performance</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive security layers: UFW firewall, fail2ban, SSL/TLS (A+), Security Headers (A+)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Orchestrated routing system managing three distinct applications across multiple subdomains</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Established secure communication channels for external API integrations (Azure Vision, Spoonacular)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-10" data-aos="fade-right" -->
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Let's Encrypt</span></li>
+                    <li><i class="bi bi-plus"></i> <span>SSL / TLS</span></li>
+                    <li><i class="bi bi-plus"></i> <span>DigitalOcean</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Load Balancer</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Security Headers</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Server Blocks</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Reverse Proxy</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Subdomains</span></li>
+                    <li><i class="bi bi-plus"></i> <span>UFW & fail2ban</span></li>
+                  </ul>
+              </div><!-- END: class="project overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
         
-      </div><!-- END: row align-items-center (class="row") -->
+        </div><!-- END: row align-items-center (class="row") -->
 
 
-
-
-
-
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview" id="tech-stack">
-              <h4>Tech Stack</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Nginx</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Docker</span></li>
-                  <li><i class="bi bi-plus"></i> <span>DNS</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-        
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
+        <!-- =========   SCREENSHOTS   =================== -->
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
               <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Let's Encrypt</span></li>
-                  <li><i class="bi bi-plus"></i> <span>SSL / TLS</span></li>
-                  <li><i class="bi bi-plus"></i> <span>DigitalOcean</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
+                <h4>Architecture && Details</h4>
+                <div class="overview-image" id="image-shadow">
+                  <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.jpg"
+                  class="img-fluid base-diagram"
+                  alt="Reverse Proxy Configuration" 
+                  onclick="openFullscreen(this)">
+                </div><!-- END: class="overview-image" id="image-shadow" -->
+              </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
 
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Load Balancer</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Security Headers</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Server Blocks</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Reverse Proxy</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Subdomains</span></li>
-                  <li><i class="bi bi-plus"></i> <span>UFW & fail2ban</span></li>
-                </ul>
-            </div><!-- end: class="project overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-      
-      </div><!-- END: row align-items-center (class="row") -->
-
-
-
-
-
-      <!-- =========   SCREENSHOTS   =================== -->
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
             <div class="project overview">
-              <h4>Architecture && Details</h4>
               <div class="overview-image" id="image-shadow">
-                <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.jpg"
+                <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
                 class="img-fluid base-diagram"
                 alt="Reverse Proxy Configuration" 
                 onclick="openFullscreen(this)">
-              </div><!-- end: class="overview-image" id="image-shadow" -->
-            </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
+              </div><!-- END: class="overview-image" id="image-shadow" -->
+            </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
 
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
           <div class="project overview">
-            <!-- <h4>Architecture && Screenshots</h4> -->
             <div class="overview-image" id="image-shadow">
-              <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
+              <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.png"
               class="img-fluid base-diagram"
               alt="Reverse Proxy Configuration" 
               onclick="openFullscreen(this)">
-            </div><!-- end: class="overview-image" id="image-shadow" -->
-          </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
+            </div><!-- END: class="overview-image" id="image-shadow" -->
+          </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+        </div><!-- END: row align-items-center (class="row") -->
 
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
-         <div class="project overview">
-          <!-- <h4>Architecture && Screenshots</h4> -->
-          <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.png"
-            class="img-fluid base-diagram"
-            alt="Reverse Proxy Configuration" 
-            onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow" -->
-         </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-      </div><!-- END: row align-items-center (class="row") -->
-      <!-- ============================================ -->
-
-      <!-- VIEW FULL DETAILS BUTTON -->
-      <div class="full-details-container">
-        <a href="https://vladbortnik.dev/server-setup.html" class="full-details-button">
-          View Full Details
-        </a>
-      </div>
-
-    </div><!-- END: Project-1 Container  -->
-
-
-    <!-- PROJECT-2 CONTAINER -->
-    <div class="project container">
-
-      <div class="section-title project-title">
-        <h2>PROJECT #2</h2>
-        <a href="https://recipe.vladbortnik.dev" class="project-title-link">
-          <h4>RECIPE WEB APP</h4>
-        </a>
-      </div>
-          
-      <div class="row align-items-center" id="section-container">
-        <h5>
-          Full-stack Flask App integrating Azure Vision API for ingredient recognition and Spoonacular API for recipe generation.
-        </h5>
-        <div class="col-lg-10 pt-4 pt-lg-4" data-aos="fade-right">
-          <div class="overview-content">
-
-              <div class="project overview">
-              <h4>Overview</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive user system with secure authentication, password hashing (Bcrypt), and CSRF protection</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Designed PostgreSQL database schema with SQLAlchemy ORM, implementing automated migrations for version control</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Containerized application using Docker Compose, orchestrating web service and PostgreSQL database deployment</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Configured Gunicorn WSGI server for concurrent request handling and production-grade performance</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li> -->
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-10" data-aos="fade-right" -->
-      </div><!-- END: row align-items-center (class="row") -->
-
-
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview" id="tech-stack">
-              <h4>Tech Stack</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Flask</span></li>
-                  <li><i class="bi bi-plus"></i> <span>PostgreSQL</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Docker</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-        
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Gunicorn</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Azure Vision API</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Spoonacular API</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Load Balancer (Docker)</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Security Headers</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Server Blocks</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Script Automation</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Network Segregation</span></li>
-                  <li><i class="bi bi-plus"></i> <span>CSRF Protection</span></li>
-                </ul>
-            </div><!-- end: class="project overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-      
-      </div><!-- END: row align-items-center (class="row") -->
-
-
-      <!-- =========   SCREENSHOTS   =================== -->
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
-            <div class="project overview">
-              <h4>Details && Screenshots</h4>
-              <div class="overview-image" id="image-shadow">
-                <img src="assets/img/portfolio/recipe/_temp.png"
-                class="img-fluid base-diagram"
-                alt="................." 
-                onclick="openFullscreen(this)">
-              </div><!-- end: class="overview-image" id="image-shadow" -->
-            </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
-          <div class="project overview">
-            <div class="overview-image" id="image-shadow">
-              <img src="assets/img/portfolio/recipe/_temp.png"
-              class="img-fluid base-diagram"
-              alt="................" 
-              onclick="openFullscreen(this)">
-            </div><!-- end: class="overview-image" id="image-shadow" -->
-          </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
-         <div class="project overview">
-          <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/recipe/_temp.png"
-            class="img-fluid base-diagram"
-            alt=".........." 
-            onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow" -->
-         </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-      </div><!-- END: row align-items-center (class="row") -->
-      <!-- ============================================ -->
-
-      <!-- DUAL BUTTON CONTAINER -->
-      <div class="dual-buttons-container">
-        <a href="https://github.com/vladbortnik/recipe-web-app" class="dual-button">
-          GitHub
-        </a>
-        <a href="https://recipe.vladbortnik.dev" class="dual-button">
-          Live
-        </a>
-      </div>
-    </div><!-- END: Project-2 Container  -->
-
-
-    <!-- PROJECT-3 CONTAINER -->
-    <div class="project container">
-
-      <div class="section-title project-title">
-        <h2>PROJECT #3</h2>
-        <a href="https://bookfinder.vladbortnik.dev" class="project-title-link">
-          <h4>STUDENT BOOK EXCHANGE PLATFORM</h4>
-        </a>
-      </div>
-          
-      <div class="row align-items-center" id="section-container">
-        <h5>
-          Full-stack marketplace application using Flask/Gunicorn and SQLite for student textbook exchange.
-        </h5>
-        <div class="col-lg-12 pt-4 pt-lg-4" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-              <h4>Overview</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive user system with secure authentication (Flask-Login) and password encryption (Bcrypt)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Created CRUD functionality for book listings with image upload capability and form validation (Flask-WTF)</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Containerized application using Docker Compose and deployed with Nginx reverse proxy on DigitalOcean</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Designed responsive UI with Bootstrap and Jinja2 templating for optimal user experience</span></li>
-                  <!-- <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li> -->
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-10" data-aos="fade-right" -->
-      </div><!-- END: row align-items-center (class="row") -->
-
-
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview" id="tech-stack">
-              <h4>Tech Stack && Features</h4>
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Flask</span></li>
-                  <li><i class="bi bi-plus"></i> <span>SQLite</span></li>
-                  <li><i class="bi bi-plus"></i> <span>SQLAlchemy</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-        
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Docker</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Bootstrap</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Jinja2</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>RESTful API</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Endpoints</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Docker Compose</span></li>
-                </ul>
-            </div><!-- end: class="project-1 overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-
-        <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
-          <div class="overview-content">
-              <div class="project overview">
-                <ul class="feature-list">
-                  <li><i class="bi bi-plus"></i> <span>Flask-Bcrypt</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Flask-WTF</span></li>
-                  <li><i class="bi bi-plus"></i> <span>Secure Image Storage</span></li>
-                </ul>
-            </div><!-- end: class="project overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-4" data-aos="fade-right" -->
-      </div><!-- END: row align-items-center (class="row") -->
-
-
-      <!-- =========   SCREENSHOTS   =================== -->
-      <div class="row align-items-center" id="section-container">
-        <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
-            <div class="project overview">
-              <h4>Diagram && Screenshots</h4>
-              <div class="overview-image" id="image-shadow">
-                <img src="assets/img/portfolio/bookfinder/bookfinder-homepage.jpg"
-                class="img-fluid base-diagram"
-                alt="Bookfinder Homepage" 
-                onclick="openFullscreen(this)">
-              </div><!-- end: class="overview-image" id="image-shadow" -->
-            </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
-          <div class="project overview">
-            <!-- <h4>Architecture && Screenshots</h4> -->
-            <div class="overview-image" id="image-shadow">
-              <img src="assets/img/portfolio/bookfinder/bookfinder-diagram.png"
-              class="img-fluid base-diagram"
-              alt="Overview Diagram" 
-              onclick="openFullscreen(this)">
-            </div><!-- end: class="overview-image" id="image-shadow" -->
-          </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-
-        <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
-         <div class="project overview">
-          <!-- <h4>Architecture && Screenshots</h4> -->
-          <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/bookfinder/brooklyn-college-campus.jpg"
-            class="img-fluid base-diagram"
-            alt="Brooklyn College Campus" 
-            onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow" -->
-         </div><!-- end: class="project overview" -->
-        </div><!-- end: class="col-lg-4" -->
-      </div><!-- END: row align-items-center (class="row") -->
-      <!-- ============================================ -->
-
-      <!-- DUAL BUTTON CONTAINER -->
-      <div class="dual-buttons-container">
-        <a href="https://github.com/vladbortnik/book-finder-web-app" class="dual-button">
-          GitHub
-        </a>
-        <a href="https://bookfinder.vladbortnik.dev" class="dual-button">
-          Live
-        </a>
-      </div>
-    </div><!-- END: Project-3 Container  -->
-
-
-    </div><!-- ????? END: Project-3 Container  -->
-
-
-    <!-- ======= Technologies Slider On Portfolio Gallery Page ======= -->
-      <!-- ============================ ...Technologies Slider - RETURN HERE ========================================== -->
-    <!-- ======= end: Technologies Slider On Portfolio Gallery Page ======= -->
-
-
-
-
-
-
-
-
-
-
-
-<!-- ================================ -->
-
-    <!-- ======= Technologies Slider On Portfolio Gallery Page ======= -->
-    <div class="technologies container">
-
-      <div class="section-title">
-        <h2>Technologies</h2>
-      </div>
-
-      <div class="technologies-slider swiper" data-aos="fade-up" data-aos-delay="100">
-        <div class="swiper-wrapper">
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/docker.png" class="technology-icon" id="docker-icon" alt="Docker Icon">
-              <h3>Docker</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/flask-white.png" class="technology-icon" alt="Flask Icon">
-              <h3>Flask</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/nginx.png" class="technology-icon" id="nginx-icon" alt="Nginx Icon">
-              <h3>Nginx</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/postgresql.png" class="technology-icon" alt="PostgreSQL Icon">
-              <h3>PostgreSQL</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/git.png" class="technology-icon" id="git-icon" alt="Git Icon">
-              <h3>git</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/python.png" class="technology-icon" alt="Python Icon">
-              <h3>Python</h3>
-            </div>
-          </div><!-- end technology item -->
-
-          <div class="swiper-slide">
-            <div class="technology-item">
-              <img src="assets/img/portfolio/technologies-icons/dns.png" class="technology-icon" alt="DNS Icon">
-              <h3>.config</h3>
-            </div>
-          </div><!-- end technology item -->
-
+        <!-- VIEW FULL DETAILS BUTTON -->
+        <div class="full-details-container">
+          <a href="server-setup.html" target="_blank" class="full-details-button">
+            View Full Details
+          </a>
         </div>
-        <div class="swiper-pagination"></div>
-      </div>
 
-    </div><!-- ======= end: Technologies Slider On Portfolio Gallery Page ======= -->
+      </div><!-- END: Project-1 Container  -->
+
+
+      <!-- PROJECT-2 CONTAINER -->
+      <div class="project container" id="project-2">
+
+        <div class="section-title project-title">
+          <h2>PROJECT #2</h2>
+          <a href="https://recipe.vladbortnik.dev" target="_blank" class="project-title-link">
+            <h4>RECIPE WEB APP</h4>
+          </a>
+        </div>
+            
+        <div class="row align-items-center" id="section-container">
+          <h5>
+            Full-stack Flask App integrating Azure Vision API for ingredient recognition and Spoonacular API for recipe generation.
+          </h5>
+          <div class="col-lg-10 pt-4 pt-lg-4" data-aos="fade-right">
+            <div class="overview-content">
+
+                <div class="project overview">
+                <h4>Overview</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive user system with secure authentication, password hashing (Bcrypt), and CSRF protection</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Designed PostgreSQL database schema with SQLAlchemy ORM, implementing automated migrations for version control</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Containerized application using Docker Compose, orchestrating web service and PostgreSQL database deployment</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Configured Gunicorn WSGI server for concurrent request handling and production-grade performance</span></li>
+                    <!-- <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li> -->
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-10" data-aos="fade-right" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview" id="tech-stack">
+                <h4>Tech Stack</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Flask</span></li>
+                    <li><i class="bi bi-plus"></i> <span>PostgreSQL</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Docker</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+          
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Gunicorn</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Azure Vision API</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Spoonacular API</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Load Balancer (Docker)</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Security Headers</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Server Blocks</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Script Automation</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Network Segregation</span></li>
+                    <li><i class="bi bi-plus"></i> <span>CSRF Protection</span></li>
+                  </ul>
+              </div><!-- END: class="project overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+        
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <!-- =========   SCREENSHOTS   =================== -->
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
+              <div class="project overview">
+                <h4>Screenshots && Details</h4>
+                <div class="overview-image" id="image-shadow">
+                  <img src="assets/img/portfolio/recipe/recipe-homepage.jpg"
+                  class="img-fluid base-diagram"
+                  alt="Recipe Homepage" 
+                  onclick="openFullscreen(this)">
+                </div><!-- END: class="overview-image" id="image-shadow" -->
+              </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+            <div class="project overview">
+              <div class="overview-image" id="image-shadow">
+                <img src="assets/img/portfolio/recipe/recipe-docker-compose.jpg"
+                class="img-fluid base-diagram"
+                alt="Docker Compose Screenshot" 
+                onclick="openFullscreen(this)">
+              </div><!-- END: class="overview-image" id="image-shadow" -->
+            </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+          <div class="project overview">
+            <div class="overview-image" id="image-shadow">
+              <img src="assets/img/portfolio/recipe/recipe-migration-scripts.jpg"
+              class="img-fluid base-diagram"
+              alt="Migration Scripts"
+              onclick="openFullscreen(this)">
+            </div><!-- END: class="overview-image" id="image-shadow" -->
+          </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+        <!-- DUAL BUTTON CONTAINER -->
+        <div class="dual-buttons-container">
+          <a href="https://github.com/vladbortnik/recipe-web-app#about" target="_blank" class="dual-button">
+            GitHub
+          </a>
+          <a href="https://recipe.vladbortnik.dev" target="_blank" class="dual-button">
+            Live
+          </a>
+        </div>
+
+      </div><!-- END: Project-2 Container  -->
+
+
+      <!-- PROJECT-3 CONTAINER -->
+      <div class="project container" id="project-3">
+
+        <div class="section-title project-title">
+          <h2>PROJECT #3</h2>
+          <a href="https://bookfinder.vladbortnik.dev" target="_blank" class="project-title-link">
+            <h4>STUDENT BOOK EXCHANGE PLATFORM</h4>
+          </a>
+        </div>
+            
+        <div class="row align-items-center" id="section-container">
+          <h5>
+            Full-stack marketplace application using Flask/Gunicorn and SQLite for student textbook exchange.
+          </h5>
+          <div class="col-lg-12 pt-4 pt-lg-4" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                <h4>Overview</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-chevron-right"></i> <span>Implemented comprehensive user system with secure authentication (Flask-Login) and password encryption (Bcrypt)</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Created CRUD functionality for book listings with image upload capability and form validation (Flask-WTF)</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Containerized application using Docker Compose and deployed with Nginx reverse proxy on DigitalOcean</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Designed responsive UI with Bootstrap and Jinja2 templating for optimal user experience</span></li>
+                    <!-- <li><i class="bi bi-chevron-right"></i> <span>Maintained production environment, hosting Docker containerized Flask applications with SQLite/PostgreSQL</span></li> -->
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-10" data-aos="fade-right" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview" id="tech-stack">
+                <h4>Tech Stack && Features</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Flask</span></li>
+                    <li><i class="bi bi-plus"></i> <span>SQLite</span></li>
+                    <li><i class="bi bi-plus"></i> <span>SQLAlchemy</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+          
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Docker</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Bootstrap</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Jinja2</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>RESTful API</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Endpoints</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Docker Compose</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Flask-Bcrypt</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Flask-WTF</span></li>
+                    <li><i class="bi bi-plus"></i> <span>Secure Image Storage</span></li>
+                  </ul>
+              </div><!-- END: class="project overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <!-- =========   SCREENSHOTS   =================== -->
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
+              <div class="project overview">
+                <h4>Diagram && Screenshots</h4>
+                <div class="overview-image" id="image-shadow">
+                  <img src="assets/img/portfolio/bookfinder/bookfinder-homepage.jpg"
+                  class="img-fluid base-diagram"
+                  alt="Bookfinder Homepage" 
+                  onclick="openFullscreen(this)">
+                </div><!-- END: class="overview-image" id="image-shadow" -->
+              </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+            <div class="project overview">
+              <div class="overview-image" id="image-shadow">
+                <img src="assets/img/portfolio/bookfinder/bookfinder-diagram.png"
+                class="img-fluid base-diagram"
+                alt="Overview Diagram" 
+                onclick="openFullscreen(this)">
+              </div><!-- END: class="overview-image" id="image-shadow" -->
+            </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+          <div class="project overview">
+            <div class="overview-image" id="image-shadow">
+              <img src="assets/img/portfolio/bookfinder/brooklyn-college-campus.jpg"
+              class="img-fluid base-diagram"
+              alt="Brooklyn College Campus" 
+              onclick="openFullscreen(this)">
+            </div><!-- END: class="overview-image" id="image-shadow" -->
+          </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+        <!-- DUAL BUTTON CONTAINER -->
+        <div class="dual-buttons-container">
+          <a href="https://github.com/vladbortnik/book-finder-web-app#about-the-project" target="_blank" class="dual-button">
+            GitHub
+          </a>
+          <a href="https://bookfinder.vladbortnik.dev" target="_blank" class="dual-button">
+            Live
+          </a>
+        </div>
+      </div><!-- END: Project-3 Container  -->
+
+
+      <!-- PROJECT-4 CONTAINER -->
+      <div class="project container" id="project-4">
+
+        <div class="section-title project-title">
+          <h2>PROJECT #4</h2>
+          <a href="https://vladbortnik.dev" class="project-title-link">
+            <h4>PROFESSIONAL PORTFOLIO WEBSITE</h4>
+          </a>
+        </div>
+            
+        <div class="row align-items-center" id="section-container">
+          <h5>
+            Adapted a professional HTML template to create a personalized portfolio website.
+          </h5>
+          <div class="col-lg-12 pt-4 pt-lg-4" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                <h4>Overview</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-chevron-right"></i> <span>Code modified: HTML 75%, CSS 80%, JavaScript 65%</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Modified existing CSS styles and JavaScript functionality to match requirements</span></li>
+                    <li><i class="bi bi-chevron-right"></i> <span>Customized content structure and layout for optimal presentation of projects</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-10" data-aos="fade-right" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-3 pt-0 pt-lg-0" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview" id="tech-stack">
+                <h4>Tech Stack</h4>
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>HTML</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+          
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>CSS</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>JavaScript</span></li>
+                  </ul>
+              </div><!-- END: class="project-1 overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+
+          <div class="col-lg-3 pt-5 pt-lg-5" data-aos="fade-right">
+            <div class="overview-content">
+                <div class="project overview">
+                  <ul class="feature-list">
+                    <li><i class="bi bi-plus"></i> <span>Bootstrap</span></li>
+                  </ul>
+              </div><!-- END: class="project overview" -->
+            </div><!-- END: class="overview-content" -->
+          </div><!-- END: class="col-lg-4" data-aos="fade-right" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+
+        <!-- =========   SCREENSHOTS   =================== -->
+        <div class="row align-items-center" id="section-container">
+          <div class="col-lg-4 pt-3 pt-lg-0" data-aos="fade-left">
+              <div class="project overview">
+                <h4>Diagram && Screenshots</h4>
+                <div class="overview-image" id="image-shadow">
+                  <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.png"
+                  class="img-fluid base-diagram"
+                  alt="Portfolio Homepage" 
+                  onclick="openFullscreen(this)">
+                </div><!-- END: class="overview-image" id="image-shadow" -->
+              </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+            <div class="project overview">
+              <div class="overview-image" id="image-shadow">
+                <img src="assets/img/portfolio/website-portfolio/website-portfolio-projects.jpg"
+                class="img-fluid base-diagram"
+                alt="Projects" 
+                onclick="openFullscreen(this)">
+              </div><!-- END: class="overview-image" id="image-shadow" -->
+            </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+
+          <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
+          <div class="project overview">
+            <div class="overview-image" id="image-shadow">
+              <img src="assets/img/portfolio/website-portfolio/website-portfolio-resume.png"
+              class="img-fluid base-diagram"
+              alt="Resume" 
+              onclick="openFullscreen(this)">
+            </div><!-- END: class="overview-image" id="image-shadow" -->
+          </div><!-- END: class="project overview" -->
+          </div><!-- END: class="col-lg-4" -->
+        </div><!-- END: row align-items-center (class="row") -->
+
+        <!-- DUAL BUTTON CONTAINER -->
+        <div class="dual-buttons-container">
+          <a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank" class="dual-button">
+            GitHub
+          </a>
+          <a href="https://vladbortnik.dev" class="dual-button">
+            Live
+          </a>
+        </div>
+      </div><!-- END: Project-4 Container  -->
+
+
+      <!-- ======= Technologies Slider On Portfolio Gallery Page ======= -->
+      <div class="technologies container">
+
+        <div class="section-title">
+          <h2>Technologies</h2>
+        </div>
+
+        <div class="technologies-slider swiper" data-aos="fade-up" data-aos-delay="100">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/docker.png" class="technology-icon" id="docker-icon" alt="Docker Icon">
+                <h3>Docker</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/flask-white.png" class="technology-icon" alt="Flask Icon">
+                <h3>Flask</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/nginx.png" class="technology-icon" id="nginx-icon" alt="Nginx Icon">
+                <h3>Nginx</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/postgresql.png" class="technology-icon" alt="PostgreSQL Icon">
+                <h3>PostgreSQL</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/git.png" class="technology-icon" id="git-icon" alt="Git Icon">
+                <h3>git</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/python.png" class="technology-icon" alt="Python Icon">
+                <h3>Python</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+            <div class="swiper-slide">
+              <div class="technology-item">
+                <img src="assets/img/portfolio/technologies-icons/dns.png" class="technology-icon" alt="DNS Icon">
+                <h3>.config</h3>
+              </div>
+            </div><!-- END: technology item -->
+
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+
+      </div><!-- ======= END: Technologies Slider On Portfolio Page ======= -->
+
+    </div><!-- END: class="container" -->
   </section><!-- END: Projects Section -->
+
+
 
   <!-- ============================================ -->
   <!-- ======= CONTACT Section ==================== -->
@@ -1326,17 +1393,7 @@
       </form>
 
     </div>
-  </section> --><!-- end: Contact Section -->
-
-
-<!-- ================================ -->
-
-
-
-
-
-
-
+  </section> --><!-- END: Contact Section -->
 
 
 

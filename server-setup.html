@@ -29,12 +29,13 @@
 
   <!-- Main CSS File -->
   <link href="assets/css/server-setup.css" rel="stylesheet">
+
 </head>
 
 <body>
-
+  <!-- ====================== -->
   <!-- FLOATING RETURN BUTTON -->
-  <a href="index.html" class="floating-return-btn">
+  <a href="/" class="floating-return-btn">
     <i class="bi bi-house-door"></i>
     <span>Back to Portfolio</span>
   </a>
@@ -45,13 +46,6 @@
   <header id="header">
     <div class="container">
 
-      <!-- <a href="index.html" class="floating-home"><i class="bi bi-arrow-return-left"></i> Home</a> -->
-
-      <!-- <div class="title-container">
-        <a id="project-title-1" href="server-setup.html">Nginx. From the ground up</a>
-        <a id="project-title-2" href="server-setup.html">Production-Grade Multi-Application Server</a>
-      </div> -->
-
       <div class="project-badge pill">
         <span>PROJECT #1</span>
       </div>
@@ -59,7 +53,6 @@
       <div class="project-title">
         <a href="server-setup.html">Production-Grade Multi-Application Server</a>
       </div>
-      <!-- <a href="index.html" class="back-to-portfolio"><i class="bi bi-arrow-return-left"></i> Back to Portfolio</a> -->
 
       <nav id="navbar" class="navbar">
         <ul>
@@ -74,15 +67,11 @@
       </nav><!-- .navbar -->
 
     </div>
-  </header><!-- end: HEADER -->
-
-  
-  <!-- ======= PROJECT BANNER ======= -->
-  <!-- ======= END: Project Banner ======= -->
+  </header><!-- END: Header -->
 
 
   <!-- ================ -->
-  <!-- OVERVIEW Section -->
+  <!-- OVERVIEW SECTION -->
   <section class="overview" id="overview">
     <div class="container">
 
@@ -100,7 +89,7 @@
                 class="overlay-image">
             </div>
           </div>
-      </div><!-- end: class="diagram-container" -->
+      </div><!-- END: class="diagram-container" -->
 
       <div class="row align-items-center" id="overview-content">
         <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
@@ -112,15 +101,14 @@
               connections, configured DNS, and deployed applications using Docker containers for isolated environments.
             </p>
           </div>
-        </div><!-- end: Class Col-6 -->
+        </div><!-- END: Class Col-6 -->
 
-        <div class="col-lg-6 pt-4 pt-lg-0" data-aos="fade-left">
+        <div class="col-lg-6 pt-5 pt-lg-5" data-aos="fade-left">
           <div class="overview-content">
             <div class="tech-overview">
               <h3>Tech Stack</h3>
               <ul class="tech-list">
-                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual
-                    Server)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual Environment)</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Security:</strong> <span>SSL, Firewall, HTTPS</span>
                 </li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Deployment:</strong> <span>Docker, SFTP</span></li>
@@ -129,15 +117,15 @@
               </ul>
             </div>
           </div>
-        </div><!-- end: Class Col-6 -->
-      </div><!-- end: Class Row -->
+        </div><!-- END: Class Col-6 -->
+      </div><!-- END: Class Row -->
 
-    </div><!-- end: Overview Container -->
-  </section><!-- end: Overview Section -->
+    </div><!-- END: Overview Container -->
+  </section><!-- END: Overview Section -->
 
 
   <!-- ==================== -->
-  <!-- ARCHITECTURE Section -->
+  <!-- ARCHITECTURE SECTION -->
   <section class="architecture" id="architecture">
     <div class="architecture container">
 
@@ -254,8 +242,8 @@
           <!-- Blur Background when a Hotspot Pops up -->
           <div class="diagram-overlay"></div>
 
-        </div><!-- end: Hotspot On Hover -->
-      </div><!-- end: Architecture Diagram -->
+        </div><!-- END: Hotspot On Hover -->
+      </div><!-- END: Architecture Diagram -->
 
       <div class="section-title">
         <h2>Domain Name System</h2>
@@ -269,7 +257,7 @@
              data-fullscreen-src="assets/img/portfolio/server-setup/DNS/dns-dashboard-fullscreen.png"
              alt="DNS Details" 
              onclick="openFullscreen(this)">
-      </div><!-- end: DNS -->
+      </div><!-- END: DNS -->
 
       <!-- Droplet Dashboard -->
       <div class="section-title">
@@ -285,44 +273,35 @@
              onclick="openFullscreen(this)">
       </div> -->
 
-          <!-- OPEN IMG SIDE-by-SIDE -->
-          <div class="diagram-container" id="section-container" data-aos="zoom-in">
-            <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png"
-                class="img-fluid base-diagram"
-                data-img1-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.png"
-                data-img2-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-2.png"
-                data-img1-alt="Droplet Dashboard 1"
-                data-img2-alt="Droplet Dashboard 2"
-                alt="Droplet Dashboard" 
-                onclick="openSideBySideFullscreen(this)">
-                <!-- <div class="caption">Droplet Dashboard</div> -->
-          </div>
+      <!-- OPEN IMG SIDE-by-SIDE -->
+      <div class="diagram-container" id="section-container" data-aos="zoom-in">
+        <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.png"
+            class="img-fluid base-diagram"
+            data-img1-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.png"
+            data-img2-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-2.png"
+            data-img1-alt="Droplet Dashboard 1"
+            data-img2-alt="Droplet Dashboard 2"
+            alt="Droplet Dashboard" 
+            onclick="openSideBySideFullscreen(this)">
+            <!-- <div class="caption">Droplet Dashboard</div> -->
+      </div>
 
-
-    </div><!-- end: Architecture Container -->
-  </section><!-- end: Architecture Section -->
+    </div><!-- END: Architecture Container -->
+  </section><!-- END: Architecture Section -->
 
 
   <!-- ============================= -->
-  <!-- DOCKER INFRASTRUCTURE Section -->
+  <!-- DOCKER INFRASTRUCTURE SECTION -->
   <section class="docker" id="docker">
     <div class="container">
 
       <!-- ^^INFO^^: Project Context Banner -->
-      <div class="project-context" data-aos="fade-up">
+      <!-- <div class="project-context" data-aos="fade-up">
         <div class="context-note">
           <i class="bi bi-info-circle me-2"></i>
-          <span>This section details the Docker Infrastructure related the "Server Setup" Project only.</span>
+          <span>Docker Infrastructure Details (on this page) are related only to the "Server Setup" Project.</span>
         </div>
-        <!-- <div class="context-links">
-          <a href="https://vladbortnik.dev" target="_blank" class="btn-link">
-            <i class="bi bi-globe"></i> Live Server
-          </a>
-          <a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank" class="btn-link"><i
-              class="bi bi-github"></i> Project Details
-          </a>
-        </div> -->
-      </div>
+      </div> -->
 
       <!-- Docker Diagram -->
       <div class="section-title">
@@ -381,8 +360,8 @@
           <!-- Blur Background when Hotspot Pops up -->
           <div class="diagram-overlay"></div>
 
-        </div><!-- end: Hotspot -->
-      </div><!-- end: Docker Diagram -->
+        </div><!-- END: Hotspot -->
+      </div><!-- END: Docker Diagram -->
 
       <!-- Docker-Compose Screenshot -->
       <div class="section-title">
@@ -407,16 +386,16 @@
             <p>Persistent Volumes</p>
           </div>
 
-        </div><!-- end: Highlight Overlay -->
-      </div><!-- end: DOCKER-COMPOSE WITH FULLSCREEN EFFECT -->
+        </div><!-- END: Highlight Overlay -->
+      </div><!-- END: Docker-compose With Fullscreen Effect -->
 
-      <!-- === Docker. Other Screenshots. === -->
+
+      <!-- ======== DOCKER SCREENSHOTS (OTHER) ======== -->
       <div class="section-title">
         <h2>Screenshots</h2>
         <h4>Details</h4>
       </div>
       <div class="screenshots-gallery" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <!-- First item -->
           <div class="gallery-item" id="image-shadow">
@@ -455,15 +434,15 @@
           </div>          
           <!-- More items ??? -->
 
-        </div>
-      </div><!--end: Masonry Grid Gallery    -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
   
-    </div><!-- Last Div Before Section Ends -->
-  </section><!-- end: Docker Infrastructure Section -->
+    </div><!-- END: div container -->
+  </section><!-- END: Docker Infrastructure Section -->
 
 
   <!-- =============================== -->
-  <!-- SECURITY IMPLEMENTATION Section -->
+  <!-- SECURITY IMPLEMENTATION SECTION -->
   <section class="security" id="security">
     <div class="container">
 
@@ -494,7 +473,6 @@
                 onclick="openSideBySideFullscreen(this)">
                 <div class="caption">SSL Lab Test (Qualys)</div>
           </div>
-
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification.png" 
@@ -551,15 +529,10 @@
             onclick="openFullscreen(this)">
             <div class="caption">SSL Certificate (Browser Padlock)</div>
           </div>
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/letsencrypt-renewal.png" alt="Letsencrypt Renewal" onclick="openFullscreen(this)">
-            <div class="caption">Letsencrypt Renewal</div>
-          </div> -->
           <!-- More items ??? -->
 
-        </div>
-      </div><!-- end: Masonry Grid Gallery  -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
 
 
       <!-- =================================  -->
@@ -570,7 +543,6 @@
       </div>
 
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.png" 
@@ -613,8 +585,8 @@
           </div>
           <!-- More items ??? -->
 
-        </div>
-      </div><!-- end: Masonry Grid Gallery  -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
 
 
       <!-- =========================  -->
@@ -625,7 +597,6 @@
       </div>
 
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.png" 
@@ -648,17 +619,10 @@
             onclick="openFullscreen(this)">
             <div class="caption">Security Headers Config</div>
           </div>
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/certbot-certificates.png" 
-            alt="Certbot Certificates" 
-            onclick="openFullscreen(this)">
-            <div class="caption">Certbot Certificates</div>
-          </div> -->
           <!-- More items ??? -->
 
-        </div>
-      </div><!-- end: Masonry Grid Gallery  -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
 
 
       <!-- =====================  -->
@@ -669,7 +633,6 @@
       </div>
 
       <div class="screenshots-gallery" id="section-container" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/firewall/fail2ban.png" alt="fail2ban Details" 
@@ -682,27 +645,17 @@
             onclick="openFullscreen(this)">
             <div class="caption">UFW</div>
           </div>
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.png" alt="Docker Volumes Details" onclick="openFullscreen(this)">
-            <div class="caption">Volume Details</div>
-          </div> -->
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.png" alt="Docker Networks Diagram" onclick="openFullscreen(this)">
-            <div class="caption">Networks Diagram</div>
-          </div> -->
           <!-- More items ??? -->
 
-        </div>
-      </div><!-- end: Masonry Grid Gallery  -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
 
-    </div><!-- Last Div Before Section Ends -->
-  </section><!-- end: Docker Infrastructure Section -->
+    </div><!-- END: div container -->
+  </section><!-- END: Docker Infrastructure Section -->
 
 
   <!-- =========================== -->
-  <!-- NGINX CONFIGURATION Section -->
+  <!-- NGINX CONFIGURATION SECTION -->
   <section class="nginx" id="nginx">
     <div class="nginx container">
 
@@ -717,7 +670,6 @@
           Nginx reverse proxy acts as an intermediary server that forwards client requests to appropriate backend servers. It handles incoming requests and distributes them to backend applications while providing an additional layer of abstraction and security.
         </p>
         <div class="col-lg-5" data-aos="fade-right">
-            <!-- <h3>Nginx as Reverse Proxy</h3> -->
           <div class="overview-content">
 
             <div class="tech-overview">
@@ -729,9 +681,9 @@
                   <li><i class="bi bi-chevron-right"></i> <span>Enhances security through IP masking</span></li>
                   <li><i class="bi bi-chevron-right"></i> <span>Simplifies backend maintenance</span></li>
                 </ul>
-            </div><!-- end: class="tech-overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
+            </div><!-- END: class="tech-overview" -->
+          </div><!-- END: class="overview-content" -->
+        </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
         
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
@@ -739,10 +691,9 @@
             class="img-fluid base-diagram"
             alt="Reverse Proxy Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow-light" -->
-        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
-      
-      </div><!-- end: 1. Reverse Proxy (class="row") -->
+          </div><!-- END: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" --> 
+      </div><!-- END: 1. Reverse Proxy (class="row") -->
 
 
       <!-- 2. Load Balancer -->
@@ -762,27 +713,25 @@
             class="img-fluid base-diagram"
             alt="Load Balancer Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow-light" -->
-        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
+          </div><!-- END: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
 
         <div class="col-lg-5" data-aos="fade-right">
-          <!-- <h3>Nginx as Reverse Proxy</h3> -->
-        <div class="overview-content">
+          <div class="overview-content">
 
-          <div class="tech-overview">
-            <h4>Features</h4>
-              <ul class="tech-list">
-                <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
-                <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
-                <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
-                <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
-                <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
-              </ul>
-          </div><!-- end: class="tech-overview" -->
-        </div><!-- end: class="overview-content" -->
-      </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
-      
-      </div><!-- end: 2. Load Balancer -->
+            <div class="tech-overview">
+              <h4>Features</h4>
+                <ul class="tech-list">
+                  <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
+                  <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
+                </ul>
+            </div><!-- END: class="tech-overview" -->
+          </div><!-- END: class="overview-content" -->
+       </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
+      </div><!-- END: 2. Load Balancer -->
 
 
       <!-- 3. Server Blocks -->
@@ -796,7 +745,6 @@
           Server Blocks (or Virtual Hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
         </p>
         <div class="col-lg-5" data-aos="fade-right">
-            <!-- <h3>Nginx as Reverse Proxy</h3> -->
           <div class="overview-content">
 
             <div class="tech-overview">
@@ -808,9 +756,9 @@
                   <li><i class="bi bi-chevron-right"></i> <span>Individual SSL certificates</span></li>
                   <li><i class="bi bi-chevron-right"></i> <span>Resource isolation</span></li>
                 </ul>
-            </div><!-- end: class="tech-overview" -->
-          </div><!-- end: class="overview-content" -->
-        </div><!-- end: class="col-lg-7" data-aos="fade-right" -->
+            </div><!-- END: class="tech-overview" -->
+          </div><!-- END: class="overview-content" -->
+        </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
         
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
@@ -818,10 +766,9 @@
             class="img-fluid base-diagram"
             alt="Server Blocks Configuration" 
             onclick="openFullscreen(this)">
-          </div><!-- end: class="overview-image" id="image-shadow-light" -->
-        </div><!-- end: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
-      
-      </div><!-- end: 3. Server Blocks (class="row") -->   
+          </div><!-- END: class="overview-image" id="image-shadow-light" -->
+        </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->     
+      </div><!-- END: 3. Server Blocks (class="row") -->   
       
 
       <!-- === 4. Nginx. Other Screenshots. === -->
@@ -830,7 +777,6 @@
         <h4>Details</h4>
       </div>
       <div class="screenshots-gallery" data-aos="fade-up">
-        <!-- <h4>Additional Configuration Screenshots</h4> -->
         <div class="masonry-grid">
           <!-- First item -->
           <div class="gallery-item" id="image-shadow">
@@ -839,25 +785,17 @@
             onclick="openFullscreen(this)">
             <div class="caption">Load Balancer Logs</div>
           </div>
-          <!-- More items -->
-          <!-- <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-ps.png" 
-            alt="Docker Running Containers Details" 
-            onclick="openFullscreen(this)">
-            <div class="caption">Container/Port Details</div>
-          </div> -->
           <!-- More items ??? -->
 
-        </div><!-- end: class="masonry-grid" -->
-      </div><!-- end: Masonry Grid Gallery    -->
+        </div><!-- END: Masonry-Grid -->
+      </div><!-- END: Screenshots Gallery  -->
 
-      
-    </div><!-- end: 0. nginx container -->
-  </section><!-- end: Nginx Configuration Section -->
+    </div><!-- END: 0. nginx container -->
+  </section><!-- END: Nginx Configuration Section -->
 
 
   <!-- Vendor JS -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <!-- <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script> -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
   <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
   <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>

@@ -109,8 +109,33 @@
    */
   window.addEventListener('load', () => {
     if (window.location.hash === "") {
-      window.location.hash = "overview"
+      // Show overview section without changing URL
+      const overviewSection = select("#overview");
+      const header = select('#header');
+      const navlinks = select('#navbar .nav-link', true);
+      
+      header.classList.add('header-top');
+      
+      // Set the overview nav link as active
+      navlinks.forEach((item) => {
+        if (item.getAttribute('href') == '#overview') {
+          item.classList.add('active');
+        } else {
+          item.classList.remove('active');
+        }
+      });
+      
+      // Show the overview section
+      setTimeout(function() {
+        select('section', true).forEach((item) => {
+          item.classList.remove('section-show');
+        });
+        overviewSection.classList.add('section-show');
+      }, 350);
+      
+      return; // Skip the rest of the function
     }
+
     if (window.location.hash) {
       let initial_nav = select(window.location.hash)
 
@@ -136,75 +161,14 @@
       }
     }
   });
-
-  /**
-   * Technologies Carousel
-   */
-  new Swiper('.technologies-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    },
-    breakpoints: {
-      320: {
-        slidesPerView: 1,
-        spaceBetween: 20
-      },
-
-      430: {
-        slidesPerView: 2,
-        spaceBetween: 20
-      },
-
-      760: {
-        slidesPerView: 3,
-        spaceBetween: 20
-      },
-
-      1000: {
-        slidesPerView: 4,
-        spaceBetween: 20
-      }
-    }
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Initiate Pure Counter 
-   */
-  new PureCounter();
 })()
 
 
-/**********************************
-******* SERVER SETUP SPECIFIC *****
-**********************************/
+/*************************************
+******** SERVER SETUP SPECIFIC *******
+*************************************/
 
-/* ##### openFullscreen(img) ##### */
+// === OPEN IMAGE in FULLSCREEN === //
 function openFullscreen(img) {
   // Create overlay
   const overlay = document.createElement('div');
@@ -245,7 +209,7 @@ function openFullscreen(img) {
   // fullImg.addEventListener('onclick', closeFullscreen);
 }
 
-// `docker-compose. yaml` CODE SNIPPETS POPUPs
+// === `DOCKER-COMPOSE. YAML` CODE SNIPPETS POPUPS === //
 function showCodeSnippet(type) {
   let codeSnippet = '';
 
@@ -343,41 +307,36 @@ function showCodeSnippet(type) {
     });
 }
 
-// OPT 1. FLOATING RETURN BUTTON. ANIMATED APPEAR ON SCROLL
-// window.addEventListener('scroll', function() {
-//   const button = document.querySelector('.floating-return-btn');
-//   if (window.scrollY > 100) {
-//     button.classList.add('visible');
-//   } else {
-//     button.classList.remove('visible');
-//   }
-// });
-
-// OPT 2. FLOATING RETURN BUTTON. ANIMATED APPEAR ON SCROLL
-// Track if button has appeared at least once
+// ==== FLOATING "RETURN HOME" BUTTON ==== //
+// Appears On Scroll or After Timeout //
 let buttonRevealed = false;
 let scrollTimer;
+let autoShowTimer;
 
 window.addEventListener('load', function() {
   const button = document.querySelector('.floating-return-btn');
   
-  // Initial check on page load
   if (window.scrollY >= 100) {
     button.classList.add('visible');
     buttonRevealed = true;
+  } else {
+    autoShowTimer = setTimeout(function() {
+      if (!buttonRevealed) {
+        button.classList.add('visible');
+        buttonRevealed = true;
+        button.style.opacity = "1";
+      }
+    }, 3000);
   }
 });
 
 window.addEventListener('scroll', function() {
   const button = document.querySelector('.floating-return-btn');
   
-  // Clear the existing timeout
-  clearTimeout(scrollTimer);
-  
   // Make fully opaque while scrolling
   button.style.opacity = "0.3";
   
-  // If we've scrolled enough and button hasn't been revealed yet
+  // If scrolled enough and button hasn't been revealed yet
   if (window.scrollY >= 100 && !buttonRevealed) {
     button.classList.add('visible');
     buttonRevealed = true;
@@ -388,10 +347,11 @@ window.addEventListener('scroll', function() {
     if (buttonRevealed) {
       button.style.opacity = "1";
     }
-  }, 1000); // 1000ms after scrolling stops
+  }, 1000);
 });
 
-// OPEN IMG SIDE-by-SIDE
+
+// ===== OPEN IMAGE SIDE-by-SIDE ====== //
 function openSideBySideFullscreen(img) {
   // Create overlay
   const overlay = document.createElement('div');

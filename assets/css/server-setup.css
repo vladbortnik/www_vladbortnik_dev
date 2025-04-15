@@ -12,60 +12,7 @@ body {
 body::before {
   content: "";
   position: fixed;
-  /* DEFAULT BACKGROUND */
-  background: #040404 url("../img/background.jpg") top right no-repeat;
-
-  /* OPTIONS FOR DIFF NAV-BARs */
-
-  /* OPT 1. Nav-Bar 1: Purple/Blue Gradient. Back-Ref: Line 324 */
-  /* ! Deep Space:  */
-  /* background: #0a1129; */
-  /* ! Midnight Slate:  */
-  /* background: #1a1a2e; */
-  /* !!!!! Cosmic Depth:  */
   background: linear-gradient(135deg, #190d30 0%, #0c1e57 100%);
-  /* !!! Twilight Fade:  */
-  /* background: radial-gradient(circle at top right, #1a1a2e 0%, #0c0a1e 100%); */
-  
-  /* OPT 2. Nav-Bar 2: Green Gradient Back-Ref: Line 327 */
-  /* ! Forest Depth:  */
-  /* background: #0a2017; */
-  /* ! Carbon Moss:  */
-  /* background: #171f1a; */
-  /* !!! Emerald Depths:  */
-  /* background: linear-gradient(135deg, #030a07 0%, #0c4337 100%); */
-  /* !! Biome Fade:  */
-  /* background: radial-gradient(circle at top right, #171f1a 0%, #0d1f14 100%); */
-  /* !!! Biome Fade 2:  */
-  /* background: radial-gradient(circle at top left, #26392e 0%, #236b25 100%); */
-
-  /* OPT 3. Nav-Bar 3: Orange/Red Gradient Back-Ref: Line 330 */
-  /* !! Dark Ember:  */
-  /* background: #221200; */
-  /* ! Charred Carbon:  */
-  /* background: #1a1512; */
-  /* !!! Volcanic Depth:  */
-  /* background: linear-gradient(135deg, #221200 0%, #301500 100%); */
-  /* !! Heat Sink:  */
-  /* background: radial-gradient(circle at top right, #1a1512 0%, #241a12 100%); */
-  /* !!!! Ember Glow:  */
-  /* background: linear-gradient(170deg, #1a0f00 0%, #2d1500 90%, #3d1800 100%); */
-  /* !!! Terracotta Sunset:  */
-  /* background: linear-gradient(125deg, #1c0d00 0%, #261203 85%, #331705 100%); */
-  /* !! Forge Depth:  */
-  /* background: radial-gradient(circle at 75% 25%, #331500 0%, #220e00 50%, #1a0a00 100%); */
-  /* !! Cinnamon Shadow:  */
-  /* background: linear-gradient(90deg, #1e1007 0%, #261209 100%); */
-  /* ! Volcanic Nightfall:  */
-  /* background: linear-gradient(to bottom right, #1f1209 0%, #150d07 50%, #0e0702 100%); */
-  /* !-!!!! Molten Core:  */
-  /* background: radial-gradient(ellipse at bottom, #2c1200 0%, #1a0c00 70%, #140800 100%); */
-
-  /* OPT 4. Nav-Bar-4. */
-  /* !!!!! Cosmic Depth:  */
-  /* background: linear-gradient(135deg, #01052e 0%, #002f30 100%); */
-
-
   background-size: cover;
   left: 0;
   right: 0;
@@ -112,7 +59,7 @@ h6 {
   padding: 15px 20px;
 }
 
-/* Pill/Rounded Project Badge */
+/* Pill-Shaped Project Badge */
 .project-badge.pill {
   background-color: #ff5722; /* Orange */
   color: white;
@@ -227,7 +174,6 @@ h6 {
   display: inline-block;
 }
 
-
 #header h2 {
   font-size: 24px;
   margin-top: 20px;
@@ -293,19 +239,11 @@ h6 {
 /* ====================== */
 /* Floating Return Button */
 .floating-return-btn {
-
-  /* Option 1: Top-Left Position */
+  /* Top-Left Position */
   position: fixed;
   top: 90px;
   left: 30px;
-
-  /* Option 2: Bottom-Right Position */
-  /* position: fixed;
-  bottom: 30px;
-  right: 30px; */
-  /* END ======== */
-
-  background-color: rgba(0, 123, 255, 0.9); /* Blue with slight transparency */
+  background-color: rgba(0, 123, 255, 0.9);
   color: white;
   padding: 6px 10px;
   border-radius: 25px;
@@ -319,8 +257,8 @@ h6 {
   transition: all 0.3s ease;
   font-weight: 500;
 
-  /* OPTION: Animated Appear on Scroll. 
-  backref: line 356 in server-setup.js */
+  /* Animated Appear on Scroll. 
+  backref: line ~356 in server-setup.js */
   opacity: 0;
   visibility: hidden;
   transition: opacity 1s, visibility 1s, transform 1s;
@@ -361,8 +299,6 @@ h6 {
   }
 }
 
-
-
 /* =========== */
 /* HEADER TOP */
 #header.header-top {
@@ -371,23 +307,9 @@ h6 {
   left: 0;
   top: 0;
   right: 0;
-  background: rgba(0, 0, 0, 0.9);
-
+  /* background: rgba(0, 0, 0, 0.9); */
   /* Nav-Bar 1: Purple/Blue Gradient. Back-Ref: Line 15 */
   background: linear-gradient(90deg, #3a1c71, #4361c2);
-
-  /* Nav-Bar 2: Green Gradient */
-  /* background: linear-gradient(90deg, #0d3b25, #4caf50); */
-
-  /* Nav-Bar 3: Orange/Red Gradient */
-  /* background: linear-gradient(90deg, #5e2c00, #dd4814); */
-
-  /* Nav-Bar-4. */
-  /* background: linear-gradient(90deg, #1a227e, #006164); */
-
-  /* Nav-Bar: other options */
-  /* background: linear-gradient(90deg, #0e1c36, #0080ff); */
-  /* background: linear-gradient(90deg, #101d42, #4caf50); */
 }
 
 #header.header-top .social-links,
@@ -566,11 +488,6 @@ h6 {
 }
 
 /*======================
-### PROJECT BANNER   ###
-======================*/
-
-
-/*======================
 ### SECTIONS GENERAL ###
 ======================*/
 section {
@@ -638,7 +555,7 @@ section .container {
 }
 
 /*======================================
-########## SERVER SETUP PAGE ##########
+######## SERVER SETUP (SPECIFIC) #######
 ======================================*/
 #section-container {
   margin-bottom: 70px;
@@ -868,11 +785,9 @@ section .container {
   position: absolute;
   pointer-events: auto;
   cursor: pointer;
-
   /* background-color: #18d26e; */
   /* opacity: 0.5; */
   background: transparent;
-  
   transition: all 0.3s ease;
 }
 
@@ -1227,7 +1142,6 @@ section .container {
 #load-balancer-section .tech-list li i {
   margin-right: 5px;
 }
-
 
 /*==========================
 ==  OPEN IMG SIDE-by-SIDE =
