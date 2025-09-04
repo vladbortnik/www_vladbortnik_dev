@@ -1,5 +1,9 @@
+# Project Specific
+.claude/
+CLAUDE.md
+_*
+
 # General
-.DS_Store
 .AppleDouble
 .LSOverride
 
