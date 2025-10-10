@@ -1,0 +1,40 @@
+{
+  "posts": [
+    {
+      "slug": "deploying-flask-app-docker-digitalocean",
+      "title": "Deploying a Flask App with Docker on DigitalOcean",
+      "excerpt": "A comprehensive guide to deploying production-ready Flask applications using Docker containers on DigitalOcean, including Nginx configuration, SSL setup, and best practices for secure deployment.",
+      "author": "Vlad Bortnik",
+      "date": "2025-01-15",
+      "updated": null,
+      "category": "DevOps",
+      "tags": ["Flask", "Docker", "DigitalOcean", "Nginx", "SSL", "Python"],
+      "file": "deploying-flask-app-docker-digitalocean.md",
+      "image": null
+    },
+    {
+      "slug": "python-backend-best-practices-2025",
+      "title": "Python Backend Development Best Practices in 2025",
+      "excerpt": "Explore modern Python backend development patterns, including project structure, dependency management, testing strategies, and performance optimization techniques that every backend engineer should know.",
+      "author": "Vlad Bortnik",
+      "date": "2025-01-10",
+      "updated": null,
+      "category": "Backend Development",
+      "tags": ["Python", "Best Practices", "Architecture", "Testing", "Performance"],
+      "file": "python-backend-best-practices-2025.md",
+      "image": null
+    },
+    {
+      "slug": "docker-compose-multi-container-apps",
+      "title": "Mastering Docker Compose for Multi-Container Applications",
+      "excerpt": "Learn how to orchestrate complex multi-container applications using Docker Compose, including networking, volumes, environment variables, and production deployment strategies.",
+      "author": "Vlad Bortnik",
+      "date": "2025-01-05",
+      "updated": null,
+      "category": "Docker",
+      "tags": ["Docker", "Docker Compose", "Containers", "DevOps", "Microservices"],
+      "file": "docker-compose-multi-container-apps.md",
+      "image": null
+    }
+  ]
+}

@@ -5,10 +5,36 @@
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
-  <title>About | Server Setup</title>
-  <meta name="description" content="Learn about our custom server solution">
+  <title>Production-Grade Server Setup | Docker & Nginx | Vlad Bortnik</title>
+  <meta name="description" content="Learn how to deploy and manage a production-grade multi-application server with Docker, Nginx, SSL certificates, and custom DNS configuration on DigitalOcean.">
   <meta name="keywords"
     content="Personal Backend Development Project, Nginx Configuration, Ubuntu Server Setup, DigitalOcean Deployment, SSL Certificate Installation, DNS Configuration, Static Website Deployment, Subdomain Management, Docker Web Apps, Shared Server Environment, DigitalOcean Droplet, Web App Deployment, Full Stack Development, Server Management, Backend Developer Portfolio, Cloud Hosting Solutions, Custom Server Setup, Web Application Hosting, DevOps Practices, Manual Server Configuration">
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://vladbortnik.dev/server-setup.html">
+
+  <!-- Preconnect for performance -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="dns-prefetch" href="https://analytics.vladbortnik.dev">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://vladbortnik.dev/server-setup.html">
+  <meta property="og:title" content="Production-Grade Multi-Application Server | Vlad Bortnik">
+  <meta property="og:description" content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
+  <meta property="og:image" content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img.png">
+  <meta property="og:site_name" content="Vlad Bortnik Portfolio">
+  <meta property="article:author" content="Vlad Bortnik">
+  <meta property="article:section" content="DevOps">
+  <meta property="article:tag" content="Docker, Nginx, DigitalOcean, SSL, DevOps">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://vladbortnik.dev/server-setup.html">
+  <meta name="twitter:title" content="Production-Grade Multi-Application Server | Vlad Bortnik">
+  <meta name="twitter:description" content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
+  <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img.png">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/img/favicon.ico">
@@ -30,6 +56,38 @@
   <!-- Main CSS File -->
   <link href="assets/css/server-setup.css" rel="stylesheet">
 
+  <!-- Umami Analytics -->
+  <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="aa07340d-e426-4f86-a8f2-7736dd49d7aa"></script>
+
+  <!-- Structured Data / Schema.org -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "TechArticle",
+    "headline": "Production-Grade Multi-Application Server",
+    "description": "Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.",
+    "author": {
+      "@type": "Person",
+      "name": "Vlad Bortnik",
+      "url": "https://vladbortnik.dev"
+    },
+    "publisher": {
+      "@type": "Person",
+      "name": "Vlad Bortnik"
+    },
+    "image": "https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img.png",
+    "url": "https://vladbortnik.dev/server-setup.html",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "https://vladbortnik.dev/server-setup.html"
+    },
+    "keywords": "Docker, Nginx, DigitalOcean, SSL, DevOps, Server Configuration, Production Deployment",
+    "articleSection": "DevOps"
+  }
+  </script>
+
+  <!-- Umami Analytics (Privacy-friendly, GDPR compliant) -->
+  <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="aa07340d-e426-4f86-a8f2-7736dd49d7aa"></script>
 </head>
 
 <body>
@@ -471,7 +529,7 @@
                 data-img2-alt="SSL Lab Test 2"
                 alt="SSL Lab Test" 
                 onclick="openSideBySideFullscreen(this)">
-                <div class="caption">SSL Lab Test (Qualys)</div>
+                <div class="caption">SSL Lab Test (Qualys® Vulnerability Scan)</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
