@@ -1,0 +1,98 @@
+# Sveltia CMS Configuration
+# Vlad Bortnik's Blog - Magazine Editorial Design
+
+backend:
+  name: github
+  repo: vladbortnik/www_vladbortnik_dev # Replace with your actual repo
+  branch: main # or master, depending on your default branch
+  base_url: https://api.github.com
+  
+# Uncomment for local development testing
+# local_backend: true
+
+# Publish mode
+publish_mode: simple
+
+# Media files
+media_folder: "blog/assets/img/posts" # Where uploaded images will be saved
+public_folder: "assets/img/posts" # URL path for images in posts
+
+# Collections
+collections:
+  # Blog Posts Collection
+  - name: "posts"
+    label: "Blog Posts"
+    folder: "blog/posts"
+    create: true
+    slug: "{{slug}}"
+    extension: "md"
+    format: "frontmatter"
+    
+    # Editor settings
+    editor:
+      preview: true
+    
+    # Fields for each blog post
+    fields:
+      - { label: "Title", name: "title", widget: "string", required: true }
+      - { label: "Slug", name: "slug", widget: "string", required: true, 
+          hint: "URL-friendly version of title (e.g., 'my-first-post')" }
+      - { label: "Excerpt", name: "excerpt", widget: "text", required: true,
+          hint: "Short description (150-200 characters) shown in post cards" }
+      - { label: "Author", name: "author", widget: "string", default: "Vlad Bortnik", required: true }
+      - { label: "Publish Date", name: "date", widget: "datetime", required: true,
+          date_format: "YYYY-MM-DD", time_format: false }
+      - { label: "Category", name: "category", widget: "select", required: true,
+          options: ["Backend Development", "DevOps", "Docker", "Cloud Infrastructure", "Python", "Security"] }
+      - { label: "Tags", name: "tags", widget: "list", required: true,
+          hint: "Add relevant tags (e.g., Python, Flask, Docker)" }
+      - { label: "Featured Image", name: "image", widget: "image", required: false,
+          hint: "Optional hero image for the post" }
+      - { label: "Body", name: "body", widget: "markdown", required: true }
+    
+    # Sort posts by date (newest first)
+    sortable_fields: ["date", "title"]
+    
+    # View settings
+    view_filters:
+      - label: "Category"
+        field: category
+        pattern: "Backend Development"
+      - label: "DevOps Posts"
+        field: category
+        pattern: "DevOps"
+    
+    view_groups:
+      - label: "Year"
+        field: date
+        pattern: "YYYY"
+
+  # Posts Metadata (posts.json)
+  - name: "metadata"
+    label: "Posts Metadata"
+    files:
+      - label: "Posts Index"
+        name: "posts_json"
+        file: "blog/posts/posts.json"
+        fields:
+          - label: "Posts"
+            name: "posts"
+            widget: "list"
+            summary: "{{fields.title}}"
+            fields:
+              - { label: "Slug", name: "slug", widget: "string" }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Excerpt", name: "excerpt", widget: "text" }
+              - { label: "Author", name: "author", widget: "string" }
+              - { label: "Date", name: "date", widget: "datetime", format: "YYYY-MM-DD", date_format: "YYYY-MM-DD", time_format: false }
+              - { label: "Category", name: "category", widget: "string" }
+              - { label: "Tags", name: "tags", widget: "list" }
+              - { label: "Image", name: "image", widget: "string", required: false }
+              - { label: "File", name: "file", widget: "string", hint: "Markdown filename (e.g., 'my-post.md')" }
+
+# Site URL
+site_url: https://vladbortnik.dev/blog/
+display_url: https://vladbortnik.dev/blog/
+
+# Logo
+logo_url: https://vladbortnik.dev/assets/img/me.jpg

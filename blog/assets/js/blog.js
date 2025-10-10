@@ -11,11 +11,7 @@ let currentTag = 'all';
 let searchQuery = '';
 
 // DOM Elements
-const blogPostsGrid = document.getElementById('blogPostsGrid');
-const searchInput = document.getElementById('searchInput');
-const categoryFilters = document.getElementById('categoryFilters');
-const tagFilters = document.getElementById('tagFilters');
-const resultsCount = document.getElementById('resultsCount');
+const postsGrid = document.getElementById('postsGrid');
 const noResults = document.getElementById('noResults');
 
 /**
@@ -23,8 +19,8 @@ const noResults = document.getElementById('noResults');
  */
 async function initBlog() {
   try {
-    // Load posts metadata
-    const response = await fetch('posts/posts.json');
+    // Load posts metadata (with cache-busting)
+    const response = await fetch(`posts/posts.json?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to load posts');
     
     const data = await response.json();
@@ -50,176 +46,198 @@ async function initBlog() {
 }
 
 /**
- * Initialize category and tag filters
+ * Initialize category navigation and filters
  */
 function initializeFilters() {
   // Extract unique categories
-  const categories = ['all', ...new Set(allPosts.map(post => post.category))];
+  const categories = ['All Posts', ...new Set(allPosts.map(post => post.category))];
   
-  // Extract unique tags
-  const allTags = allPosts.flatMap(post => post.tags || []);
-  const uniqueTags = ['all', ...new Set(allTags)];
+  // Category icon mapping
+  const categoryIcons = {
+    'All Posts': 'bi-grid',
+    'Backend Development': 'bi-code-slash',
+    'DevOps': 'bi-hdd-stack',
+    'Docker': 'bi-box',
+    'Cloud Infrastructure': 'bi-cloud',
+    'Python': 'bi-file-code',
+    'Security': 'bi-shield-check'
+  };
   
-  // Render category filters
-  categoryFilters.innerHTML = categories.map(category => 
-    `<span class="category-filter ${category === 'all' ? 'active' : ''}" 
-           data-category="${category}">
-      ${category === 'all' ? 'All' : category}
-    </span>`
-  ).join('');
-  
-  // Render tag filters
-  tagFilters.innerHTML = uniqueTags.map(tag => 
-    `<span class="tag-filter ${tag === 'all' ? 'active' : ''}" 
-           data-tag="${tag}">
-      ${tag === 'all' ? 'All' : tag}
-    </span>`
-  ).join('');
+  // Render category navigation pills
+  const categoryNav = document.getElementById('categoryNav');
+  if (categoryNav) {
+    categoryNav.innerHTML = categories.map((category, index) => {
+      const icon = categoryIcons[category] || 'bi-circle';
+      const dataCategory = category === 'All Posts' ? 'all' : category;
+      return `<span class="category-pill ${index === 0 ? 'active' : ''}" 
+                    data-category="${dataCategory}">
+                <i class="bi ${icon}"></i>
+                ${category}
+              </span>`;
+    }).join('');
+    
+    // Add click handlers for category pills
+    categoryNav.addEventListener('click', (e) => {
+      if (e.target.closest('.category-pill')) {
+        const pill = e.target.closest('.category-pill');
+        document.querySelectorAll('.category-pill').forEach(p => p.classList.remove('active'));
+        pill.classList.add('active');
+        currentCategory = pill.dataset.category;
+        applyFilters();
+      }
+    });
+  }
 }
 
 /**
  * Setup event listeners
  */
 function setupEventListeners() {
-  // Search input
-  searchInput.addEventListener('input', debounce(handleSearch, 300));
-  
-  // Category filters
-  categoryFilters.addEventListener('click', (e) => {
-    if (e.target.classList.contains('category-filter')) {
-      handleCategoryFilter(e.target);
-    }
-  });
-  
-  // Tag filters
-  tagFilters.addEventListener('click', (e) => {
-    if (e.target.classList.contains('tag-filter')) {
-      handleTagFilter(e.target);
-    }
-  });
+  // Event listeners are now set up in initializeFilters()
+  // for the category navigation pills
 }
 
 /**
- * Handle search input
- */
-function handleSearch(e) {
-  searchQuery = e.target.value.toLowerCase().trim();
-  applyFilters();
-}
-
-/**
- * Handle category filter click
- */
-function handleCategoryFilter(element) {
-  // Update active state
-  document.querySelectorAll('.category-filter').forEach(el => el.classList.remove('active'));
-  element.classList.add('active');
-  
-  // Update current category
-  currentCategory = element.dataset.category;
-  
-  // Apply filters
-  applyFilters();
-}
-
-/**
- * Handle tag filter click
- */
-function handleTagFilter(element) {
-  // Update active state
-  document.querySelectorAll('.tag-filter').forEach(el => el.classList.remove('active'));
-  element.classList.add('active');
-  
-  // Update current tag
-  currentTag = element.dataset.tag;
-  
-  // Apply filters
-  applyFilters();
-}
-
-/**
- * Apply all filters (search, category, tag)
+ * Apply category filter
  */
 function applyFilters() {
   filteredPosts = allPosts.filter(post => {
     // Category filter
     const categoryMatch = currentCategory === 'all' || post.category === currentCategory;
     
-    // Tag filter
-    const tagMatch = currentTag === 'all' || (post.tags && post.tags.includes(currentTag));
-    
-    // Search filter
-    const searchMatch = !searchQuery || 
-      post.title.toLowerCase().includes(searchQuery) ||
-      post.excerpt.toLowerCase().includes(searchQuery) ||
-      post.author.toLowerCase().includes(searchQuery) ||
-      (post.tags && post.tags.some(tag => tag.toLowerCase().includes(searchQuery)));
-    
-    return categoryMatch && tagMatch && searchMatch;
+    return categoryMatch;
   });
   
   displayPosts();
 }
 
 /**
- * Display filtered posts
+ * Display filtered posts (with hero, grid, medium card, and compact list)
  */
 function displayPosts() {
-  // Update results count
-  const totalCount = allPosts.length;
-  const filteredCount = filteredPosts.length;
-  resultsCount.textContent = `Showing ${filteredCount} of ${totalCount} articles`;
+  const heroPost = document.getElementById('heroPost');
+  const mediumPostCard = document.getElementById('mediumPostCard');
+  const compactPostsList = document.getElementById('compactPostsList');
   
   // Show/hide no results message
   if (filteredPosts.length === 0) {
-    blogPostsGrid.innerHTML = '';
+    if (heroPost) heroPost.style.display = 'none';
+    if (mediumPostCard) mediumPostCard.style.display = 'none';
+    if (compactPostsList) compactPostsList.innerHTML = '';
+    postsGrid.innerHTML = '';
     noResults.style.display = 'block';
     return;
   }
   
   noResults.style.display = 'none';
   
-  // Render posts
-  blogPostsGrid.innerHTML = filteredPosts.map(post => createPostCard(post)).join('');
+  // Render full magazine layout (if not filtering)
+  if (currentCategory === 'all' && filteredPosts.length > 0) {
+    // 1. Hero section with first post
+    const featuredPost = filteredPosts[0];
+    const postUrl = `post.html?slug=${featuredPost.slug}`;
+    const imageUrl = featuredPost.image || 'assets/img/background.jpg';
+    const readingTime = calculateReadingTime(featuredPost.excerpt);
+    
+    if (heroPost) {
+      heroPost.style.display = 'block';
+      heroPost.innerHTML = `
+        <img src="${imageUrl}" alt="${featuredPost.title}" class="hero-post-image"
+             onerror="this.src='assets/img/background.jpg'">
+        <div class="hero-post-overlay">
+          <span class="hero-post-category">Featured</span>
+          <h1 class="hero-post-title">${featuredPost.title}</h1>
+          <p class="hero-post-excerpt">${featuredPost.excerpt}</p>
+          <div class="hero-post-meta">
+            <span><i class="bi bi-calendar3"></i> ${formatDate(featuredPost.date)}</span>
+            <span><i class="bi bi-clock"></i> ${readingTime} min read</span>
+            <span><i class="bi bi-person"></i> ${featuredPost.author}</span>
+          </div>
+        </div>
+      `;
+      heroPost.onclick = () => window.location.href = postUrl;
+    }
+    
+    // 2. Posts grid with next 3 posts (2nd, 3rd, 4th)
+    const gridPosts = filteredPosts.slice(1, 4);
+    postsGrid.innerHTML = gridPosts.map(post => createPostCard(post)).join('');
+    
+    // 3. Medium post card (5th post)
+    if (filteredPosts.length > 4 && mediumPostCard) {
+      const mediumPost = filteredPosts[4];
+      mediumPostCard.style.display = 'flex';
+      mediumPostCard.innerHTML = createPostCard(mediumPost).replace('<article class="post-card"', '<div');
+      mediumPostCard.onclick = () => window.location.href = `post.html?slug=${mediumPost.slug}`;
+    } else if (mediumPostCard) {
+      mediumPostCard.style.display = 'none';
+    }
+    
+    // 4. Compact list with remaining posts (6th onwards)
+    if (filteredPosts.length > 5 && compactPostsList) {
+      const compactPosts = filteredPosts.slice(5);
+      compactPostsList.innerHTML = compactPosts.map(post => {
+        const postUrl = `post.html?slug=${post.slug}`;
+        const readingTime = calculateReadingTime(post.excerpt);
+        return `
+          <article class="compact-post" onclick="window.location.href='${postUrl}'">
+            <h4 class="compact-post-title">${post.title}</h4>
+            <div class="compact-post-meta">
+              <span>${formatDate(post.date)} • ${readingTime} min</span>
+            </div>
+          </article>
+        `;
+      }).join('');
+    } else if (compactPostsList) {
+      compactPostsList.innerHTML = '<p style="color: var(--text-muted); font-size: 14px;">No more posts available</p>';
+    }
+    
+  } else {
+    // Hide magazine sections when filtering
+    if (heroPost) heroPost.style.display = 'none';
+    if (mediumPostCard) mediumPostCard.style.display = 'none';
+    if (compactPostsList) compactPostsList.innerHTML = '';
+    
+    // Render all filtered posts in simple grid
+    postsGrid.innerHTML = filteredPosts.map(post => createPostCard(post)).join('');
+  }
 }
 
 /**
- * Create a post card HTML
+ * Create a post card HTML (Magazine Editorial style)
  */
 function createPostCard(post) {
   const postUrl = `post.html?slug=${post.slug}`;
-  const imageUrl = post.image || '../assets/img/background.jpg';
+  const imageUrl = post.image || 'assets/img/background.jpg';
   const readingTime = calculateReadingTime(post.excerpt);
   
   return `
-    <div class="blog-card">
-      <div style="position: relative;">
-        <img src="${imageUrl}" alt="${post.title}" class="blog-card-img" 
-             onerror="this.src='../assets/img/background.jpg'">
-        <span class="category-badge">${post.category}</span>
+    <article class="post-card" onclick="window.location.href='${postUrl}'">
+      <div class="post-card-image-wrapper">
+        <img src="${imageUrl}" alt="${post.title}" class="post-card-image" 
+             onerror="this.src='assets/img/background.jpg'">
+        <span class="post-card-category">${post.category}</span>
       </div>
-      <div class="blog-card-body">
-        <div class="blog-card-meta">
-          <span><i class="bi bi-calendar3"></i>${formatDate(post.date)}</span>
-          <span><i class="bi bi-clock"></i>${readingTime} min read</span>
-          <span><i class="bi bi-person"></i>${post.author}</span>
+      <div class="post-card-content">
+        <div class="post-card-meta">
+          <span><i class="bi bi-calendar3"></i> ${formatDate(post.date)}</span>
+          <span><i class="bi bi-clock"></i> ${readingTime} min read</span>
         </div>
-        <h3 class="blog-card-title">
+        <h3 class="post-card-title">
           <a href="${postUrl}">${post.title}</a>
         </h3>
-        <p class="blog-card-excerpt">${post.excerpt}</p>
-        <div class="blog-card-footer">
-          <div class="blog-card-tags">
-            ${post.tags.slice(0, 3).map(tag => 
-              `<span class="blog-tag" onclick="filterByTag('${tag}')">${tag}</span>`
+        <p class="post-card-excerpt">${post.excerpt}</p>
+        <div class="post-card-footer">
+          <div class="post-card-tags">
+            ${(post.tags || []).slice(0, 3).map(tag => 
+              `<span class="post-tag" onclick="event.stopPropagation(); filterByTag('${tag}')">${tag}</span>`
             ).join('')}
           </div>
-          <a href="${postUrl}" class="read-more-btn">
+          <a href="${postUrl}" class="read-more" onclick="event.stopPropagation()">
             Read More <i class="bi bi-arrow-right"></i>
           </a>
         </div>
       </div>
-    </div>
+    </article>
   `;
 }
 

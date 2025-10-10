@@ -28,7 +28,7 @@
   <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../assets/img/favicon.ico">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <!-- Bootstrap CSS -->
   <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -68,9 +68,9 @@
   <!-- Header -->
   <header class="blog-header">
     <div class="container">
-      <h1><a href="/blog/">Vlad's Blog</a></h1>
+      <h1><a href="/blog/">Vlad<span>'s</span> Blog</a></h1>
       <nav>
-        <a href="/">← Home</a>
+        <a href="/">← Portfolio</a>
         <a href="/#about">About</a>
         <a href="/#portfolio">Projects</a>
       </nav>
@@ -79,74 +79,67 @@
 
   <!-- Main Content -->
   <main class="blog-main">
-    <div class="container">
 
-      <!-- Page Title -->
-      <div class="page-title">
-        <h1>Backend Development Blog</h1>
-        <p>Articles, tutorials, and insights on Python, Docker, DevOps, and cloud infrastructure</p>
+    <!-- Category Navigation -->
+    <nav class="category-nav" id="categoryNav">
+      <!-- Categories will be dynamically loaded by JavaScript -->
+    </nav>
+
+    <!-- Hero Featured Post -->
+    <article class="hero-post" id="heroPost" style="display: none;">
+      <!-- Hero post will be dynamically loaded by JavaScript -->
+    </article>
+
+    <!-- Recent Posts Section -->
+    <h2 class="section-heading">Recent Articles</h2>
+    
+    <!-- Blog Posts Grid -->
+    <div class="posts-grid" id="postsGrid">
+      <!-- Loading spinner -->
+      <div class="loading">
+        <div class="spinner"></div>
+        <p>Loading articles...</p>
       </div>
-
-      <!-- Search & Filter Section -->
-      <div class="search-filter-section">
-        <div class="search-box">
-          <i class="bi bi-search"></i>
-          <input type="text" id="searchInput" placeholder="Search articles by title, content, or author...">
-        </div>
-
-        <div class="row">
-          <div class="col-md-6">
-            <label class="filter-label">Filter by Category:</label>
-            <div class="filter-tags" id="categoryFilters">
-              <span class="category-filter active" data-category="all">All</span>
-              <!-- Categories will be dynamically loaded -->
-            </div>
-          </div>
-          
-          <div class="col-md-6">
-            <label class="filter-label">Filter by Tag:</label>
-            <div class="filter-tags" id="tagFilters">
-              <span class="tag-filter active" data-tag="all">All</span>
-              <!-- Tags will be dynamically loaded -->
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- Results Count -->
-      <div id="resultsCount" style="color: rgba(255, 255, 255, 0.6); margin-bottom: 20px; font-size: 14px;"></div>
-
-      <!-- Blog Posts Grid -->
-      <div class="blog-posts-grid" id="blogPostsGrid">
-        <!-- Loading spinner -->
-        <div class="loading col-span-all">
-          <div class="spinner"></div>
-          <p>Loading articles...</p>
-        </div>
-      </div>
-
-      <!-- No Results Message (hidden by default) -->
-      <div class="no-results" id="noResults" style="display: none;">
-        <i class="bi bi-search"></i>
-        <h3>No articles found</h3>
-        <p>Try adjusting your search or filters</p>
-      </div>
-
     </div>
+
+    <!-- More to Explore Section -->
+    <h2 class="section-heading">More to Explore</h2>
+    
+    <!-- Mixed Layout Section -->
+    <div class="mixed-layout">
+      <!-- Medium Post Card -->
+      <article class="post-card" id="mediumPostCard">
+        <!-- Will be dynamically loaded -->
+      </article>
+
+      <!-- Compact List / Popular Posts -->
+      <aside class="compact-list">
+        <h3 class="compact-list-title">Popular Posts</h3>
+        <div id="compactPostsList">
+          <!-- Will be dynamically loaded -->
+        </div>
+      </aside>
+    </div>
+
+    <!-- No Results Message (hidden by default) -->
+    <div class="no-results" id="noResults" style="display: none;">
+      <i class="bi bi-search"></i>
+      <h3>No articles found</h3>
+      <p>Try adjusting your search or filters</p>
+    </div>
+
   </main>
 
   <!-- Footer -->
   <footer class="blog-footer">
-    <div class="container">
-      <p>&copy; 2025 <a href="/">Vlad Bortnik</a>. All rights reserved.</p>
-    </div>
+    <p>&copy; 2025 <a href="/">Vlad Bortnik</a>. All rights reserved.</p>
   </footer>
 
   <!-- Marked.js for Markdown parsing -->
   <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
   
   <!-- Blog JavaScript -->
-  <script src="assets/js/blog.js"></script>
+  <script src="assets/js/blog.js?v=4"></script>
 
 </body>
 

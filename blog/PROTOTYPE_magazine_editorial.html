@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>PROTOTYPE: Magazine Editorial Blog Design | Vlad Bortnik</title>
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap Icons -->
+  <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  
+  <style>
+    /* ===== MAGAZINE EDITORIAL DESIGN - PROTOTYPE ===== */
+    
+    :root {
+      --bg-primary: #040404;
+      --bg-secondary: #0d0d0d;
+      --accent-primary: #18d26e;
+      --accent-hover: #35e888;
+      --text-primary: #fff;
+      --text-secondary: rgba(255, 255, 255, 0.85);
+      --text-muted: rgba(255, 255, 255, 0.6);
+      --card-bg: rgba(255, 255, 255, 0.03);
+      --card-border: rgba(255, 255, 255, 0.08);
+    }
+    
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Inter", sans-serif;
+      background-color: var(--bg-primary);
+      color: var(--text-primary);
+      line-height: 1.6;
+      position: relative;
+    }
+    
+    body::before {
+      content: "";
+      position: fixed;
+      background: var(--bg-primary) url("../assets/img/background.jpg") top right no-repeat;
+      background-size: cover;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 100vh;
+      z-index: -1;
+    }
+    
+    @media (min-width: 1024px) {
+      body::before {
+        background-attachment: fixed;
+      }
+    }
+    
+    /* Header - Fixed Navigation */
+    .blog-header {
+      background: rgba(0, 0, 0, 0.95);
+      backdrop-filter: blur(20px);
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      border-bottom: 1px solid var(--card-border);
+    }
+    
+    .header-container {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 20px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    
+    .blog-logo {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--text-primary);
+      text-decoration: none;
+      letter-spacing: -0.5px;
+    }
+    
+    .blog-logo span {
+      color: var(--accent-primary);
+    }
+    
+    .nav-links {
+      display: flex;
+      gap: 35px;
+      align-items: center;
+    }
+    
+    .nav-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 15px;
+      font-weight: 500;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+    
+    .nav-links a::after {
+      content: '';
+      position: absolute;
+      bottom: -5px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: var(--accent-primary);
+      transition: width 0.3s ease;
+    }
+    
+    .nav-links a:hover {
+      color: var(--accent-primary);
+    }
+    
+    .nav-links a:hover::after {
+      width: 100%;
+    }
+    
+    /* Main Container */
+    .main-container {
+      max-width: 1400px;
+      margin: 100px auto 60px;
+      padding: 0 40px;
+    }
+    
+    /* Category Navigation */
+    .category-nav {
+      display: flex;
+      gap: 15px;
+      margin-bottom: 50px;
+      overflow-x: auto;
+      padding-bottom: 10px;
+    }
+    
+    .category-nav::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    .category-nav::-webkit-scrollbar-thumb {
+      background: var(--accent-primary);
+      border-radius: 10px;
+    }
+    
+    .category-pill {
+      padding: 12px 28px;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 30px;
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: 600;
+      white-space: nowrap;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .category-pill:hover,
+    .category-pill.active {
+      background: var(--accent-primary);
+      color: #000;
+      border-color: var(--accent-primary);
+      transform: translateY(-2px);
+    }
+    
+    /* Hero Featured Post */
+    .hero-post {
+      position: relative;
+      height: 600px;
+      border-radius: 20px;
+      overflow: hidden;
+      margin-bottom: 60px;
+      cursor: pointer;
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-post:hover {
+      transform: scale(1.01);
+    }
+    
+    .hero-post-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .hero-post:hover .hero-post-image {
+      transform: scale(1.05);
+    }
+    
+    .hero-post-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 60px;
+    }
+    
+    .hero-post-category {
+      display: inline-block;
+      padding: 8px 20px;
+      background: var(--accent-primary);
+      color: #000;
+      border-radius: 20px;
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 20px;
+      width: fit-content;
+    }
+    
+    .hero-post-title {
+      font-family: "Playfair Display", serif;
+      font-size: 56px;
+      font-weight: 900;
+      line-height: 1.1;
+      margin-bottom: 20px;
+      color: var(--text-primary);
+    }
+    
+    .hero-post-excerpt {
+      font-size: 18px;
+      color: var(--text-secondary);
+      margin-bottom: 25px;
+      max-width: 700px;
+      line-height: 1.7;
+    }
+    
+    .hero-post-meta {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      font-size: 14px;
+      color: var(--text-muted);
+    }
+    
+    .hero-post-meta span {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+    
+    .hero-post-meta i {
+      color: var(--accent-primary);
+    }
+    
+    /* Section Heading */
+    .section-heading {
+      font-family: "Playfair Display", serif;
+      font-size: 36px;
+      font-weight: 700;
+      margin-bottom: 40px;
+      color: var(--text-primary);
+      position: relative;
+      padding-bottom: 15px;
+    }
+    
+    .section-heading::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 60px;
+      height: 3px;
+      background: var(--accent-primary);
+    }
+    
+    /* Posts Grid - Asymmetric Layout */
+    .posts-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    /* Large Card */
+    .post-card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      overflow: hidden;
+      transition: all 0.4s ease;
+      backdrop-filter: blur(10px);
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    
+    .post-card::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(135deg, rgba(24, 210, 110, 0.05), transparent);
+      opacity: 0;
+      transition: opacity 0.4s ease;
+    }
+    
+    .post-card:hover {
+      transform: translateY(-8px);
+      border-color: var(--accent-primary);
+      box-shadow: 0 20px 60px rgba(24, 210, 110, 0.15);
+    }
+    
+    .post-card:hover::before {
+      opacity: 1;
+    }
+    
+    .post-card-image-wrapper {
+      position: relative;
+      height: 250px;
+      overflow: hidden;
+    }
+    
+    .post-card-image {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+    
+    .post-card:hover .post-card-image {
+      transform: scale(1.1);
+    }
+    
+    .post-card-category {
+      position: absolute;
+      top: 20px;
+      right: 20px;
+      padding: 6px 16px;
+      background: rgba(0, 0, 0, 0.8);
+      backdrop-filter: blur(10px);
+      color: var(--accent-primary);
+      border-radius: 20px;
+      font-size: 11px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    
+    .post-card-content {
+      padding: 30px;
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    
+    .post-card-meta {
+      display: flex;
+      gap: 20px;
+      margin-bottom: 15px;
+      font-size: 13px;
+      color: var(--text-muted);
+    }
+    
+    .post-card-meta span {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+    
+    .post-card-meta i {
+      color: var(--accent-primary);
+      font-size: 12px;
+    }
+    
+    .post-card-title {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 700;
+      line-height: 1.3;
+      margin-bottom: 12px;
+      color: var(--text-primary);
+      transition: color 0.3s ease;
+    }
+    
+    .post-card:hover .post-card-title {
+      color: var(--accent-primary);
+    }
+    
+    .post-card-excerpt {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 20px;
+      flex-grow: 1;
+    }
+    
+    .post-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 20px;
+      border-top: 1px solid var(--card-border);
+    }
+    
+    .post-card-tags {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+    
+    .tag {
+      padding: 5px 12px;
+      background: rgba(24, 210, 110, 0.1);
+      border-radius: 12px;
+      font-size: 11px;
+      color: var(--accent-primary);
+      font-weight: 600;
+    }
+    
+    .read-more {
+      color: var(--accent-primary);
+      font-size: 14px;
+      font-weight: 600;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.3s ease;
+    }
+    
+    .read-more:hover {
+      gap: 12px;
+    }
+    
+    /* Mixed Layout Section */
+    .mixed-layout {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 30px;
+      margin-bottom: 60px;
+    }
+    
+    .compact-list {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 16px;
+      padding: 35px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .compact-list-title {
+      font-family: "Playfair Display", serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 25px;
+      color: var(--text-primary);
+    }
+    
+    .compact-post {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--card-border);
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+    
+    .compact-post:last-child {
+      border-bottom: none;
+    }
+    
+    .compact-post:hover {
+      padding-left: 10px;
+    }
+    
+    .compact-post-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin-bottom: 8px;
+      color: var(--text-secondary);
+      transition: color 0.3s ease;
+    }
+    
+    .compact-post:hover .compact-post-title {
+      color: var(--accent-primary);
+    }
+    
+    .compact-post-meta {
+      font-size: 12px;
+      color: var(--text-muted);
+      display: flex;
+      gap: 15px;
+    }
+    
+    /* Prototype Badge */
+    .prototype-badge {
+      position: fixed;
+      top: 80px;
+      right: 20px;
+      background: rgba(255, 0, 0, 0.9);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 14px;
+      z-index: 10000;
+      box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+      animation: pulse 2s infinite;
+    }
+    
+    @keyframes pulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.05); }
+    }
+    
+    /* Responsive */
+    @media (max-width: 1024px) {
+      .posts-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      
+      .mixed-layout {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-post {
+        height: 500px;
+      }
+      
+      .hero-post-title {
+        font-size: 42px;
+      }
+    }
+    
+    @media (max-width: 768px) {
+      .header-container {
+        padding: 15px 20px;
+      }
+      
+      .main-container {
+        padding: 0 20px;
+        margin-top: 80px;
+      }
+      
+      .posts-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .hero-post {
+        height: 400px;
+      }
+      
+      .hero-post-overlay {
+        padding: 30px;
+      }
+      
+      .hero-post-title {
+        font-size: 32px;
+      }
+      
+      .nav-links {
+        gap: 20px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  
+  <!-- Prototype Badge -->
+  <div class="prototype-badge">
+    🎨 PROTOTYPE PREVIEW
+  </div>
+
+  <!-- Header -->
+  <header class="blog-header">
+    <div class="header-container">
+      <a href="#" class="blog-logo">Vlad<span>'s</span> Blog</a>
+      <nav class="nav-links">
+        <a href="/">← Portfolio</a>
+        <a href="#">About</a>
+        <a href="#">Archive</a>
+        <a href="#">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- Main Container -->
+  <main class="main-container">
+    
+    <!-- Category Navigation -->
+    <nav class="category-nav">
+      <a href="#" class="category-pill active">
+        <i class="bi bi-grid"></i>
+        All Posts
+      </a>
+      <a href="#" class="category-pill">
+        <i class="bi bi-code-slash"></i>
+        Backend
+      </a>
+      <a href="#" class="category-pill">
+        <i class="bi bi-hdd-stack"></i>
+        DevOps
+      </a>
+      <a href="#" class="category-pill">
+        <i class="bi bi-box"></i>
+        Docker
+      </a>
+      <a href="#" class="category-pill">
+        <i class="bi bi-cloud"></i>
+        Cloud
+      </a>
+      <a href="#" class="category-pill">
+        <i class="bi bi-shield-check"></i>
+        Security
+      </a>
+    </nav>
+
+    <!-- Hero Featured Post -->
+    <article class="hero-post">
+      <img src="../assets/img/background.jpg" alt="Featured Post" class="hero-post-image">
+      <div class="hero-post-overlay">
+        <span class="hero-post-category">Featured</span>
+        <h1 class="hero-post-title">Deploying Production-Grade Flask Applications with Docker</h1>
+        <p class="hero-post-excerpt">
+          A comprehensive guide to containerizing Flask applications and deploying them to production with Docker, Nginx, and best security practices for 2025.
+        </p>
+        <div class="hero-post-meta">
+          <span><i class="bi bi-calendar3"></i> Oct 5, 2025</span>
+          <span><i class="bi bi-clock"></i> 12 min read</span>
+          <span><i class="bi bi-person"></i> Vlad Bortnik</span>
+          <span><i class="bi bi-eye"></i> 1.2K views</span>
+        </div>
+      </div>
+    </article>
+
+    <!-- Recent Posts Section -->
+    <h2 class="section-heading">Recent Articles</h2>
+    
+    <div class="posts-grid">
+      
+      <!-- Post Card 1 -->
+      <article class="post-card">
+        <div class="post-card-image-wrapper">
+          <img src="../assets/img/background.jpg" alt="Post" class="post-card-image">
+          <span class="post-card-category">DevOps</span>
+        </div>
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <span><i class="bi bi-calendar3"></i> Oct 3, 2025</span>
+            <span><i class="bi bi-clock"></i> 8 min</span>
+          </div>
+          <h3 class="post-card-title">Docker Compose for Multi-Container Applications</h3>
+          <p class="post-card-excerpt">
+            Learn how to orchestrate multiple containers with Docker Compose, including database connections, networking, and volume management.
+          </p>
+          <div class="post-card-footer">
+            <div class="post-card-tags">
+              <span class="tag">Docker</span>
+              <span class="tag">DevOps</span>
+            </div>
+            <a href="#" class="read-more">
+              Read More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post Card 2 -->
+      <article class="post-card">
+        <div class="post-card-image-wrapper">
+          <img src="../assets/img/background.jpg" alt="Post" class="post-card-image">
+          <span class="post-card-category">Backend</span>
+        </div>
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <span><i class="bi bi-calendar3"></i> Sep 28, 2025</span>
+            <span><i class="bi bi-clock"></i> 10 min</span>
+          </div>
+          <h3 class="post-card-title">Python Backend Best Practices for 2025</h3>
+          <p class="post-card-excerpt">
+            Modern Python development patterns, including type hints, async/await, error handling, and code organization strategies.
+          </p>
+          <div class="post-card-footer">
+            <div class="post-card-tags">
+              <span class="tag">Python</span>
+              <span class="tag">Flask</span>
+            </div>
+            <a href="#" class="read-more">
+              Read More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Post Card 3 -->
+      <article class="post-card">
+        <div class="post-card-image-wrapper">
+          <img src="../assets/img/background.jpg" alt="Post" class="post-card-image">
+          <span class="post-card-category">Cloud</span>
+        </div>
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <span><i class="bi bi-calendar3"></i> Sep 20, 2025</span>
+            <span><i class="bi bi-clock"></i> 15 min</span>
+          </div>
+          <h3 class="post-card-title">Building RESTful APIs with Flask and SQLAlchemy</h3>
+          <p class="post-card-excerpt">
+            Complete guide to creating production-ready REST APIs with Flask, including authentication, rate limiting, and database optimization.
+          </p>
+          <div class="post-card-footer">
+            <div class="post-card-tags">
+              <span class="tag">API</span>
+              <span class="tag">SQLAlchemy</span>
+            </div>
+            <a href="#" class="read-more">
+              Read More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </div>
+
+    <!-- Mixed Layout Section -->
+    <h2 class="section-heading">More to Explore</h2>
+    
+    <div class="mixed-layout">
+      
+      <!-- Medium Post Card -->
+      <article class="post-card">
+        <div class="post-card-image-wrapper">
+          <img src="../assets/img/background.jpg" alt="Post" class="post-card-image">
+          <span class="post-card-category">Security</span>
+        </div>
+        <div class="post-card-content">
+          <div class="post-card-meta">
+            <span><i class="bi bi-calendar3"></i> Sep 15, 2025</span>
+            <span><i class="bi bi-clock"></i> 12 min</span>
+          </div>
+          <h3 class="post-card-title">Implementing Security Headers for A+ SSL Rating</h3>
+          <p class="post-card-excerpt">
+            Step-by-step guide to implementing comprehensive security headers in Nginx for achieving the highest security ratings on SSL Labs.
+          </p>
+          <div class="post-card-footer">
+            <div class="post-card-tags">
+              <span class="tag">Security</span>
+              <span class="tag">Nginx</span>
+              <span class="tag">SSL</span>
+            </div>
+            <a href="#" class="read-more">
+              Read More <i class="bi bi-arrow-right"></i>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Compact List -->
+      <aside class="compact-list">
+        <h3 class="compact-list-title">Popular Posts</h3>
+        
+        <article class="compact-post">
+          <h4 class="compact-post-title">Setting Up Nginx Reverse Proxy</h4>
+          <div class="compact-post-meta">
+            <span>Sep 10 • 6 min</span>
+          </div>
+        </article>
+        
+        <article class="compact-post">
+          <h4 class="compact-post-title">PostgreSQL Optimization Tips</h4>
+          <div class="compact-post-meta">
+            <span>Aug 28 • 9 min</span>
+          </div>
+        </article>
+        
+        <article class="compact-post">
+          <h4 class="compact-post-title">CI/CD Pipeline with GitHub Actions</h4>
+          <div class="compact-post-meta">
+            <span>Aug 15 • 11 min</span>
+          </div>
+        </article>
+        
+        <article class="compact-post">
+          <h4 class="compact-post-title">Load Balancing Strategies</h4>
+          <div class="compact-post-meta">
+            <span>Aug 5 • 7 min</span>
+          </div>
+        </article>
+        
+        <article class="compact-post">
+          <h4 class="compact-post-title">Monitoring Production Apps</h4>
+          <div class="compact-post-meta">
+            <span>Jul 20 • 10 min</span>
+          </div>
+        </article>
+        
+      </aside>
+
+    </div>
+
+  </main>
+
+</body>
+</html>
