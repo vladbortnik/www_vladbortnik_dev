@@ -77,11 +77,9 @@
           <p>Have a question or just want to say hello? Drop me a line.</p>
         </div>
 
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="simple-contact-form">
-          <!-- Web3Forms Access Key (replace with your actual key) -->
-          <input type="hidden" name="access_key" value="f6bde7f8-4cfb-4a31-a231-3439dd35c1e0">
-          <input type="hidden" name="subject" value="New Contact Form Submission">
-          <input type="hidden" name="from_name" value="Portfolio Contact Form">
+        <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form" id="simple-contact-form">
+          <!-- Cloudflare Worker endpoint - update after deployment -->
+          <input type="hidden" name="form_type" value="simple">
 
           <!-- Honeypot -->
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -110,7 +108,7 @@
 
           <!-- Cloudflare Turnstile (replace with your site key) -->
           <div class="turnstile-wrapper">
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB6AEVcPkpc4oM3Q"></div>
           </div>
 
           <div class="text-center">
@@ -130,11 +128,9 @@
           <p>Tell me about your project and upload any relevant files or documentation.</p>
         </div>
 
-        <form action="https://api.web3forms.com/submit" method="POST" class="contact-form" id="project-request-form" enctype="multipart/form-data">
-          <!-- Web3Forms Access Key (replace with your actual key) -->
-          <input type="hidden" name="access_key" value="f6bde7f8-4cfb-4a31-a231-3439dd35c1e0">
-          <input type="hidden" name="subject" value="New Project Request">
-          <input type="hidden" name="from_name" value="Portfolio Project Request">
+        <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form" id="project-request-form" enctype="multipart/form-data">
+          <!-- Cloudflare Worker endpoint - update after deployment -->
+          <input type="hidden" name="form_type" value="project">
 
           <!-- Honeypot -->
           <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
@@ -256,7 +252,7 @@
 
           <!-- Cloudflare Turnstile (replace with your site key) -->
           <div class="turnstile-wrapper">
-            <div class="cf-turnstile" data-sitekey="YOUR_TURNSTILE_SITE_KEY"></div>
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB6AEVcPkpc4oM3Q"></div>
           </div>
 
           <div class="text-center">
