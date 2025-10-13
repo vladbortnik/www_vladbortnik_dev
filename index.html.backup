@@ -108,10 +108,10 @@
           <li class="dropdown">
             <a class="nav-link" href="#portfolio">Projects<i class="bi bi-chevron-down toggle-dropdown"></i></a>
             <ul class="dropdown-menu">
-                <li><a class="nav-link" href="#portfolio" data-anchor="project-1">1. Production-Grade Multi-Application Server</a></li>
-                <li><a class="nav-link" href="#portfolio" data-anchor="project-2">2. Recipe Web App</a></li>
-                <li><a class="nav-link" href="#portfolio" data-anchor="project-3">3. Student Book Exchange Platform</a></li>
-                <li><a class="nav-link" href="#portfolio" data-anchor="project-4">4. Professional Portfolio Website</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-1')">1. Production-Grade Multi-Application Server</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-2')">2. Recipe Web App</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-3')">3. Student Book Exchange Platform</a></li>
+                <li><a class="nav-link" href="#portfolio" onclick="scrollToAnchorInPortfolio('project-4')">4. Professional Portfolio Website</a></li>
             </ul>
          </li>
          <li><a class="nav-link" href="#resume">Resume</a></li>
@@ -885,8 +885,8 @@
                 <div class="overview-image" id="image-shadow">
                   <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.jpg"
                   class="img-fluid base-diagram"
-                  alt="Reverse Proxy Configuration"
-                  data-fullscreen="true">
+                  alt="Reverse Proxy Configuration" 
+                  onclick="openFullscreen(this)">
                 </div><!-- END: class="overview-image" id="image-shadow" -->
               </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -896,8 +896,8 @@
               <div class="overview-image" id="image-shadow">
                 <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
                 class="img-fluid base-diagram"
-                alt="Reverse Proxy Configuration"
-                data-fullscreen="true">
+                alt="Reverse Proxy Configuration" 
+                onclick="openFullscreen(this)">
               </div><!-- END: class="overview-image" id="image-shadow" -->
             </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -907,8 +907,8 @@
             <div class="overview-image" id="image-shadow">
               <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.png"
               class="img-fluid base-diagram"
-              alt="Reverse Proxy Configuration"
-              data-fullscreen="true">
+              alt="Reverse Proxy Configuration" 
+              onclick="openFullscreen(this)">
             </div><!-- END: class="overview-image" id="image-shadow" -->
           </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1017,8 +1017,8 @@
                 <div class="overview-image" id="image-shadow">
                   <img src="assets/img/portfolio/recipe/recipe-homepage.jpg"
                   class="img-fluid base-diagram"
-                  alt="Recipe Homepage"
-                  data-fullscreen="true">
+                  alt="Recipe Homepage" 
+                  onclick="openFullscreen(this)">
                 </div><!-- END: class="overview-image" id="image-shadow" -->
               </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1028,8 +1028,8 @@
               <div class="overview-image" id="image-shadow">
                 <img src="assets/img/portfolio/recipe/recipe-docker-compose.jpg"
                 class="img-fluid base-diagram"
-                alt="Docker Compose Screenshot"
-                data-fullscreen="true">
+                alt="Docker Compose Screenshot" 
+                onclick="openFullscreen(this)">
               </div><!-- END: class="overview-image" id="image-shadow" -->
             </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1040,7 +1040,7 @@
               <img src="assets/img/portfolio/recipe/recipe-migration-scripts.jpg"
               class="img-fluid base-diagram"
               alt="Migration Scripts"
-              data-fullscreen="true">
+              onclick="openFullscreen(this)">
             </div><!-- END: class="overview-image" id="image-shadow" -->
           </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1150,8 +1150,8 @@
                 <div class="overview-image" id="image-shadow">
                   <img src="assets/img/portfolio/bookfinder/bookfinder-homepage.jpg"
                   class="img-fluid base-diagram"
-                  alt="Bookfinder Homepage"
-                  data-fullscreen="true">
+                  alt="Bookfinder Homepage" 
+                  onclick="openFullscreen(this)">
                 </div><!-- END: class="overview-image" id="image-shadow" -->
               </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1161,8 +1161,8 @@
               <div class="overview-image" id="image-shadow">
                 <img src="assets/img/portfolio/bookfinder/bookfinder-diagram.png"
                 class="img-fluid base-diagram"
-                alt="Overview Diagram"
-                data-fullscreen="true">
+                alt="Overview Diagram" 
+                onclick="openFullscreen(this)">
               </div><!-- END: class="overview-image" id="image-shadow" -->
             </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1172,8 +1172,8 @@
             <div class="overview-image" id="image-shadow">
               <img src="assets/img/portfolio/bookfinder/brooklyn-college-campus.jpg"
               class="img-fluid base-diagram"
-              alt="Brooklyn College Campus"
-              data-fullscreen="true">
+              alt="Brooklyn College Campus" 
+              onclick="openFullscreen(this)">
             </div><!-- END: class="overview-image" id="image-shadow" -->
           </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1272,8 +1272,8 @@
                 <div class="overview-image" id="image-shadow">
                   <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.png"
                   class="img-fluid base-diagram"
-                  alt="Portfolio Homepage"
-                  data-fullscreen="true">
+                  alt="Portfolio Homepage" 
+                  onclick="openFullscreen(this)">
                 </div><!-- END: class="overview-image" id="image-shadow" -->
               </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1283,8 +1283,8 @@
               <div class="overview-image" id="image-shadow">
                 <img src="assets/img/portfolio/website-portfolio/website-portfolio-projects.jpg"
                 class="img-fluid base-diagram"
-                alt="Projects"
-                data-fullscreen="true">
+                alt="Projects" 
+                onclick="openFullscreen(this)">
               </div><!-- END: class="overview-image" id="image-shadow" -->
             </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->
@@ -1294,8 +1294,8 @@
             <div class="overview-image" id="image-shadow">
               <img src="assets/img/portfolio/website-portfolio/website-portfolio-resume.png"
               class="img-fluid base-diagram"
-              alt="Resume"
-              data-fullscreen="true">
+              alt="Resume" 
+              onclick="openFullscreen(this)">
             </div><!-- END: class="overview-image" id="image-shadow" -->
           </div><!-- END: class="project overview" -->
           </div><!-- END: class="col-lg-4" -->

@@ -244,11 +244,11 @@ function scrollToAnchorInPortfolio(anchorId) {
       // Get header height for offset
       const header = document.getElementById('header');
       const headerHeight = header.offsetHeight;
-
+      
       // Get position
       const elementPosition = element.getBoundingClientRect().top;
       const offsetPosition = elementPosition + window.pageYOffset - headerHeight - 14;
-
+      
       // Scroll
       window.scrollTo({
         top: offsetPosition,
@@ -257,59 +257,3 @@ function scrollToAnchorInPortfolio(anchorId) {
     }
   }, 500);
 }
-
-/**
- * CSP-compliant event handlers
- * Replaces inline onclick attributes for Content Security Policy compliance
- */
-document.addEventListener('DOMContentLoaded', function() {
-
-  // Handle fullscreen image clicks
-  // Find all images with data-fullscreen attribute
-  const images = document.querySelectorAll('img[data-fullscreen="true"]');
-
-  images.forEach(function(img) {
-    // Add pointer cursor for better UX
-    img.style.cursor = 'pointer';
-
-    // Add click event listener
-    img.addEventListener('click', function() {
-      openFullscreen(this);
-    });
-  });
-
-  // Handle portfolio navigation clicks
-  // Find all links with data-anchor attribute
-  const navLinks = document.querySelectorAll('a[data-anchor]');
-
-  navLinks.forEach(function(link) {
-    const anchorId = link.getAttribute('data-anchor');
-
-    if (anchorId) {
-      // Add click event listener
-      link.addEventListener('click', function(e) {
-        scrollToAnchorInPortfolio(anchorId);
-      });
-    }
-  });
-
-  // Legacy support: Also handle any remaining onclick attributes
-  const legacyNavLinks = document.querySelectorAll('a[onclick*="scrollToAnchorInPortfolio"]');
-
-  legacyNavLinks.forEach(function(link) {
-    const onclickAttr = link.getAttribute('onclick');
-    const match = onclickAttr ? onclickAttr.match(/'([^']+)'/) : null;
-
-    if (match) {
-      const anchorId = match[1];
-      // Remove inline onclick attribute
-      link.removeAttribute('onclick');
-
-      // Add click event listener
-      link.addEventListener('click', function(e) {
-        scrollToAnchorInPortfolio(anchorId);
-      });
-    }
-  });
-
-});
