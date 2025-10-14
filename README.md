@@ -185,7 +185,7 @@ Full-stack web application enabling users to upload images of ingredients and ge
 
 ### 5. 📚 Student Book Exchange Platform
 
-**Live:** [bookfinder.vladbortnik.dev](https://bookfinder.vladbortnik.dev/) | **GitHub:** [View Repository](https://github.com/vladbortnik/book-finder-web-app)
+**Live:** [bookfinder](https://bookfinder.vladbortnik.dev/) | **GitHub:** [View Repository](https://github.com/vladbortnik/book-finder-web-app)
 
 Marketplace application connecting students to buy and sell textbooks directly, eliminating third-party resellers. Features complete CRUD functionality, secure authentication system with password hashing and CSRF protection, and containerized deployment with Gunicorn production server.
 
@@ -243,11 +243,11 @@ I'm always interested in discussing new opportunities, collaborating on projects
 
 <div align="center">
 
-### 🌟 **Built with passion for clean code, robust architecture, and scalable solutions**
+### 🌟 **Built with a passion for clean code, robust architecture, and scalable solutions**
 
-*Backend Engineer | DevOps Enthusiast | Problem Solver*
+*Software Engineer | Frontend (React 19) → Backend (Flask, PostgreSQL) → Infrastructure (Docker, Nginx, Cloud)*
 
-**New York, NY** • **[vladbortnik.dev](https://vladbortnik.dev)** • **[Contact](https://vladbortnik.dev/contact)**
+**CS degree** • **NYC 🗽** • **[vladbortnik.dev](https://vladbortnik.dev)** • **[Contact](https://vladbortnik.dev/contact)**
 
 ---
 
