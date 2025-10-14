@@ -3,6 +3,19 @@
 CLAUDE.md
 _*
 .*
+archive/RESEND-SETUP.md
+archive/
+DEPLOYMENT/_README-Portfolio-Info.md
+DEPLOYMENT/BUSINESS-CARD.md
+DEPLOYMENT/SHORTCUT-URLS.md
+
+# Cloudflare Worker
+contact-worker/
+.wrangler/
+node_modules/
+
+# Backups
+*.backup
 
 # General
 .AppleDouble
@@ -171,3 +184,4 @@ cython_debug/
 
 # PyCharm
 .idea/
+.qodo/

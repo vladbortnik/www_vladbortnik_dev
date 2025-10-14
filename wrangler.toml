@@ -1,0 +1,7 @@
+name = "portfolio-contact-form"
+main = "cloudflare-worker-resend.js"
+compatibility_date = "2025-10-13"
+
+# Secrets (set with: wrangler secret put RESEND_API_KEY)
+# - RESEND_API_KEY
+# - TURNSTILE_SECRET_KEY

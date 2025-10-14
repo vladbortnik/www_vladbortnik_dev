@@ -7,8 +7,8 @@
 // Configuration
 const CONFIG = {
   // Your email address where form submissions will be sent
-  TO_EMAIL: 'your-email@example.com',
-  FROM_EMAIL: 'contact@vladbortnik.dev', // Must be your domain
+  TO_EMAIL: 'contact.me@vladbortnik.dev',
+  FROM_EMAIL: 'portfolio-contact-form@vladbortnik.dev', // Must be your domain
   FROM_NAME: 'Portfolio Contact Form',
 
   // Cloudflare Turnstile secret key (get from Cloudflare dashboard)
@@ -200,10 +200,7 @@ async function sendEmail(data, attachments) {
   // Prepare email payload
   const payload = {
     personalizations: [{
-      to: [{ email: CONFIG.TO_EMAIL }],
-      dkim_domain: 'vladbortnik.dev',
-      dkim_selector: 'mailchannels',
-      dkim_private_key: '' // Optional: Add DKIM key for better deliverability
+      to: [{ email: CONFIG.TO_EMAIL }]
     }],
     from: {
       email: CONFIG.FROM_EMAIL,

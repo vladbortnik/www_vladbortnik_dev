@@ -1,18 +1,19 @@
 /**
- * CLOUDFLARE WORKER - Contact Form Handler
+ * CLOUDFLARE WORKER - Contact Form Handler (Resend API)
  * Handles form submissions with file uploads and email delivery
- * FREE - No external services needed (uses MailChannels)
+ * Uses Resend API (free tier: 3,000 emails/month, 100/day)
  */
 
 // Configuration
 const CONFIG = {
   // Your email address where form submissions will be sent
-  TO_EMAIL: 'contact.me@vladbortnik.dev',
-  FROM_EMAIL: 'portfolio-contact-form@vladbortnik.dev', // Must be your domain
+  TO_EMAIL: 'contact@vladbortnik.dev',
+  FROM_EMAIL: 'portfolio-contact-form@vladbortnik.dev', // Must be your verified domain
   FROM_NAME: 'Portfolio Contact Form',
 
-  // Cloudflare Turnstile secret key (get from Cloudflare dashboard)
-  TURNSTILE_SECRET_KEY: '0x4AAAAAAB6AEZHX3E60CgvZEWt8Vau7dz8',
+  // API keys loaded from environment variables (set via wrangler secret)
+  RESEND_API_KEY: null, // Set via: wrangler secret put RESEND_API_KEY
+  TURNSTILE_SECRET_KEY: null, // Set via: wrangler secret put TURNSTILE_SECRET_KEY
 
   // Allowed origins (CORS)
   ALLOWED_ORIGINS: [
@@ -22,8 +23,9 @@ const CONFIG = {
   ],
 
   // File upload limits
-  MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB
+  MAX_FILE_SIZE: 10 * 1024 * 1024, // 10MB per file
   MAX_FILES: 5,
+  MAX_TOTAL_SIZE: 40 * 1024 * 1024, // 40MB total (Resend limit)
   ALLOWED_FILE_TYPES: [
     'image/jpeg', 'image/png', 'image/webp',
     'application/pdf',
@@ -69,7 +71,7 @@ export default {
       };
 
       // Security checks
-      const securityCheck = await validateSecurity(data, request);
+      const securityCheck = await validateSecurity(data, request, env);
       if (!securityCheck.valid) {
         return jsonResponse({ error: securityCheck.error }, 400);
       }
@@ -86,6 +88,8 @@ export default {
 
       // Handle file attachments
       const attachments = [];
+      let totalSize = 0;
+
       for (const [key, value] of formData.entries()) {
         if (value instanceof File && value.size > 0) {
           // Validate file
@@ -94,14 +98,15 @@ export default {
             return jsonResponse({ error: fileValidation.error }, 400);
           }
 
-          // Convert file to base64 for email attachment
+          totalSize += value.size;
+
+          // Convert file to base64 for Resend attachment
           const arrayBuffer = await value.arrayBuffer();
           const base64 = arrayBufferToBase64(arrayBuffer);
 
           attachments.push({
             filename: value.name,
-            content: base64,
-            type: value.type
+            content: base64
           });
         }
       }
@@ -113,8 +118,14 @@ export default {
         }, 400);
       }
 
-      // Send email via MailChannels
-      await sendEmail(data, attachments);
+      if (totalSize > CONFIG.MAX_TOTAL_SIZE) {
+        return jsonResponse({
+          error: 'Total attachment size exceeds 40MB limit'
+        }, 400);
+      }
+
+      // Send email via Resend
+      await sendEmail(data, attachments, env);
 
       // Success response
       return jsonResponse({
@@ -125,24 +136,26 @@ export default {
     } catch (error) {
       console.error('Form submission error:', error);
       return jsonResponse({
-        error: 'Something went wrong. Please try again later.'
+        error: 'Something went wrong. Please try again later.',
+        details: error.message
       }, 500);
     }
   }
 };
 
 // Security validation
-async function validateSecurity(data, request) {
+async function validateSecurity(data, request, env) {
   // Honeypot check
   if (data.botcheck === 'on' || data.botcheck === true) {
     return { valid: false, error: 'Bot detected' };
   }
 
-  // Verify Turnstile token
-  if (CONFIG.TURNSTILE_SECRET_KEY !== 'YOUR_TURNSTILE_SECRET_KEY') {
+  // Verify Turnstile token (if configured)
+  if (env.TURNSTILE_SECRET_KEY) {
     const turnstileValid = await verifyTurnstile(
       data.turnstileToken,
-      request.headers.get('CF-Connecting-IP')
+      request.headers.get('CF-Connecting-IP'),
+      env.TURNSTILE_SECRET_KEY
     );
 
     if (!turnstileValid) {
@@ -154,14 +167,14 @@ async function validateSecurity(data, request) {
 }
 
 // Verify Cloudflare Turnstile token
-async function verifyTurnstile(token, ip) {
+async function verifyTurnstile(token, ip, secret) {
   if (!token) return false;
 
   const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify({
-      secret: CONFIG.TURNSTILE_SECRET_KEY,
+      secret: secret,
       response: token,
       remoteip: ip
     })
@@ -192,54 +205,49 @@ function validateFile(file) {
   return { valid: true };
 }
 
-// Send email via MailChannels API
-async function sendEmail(data, attachments) {
+// Send email via Resend API
+async function sendEmail(data, attachments, env) {
   // Build email body
   const emailBody = buildEmailBody(data);
 
-  // Prepare email payload
+  // Prepare Resend payload
   const payload = {
-    personalizations: [{
-      to: [{ email: CONFIG.TO_EMAIL }],
-      dkim_domain: 'vladbortnik.dev',
-      dkim_selector: 'mailchannels',
-      dkim_private_key: '' // Optional: Add DKIM key for better deliverability
-    }],
-    from: {
-      email: CONFIG.FROM_EMAIL,
-      name: CONFIG.FROM_NAME
-    },
-    reply_to: {
-      email: data.email,
-      name: data.name
-    },
+    from: `${CONFIG.FROM_NAME} <${CONFIG.FROM_EMAIL}>`,
+    to: [CONFIG.TO_EMAIL],
+    reply_to: data.email,
     subject: data.subject,
-    content: [{
-      type: 'text/html',
-      value: emailBody
-    }]
+    html: emailBody
   };
 
   // Add attachments if present
   if (attachments.length > 0) {
-    payload.attachments = attachments.map(att => ({
-      filename: att.filename,
-      content: att.content,
-      type: att.type
-    }));
+    payload.attachments = attachments;
   }
 
-  // Send via MailChannels
-  const response = await fetch('https://api.mailchannels.net/tx/v1/send', {
+  // Get API key from environment
+  const apiKey = env.RESEND_API_KEY;
+  if (!apiKey) {
+    throw new Error('RESEND_API_KEY not configured');
+  }
+
+  // Send via Resend API
+  const response = await fetch('https://api.resend.com/emails', {
     method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
+    headers: {
+      'Authorization': `Bearer ${apiKey}`,
+      'Content-Type': 'application/json'
+    },
     body: JSON.stringify(payload)
   });
 
   if (!response.ok) {
     const error = await response.text();
-    throw new Error(`Email send failed: ${error}`);
+    throw new Error(`Resend API error: ${response.status} ${error}`);
   }
+
+  const result = await response.json();
+  console.log('Email sent successfully:', result.id);
+  return result;
 }
 
 // Build HTML email body
@@ -346,6 +354,7 @@ function isValidEmail(email) {
 }
 
 function escapeHtml(text) {
+  if (!text) return '';
   const map = {
     '&': '&amp;',
     '<': '&lt;',
@@ -386,7 +395,7 @@ function jsonResponse(data, status = 200) {
     status,
     headers: {
       'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*', // Adjust in production
+      'Access-Control-Allow-Origin': '*',
       'Access-Control-Allow-Methods': 'POST, OPTIONS',
       'Access-Control-Allow-Headers': 'Content-Type'
     }

@@ -87,6 +87,16 @@ h6 {
   color: #fff;
 }
 
+#header h1 .color-accent {
+  color: #18d26e;
+  transition: color 0.3s ease;
+}
+
+#header h1:hover .color-accent,
+#header h1 .color-accent:hover {
+  color: #35e888;
+}
+
 #header h2 {
   font-size: 24px;
   margin-top: 20px;
@@ -122,7 +132,25 @@ h6 {
 
 #header .social-links a:hover {
   background: #18d26e;
-  color: #040404;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Individual social link hover colors */
+#header .social-links a.github:hover {
+  background: #18d26e;
+}
+
+#header .social-links a.linkedin:hover {
+  background: #0077b5;
+}
+
+#header .social-links a[href*="x.com"]:hover {
+  background: #1da1f2;
+}
+
+#header .social-links a[href="/"]:hover {
+  background: #18d26e;
 }
 
 .back-link {
@@ -372,20 +400,35 @@ label {
   background: rgba(255, 255, 255, 0.05);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 5px;
-  color: #fff;
+  color: #fff !important;
   font-size: 15px;
   font-family: "Open Sans", sans-serif;
   transition: all 0.3s ease;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .form-control:focus {
   outline: none;
   border-color: #18d26e;
   background: rgba(255, 255, 255, 0.08);
+  color: #fff !important;
+  -webkit-text-fill-color: #fff !important;
 }
 
 .form-control::placeholder {
-  color: #666;
+  color: #888 !important;
+  -webkit-text-fill-color: #888 !important;
+  opacity: 1;
+}
+
+/* Fix autofill styling */
+.form-control:-webkit-autofill,
+.form-control:-webkit-autofill:hover,
+.form-control:-webkit-autofill:focus,
+.form-control:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px rgba(255, 255, 255, 0.05) inset !important;
+  -webkit-text-fill-color: #fff !important;
+  color: #fff !important;
 }
 
 select.form-control {

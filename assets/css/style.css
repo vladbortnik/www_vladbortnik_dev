@@ -120,6 +120,25 @@ h6 {
 
 #header .social-links a:hover {
   background: #18d26e;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Individual social link hover colors */
+#header .social-links a.github:hover {
+  background: #18d26e;
+}
+
+#header .social-links a.linkedin:hover {
+  background: #0077b5;
+}
+
+#header .social-links a[href*="x.com"]:hover {
+  background: #1da1f2;
+}
+
+#header .social-links a[href="/"]:hover {
+  background: #18d26e;
 }
 
 @media (max-width: 992px) {
@@ -795,6 +814,25 @@ section .container {
 }
 
 #header .social-links a:hover {
+  background: #18d26e;
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Individual social link hover colors */
+#header .social-links a.github:hover {
+  background: #18d26e;
+}
+
+#header .social-links a.linkedin:hover {
+  background: #0077b5;
+}
+
+#header .social-links a[href*="x.com"]:hover {
+  background: #1da1f2;
+}
+
+#header .social-links a[href="/"]:hover {
   background: #18d26e;
 }
 

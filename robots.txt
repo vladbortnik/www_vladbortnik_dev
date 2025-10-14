@@ -6,6 +6,12 @@ Disallow: /forms/
 Disallow: /.git/
 Disallow: /.idea/
 Disallow: /.claude/
+Disallow: /archive/
+Disallow: /DEPLOYMENT/
+Disallow: /SEO/
+Disallow: /assets/vendor/
+Disallow: /.wrangler/
+Disallow: /contact-worker/
 
 # Sitemap locations
 Sitemap: https://vladbortnik.dev/sitemap.xml
