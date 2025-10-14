@@ -33,7 +33,7 @@ async function initPost() {
     }
     
     // Load posts metadata
-    const response = await fetch('posts/posts.json');
+    const response = await fetch('./posts/posts.json');
     if (!response.ok) throw new Error('Failed to load posts metadata');
     
     const data = await response.json();
@@ -44,7 +44,7 @@ async function initPost() {
     }
     
     // Load markdown content
-    const markdownResponse = await fetch(`posts/${post.file}`);
+    const markdownResponse = await fetch(`./posts/${post.file}`);
     if (!markdownResponse.ok) throw new Error('Failed to load post content');
     
     const markdownContent = await markdownResponse.text();

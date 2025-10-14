@@ -20,7 +20,8 @@ const noResults = document.getElementById('noResults');
 async function initBlog() {
   try {
     // Load posts metadata (with cache-busting)
-    const response = await fetch(`posts/posts.json?t=${Date.now()}`, { cache: 'no-store' });
+    // Use relative path that works from /blog/ directory
+    const response = await fetch(`./posts/posts.json?t=${Date.now()}`, { cache: 'no-store' });
     if (!response.ok) throw new Error('Failed to load posts');
     
     const data = await response.json();

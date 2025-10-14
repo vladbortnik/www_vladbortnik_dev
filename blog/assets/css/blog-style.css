@@ -1,15 +1,21 @@
 /* ===== MAGAZINE EDITORIAL DESIGN - October 2025 ===== */
 
 :root {
+  /* Portfolio-matched colors */
   --bg-primary: #040404;
-  --bg-secondary: #0d0d0d;
+  --bg-overlay: rgba(0, 0, 0, 0.9);
   --accent-primary: #18d26e;
   --accent-hover: #35e888;
+  --accent-bright: #4ceb95;
+  --accent-alt: #08c25f;
+  --accent-blue: #090593;
+  --accent-orange: #ff5722;
   --text-primary: #fff;
-  --text-secondary: rgba(255, 255, 255, 0.85);
-  --text-muted: rgba(255, 255, 255, 0.6);
-  --card-bg: rgba(255, 255, 255, 0.03);
-  --card-border: rgba(255, 255, 255, 0.08);
+  --text-secondary: rgba(255, 255, 255, 0.7);
+  --text-muted: #aaaaaa;
+  --card-bg: rgba(255, 255, 255, 0.08);
+  --card-hover-bg: rgba(255, 255, 255, 0.12);
+  --card-border: rgba(255, 255, 255, 0.1);
 }
 
 * {
@@ -19,7 +25,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: "Open Sans", sans-serif;
   background-color: var(--bg-primary);
   color: var(--text-primary);
   line-height: 1.6;
@@ -38,6 +44,45 @@ body::before {
   z-index: -1;
 }
 
+body::after {
+  content: "";
+  position: fixed;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at 20% 50%,
+    rgba(24, 210, 110, 0.03) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 80% 80%,
+    rgba(9, 5, 147, 0.04) 0%,
+    transparent 50%
+  ),
+  radial-gradient(
+    circle at 40% 20%,
+    rgba(255, 87, 34, 0.02) 0%,
+    transparent 50%
+  );
+  animation: float-gradient 20s ease-in-out infinite;
+  z-index: -1;
+  pointer-events: none;
+}
+
+@keyframes float-gradient {
+  0%, 100% {
+    transform: translate(0, 0) rotate(0deg);
+  }
+  33% {
+    transform: translate(5%, 5%) rotate(5deg);
+  }
+  66% {
+    transform: translate(-5%, 3%) rotate(-3deg);
+  }
+}
+
 @media (min-width: 1024px) {
   body::before {
     background-attachment: fixed;
@@ -46,14 +91,14 @@ body::before {
 
 /* Header - Fixed Navigation */
 .blog-header {
-  background: rgba(0, 0, 0, 0.95);
-  backdrop-filter: blur(20px);
+  background: var(--bg-overlay);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
   border-bottom: 1px solid var(--card-border);
+  transition: all 0.3s ease-in-out;
 }
 
 .blog-header .container {
@@ -66,7 +111,7 @@ body::before {
 }
 
 .blog-header h1 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 28px;
   font-weight: 700;
   margin: 0;
@@ -123,6 +168,21 @@ body::before {
   padding: 0 40px;
 }
 
+/* Section Headings */
+.blog-main h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 32px;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: var(--text-primary);
+  margin: 60px 0 30px 0;
+  letter-spacing: 1px;
+}
+
+.blog-main h2:first-of-type {
+  margin-top: 40px;
+}
+
 /* Category Navigation */
 .category-nav {
   display: flex;
@@ -158,12 +218,24 @@ body::before {
   cursor: pointer;
 }
 
-.category-pill:hover,
-.category-pill.active {
+.category-pill:hover {
   background: var(--accent-primary);
   color: #000;
   border-color: var(--accent-primary);
   transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(24, 210, 110, 0.4);
+}
+
+.category-pill.active {
+  background: linear-gradient(135deg, var(--accent-primary) 0%, var(--accent-alt) 100%);
+  color: #000;
+  border-color: var(--accent-primary);
+  transform: translateY(-2px);
+  box-shadow: 0 5px 20px rgba(24, 210, 110, 0.4);
+}
+
+.category-pill i {
+  font-size: 16px;
 }
 
 /* Hero Featured Post */
@@ -205,8 +277,8 @@ body::before {
 .hero-post-category {
   display: inline-block;
   padding: 8px 20px;
-  background: var(--accent-primary);
-  color: #000;
+  background: var(--accent-orange);
+  color: #fff;
   border-radius: 20px;
   font-size: 12px;
   font-weight: 700;
@@ -214,12 +286,23 @@ body::before {
   letter-spacing: 1px;
   margin-bottom: 20px;
   width: fit-content;
+  box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 87, 34, 0.6);
+  }
+  50% {
+    box-shadow: 0 0 40px rgba(255, 87, 34, 0.9);
+  }
 }
 
 .hero-post-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 56px;
-  font-weight: 900;
+  font-weight: 700;
   line-height: 1.1;
   margin-bottom: 20px;
   color: var(--text-primary);
@@ -438,6 +521,14 @@ body::before {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  border: 1px solid var(--accent-primary);
+  transition: all 0.3s ease;
+}
+
+/* Category color variations */
+.post-card:hover .post-card-category {
+  background: rgba(24, 210, 110, 0.15);
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.3);
 }
 
 .post-card-content {
@@ -468,7 +559,7 @@ body::before {
 }
 
 .post-card-title {
-  font-family: "Playfair Display", serif;
+  font-family: "Raleway", sans-serif;
   font-size: 24px;
   font-weight: 700;
   line-height: 1.3;
@@ -514,16 +605,40 @@ body::before {
   padding: 6px 14px;
   background: rgba(24, 210, 110, 0.1);
   border-radius: 15px;
-  font-size: 11px;
   color: var(--accent-primary);
+  font-size: 11px;
   font-weight: 600;
-  cursor: pointer;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
   transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
 .post-tag:hover {
   background: var(--accent-primary);
   color: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(24, 210, 110, 0.3);
+}
+
+.post-tag:nth-child(2) {
+  background: rgba(9, 5, 147, 0.08);
+  color: var(--accent-blue);
+}
+
+.post-tag:nth-child(2):hover {
+  background: var(--accent-blue);
+  box-shadow: 0 4px 12px rgba(9, 5, 147, 0.3);
+}
+
+.post-tag:nth-child(3) {
+  background: rgba(255, 87, 34, 0.08);
+  color: var(--accent-orange);
+}
+
+.post-tag:nth-child(3):hover {
+  background: var(--accent-orange);
+  box-shadow: 0 4px 12px rgba(255, 87, 34, 0.3);
 }
 
 .read-more {
@@ -540,6 +655,8 @@ body::before {
 
 .read-more:hover {
   gap: 12px;
+  color: var(--accent-blue);
+  text-shadow: 0 0 10px rgba(9, 5, 147, 0.5);
 }
 
 .read-more i {
@@ -560,7 +677,7 @@ body::before {
 }
 
 .no-results h3 {
-  font-family: "Playfair Display", serif;
+  font-family: "Poppins", sans-serif;
   font-size: 32px;
   margin-bottom: 10px;
   color: var(--text-secondary);

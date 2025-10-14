@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  
+  <title>Something is Growing... | Vlad Bortnik</title>
+  <meta name="description" content="A new way to explore knowledge is being cultivated. Coming soon.">
+  
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="48x48" href="assets/img/favicon.png">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+  
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: "Open Sans", sans-serif;
+      background: #040404;
+      color: #fff;
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    /* Animated background gradients - darker fairy tale theme */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: 
+        radial-gradient(circle at 30% 40%, rgba(60, 50, 110, 0.15) 0%, transparent 50%),
+        radial-gradient(circle at 70% 60%, rgba(75, 45, 95, 0.12) 0%, transparent 50%),
+        radial-gradient(circle at 50% 50%, rgba(85, 55, 105, 0.10) 0%, transparent 50%);
+      animation: float-mystery 25s ease-in-out infinite;
+      z-index: 0;
+    }
+    
+    @keyframes float-mystery {
+      0%, 100% { transform: translate(0, 0) rotate(0deg); }
+      33% { transform: translate(5%, 5%) rotate(3deg); }
+      66% { transform: translate(-3%, 7%) rotate(-2deg); }
+    }
+    
+    /* Particle network effect */
+    #particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      opacity: 0.3;
+    }
+    
+    .container {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      padding: 40px;
+      max-width: 800px;
+    }
+    
+    .logo {
+      font-family: "Poppins", sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeInDown 1s ease forwards;
+      transform: rotate(-3deg);
+      filter: brightness(0.8);
+    }
+    
+    .logo span {
+      color: #6b7bc8;
+    }
+    
+    .mystery-icon {
+      font-size: 80px;
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.3s forwards;
+      filter: drop-shadow(0 0 30px rgba(122, 90, 154, 0.8));
+    }
+    
+    h1 {
+      font-family: "Poppins", sans-serif;
+      font-size: 48px;
+      font-weight: 700;
+      margin-bottom: 20px;
+      background: linear-gradient(135deg, #5a4a7a 0%, #7a5a9a 50%, #6a4a8a 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.5s forwards;
+    }
+    
+    .subtitle {
+      font-size: 20px;
+      color: rgba(255, 255, 255, 0.7);
+      margin-bottom: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.7s forwards;
+    }
+    
+    .cryptic-message {
+      font-family: "Poppins", sans-serif;
+      font-size: 16px;
+      color: rgba(255, 255, 255, 0.5);
+      font-style: italic;
+      margin-bottom: 60px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 0.9s forwards;
+      letter-spacing: 1px;
+    }
+    
+    /* Progress/growth indicator */
+    .growth-container {
+      margin: 60px 0;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.1s forwards;
+    }
+    
+    .growth-label {
+      font-size: 14px;
+      color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+    
+    .growth-bar {
+      height: 4px;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 10px;
+      overflow: hidden;
+      position: relative;
+    }
+    
+    .growth-progress {
+      height: 100%;
+      background: linear-gradient(90deg, #5a4a7a 0%, #7a5a9a 50%, #6a4a8a 100%);
+      border-radius: 10px;
+      width: 0;
+      animation: grow 3s ease 1.5s forwards;
+      box-shadow: 0 0 20px rgba(122, 90, 154, 0.7);
+    }
+    
+    @keyframes grow {
+      to { width: 68%; }
+    }
+    
+    .growth-percent {
+      font-family: "Poppins", sans-serif;
+      font-size: 14px;
+      color: #7a5a9a;
+      margin-top: 10px;
+      opacity: 0;
+      animation: fadeIn 1s ease 2s forwards;
+    }
+    
+    /* Mystery message animation */
+    .mystery-message {
+      font-family: "Poppins", sans-serif;
+      font-size: 18px;
+      color: rgba(255, 255, 255, 0.8);
+      margin: 60px 0 40px 0;
+      opacity: 0;
+      animation: fadeIn 2s ease 2.5s forwards, glow-pulse 3s ease-in-out 4s infinite;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      font-weight: 300;
+    }
+    
+    @keyframes glow-pulse {
+      0%, 100% {
+        text-shadow: 0 0 10px rgba(122, 90, 154, 0.5);
+      }
+      50% {
+        text-shadow: 0 0 25px rgba(122, 90, 154, 0.9), 0 0 35px rgba(122, 90, 154, 0.6);
+      }
+    }
+    
+    /* Mystical navigation portals */
+    .portals {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 40px;
+      opacity: 0;
+      animation: fadeInUp 1s ease 1.3s forwards;
+      width: 100%;
+      max-width: 600px;
+      padding: 0 20px;
+    }
+    
+    .portal {
+      text-align: center;
+      text-decoration: none;
+      transition: all 0.4s ease;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    
+    .portal-arrow {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 15px;
+      transition: all 0.4s ease;
+      filter: drop-shadow(0 0 15px rgba(90, 70, 120, 0.5));
+      animation: subtle-sway 4s ease-in-out infinite;
+    }
+    
+    .portal-arrow svg {
+      width: 100%;
+      height: 100%;
+    }
+    
+    @keyframes subtle-sway {
+      0%, 100% {
+        transform: rotate(0deg);
+      }
+      25% {
+        transform: rotate(2deg);
+      }
+      75% {
+        transform: rotate(-2deg);
+      }
+    }
+    
+    .portal-label {
+      font-family: "Poppins", sans-serif;
+      font-size: 13px;
+      color: rgba(255, 255, 255, 0.6);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      font-weight: 600;
+      transition: all 0.4s ease;
+    }
+    
+    .portal:hover .portal-arrow {
+      transform: translateY(-8px) scale(1.1) rotate(0deg);
+      filter: drop-shadow(0 0 30px rgba(122, 90, 154, 0.9));
+      animation: none;
+    }
+    
+    .portal:hover .portal-label {
+      color: #7a5a9a;
+    }
+    
+    .portal:hover .portal-arrow svg path {
+      stroke: #8a6aaa;
+    }
+    
+    /* Tree visual hint */
+    .tree-hint {
+      position: fixed;
+      bottom: 40px;
+      left: 50%;
+      transform: translateX(-50%);
+      font-size: 12px;
+      color: rgba(255, 255, 255, 0.3);
+      text-align: center;
+      opacity: 0;
+      animation: fadeIn 1s ease 2.5s forwards, pulse 2s ease-in-out 3s infinite;
+      z-index: 10;
+    }
+    
+    .tree-hint svg {
+      width: 40px;
+      height: 40px;
+      margin-bottom: 10px;
+      opacity: 0.4;
+    }
+    
+    /* Animations */
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeInUp {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+    
+    @keyframes pulse {
+      0%, 100% { opacity: 0.3; }
+      50% { opacity: 0.6; }
+    }
+    
+    /* Floating leaves - non-stop animation */
+    .floating-leaf {
+      position: fixed;
+      font-size: 24px;
+      opacity: 0.6;
+      z-index: 5;
+      pointer-events: none;
+    }
+    
+    .leaf-1 {
+      top: 20%;
+      left: 10%;
+      animation: float-leaf-1 15s ease-in-out infinite;
+    }
+    
+    .leaf-2 {
+      top: 60%;
+      right: 15%;
+      animation: float-leaf-2 18s ease-in-out infinite;
+    }
+    
+    .leaf-3 {
+      bottom: 30%;
+      left: 20%;
+      animation: float-leaf-3 20s ease-in-out infinite;
+    }
+    
+    .leaf-4 {
+      top: 40%;
+      right: 25%;
+      animation: float-leaf-4 22s ease-in-out infinite;
+    }
+    
+    @keyframes float-leaf-1 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.4;
+      }
+      25% {
+        transform: translate(50px, -30px) rotate(90deg);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translate(20px, 40px) rotate(180deg);
+        opacity: 0.5;
+      }
+      75% {
+        transform: translate(-30px, 10px) rotate(270deg);
+        opacity: 0.6;
+      }
+    }
+    
+    @keyframes float-leaf-2 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg);
+        opacity: 0.5;
+      }
+      25% {
+        transform: translate(-40px, 50px) rotate(-90deg);
+        opacity: 0.7;
+      }
+      50% {
+        transform: translate(30px, -20px) rotate(-180deg);
+        opacity: 0.4;
+      }
+      75% {
+        transform: translate(10px, 60px) rotate(-270deg);
+        opacity: 0.6;
+      }
+    }
+    
+    @keyframes float-leaf-3 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.6;
+      }
+      33% {
+        transform: translate(60px, -50px) rotate(120deg) scale(1.1);
+        opacity: 0.8;
+      }
+      66% {
+        transform: translate(-20px, 30px) rotate(240deg) scale(0.9);
+        opacity: 0.5;
+      }
+    }
+    
+    @keyframes float-leaf-4 {
+      0%, 100% {
+        transform: translate(0, 0) rotate(0deg) scale(1);
+        opacity: 0.5;
+      }
+      33% {
+        transform: translate(-50px, 40px) rotate(-120deg) scale(0.9);
+        opacity: 0.7;
+      }
+      66% {
+        transform: translate(25px, -35px) rotate(-240deg) scale(1.1);
+        opacity: 0.6;
+      }
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      h1 {
+        font-size: 32px;
+      }
+      
+      .subtitle {
+        font-size: 16px;
+      }
+      
+      .mystery-icon {
+        font-size: 60px;
+      }
+      
+      .portals {
+        max-width: 400px;
+        padding: 0 10px;
+      }
+      
+      .portal-arrow {
+        width: 50px;
+        height: 50px;
+      }
+      
+      .mystery-message {
+        font-size: 16px;
+        letter-spacing: 2px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Particle canvas (optional - can add particles.js or keep it simple) -->
+  <canvas id="particles"></canvas>
+  
+  <!-- Floating leaves - non-stop animation -->
+  <div class="floating-leaf leaf-1">🍃</div>
+  <div class="floating-leaf leaf-2">🍂</div>
+  <div class="floating-leaf leaf-3">🍃</div>
+  <div class="floating-leaf leaf-4">🍂</div>
+  
+  <div class="container">
+    <div class="logo">
+      Vlad<span>'s</span> Lab
+    </div>
+    
+    <div class="mystery-icon">🌱</div>
+    
+    <h1>Something is Growing</h1>
+    
+    <p class="subtitle">
+      A new way to navigate knowledge
+    </p>
+    
+    <p class="cryptic-message">
+      "Not all those who wander are lost..."
+    </p>
+    
+    <div class="growth-container">
+      <div class="growth-label">Cultivation Progress</div>
+      <div class="growth-bar">
+        <div class="growth-progress"></div>
+      </div>
+      <div class="growth-percent">68% grown</div>
+    </div>
+    
+    <div class="mystery-message">
+      Mystery is Coming...
+    </div>
+    
+    <div class="portals">
+      <a href="https://vladbortnik.dev" class="portal">
+        <div class="portal-arrow">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Left-pointing organic root arrow -->
+            <path d="M 80 50 Q 70 45, 60 50 Q 50 55, 40 50 Q 30 45, 20 50 L 15 50 L 20 45 M 20 50 L 20 55 L 15 50" 
+                  stroke="#5a4a3a" 
+                  stroke-width="3" 
+                  fill="none" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+            <path d="M 60 50 Q 55 40, 50 35 M 40 50 Q 35 60, 30 65" 
+                  stroke="#5a4a3a" 
+                  stroke-width="2" 
+                  fill="none" 
+                  stroke-linecap="round" 
+                  opacity="0.7"/>
+          </svg>
+        </div>
+        <span class="portal-label">World of Things</span>
+      </a>
+      
+      <a href="https://www.linkedin.com/in/vladbortnik/" target="_blank" class="portal">
+        <div class="portal-arrow">
+          <svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <!-- Right-pointing organic root arrow -->
+            <path d="M 20 50 Q 30 45, 40 50 Q 50 55, 60 50 Q 70 45, 80 50 L 85 50 L 80 45 M 80 50 L 80 55 L 85 50" 
+                  stroke="#5a4a3a" 
+                  stroke-width="3" 
+                  fill="none" 
+                  stroke-linecap="round" 
+                  stroke-linejoin="round"/>
+            <path d="M 40 50 Q 45 40, 50 35 M 60 50 Q 65 60, 70 65" 
+                  stroke="#5a4a3a" 
+                  stroke-width="2" 
+                  fill="none" 
+                  stroke-linecap="round" 
+                  opacity="0.7"/>
+          </svg>
+        </div>
+        <span class="portal-label">World of People</span>
+      </a>
+    </div>
+  </div>
+  
+  <div class="tree-hint">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M12 2v20M12 2L8 6M12 2l4 4M12 12l-4 4M12 12l4 4"/>
+    </svg>
+    <div>Roots are spreading...</div>
+  </div>
+  
+  <script>
+    // Simple particle effect using canvas
+    const canvas = document.getElementById('particles');
+    const ctx = canvas.getContext('2d');
+    
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+    
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.size = Math.random() * 2 + 1;
+        this.speedX = Math.random() * 0.5 - 0.25;
+        this.speedY = Math.random() * 0.5 - 0.25;
+        this.opacity = Math.random() * 0.5;
+      }
+      
+      update() {
+        this.x += this.speedX;
+        this.y += this.speedY;
+        
+        if (this.x > canvas.width) this.x = 0;
+        if (this.x < 0) this.x = canvas.width;
+        if (this.y > canvas.height) this.y = 0;
+        if (this.y < 0) this.y = canvas.height;
+      }
+      
+      draw() {
+        ctx.fillStyle = `rgba(122, 90, 154, ${this.opacity})`;
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+    
+    const particles = [];
+    for (let i = 0; i < 50; i++) {
+      particles.push(new Particle());
+    }
+    
+    function animate() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      
+      particles.forEach(particle => {
+        particle.update();
+        particle.draw();
+      });
+      
+      // Draw connections
+      for (let i = 0; i < particles.length; i++) {
+        for (let j = i + 1; j < particles.length; j++) {
+          const dx = particles[i].x - particles[j].x;
+          const dy = particles[i].y - particles[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+          
+          if (distance < 150) {
+            ctx.strokeStyle = `rgba(122, 90, 154, ${0.1 * (1 - distance / 150)})`;
+            ctx.lineWidth = 1;
+            ctx.beginPath();
+            ctx.moveTo(particles[i].x, particles[i].y);
+            ctx.lineTo(particles[j].x, particles[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      
+      requestAnimationFrame(animate);
+    }
+    
+    animate();
+    
+    window.addEventListener('resize', () => {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    });
+  </script>
+</body>
+</html>
