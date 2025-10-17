@@ -1,9 +1,0 @@
-User-agent: *
-Allow: /blog/
-Allow: /blog/post.html
-Allow: /blog/posts/*.md
-
-Disallow: /blog/assets/
-
-Sitemap: https://vladbortnik.dev/blog/sitemap.xml
-Sitemap: https://vladbortnik.dev/sitemap.xml
