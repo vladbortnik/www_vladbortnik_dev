@@ -10,7 +10,7 @@
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vladbortnik)
 [![X/Twitter](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/vladbortnik_dev)
 [![GitHub](https://img.shields.io/badge/GitHub-Follow-181717?style=for-the-badge&logo=github&logoColor=white)](https://github.com/vladbortnik)
-[![Contact](https://img.shields.io/badge/Contact_Me-Get_In_Touch-00C853?style=for-the-badge&logo=gmail&logoColor=white)](https://vladbortnik.dev/contact)
+[![Contact](https://img.shields.io/badge/Contact_Me-Get_In_Touch-00C853?style=for-the-badge&logo=gmail&logoColor=white)](https://vladbortnik.dev/contact.html)
 
 </div>
 
@@ -231,7 +231,7 @@ I'm always interested in discussing new opportunities, collaborating on projects
 ### 📬 Get In Touch
 
 [![Portfolio](https://img.shields.io/badge/🌐_Visit_Portfolio-vladbortnik.dev-0A66C2?style=for-the-badge)](https://vladbortnik.dev)
-[![Contact Form](https://img.shields.io/badge/📧_Contact_Me-Send_Message-00C853?style=for-the-badge)](https://vladbortnik.dev/contact)
+[![Contact Form](https://img.shields.io/badge/📧_Contact_Me-Send_Message-00C853?style=for-the-badge)](https://vladbortnik.dev/contact.html)
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-Connect-0A66C2?style=for-the-badge&logo=linkedin&logoColor=white)](https://www.linkedin.com/in/vladbortnik)
 [![X/Twitter](https://img.shields.io/badge/X-Follow-000000?style=for-the-badge&logo=x&logoColor=white)](https://x.com/vladbortnik_dev)
@@ -247,7 +247,7 @@ I'm always interested in discussing new opportunities, collaborating on projects
 
 *Software Engineer | Frontend (React 19) → Backend (Flask, PostgreSQL) → Infrastructure (Docker, Nginx, Cloud)*
 
-**CS degree** • **NYC 🗽** • **[vladbortnik.dev](https://vladbortnik.dev)** • **[Contact](https://vladbortnik.dev/contact)**
+**[vladbortnik.dev](https://vladbortnik.dev)** • **[Contact](https://vladbortnik.dev/contact.html)** • **CS degree** • **NYC 🗽**
 
 ---
 
