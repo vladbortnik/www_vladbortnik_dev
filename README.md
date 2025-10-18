@@ -69,7 +69,7 @@ I specialize in transforming ideas into scalable, secure applications deployed o
 
 **Live:** [vladbortnik.dev](https://vladbortnik.dev) | **GitHub:** [View Repository](https://github.com/vladbortnik/www_vladbortnik_dev)
 
-A lightweight, performance-optimized portfolio website built from scratch with vanilla HTML5, CSS3/SCSS, and JavaScript. Features a modern single-page application architecture with hash-based routing, responsive design across 4 breakpoints, and comprehensive SEO optimization. **1000+ lines of custom code** demonstrating mastery of core web technologies without framework dependencies.
+A lightweight, performance-optimized portfolio website built from scratch with vanilla HTML5, CSS3/SCSS, and JavaScript. Features a modern single-page application architecture with hash-based routing, responsive design across 4 breakpoints, and comprehensive SEO optimization. **1000s lines of custom code** demonstrating mastery of core web technologies without framework dependencies.
 
 **Key Achievements:**
 - **93% performance score** with optimized assets and lazy loading
