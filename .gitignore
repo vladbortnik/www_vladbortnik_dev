@@ -6,9 +6,9 @@ _*
 blog/
 #archive/RESEND-SETUP.md
 #archive/
-#DEPLOYMENT/_README-Portfolio-Info.md
-#DEPLOYMENT/BUSINESS-CARD.md
-#DEPLOYMENT/SHORTCUT-URLS.md
+DEPLOYMENT/_README-Portfolio-Info.md
+DEPLOYMENT/BUSINESS-CARD.md
+DEPLOYMENT/SHORTCUT-URLS.md
 
 # Cloudflare Worker
 contact-worker/
