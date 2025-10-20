@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Implementing Secure Authentication in Flask with JWT | Vlad Bortnik</title>
+    <meta name="description" content="A comprehensive guide to building secure authentication systems in Flask applications using JSON Web Tokens, including best practices for token management and security.">
+    <meta name="keywords" content="Flask, JWT, Authentication, Python, Web Security, JSON Web Tokens, Flask-JWT-Extended">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html">
+    <meta property="og:title" content="Implementing Secure Authentication in Flask with JWT">
+    <meta property="og:description" content="Learn how to build secure authentication systems in Flask using JSON Web Tokens.">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../../assets/img/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS Files -->
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/blog.css" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Implementing Secure Authentication in Flask with JWT",
+        "description": "A comprehensive guide to building secure authentication systems in Flask applications using JSON Web Tokens.",
+        "author": {
+            "@type": "Person",
+            "name": "Vlad Bortnik",
+            "url": "https://vladbortnik.dev"
+        },
+        "datePublished": "2024-01-10"
+    }
+    </script>
+
+    <!-- Umami Analytics -->
+    <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="b386b8f9-b644-4400-a091-208983cb8340"></script>
+</head>
+
+<body>
+    <!-- ======= HEADER ======= -->
+    <header id="header" class="header-top">
+        <div class="container">
+            <h1><a href="/">Vlad Bortnik</a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="/">Home</a></li>
+                    <li><a class="nav-link" href="/#about">About</a></li>
+                    <li><a class="nav-link" href="/#portfolio">Projects</a></li>
+                    <li><a class="nav-link" href="/#resume">Resume</a></li>
+                    <li><a class="nav-link active" href="/blog/">Blog</a></li>
+                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+            <div class="social-links">
+                <a href="/" title="Portfolio"><i class="bi bi-briefcase-fill"></i></a>
+                <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="bi bi-twitter"></i></a>
+                <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= BLOG POST SECTION ======= -->
+    <section class="blog-post">
+        <div class="container">
+            <a href="/blog/" class="back-to-blog">
+                <i class="bi bi-arrow-left"></i> Back to Blog
+            </a>
+
+            <div class="blog-post-content">
+                <!-- Post Header -->
+                <div class="blog-post-header">
+                    <h1>Implementing Secure Authentication in Flask with JWT</h1>
+                    <div class="post-meta">
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+                            <span>January 10, 2024</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-clock"></i>
+                            <span>10 min read</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-person"></i>
+                            <span>Vlad Bortnik</span>
+                        </div>
+                        <span class="post-category">Python</span>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <article class="article-content">
+                    <p>
+                        Authentication is a critical component of any web application. In this guide, we'll explore how to implement 
+                        secure authentication in Flask using JSON Web Tokens (JWT), a modern and stateless approach to user authentication.
+                    </p>
+
+                    <h2>What are JSON Web Tokens?</h2>
+                    <p>
+                        JWT is an open standard (RFC 7519) that defines a compact and self-contained way for securely transmitting 
+                        information between parties as a JSON object. In the context of authentication, JWTs are used to verify 
+                        the identity of users without requiring server-side session storage.
+                    </p>
+
+                    <h3>JWT Structure</h3>
+                    <p>A JWT consists of three parts separated by dots:</p>
+                    <ul>
+                        <li><strong>Header:</strong> Contains token type and hashing algorithm</li>
+                        <li><strong>Payload:</strong> Contains claims (user data and metadata)</li>
+                        <li><strong>Signature:</strong> Verifies the token hasn't been tampered with</li>
+                    </ul>
+
+                    <h2>Setting Up Flask-JWT-Extended</h2>
+                    <p>
+                        We'll use the <code>Flask-JWT-Extended</code> library, which provides comprehensive JWT support for Flask applications.
+                    </p>
+
+                    <pre><code># Install required packages
+pip install Flask Flask-JWT-Extended Flask-SQLAlchemy python-dotenv</code></pre>
+
+                    <h3>Basic Configuration</h3>
+                    <pre><code>from flask import Flask, jsonify, request
+from flask_jwt_extended import (
+    JWTManager, create_access_token, create_refresh_token,
+    jwt_required, get_jwt_identity
+)
+from datetime import timedelta
+import os
+
+app = Flask(__name__)
+
+# Configuration
+app.config['JWT_SECRET_KEY'] = os.getenv('JWT_SECRET_KEY')
+app.config['JWT_ACCESS_TOKEN_EXPIRES'] = timedelta(hours=1)
+app.config['JWT_REFRESH_TOKEN_EXPIRES'] = timedelta(days=30)
+
+jwt = JWTManager(app)</code></pre>
+
+                    <h2>User Registration</h2>
+                    <p>
+                        First, let's implement user registration with password hashing:
+                    </p>
+
+                    <pre><code>from werkzeug.security import generate_password_hash, check_password_hash
+from flask_sqlalchemy import SQLAlchemy
+
+db = SQLAlchemy(app)
+
+class User(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    email = db.Column(db.String(120), unique=True, nullable=False)
+    password_hash = db.Column(db.String(255), nullable=False)
+    
+    def set_password(self, password):
+        self.password_hash = generate_password_hash(password)
+    
+    def check_password(self, password):
+        return check_password_hash(self.password_hash, password)
+
+@app.route('/register', methods=['POST'])
+def register():
+    data = request.get_json()
+    
+    # Validate input
+    if not data or not data.get('email') or not data.get('password'):
+        return jsonify({'error': 'Missing email or password'}), 400
+    
+    # Check if user exists
+    if User.query.filter_by(email=data['email']).first():
+        return jsonify({'error': 'Email already registered'}), 409
+    
+    # Create new user
+    user = User(email=data['email'])
+    user.set_password(data['password'])
+    
+    db.session.add(user)
+    db.session.commit()
+    
+    return jsonify({'message': 'User created successfully'}), 201</code></pre>
+
+                    <h2>Login and Token Generation</h2>
+                    <p>
+                        Implement login functionality that returns both access and refresh tokens:
+                    </p>
+
+                    <pre><code>@app.route('/login', methods=['POST'])
+def login():
+    data = request.get_json()
+    
+    if not data or not data.get('email') or not data.get('password'):
+        return jsonify({'error': 'Missing credentials'}), 400
+    
+    user = User.query.filter_by(email=data['email']).first()
+    
+    if not user or not user.check_password(data['password']):
+        return jsonify({'error': 'Invalid credentials'}), 401
+    
+    # Create tokens
+    access_token = create_access_token(identity=user.id)
+    refresh_token = create_refresh_token(identity=user.id)
+    
+    return jsonify({
+        'access_token': access_token,
+        'refresh_token': refresh_token
+    }), 200</code></pre>
+
+                    <h2>Protected Routes</h2>
+                    <p>
+                        Use the <code>@jwt_required()</code> decorator to protect routes:
+                    </p>
+
+                    <pre><code>@app.route('/protected', methods=['GET'])
+@jwt_required()
+def protected():
+    current_user_id = get_jwt_identity()
+    user = User.query.get(current_user_id)
+    
+    return jsonify({
+        'message': 'Access granted',
+        'user': {
+            'id': user.id,
+            'email': user.email
+        }
+    }), 200</code></pre>
+
+                    <h2>Token Refresh</h2>
+                    <p>
+                        Implement token refresh to allow users to get new access tokens without re-authenticating:
+                    </p>
+
+                    <pre><code>@app.route('/refresh', methods=['POST'])
+@jwt_required(refresh=True)
+def refresh():
+    current_user_id = get_jwt_identity()
+    new_access_token = create_access_token(identity=current_user_id)
+    
+    return jsonify({'access_token': new_access_token}), 200</code></pre>
+
+                    <h2>Security Best Practices</h2>
+
+                    <h3>1. Use Strong Secret Keys</h3>
+                    <p>
+                        Generate a cryptographically secure secret key and store it in environment variables:
+                    </p>
+                    <pre><code>import secrets
+secret_key = secrets.token_hex(32)  # 64 character hex string</code></pre>
+
+                    <h3>2. Implement Token Blacklisting</h3>
+                    <p>
+                        For logout functionality, implement a token blacklist to revoke tokens before expiration:
+                    </p>
+
+                    <pre><code>from flask_jwt_extended import get_jwt
+
+# Store revoked tokens (use Redis in production)
+revoked_tokens = set()
+
+@jwt.token_in_blocklist_loader
+def check_if_token_revoked(jwt_header, jwt_payload):
+    jti = jwt_payload['jti']
+    return jti in revoked_tokens
+
+@app.route('/logout', methods=['POST'])
+@jwt_required()
+def logout():
+    jti = get_jwt()['jti']
+    revoked_tokens.add(jti)
+    return jsonify({'message': 'Successfully logged out'}), 200</code></pre>
+
+                    <h3>3. Use HTTPS</h3>
+                    <p>
+                        Always transmit tokens over HTTPS to prevent man-in-the-middle attacks. Configure your production 
+                        server (Nginx, Apache) with SSL/TLS certificates.
+                    </p>
+
+                    <h3>4. Validate Token Claims</h3>
+                    <p>
+                        Add custom claims validation to verify additional token properties:
+                    </p>
+
+                    <pre><code>@jwt.additional_claims_loader
+def add_claims_to_access_token(identity):
+    user = User.query.get(identity)
+    return {
+        'email': user.email,
+        'is_admin': user.is_admin
+    }</code></pre>
+
+                    <h2>Error Handling</h2>
+                    <p>
+                        Implement custom error handlers for JWT-related errors:
+                    </p>
+
+                    <pre><code>@jwt.expired_token_loader
+def expired_token_callback(jwt_header, jwt_payload):
+    return jsonify({
+        'error': 'Token has expired',
+        'message': 'Please refresh your token'
+    }), 401
+
+@jwt.invalid_token_loader
+def invalid_token_callback(error):
+    return jsonify({
+        'error': 'Invalid token',
+        'message': 'Signature verification failed'
+    }), 401
+
+@jwt.unauthorized_loader
+def missing_token_callback(error):
+    return jsonify({
+        'error': 'Authorization required',
+        'message': 'Request does not contain an access token'
+    }), 401</code></pre>
+
+                    <h2>Frontend Integration</h2>
+                    <p>
+                        Here's how to use the JWT authentication from a JavaScript frontend:
+                    </p>
+
+                    <pre><code>// Login
+const response = await fetch('/login', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ email, password })
+});
+
+const data = await response.json();
+localStorage.setItem('access_token', data.access_token);
+localStorage.setItem('refresh_token', data.refresh_token);
+
+// Access protected route
+const token = localStorage.getItem('access_token');
+const protectedResponse = await fetch('/protected', {
+    headers: { 'Authorization': `Bearer ${token}` }
+});</code></pre>
+
+                    <blockquote>
+                        <strong>Security Note:</strong> Consider using HttpOnly cookies instead of localStorage for storing 
+                        tokens to prevent XSS attacks. This requires additional CSRF protection.
+                    </blockquote>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        JWT-based authentication provides a scalable and stateless solution for Flask applications. Key takeaways:
+                    </p>
+                    <ul>
+                        <li>Always use strong, randomly generated secret keys</li>
+                        <li>Implement proper token expiration and refresh mechanisms</li>
+                        <li>Use HTTPS in production</li>
+                        <li>Implement token blacklisting for logout functionality</li>
+                        <li>Add comprehensive error handling</li>
+                        <li>Consider using HttpOnly cookies for enhanced security</li>
+                    </ul>
+                    <p>
+                        This implementation provides a solid foundation for authentication in your Flask applications. 
+                        As your application grows, consider adding features like email verification, password reset, 
+                        and multi-factor authentication.
+                    </p>
+                </article>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3>Comments</h3>
+                    <div class="commentbox"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- CommentBox.io -->
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>
+        commentBox('5698637896089600-proj', {
+            backgroundColor: '#040404',
+            textColor: '#fff',
+            subtextColor: 'rgba(255, 255, 255, 0.6)'
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Docker & Python: Production Best Practices | Vlad Bortnik</title>
+    <meta name="description" content="Learn how to containerize Python applications effectively with Docker, including multi-stage builds, security considerations, and optimization techniques for production environments.">
+    <meta name="keywords" content="Docker, Python, Containerization, DevOps, Production Deployment, Multi-stage Build, Docker Best Practices">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vladbortnik.dev/blog/posts/docker-python-best-practices.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vladbortnik.dev/blog/posts/docker-python-best-practices.html">
+    <meta property="og:title" content="Docker & Python: Production Best Practices">
+    <meta property="og:description" content="Learn how to containerize Python applications effectively with Docker, including multi-stage builds and security considerations.">
+    <meta property="og:image" content="https://vladbortnik.dev/assets/img/me.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vladbortnik.dev/blog/posts/docker-python-best-practices.html">
+    <meta name="twitter:title" content="Docker & Python: Production Best Practices">
+    <meta name="twitter:description" content="Learn how to containerize Python applications effectively with Docker.">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../../assets/img/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS Files -->
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/blog.css" rel="stylesheet">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BlogPosting",
+        "headline": "Docker & Python: Production Best Practices",
+        "description": "Learn how to containerize Python applications effectively with Docker, including multi-stage builds, security considerations, and optimization techniques.",
+        "image": "https://vladbortnik.dev/assets/img/me.jpg",
+        "author": {
+            "@type": "Person",
+            "name": "Vlad Bortnik",
+            "url": "https://vladbortnik.dev"
+        },
+        "publisher": {
+            "@type": "Person",
+            "name": "Vlad Bortnik"
+        },
+        "datePublished": "2024-01-15",
+        "dateModified": "2024-01-15"
+    }
+    </script>
+
+    <!-- Umami Analytics -->
+    <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="b386b8f9-b644-4400-a091-208983cb8340"></script>
+</head>
+
+<body>
+    <!-- ======= HEADER ======= -->
+    <header id="header" class="header-top">
+        <div class="container">
+            <h1><a href="/">Vlad Bortnik</a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="/">Home</a></li>
+                    <li><a class="nav-link" href="/#about">About</a></li>
+                    <li><a class="nav-link" href="/#portfolio">Projects</a></li>
+                    <li><a class="nav-link" href="/#resume">Resume</a></li>
+                    <li><a class="nav-link active" href="/blog/">Blog</a></li>
+                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+            <div class="social-links">
+                <a href="/" title="Portfolio"><i class="bi bi-briefcase-fill"></i></a>
+                <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="bi bi-twitter"></i></a>
+                <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= BLOG POST SECTION ======= -->
+    <section class="blog-post">
+        <div class="container">
+            <a href="/blog/" class="back-to-blog">
+                <i class="bi bi-arrow-left"></i> Back to Blog
+            </a>
+
+            <div class="blog-post-content">
+                <!-- Post Header -->
+                <div class="blog-post-header">
+                    <h1>Docker & Python: Production Best Practices</h1>
+                    <div class="post-meta">
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+                            <span>January 15, 2024</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-clock"></i>
+                            <span>8 min read</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-person"></i>
+                            <span>Vlad Bortnik</span>
+                        </div>
+                        <span class="post-category">DevOps</span>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <article class="article-content">
+                    <p>
+                        Containerizing Python applications with Docker has become the industry standard for deploying modern web applications. 
+                        However, there's a significant difference between creating a basic Dockerfile and building production-ready containers 
+                        that are secure, efficient, and maintainable.
+                    </p>
+
+                    <h2>Why Docker for Python Applications?</h2>
+                    <p>
+                        Docker provides consistency across development, staging, and production environments. It eliminates the classic 
+                        "it works on my machine" problem by packaging your application with all its dependencies into a single container.
+                    </p>
+
+                    <h2>Multi-Stage Builds: The Foundation</h2>
+                    <p>
+                        Multi-stage builds are essential for creating lean, production-ready Docker images. They allow you to separate 
+                        the build environment from the runtime environment, significantly reducing image size and attack surface.
+                    </p>
+
+                    <pre><code># Build stage
+FROM python:3.11-slim as builder
+
+WORKDIR /app
+
+# Install build dependencies
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gcc \
+    && rm -rf /var/lib/apt/lists/*
+
+# Install Python dependencies
+COPY requirements.txt .
+RUN pip install --user --no-cache-dir -r requirements.txt
+
+# Runtime stage
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# Copy only the installed packages from builder
+COPY --from=builder /root/.local /root/.local
+COPY . .
+
+# Make sure scripts in .local are usable
+ENV PATH=/root/.local/bin:$PATH
+
+# Create non-root user
+RUN useradd -m -u 1000 appuser && chown -R appuser:appuser /app
+USER appuser
+
+CMD ["python", "app.py"]</code></pre>
+
+                    <h3>Key Benefits of Multi-Stage Builds</h3>
+                    <ul>
+                        <li><strong>Smaller Image Size:</strong> By excluding build tools from the final image, you can reduce image size by 50-70%</li>
+                        <li><strong>Enhanced Security:</strong> Fewer packages mean fewer potential vulnerabilities</li>
+                        <li><strong>Faster Deployments:</strong> Smaller images transfer faster across networks</li>
+                        <li><strong>Better Caching:</strong> Optimize layer caching for faster builds</li>
+                    </ul>
+
+                    <h2>Security Best Practices</h2>
+                    <p>
+                        Security should be built into your containers from day one. Here are essential security practices:
+                    </p>
+
+                    <h3>1. Use Non-Root Users</h3>
+                    <p>
+                        Always run your application as a non-root user. This limits the damage an attacker can do if they compromise your container.
+                    </p>
+
+                    <h3>2. Minimize Base Image Size</h3>
+                    <p>
+                        Use <code>python:3.11-slim</code> or <code>python:3.11-alpine</code> instead of the full Python image. 
+                        The slim variant is typically sufficient for most applications.
+                    </p>
+
+                    <h3>3. Keep Dependencies Updated</h3>
+                    <p>
+                        Regularly update your base image and Python packages to patch security vulnerabilities. Use tools like 
+                        <code>pip-audit</code> to scan for known vulnerabilities in your dependencies.
+                    </p>
+
+                    <h2>Optimization Techniques</h2>
+                    
+                    <h3>Layer Caching Strategy</h3>
+                    <p>
+                        Order your Dockerfile instructions from least to most frequently changing. This maximizes Docker's layer caching:
+                    </p>
+
+                    <pre><code># Good: Install dependencies before copying code
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
+
+# Bad: Changes to code invalidate dependency cache
+COPY . .
+RUN pip install -r requirements.txt</code></pre>
+
+                    <h3>Use .dockerignore</h3>
+                    <p>
+                        Create a <code>.dockerignore</code> file to exclude unnecessary files from your Docker context. 
+                        This speeds up builds and reduces image size:
+                    </p>
+
+                    <pre><code>__pycache__
+*.pyc
+*.pyo
+*.pyd
+.git
+.gitignore
+.env
+*.md
+tests/
+.pytest_cache/</code></pre>
+
+                    <h2>Environment Variables and Secrets</h2>
+                    <p>
+                        Never hardcode secrets in your Dockerfile or commit them to version control. Use environment variables 
+                        and secret management tools:
+                    </p>
+
+                    <pre><code># Use environment variables
+ENV FLASK_ENV=production
+
+# Pass secrets at runtime
+docker run -e DATABASE_URL=postgresql://... myapp</code></pre>
+
+                    <blockquote>
+                        <strong>Pro Tip:</strong> Use Docker secrets or external secret management services like 
+                        AWS Secrets Manager or HashiCorp Vault for production deployments.
+                    </blockquote>
+
+                    <h2>Health Checks</h2>
+                    <p>
+                        Implement health checks to ensure your container is running properly:
+                    </p>
+
+                    <pre><code>HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+  CMD python -c "import requests; requests.get('http://localhost:5000/health')" || exit 1</code></pre>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        Building production-ready Docker containers for Python applications requires attention to security, 
+                        performance, and maintainability. By following these best practices, you'll create containers that are:
+                    </p>
+                    <ul>
+                        <li>Secure and minimally vulnerable</li>
+                        <li>Optimized for size and performance</li>
+                        <li>Easy to maintain and update</li>
+                        <li>Consistent across all environments</li>
+                    </ul>
+                    <p>
+                        Remember, containerization is an ongoing process. Regularly review and update your Docker configurations 
+                        as best practices evolve and new security considerations emerge.
+                    </p>
+                </article>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3>Comments</h3>
+                    <div class="commentbox"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="copyright">
+                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            </div>
+        </div>
+    </footer>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- CommentBox.io -->
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>
+        commentBox('5698637896089600-proj', {
+            backgroundColor: '#040404',
+            textColor: '#fff',
+            subtextColor: 'rgba(255, 255, 255, 0.6)'
+        });
+    </script>
+
+</body>
+</html>

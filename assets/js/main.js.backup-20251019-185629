@@ -51,9 +51,6 @@
    * Scroll with offset on links with a class name .scrollto
    */
   on('click', '#navbar .nav-link', function(e) {
-    // Skip if no hash (external links like /blog/ or /contact.html)
-    if (!this.hash) return;
-
     let section = select(this.hash)
     if (section) {
       e.preventDefault()
@@ -138,7 +135,7 @@
    * Skills animation
    */
   let skilsContent = select('.skills-content');
-  if (skilsContent && typeof Waypoint !== 'undefined') {
+  if (skilsContent) {
     new Waypoint({
       element: skilsContent,
       offset: '80%',
@@ -154,51 +151,47 @@
   /**
    * Technologies Carousel
    */
-  if (typeof Swiper !== 'undefined') {
-    new Swiper('.technologies-slider', {
-      speed: 600,
-      loop: true,
-      autoplay: {
-        delay: 5000,
-        disableOnInteraction: false
+  new Swiper('.technologies-slider', {
+    speed: 600,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      disableOnInteraction: false
+    },
+    slidesPerView: 'auto',
+    pagination: {
+      el: '.swiper-pagination',
+      type: 'bullets',
+      clickable: true
+    },
+    breakpoints: {
+      320: {
+        slidesPerView: 1,
+        spaceBetween: 20
       },
-      slidesPerView: 'auto',
-      pagination: {
-        el: '.swiper-pagination',
-        type: 'bullets',
-        clickable: true
+
+      430: {
+        slidesPerView: 2,
+        spaceBetween: 20
       },
-      breakpoints: {
-        320: {
-          slidesPerView: 1,
-          spaceBetween: 20
-        },
 
-        430: {
-          slidesPerView: 2,
-          spaceBetween: 20
-        },
+      760: {
+        slidesPerView: 3,
+        spaceBetween: 20
+      },
 
-        760: {
-          slidesPerView: 3,
-          spaceBetween: 20
-        },
-
-        1000: {
-          slidesPerView: 4,
-          spaceBetween: 20
-        }
+      1000: {
+        slidesPerView: 4,
+        spaceBetween: 20
       }
-    });
-  }
+    }
+  });
 
   /**
-   * Init Pure Counter
+   * Init Pure Counter 
    * (Animated Number Counters Lib)
    */
-  if (typeof PureCounter !== 'undefined') {
-    new PureCounter();
-  }
+  new PureCounter();  
 })()
 
 /* ##### OPEN IMAGE in FULLSCREEN ##### */
