@@ -188,8 +188,16 @@ h6 {
   color: #0077b5;
 }
 
+#header .social-links a.contact:hover {
+  color: #e91e63;
+}
+
 #header .social-links a.location:hover {
   color: #ff6b6b;
+}
+
+#header .social-links a.rss:hover {
+  color: #f26522;
 }
 
 @media (max-width: 992px) {
@@ -888,8 +896,16 @@ section .container {
   color: #0077b5;
 }
 
+#header .social-links a.contact:hover {
+  color: #e91e63;
+}
+
 #header .social-links a.location:hover {
   color: #ff6b6b;
+}
+
+#header .social-links a.rss:hover {
+  color: #f26522;
 }
 
 .resume h3 {

@@ -431,8 +431,8 @@ section.blog-post {
 
 /* Social Share - Compact Right-Aligned */
 .social-share {
-  margin-top: 50px;
-  padding-top: 30px;
+  margin-top: 35px;
+  padding-top: 12px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   justify-content: flex-end;
@@ -478,21 +478,18 @@ section.blog-post {
 
 /* Comments Section */
 .comments-section {
-  margin-top: 40px;
-  padding-top: 40px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 30px;
+  padding-top: 0;
+  border-top: none;
 }
 
 .comments-section h3 {
-  font-size: 24px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 30px;
+  display: none;
 }
 
 /* CommentBox.io Container */
 .commentbox {
-  margin-top: 20px;
+  margin-top: 0;
 }
 
 /* Back to Blog Link */
@@ -517,7 +514,7 @@ section.blog-post {
   color: #fff;
   font-size: 14px;
   padding: 21px 0;
-  margin-top: 80px;
+  margin-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
@@ -652,7 +649,7 @@ section.blog-post {
   
   #footer {
     padding: 18px 0;
-    margin-top: 40px;
+    margin-top: 22px;
   }
 }
 
