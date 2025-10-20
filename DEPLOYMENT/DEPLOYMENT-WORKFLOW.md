@@ -25,14 +25,15 @@ Your portfolio has **two separate parts** that deploy differently:
 ## Part 1: One-Time Setup (Do Once)
 
 ### Set API Keys (Secrets)
+
 ```bash
 # Set Resend API key
 wrangler secret put RESEND_API_KEY
-# When prompted, paste: re_iBL41yGz_BT2WijUBkYBsTcCpYCzmdhFN
+# When prompted, paste: re_iBL41yGz_BT2XXXXXXXXXXXXXXXXXXXXX
 
 # Set Turnstile secret key
 wrangler secret put TURNSTILE_SECRET_KEY
-# When prompted, paste: 0x4AAAAAAB6AEZHX3E60CgvZEWt8Vau7dz8
+# When prompted, paste: 0x4AAAAAAB6AEZXXXXXXXXXXXXXXXXXXXXX
 ```
 
 **Note:** You only need to do this ONCE. Secrets are stored encrypted in Cloudflare.
@@ -44,6 +45,7 @@ wrangler secret put TURNSTILE_SECRET_KEY
 ### A) When You Change **HTML/CSS/JavaScript** (Frontend)
 
 **Files affected:**
+
 - `index.html`
 - `contact.html`
 - `assets/css/*`
@@ -51,6 +53,7 @@ wrangler secret put TURNSTILE_SECRET_KEY
 - Images
 
 **How to deploy:**
+
 ```bash
 # Option 1: If using Git/GitHub Pages
 git add .
@@ -71,6 +74,7 @@ rsync -avz --exclude 'node_modules' . user@server:/var/www/html/
 ### B) When You Change **Cloudflare Worker** (Backend)
 
 **Files affected:**
+
 - `cloudflare-worker-resend.js`
 - Form validation logic
 - Email sending logic
@@ -78,11 +82,13 @@ rsync -avz --exclude 'node_modules' . user@server:/var/www/html/
 **How to deploy:**
 
 **Option 1: Using the script (Recommended)**
+
 ```bash
 ./deploy-worker.sh
 ```
 
 **Option 2: Manual command**
+
 ```bash
 wrangler deploy
 ```
@@ -94,6 +100,7 @@ wrangler deploy
 ## Typical Workflow Examples
 
 ### Example 1: Change Contact Form Color
+
 ```bash
 # 1. Edit contact.css
 vim assets/css/contact.css
@@ -107,6 +114,7 @@ git push
 ```
 
 ### Example 2: Change Email Template in Worker
+
 ```bash
 # 1. Edit Worker
 vim cloudflare-worker-resend.js
@@ -118,6 +126,7 @@ vim cloudflare-worker-resend.js
 ```
 
 ### Example 3: Update Both Frontend and Backend
+
 ```bash
 # 1. Edit both files
 vim contact.html
@@ -138,17 +147,18 @@ git push
 
 ## Quick Reference
 
-| What Changed? | Deploy Command | How Often? |
-|--------------|----------------|------------|
-| **Secrets** (API keys) | `wrangler secret put` | Once (or when rotating keys) |
-| **HTML/CSS/JS** | `git push` or `rsync` | Every time you change frontend |
-| **Worker** (backend) | `./deploy-worker.sh` | Every time you change Worker |
+| What Changed?          | Deploy Command        | How Often?                     |
+| ---------------------- | --------------------- | ------------------------------ |
+| **Secrets** (API keys) | `wrangler secret put` | Once (or when rotating keys)   |
+| **HTML/CSS/JS**        | `git push` or `rsync` | Every time you change frontend |
+| **Worker** (backend)   | `./deploy-worker.sh`  | Every time you change Worker   |
 
 ---
 
 ## Checking Deployment Status
 
 ### Worker Status
+
 ```bash
 # List all your Workers
 wrangler deployments list
@@ -161,6 +171,7 @@ wrangler secret list
 ```
 
 ### Worker URL
+
 ```
 https://portfolio-contact-form.vladbortnik.workers.dev
 ```
@@ -170,6 +181,7 @@ https://portfolio-contact-form.vladbortnik.workers.dev
 ## Troubleshooting
 
 ### "Worker not found"
+
 ```bash
 # Make sure wrangler.toml exists
 cat wrangler.toml
@@ -179,6 +191,7 @@ wrangler deploy
 ```
 
 ### "Secret not configured"
+
 ```bash
 # Check if secrets exist
 wrangler secret list
@@ -189,6 +202,7 @@ wrangler secret put TURNSTILE_SECRET_KEY
 ```
 
 ### "Form not sending emails"
+
 ```bash
 # Check Worker logs
 wrangler tail
@@ -201,6 +215,7 @@ wrangler tail
 ## Summary
 
 **Remember:**
+
 - 🔐 **Secrets**: Set once with `wrangler secret put`
 - 🎨 **Frontend changes** (HTML/CSS/JS): Deploy via Git/rsync/FTP
 - ⚙️ **Worker changes** (backend): Deploy with `./deploy-worker.sh`

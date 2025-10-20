@@ -1,0 +1,147 @@
+{
+  "cleanupPeriodDays": 7,
+  "env": {
+    "CLAUDE_LOG_LEVEL": "info",
+    "DISABLE_TELEMETRY": "1",
+    "DISABLE_ERROR_REPORTING": "1",
+    "CLAUDE_CODE_DISABLE_NONESSENTIAL_TRAFFIC": "false",
+    "BASH_DEFAULT_TIMEOUT_MS": "60000",
+    "BASH_MAX_OUTPUT_LENGTH": "150000",
+    "MAX_THINKING_TOKENS": "10000"
+  },
+  "includeCoAuthoredBy": false,
+  "permissions": {
+    "allow": [
+      "Read(./**)",
+      "Write(./**)",
+      "Edit(./**)",
+      "MultiEdit(./**)",
+      "Bash(npm run lint)",
+      "Bash(npm run test)",
+      "Bash(npm run build)",
+      "WebFetch",
+      "WebSearch",
+      "Glob",
+      "Grep"
+    ],
+    "deny": [
+      "Read(~/.ssh/**)",
+      "Read(./.env)",
+      "Read(./.env.*)",
+      "Read(./**/.env)",
+      "Read(./**/.env.*)",
+      "Bash(rm -rf:*)",
+      "Bash(sudo:*)",
+      "Bash(chmod 777:*)",
+      "Bash(curl:*)",
+      "Bash(wget:*)",
+      "Bash(chown:*)",
+      "Bash(chgrp:*)",
+      "Bash(systemctl:*)",
+      "Bash(service:*)"
+    ],
+    "defaultMode": "plan",
+    "additionalDirectories": [
+      "/Users/vladbortnik/Desktop/_screenshots"
+    ],
+    "allowUnsafeOperations": false
+  },
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo \"[SECURITY] About to run: $(jq -r '.tool_input.command' 2>/dev/null || echo 'Unknown command')\" >&2"
+          }
+        ]
+      },
+      {
+        "matcher": "Write(*)|Edit(*)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "echo 'STOP: Did you analyze impact on ALL features?' && read -p 'Proceed? (y/n) ' -n 1 -r && echo && [[ $REPLY =~ ^[Yy]$ ]]"
+          }
+        ]
+      }
+    ],
+    "PostToolUse": [
+      {
+        "matcher": "Write(*.js|*.ts|*.jsx|*.tsx|*.vue)",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "npx prettier --write \"$CLAUDE_FILE_PATHS\" 2>/dev/null || true"
+          }
+        ]
+      }
+    ],
+    "Notification": [
+      {
+        "matcher": "",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "notify-send 'Claude Code' 'Awaiting your input'"
+          }
+        ]
+      }
+    ]
+  },
+  "model": "opusplan",
+  "spinnerTipsEnabled": false,
+  "alwaysThinkingEnabled": true,
+  "autoUpdates": true,
+  "mcpServers": {
+    "brave-search": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-brave-search"
+      ],
+      "command": "npx",
+      "env": {
+        "BRAVE_API_KEY": "BSA26g-ikvndO8iKiIfV0Yzpd-kIX6X"
+      },
+      "name": "Brave Search"
+    },
+    "mcp-server-firecrawl": {
+      "args": [
+        "-y",
+        "firecrawl-mcp"
+      ],
+      "command": "npx",
+      "env": {
+        "FIRECRAWL_API_KEY": "fc-72045b16666441d0a74fc7a11e8b77c7"
+      },
+      "name": "FireCrawl"
+    },
+    "puppeteer": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-puppeteer"
+      ],
+      "command": "npx",
+      "name": "Puppeteer"
+    },
+    "sequential-thinking": {
+      "args": [
+        "-y",
+        "@modelcontextprotocol/server-sequential-thinking"
+      ],
+      "command": "npx",
+      "name": "Sequential-Thinking"
+    },
+    "MCP_DOCKER": {
+      "command": "docker",
+      "args": [
+        "mcp",
+        "gateway",
+        "run"
+      ],
+      "type": "stdio",
+      "disabled": true
+    }
+  }
+}

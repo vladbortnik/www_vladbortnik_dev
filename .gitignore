@@ -1,12 +1,7 @@
 # Project Specific
-# .claude/
-# CLAUDE.md
-.*
 blog/screenshots
-# blog/
-#archive/RESEND-SETUP.md
-#archive/
-
+archive/
+blog/temp/
 
 # Cloudflare Worker
 contact-worker/
@@ -26,6 +21,7 @@ node_modules/
 
 # VS Code
 .vscode/
+.idea/
 
 # Files that might appear in the root of a volume
 .DocumentRevisions-V100

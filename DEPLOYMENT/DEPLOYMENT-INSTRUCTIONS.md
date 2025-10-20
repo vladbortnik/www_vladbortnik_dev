@@ -3,6 +3,7 @@
 ## ✅ What Changed
 
 ### 1. API Keys Now Use Cloudflare Secrets (Not Hard-coded)
+
 **Problem**: Hard-coded API keys in code = security risk
 **Solution**: Use Cloudflare environment variables
 
@@ -17,14 +18,15 @@ Run these commands to securely store your API keys:
 ```bash
 # Set Resend API key
 wrangler secret put RESEND_API_KEY
-# When prompted, paste: re_iBL41yGz_BT2WijUBkYBsTcCpYCzmdhFN
+# When prompted, paste: re_iBL41yGz_BT2WiXXXXXXXXXXXX
 
 # Set Turnstile secret key
 wrangler secret put TURNSTILE_SECRET_KEY
-# When prompted, paste: 0x4AAAAAAB6AEZHX3E60CgvZEWt8Vau7dz8
+# When prompted, paste: 0x4AAAAAABXXXXXXXXXXXXXXXXXX
 ```
 
 **Why this is secure:**
+
 - Keys stored encrypted in Cloudflare
 - Never visible in code or git
 - Can be rotated anytime without code changes
@@ -48,6 +50,7 @@ wrangler secret list
 ```
 
 Should show:
+
 ```
 RESEND_API_KEY
 TURNSTILE_SECRET_KEY
@@ -60,6 +63,7 @@ TURNSTILE_SECRET_KEY
 Your contact form is now live at:
 
 ### **Primary URL:**
+
 ```
 https://vladbortnik.dev/contact.html
 ```
@@ -67,7 +71,9 @@ https://vladbortnik.dev/contact.html
 ### **Make it Shorter (Optional):**
 
 #### Option 1: Cloudflare Page Rule (Redirect)
+
 **In Cloudflare Dashboard:**
+
 1. Go to **Rules** → **Page Rules**
 2. Create rule:
    - **URL:** `*vladbortnik.dev/contact`
@@ -77,10 +83,12 @@ https://vladbortnik.dev/contact.html
 **Result:** `https://vladbortnik.dev/contact` → works!
 
 #### Option 2: Create `/contact/index.html`
+
 ```bash
 mkdir -p contact
 cp contact.html contact/index.html
 ```
+
 **Result:** `https://vladbortnik.dev/contact/` → works!
 
 ---
@@ -91,6 +99,7 @@ cp contact.html contact/index.html
 **Solution**: Added `!important` flags and webkit-specific CSS
 
 **Fixed:**
+
 - Input text now always white (`#fff`)
 - Placeholder text lighter gray (`#888`)
 - Browser autofill styling corrected
@@ -107,17 +116,35 @@ cp contact.html contact/index.html
 **In `index.html`, find the navigation menu and add:**
 
 ```html
-
 <nav id="navbar" class="navbar nav-menu">
-    <ul>
-        <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
-        <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
-        <li><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
-        <li><a href="#portfolio" class="nav-link scrollto"><i class="bx bx-book-content"></i> <span>Portfolio</span></a>
-        </li>
-        <!-- ADD THIS LINE: -->
-        <li><a href="/contact.html" class="nav-link"><i class="bx bx-envelope"></i> <span>Contact</span></a></li>
-    </ul>
+  <ul>
+    <li>
+      <a href="#hero" class="nav-link scrollto active"
+        ><i class="bx bx-home"></i> <span>Home</span></a
+      >
+    </li>
+    <li>
+      <a href="#about" class="nav-link scrollto"
+        ><i class="bx bx-user"></i> <span>About</span></a
+      >
+    </li>
+    <li>
+      <a href="#resume" class="nav-link scrollto"
+        ><i class="bx bx-file-blank"></i> <span>Resume</span></a
+      >
+    </li>
+    <li>
+      <a href="#portfolio" class="nav-link scrollto"
+        ><i class="bx bx-book-content"></i> <span>Portfolio</span></a
+      >
+    </li>
+    <!-- ADD THIS LINE: -->
+    <li>
+      <a href="/contact.html" class="nav-link"
+        ><i class="bx bx-envelope"></i> <span>Contact</span></a
+      >
+    </li>
+  </ul>
 </nav>
 ```
 
@@ -125,9 +152,15 @@ cp contact.html contact/index.html
 
 ```html
 <div class="social-links">
-  <a href="https://twitter.com/..." target="_blank"><i class="bx bxl-twitter"></i></a>
-  <a href="https://linkedin.com/in/..." target="_blank"><i class="bx bxl-linkedin"></i></a>
-  <a href="https://github.com/..." target="_blank"><i class="bx bxl-github"></i></a>
+  <a href="https://twitter.com/..." target="_blank"
+    ><i class="bx bxl-twitter"></i
+  ></a>
+  <a href="https://linkedin.com/in/..." target="_blank"
+    ><i class="bx bxl-linkedin"></i
+  ></a>
+  <a href="https://github.com/..." target="_blank"
+    ><i class="bx bxl-github"></i
+  ></a>
   <!-- ADD THIS LINE: -->
   <a href="/contact.html" title="Contact Me"><i class="bx bx-envelope"></i></a>
 </div>
@@ -148,11 +181,13 @@ cp contact.html contact/index.html
 ## 🔐 Security Summary
 
 **Before:**
+
 - ❌ API keys in code
 - ❌ Visible in git commits
 - ❌ Visible in deployed code
 
 **After:**
+
 - ✅ Keys in Cloudflare secrets
 - ✅ Not in code or git
 - ✅ Encrypted in Cloudflare
@@ -163,31 +198,37 @@ cp contact.html contact/index.html
 ## 📝 Quick Reference
 
 **Worker endpoint:**
+
 ```
 https://portfolio-contact-form.vladbortnik.workers.dev
 ```
 
 **Contact form:**
+
 ```
 https://vladbortnik.dev/contact.html
 ```
 
 **Check secrets:**
+
 ```bash
 wrangler secret list
 ```
 
 **View logs:**
+
 ```bash
 wrangler tail
 ```
 
 **Update a secret:**
+
 ```bash
 wrangler secret put RESEND_API_KEY
 ```
 
 **Delete a secret:**
+
 ```bash
 wrangler secret delete RESEND_API_KEY
 ```
@@ -197,12 +238,15 @@ wrangler secret delete RESEND_API_KEY
 ## 🆘 Troubleshooting
 
 ### Error: "RESEND_API_KEY not configured"
+
 **Fix:** Run `wrangler secret put RESEND_API_KEY`
 
 ### Text still black in form
+
 **Fix:** Hard refresh browser (Cmd+Shift+R on Mac, Ctrl+Shift+R on Windows)
 
 ### Contact link doesn't work
+
 **Fix:** Use full URL: `https://vladbortnik.dev/contact.html` or set up redirect
 
 ---
@@ -210,6 +254,7 @@ wrangler secret delete RESEND_API_KEY
 ## ✅ Done!
 
 Your contact form is now:
+
 - ✅ Secure (keys encrypted)
 - ✅ Visible (white text on dark background)
 - ✅ Accessible (at /contact.html)

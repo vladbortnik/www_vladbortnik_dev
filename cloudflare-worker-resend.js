@@ -7,9 +7,9 @@
 // Configuration
 const CONFIG = {
   // Your email address where form submissions will be sent
-  TO_EMAIL: 'contact@vladbortnik.dev',
-  FROM_EMAIL: 'portfolio-contact-form@vladbortnik.dev', // Must be your verified domain
-  FROM_NAME: 'Portfolio Contact Form',
+  TO_EMAIL: "contact@vladbortnik.dev",
+  FROM_EMAIL: "portfolio-contact-form@vladbortnik.dev", // Must be your verified domain
+  FROM_NAME: "Portfolio Contact Form",
 
   // API keys loaded from environment variables (set via wrangler secret)
   RESEND_API_KEY: null, // Set via: wrangler secret put RESEND_API_KEY
@@ -17,9 +17,9 @@ const CONFIG = {
 
   // Allowed origins (CORS)
   ALLOWED_ORIGINS: [
-    'https://vladbortnik.dev',
-    'http://localhost:8000',
-    'http://localhost:3000'
+    "https://vladbortnik.dev",
+    "http://localhost:8000",
+    "http://localhost:3000",
   ],
 
   // File upload limits
@@ -27,26 +27,32 @@ const CONFIG = {
   MAX_FILES: 5,
   MAX_TOTAL_SIZE: 40 * 1024 * 1024, // 40MB total (Resend limit)
   ALLOWED_FILE_TYPES: [
-    'image/jpeg', 'image/png', 'image/webp',
-    'application/pdf',
-    'application/msword',
-    'application/vnd.openxmlformats-officedocument.wordprocessingml.document',
-    'text/plain', 'text/csv', 'text/xml', 'application/json',
-    'text/html', 'text/css'
-  ]
+    "image/jpeg",
+    "image/png",
+    "image/webp",
+    "application/pdf",
+    "application/msword",
+    "application/vnd.openxmlformats-officedocument.wordprocessingml.document",
+    "text/plain",
+    "text/csv",
+    "text/xml",
+    "application/json",
+    "text/html",
+    "text/css",
+  ],
 };
 
 // Main handler
 export default {
   async fetch(request, env, ctx) {
     // Handle CORS preflight
-    if (request.method === 'OPTIONS') {
+    if (request.method === "OPTIONS") {
       return handleCORS(request);
     }
 
     // Only allow POST
-    if (request.method !== 'POST') {
-      return jsonResponse({ error: 'Method not allowed' }, 405);
+    if (request.method !== "POST") {
+      return jsonResponse({ error: "Method not allowed" }, 405);
     }
 
     try {
@@ -55,19 +61,22 @@ export default {
 
       // Extract fields
       const data = {
-        name: formData.get('name'),
-        email: formData.get('email'),
-        subject: formData.get('subject_line') || formData.get('subject') || 'Contact Form Submission',
-        message: formData.get('message'),
-        company: formData.get('company'),
-        phone: formData.get('phone'),
-        projectType: formData.get('project_type'),
-        projectDescription: formData.get('project_description'),
-        budget: formData.get('budget'),
-        timeline: formData.get('timeline'),
-        additionalNotes: formData.get('additional_notes'),
-        botcheck: formData.get('botcheck'),
-        turnstileToken: formData.get('cf-turnstile-response')
+        name: formData.get("name"),
+        email: formData.get("email"),
+        subject:
+          formData.get("subject_line") ||
+          formData.get("subject") ||
+          "Contact Form Submission",
+        message: formData.get("message"),
+        company: formData.get("company"),
+        phone: formData.get("phone"),
+        projectType: formData.get("project_type"),
+        projectDescription: formData.get("project_description"),
+        budget: formData.get("budget"),
+        timeline: formData.get("timeline"),
+        additionalNotes: formData.get("additional_notes"),
+        botcheck: formData.get("botcheck"),
+        turnstileToken: formData.get("cf-turnstile-response"),
       };
 
       // Security checks
@@ -78,12 +87,12 @@ export default {
 
       // Validate required fields
       if (!data.name || !data.email) {
-        return jsonResponse({ error: 'Name and email are required' }, 400);
+        return jsonResponse({ error: "Name and email are required" }, 400);
       }
 
       // Validate email format
       if (!isValidEmail(data.email)) {
-        return jsonResponse({ error: 'Invalid email address' }, 400);
+        return jsonResponse({ error: "Invalid email address" }, 400);
       }
 
       // Handle file attachments
@@ -106,60 +115,71 @@ export default {
 
           attachments.push({
             filename: value.name,
-            content: base64
+            content: base64,
           });
         }
       }
 
       // Check attachment limits
       if (attachments.length > CONFIG.MAX_FILES) {
-        return jsonResponse({
-          error: `Maximum ${CONFIG.MAX_FILES} files allowed`
-        }, 400);
+        return jsonResponse(
+          {
+            error: `Maximum ${CONFIG.MAX_FILES} files allowed`,
+          },
+          400
+        );
       }
 
       if (totalSize > CONFIG.MAX_TOTAL_SIZE) {
-        return jsonResponse({
-          error: 'Total attachment size exceeds 40MB limit'
-        }, 400);
+        return jsonResponse(
+          {
+            error: "Total attachment size exceeds 40MB limit",
+          },
+          400
+        );
       }
 
       // Send email via Resend
       await sendEmail(data, attachments, env);
 
       // Success response
-      return jsonResponse({
-        success: true,
-        message: 'Form submitted successfully! I\'ll get back to you soon.'
-      }, 200);
-
+      return jsonResponse(
+        {
+          success: true,
+          message: "Form submitted successfully! I'll get back to you soon.",
+        },
+        200
+      );
     } catch (error) {
-      console.error('Form submission error:', error);
-      return jsonResponse({
-        error: 'Something went wrong. Please try again later.',
-        details: error.message
-      }, 500);
+      console.error("Form submission error:", error);
+      return jsonResponse(
+        {
+          error: "Something went wrong. Please try again later.",
+          details: error.message,
+        },
+        500
+      );
     }
-  }
+  },
 };
 
 // Security validation
 async function validateSecurity(data, request, env) {
   // Honeypot check
-  if (data.botcheck === 'on' || data.botcheck === true) {
-    return { valid: false, error: 'Bot detected' };
+  if (data.botcheck === "on" || data.botcheck === true) {
+    return { valid: false, error: "Bot detected" };
   }
 
   // Verify Turnstile token (if configured)
   if (env.TURNSTILE_SECRET_KEY) {
     const turnstileValid = await verifyTurnstile(
       data.turnstileToken,
-      request.headers.get('CF-Connecting-IP'),
+      request.headers.get("CF-Connecting-IP"),
       env.TURNSTILE_SECRET_KEY
     );
 
     if (!turnstileValid) {
-      return { valid: false, error: 'Security verification failed' };
+      return { valid: false, error: "Security verification failed" };
     }
   }
 
@@ -170,15 +190,18 @@ async function validateSecurity(data, request, env) {
 async function verifyTurnstile(token, ip, secret) {
   if (!token) return false;
 
-  const response = await fetch('https://challenges.cloudflare.com/turnstile/v0/siteverify', {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify({
-      secret: secret,
-      response: token,
-      remoteip: ip
-    })
-  });
+  const response = await fetch(
+    "https://challenges.cloudflare.com/turnstile/v0/siteverify",
+    {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        secret: secret,
+        response: token,
+        remoteip: ip,
+      }),
+    }
+  );
 
   const data = await response.json();
   return data.success;
@@ -190,7 +213,7 @@ function validateFile(file) {
   if (file.size > CONFIG.MAX_FILE_SIZE) {
     return {
       valid: false,
-      error: `File "${file.name}" exceeds 10MB limit`
+      error: `File "${file.name}" exceeds 10MB limit`,
     };
   }
 
@@ -198,7 +221,7 @@ function validateFile(file) {
   if (!CONFIG.ALLOWED_FILE_TYPES.includes(file.type)) {
     return {
       valid: false,
-      error: `File type "${file.type}" is not allowed`
+      error: `File type "${file.type}" is not allowed`,
     };
   }
 
@@ -216,7 +239,7 @@ async function sendEmail(data, attachments, env) {
     to: [CONFIG.TO_EMAIL],
     reply_to: data.email,
     subject: data.subject,
-    html: emailBody
+    html: emailBody,
   };
 
   // Add attachments if present
@@ -227,17 +250,17 @@ async function sendEmail(data, attachments, env) {
   // Get API key from environment
   const apiKey = env.RESEND_API_KEY;
   if (!apiKey) {
-    throw new Error('RESEND_API_KEY not configured');
+    throw new Error("RESEND_API_KEY not configured");
   }
 
   // Send via Resend API
-  const response = await fetch('https://api.resend.com/emails', {
-    method: 'POST',
+  const response = await fetch("https://api.resend.com/emails", {
+    method: "POST",
     headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'Content-Type': 'application/json'
+      Authorization: `Bearer ${apiKey}`,
+      "Content-Type": "application/json",
     },
-    body: JSON.stringify(payload)
+    body: JSON.stringify(payload),
   });
 
   if (!response.ok) {
@@ -246,7 +269,7 @@ async function sendEmail(data, attachments, env) {
   }
 
   const result = await response.json();
-  console.log('Email sent successfully:', result.id);
+  console.log("Email sent successfully:", result.id);
   return result;
 }
 
@@ -260,11 +283,15 @@ function buildEmailBody(data) {
         <table style="width: 100%; border-collapse: collapse;">
           <tr>
             <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Name:</strong></td>
-            <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.name)}</td>
+            <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+              data.name
+            )}</td>
           </tr>
           <tr>
             <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Email:</strong></td>
-            <td style="padding: 10px; border: 1px solid #ddd;"><a href="mailto:${data.email}">${escapeHtml(data.email)}</a></td>
+            <td style="padding: 10px; border: 1px solid #ddd;"><a href="mailto:${
+              data.email
+            }">${escapeHtml(data.email)}</a></td>
           </tr>
   `;
 
@@ -273,7 +300,9 @@ function buildEmailBody(data) {
     html += `
       <tr>
         <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Company:</strong></td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.company)}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+          data.company
+        )}</td>
       </tr>
     `;
   }
@@ -282,7 +311,9 @@ function buildEmailBody(data) {
     html += `
       <tr>
         <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Phone:</strong></td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.phone)}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+          data.phone
+        )}</td>
       </tr>
     `;
   }
@@ -291,7 +322,9 @@ function buildEmailBody(data) {
     html += `
       <tr>
         <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Project Type:</strong></td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.projectType)}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+          data.projectType
+        )}</td>
       </tr>
     `;
   }
@@ -300,7 +333,9 @@ function buildEmailBody(data) {
     html += `
       <tr>
         <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Budget:</strong></td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.budget)}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+          data.budget
+        )}</td>
       </tr>
     `;
   }
@@ -309,7 +344,9 @@ function buildEmailBody(data) {
     html += `
       <tr>
         <td style="padding: 10px; background: #f4f4f4; border: 1px solid #ddd;"><strong>Timeline:</strong></td>
-        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(data.timeline)}</td>
+        <td style="padding: 10px; border: 1px solid #ddd;">${escapeHtml(
+          data.timeline
+        )}</td>
       </tr>
     `;
   }
@@ -321,7 +358,10 @@ function buildEmailBody(data) {
     html += `
       <h3 style="color: #18d26e; margin-top: 20px;">Message:</h3>
       <div style="padding: 15px; background: #f9f9f9; border-left: 4px solid #18d26e;">
-        ${escapeHtml(data.message || data.projectDescription).replace(/\n/g, '<br>')}
+        ${escapeHtml(data.message || data.projectDescription).replace(
+          /\n/g,
+          "<br>"
+        )}
       </div>
     `;
   }
@@ -331,7 +371,7 @@ function buildEmailBody(data) {
     html += `
       <h3 style="color: #18d26e; margin-top: 20px;">Additional Notes:</h3>
       <div style="padding: 15px; background: #f9f9f9; border-left: 4px solid #18d26e;">
-        ${escapeHtml(data.additionalNotes).replace(/\n/g, '<br>')}
+        ${escapeHtml(data.additionalNotes).replace(/\n/g, "<br>")}
       </div>
     `;
   }
@@ -354,20 +394,20 @@ function isValidEmail(email) {
 }
 
 function escapeHtml(text) {
-  if (!text) return '';
+  if (!text) return "";
   const map = {
-    '&': '&amp;',
-    '<': '&lt;',
-    '>': '&gt;',
-    '"': '&quot;',
-    "'": '&#039;'
+    "&": "&amp;",
+    "<": "&lt;",
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#039;",
   };
-  return String(text).replace(/[&<>"']/g, m => map[m]);
+  return String(text).replace(/[&<>"']/g, (m) => map[m]);
 }
 
 function arrayBufferToBase64(buffer) {
   const bytes = new Uint8Array(buffer);
-  let binary = '';
+  let binary = "";
   for (let i = 0; i < bytes.length; i++) {
     binary += String.fromCharCode(bytes[i]);
   }
@@ -375,18 +415,18 @@ function arrayBufferToBase64(buffer) {
 }
 
 function handleCORS(request) {
-  const origin = request.headers.get('Origin');
+  const origin = request.headers.get("Origin");
   const allowedOrigin = CONFIG.ALLOWED_ORIGINS.includes(origin)
     ? origin
     : CONFIG.ALLOWED_ORIGINS[0];
 
   return new Response(null, {
     headers: {
-      'Access-Control-Allow-Origin': allowedOrigin,
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type, Accept',
-      'Access-Control-Max-Age': '86400'
-    }
+      "Access-Control-Allow-Origin": allowedOrigin,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type, Accept",
+      "Access-Control-Max-Age": "86400",
+    },
   });
 }
 
@@ -394,10 +434,10 @@ function jsonResponse(data, status = 200) {
   return new Response(JSON.stringify(data), {
     status,
     headers: {
-      'Content-Type': 'application/json',
-      'Access-Control-Allow-Origin': '*',
-      'Access-Control-Allow-Methods': 'POST, OPTIONS',
-      'Access-Control-Allow-Headers': 'Content-Type'
-    }
+      "Content-Type": "application/json",
+      "Access-Control-Allow-Origin": "*",
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type",
+    },
   });
 }

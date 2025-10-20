@@ -1,4 +1,4 @@
-# Shortcut URLs Setup Guide
+# Shortcut URLs Setup Guide (w/ Cloudflare)
 
 ## ✅ Three Recommended Shortcuts
 
