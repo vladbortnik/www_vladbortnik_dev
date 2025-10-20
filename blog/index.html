@@ -45,7 +45,7 @@
 
     <!-- Main CSS Files -->
     <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/blog.css" rel="stylesheet">
+    <link href="assets/css/blog.css?v=6" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -67,7 +67,9 @@
 <!--    <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="b386b8f9-b644-4400-a091-208983cb8340"></script>-->
 </head>
 
-<body>
+<body class="blog-page">
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
     <!-- ======= HEADER ======= -->
     <header id="header" class="header-top">
         <div class="container">
@@ -102,6 +104,14 @@
                 <p>Technical articles and insights</p>
             </div>
 
+            <!-- Search Box -->
+            <div class="blog-search">
+                <input type="text" 
+                       id="blog-search-input" 
+                       class="blog-search-input" 
+                       placeholder="🔍 Search articles... (try 'October', 'Docker', 'Python')">
+            </div>
+
             <!-- Blog Posts Grid -->
             <div class="row blog-posts" id="blog-posts-container">
                 <!-- Blog posts will be dynamically loaded here -->
@@ -115,21 +125,31 @@
     <!-- ======= FOOTER ======= -->
     <footer id="footer">
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year"></span> Vlad Bortnik
+                </div>
             </div>
         </div>
     </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-    <!-- Blog Layout Fix (must load before main.js) -->
-    <script src="assets/js/blog-fix.js"></script>
-
     <!-- Main JS File -->
     <script src="../assets/js/main.js"></script>
-    <script src="assets/js/blog.js"></script>
+    
+    <!-- Blog JS (all features integrated) -->
+    <script src="assets/js/blog.js?v=2"></script>
 
 </body>
 </html>

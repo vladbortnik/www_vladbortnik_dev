@@ -1,5 +1,6 @@
 /**
  * Blog Posts Data and Management
+ * ALL features integrated in ONE file
  */
 
 // Blog posts data (can be moved to a separate JSON file or API in the future)
@@ -91,12 +92,24 @@ function createPostCard(post) {
 }
 
 /**
- * Format date to readable string
+ * Format date to US format with ordinal suffixes (October 19th, 2025)
  */
 function formatDate(dateString) {
-  const options = { year: 'numeric', month: 'long', day: 'numeric' };
   const date = new Date(dateString);
-  return date.toLocaleDateString('en-US', options);
+  const months = ['January', 'February', 'March', 'April', 'May', 'June',
+                 'July', 'August', 'September', 'October', 'November', 'December'];
+  
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+  
+  // Add ordinal suffix
+  let suffix = 'th';
+  if (day === 1 || day === 21 || day === 31) suffix = 'st';
+  else if (day === 2 || day === 22) suffix = 'nd';
+  else if (day === 3 || day === 23) suffix = 'rd';
+  
+  return `${month} ${day}${suffix}, ${year}`;
 }
 
 /**
@@ -106,7 +119,140 @@ function getBlogPost(slug) {
   return blogPosts.find(post => post.slug === slug);
 }
 
-// Load blog posts when DOM is ready
+/**
+ * Fuzzy search functionality
+ */
+function fuzzyMatch(text, query) {
+  text = text.toLowerCase();
+  query = query.toLowerCase();
+  
+  // Exact match
+  if (text.includes(query)) return true;
+  
+  // Month name matching
+  const months = {
+    'january': '01', 'jan': '01', 'february': '02', 'feb': '02',
+    'march': '03', 'mar': '03', 'april': '04', 'apr': '04', 'may': '05',
+    'june': '06', 'jun': '06', 'july': '07', 'jul': '07',
+    'august': '08', 'aug': '08', 'september': '09', 'sep': '09', 'sept': '09',
+    'october': '10', 'oct': '10', 'november': '11', 'nov': '11',
+    'december': '12', 'dec': '12'
+  };
+  
+  if (months[query]) {
+    return text.includes(months[query]) || text.includes(query);
+  }
+  
+  // Fuzzy character matching
+  let queryIndex = 0;
+  for (let i = 0; i < text.length && queryIndex < query.length; i++) {
+    if (text[i] === query[queryIndex]) {
+      queryIndex++;
+    }
+  }
+  return queryIndex === query.length;
+}
+
+/**
+ * Initialize search functionality
+ */
+function initSearch() {
+  const searchInput = document.getElementById('blog-search-input');
+  const postsContainer = document.getElementById('blog-posts-container');
+  
+  if (!searchInput || !postsContainer) return;
+
+  searchInput.addEventListener('input', function(e) {
+    const searchTerm = e.target.value.trim();
+    
+    if (!searchTerm) {
+      loadBlogPosts();
+      return;
+    }
+
+    const filtered = blogPosts.filter(post => {
+      const searchableText = `${post.title} ${post.excerpt} ${post.category} ${post.date}`.toLowerCase();
+      return fuzzyMatch(searchableText, searchTerm);
+    });
+    
+    if (filtered.length === 0) {
+      postsContainer.innerHTML = '<div class="col-12 text-center"><p style="color: rgba(255, 255, 255, 0.5);">No posts found matching your search.</p></div>';
+    } else {
+      postsContainer.innerHTML = '';
+      filtered.forEach(post => {
+        const postCard = createPostCard(post);
+        postsContainer.innerHTML += postCard;
+      });
+    }
+  });
+}
+
+/**
+ * Initialize reading progress bar
+ */
+function initProgressBar() {
+  const progressBar = document.querySelector('.reading-progress');
+  if (!progressBar) return;
+
+  window.addEventListener('scroll', function() {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+    progressBar.style.width = scrolled + '%';
+  });
+}
+
+/**
+ * Initialize social share buttons
+ */
+function initSocialShare() {
+  // Twitter share
+  const twitterBtn = document.querySelector('.share-btn.twitter');
+  if (twitterBtn) {
+    twitterBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = encodeURIComponent(window.location.href);
+      const text = encodeURIComponent(document.title);
+      window.open(`https://twitter.com/intent/tweet?url=${url}&text=${text}`, '_blank', 'width=550,height=420');
+    });
+  }
+
+  // LinkedIn share
+  const linkedinBtn = document.querySelector('.share-btn.linkedin');
+  if (linkedinBtn) {
+    linkedinBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      const url = encodeURIComponent(window.location.href);
+      window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank', 'width=550,height=420');
+    });
+  }
+
+  // Copy link
+  const copyBtn = document.querySelector('.share-btn.copy');
+  if (copyBtn) {
+    copyBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      navigator.clipboard.writeText(window.location.href).then(() => {
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="bi bi-check"></i> Copied!';
+        copyBtn.classList.add('copied');
+        
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+          copyBtn.classList.remove('copied');
+        }, 2000);
+      });
+    });
+  }
+}
+
+// Expose blogPosts globally for search functionality
+window.blogPosts = blogPosts;
+
+// Load blog posts and initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
   loadBlogPosts();
+  initSearch();
+  initProgressBar();
+  initSocialShare();
 });

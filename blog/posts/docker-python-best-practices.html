@@ -41,7 +41,10 @@
 
     <!-- Main CSS Files -->
     <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/blog.css" rel="stylesheet">
+    <link href="../assets/css/blog.css?v=6" rel="stylesheet">
+    
+    <!-- Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -70,6 +73,8 @@
 </head>
 
 <body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
     <!-- ======= HEADER ======= -->
     <header id="header" class="header-top">
         <div class="container">
@@ -144,7 +149,7 @@
                         the build environment from the runtime environment, significantly reducing image size and attack surface.
                     </p>
 
-                    <pre><code># Build stage
+                    <pre><code class="language-docker"># Build stage
 FROM python:3.11-slim as builder
 
 WORKDIR /app
@@ -213,7 +218,7 @@ CMD ["python", "app.py"]</code></pre>
                         Order your Dockerfile instructions from least to most frequently changing. This maximizes Docker's layer caching:
                     </p>
 
-                    <pre><code># Good: Install dependencies before copying code
+                    <pre><code class="language-docker"># Good: Install dependencies before copying code
 COPY requirements.txt .
 RUN pip install -r requirements.txt
 COPY . .
@@ -228,7 +233,7 @@ RUN pip install -r requirements.txt</code></pre>
                         This speeds up builds and reduces image size:
                     </p>
 
-                    <pre><code>__pycache__
+                    <pre><code class="language-bash">__pycache__
 *.pyc
 *.pyo
 *.pyd
@@ -245,7 +250,7 @@ tests/
                         and secret management tools:
                     </p>
 
-                    <pre><code># Use environment variables
+                    <pre><code class="language-docker"># Use environment variables
 ENV FLASK_ENV=production
 
 # Pass secrets at runtime
@@ -261,7 +266,7 @@ docker run -e DATABASE_URL=postgresql://... myapp</code></pre>
                         Implement health checks to ensure your container is running properly:
                     </p>
 
-                    <pre><code>HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
+                    <pre><code class="language-docker">HEALTHCHECK --interval=30s --timeout=3s --start-period=5s --retries=3 \
   CMD python -c "import requests; requests.get('http://localhost:5000/health')" || exit 1</code></pre>
 
                     <h2>Conclusion</h2>
@@ -281,6 +286,22 @@ docker run -e DATABASE_URL=postgresql://... myapp</code></pre>
                     </p>
                 </article>
 
+                <!-- Social Share -->
+                <div class="social-share">
+                    <h4>Share this article</h4>
+                    <div class="share-icons">
+                        <a href="https://twitter.com/intent/tweet?url=https://vladbortnik.dev/blog/posts/docker-python-best-practices.html&text=Docker%20%26%20Python%3A%20Production%20Best%20Practices" target="_blank" rel="noopener" class="share-icon" title="Share on Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://vladbortnik.dev/blog/posts/docker-python-best-practices.html" target="_blank" rel="noopener" class="share-icon" title="Share on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'bi bi-check-lg\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'bi bi-link-45deg\'></i>', 2000); return false;" class="share-icon" title="Copy link">
+                            <i class="bi bi-link-45deg"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Comments Section -->
                 <div class="comments-section">
                     <h3>Comments</h3>
@@ -293,17 +314,37 @@ docker run -e DATABASE_URL=postgresql://... myapp</code></pre>
     <!-- ======= FOOTER ======= -->
     <footer id="footer">
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="../feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year"></span> Vlad Bortnik
+                </div>
             </div>
         </div>
     </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Blog JS (with progress bar) -->
+    <script src="../assets/js/blog.js?v=2"></script>
 
     <!-- Main JS File -->
     <script src="../../assets/js/main.js"></script>
+    
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-docker.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 
     <!-- CommentBox.io -->
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>

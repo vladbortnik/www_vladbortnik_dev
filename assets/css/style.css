@@ -94,6 +94,79 @@ h6 {
   padding-bottom: 6px;
 }
 
+#header h2 .nyc-text {
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: none;
+  padding-bottom: 0;
+  cursor: pointer;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+#header h2 .nyc-text:hover {
+  color: #ff9a56;
+}
+
+#header h2 .nyc-text.nyc-animating {
+  animation: nyc-glow 15s ease-in-out forwards !important;
+  transition: none;
+}
+
+@keyframes nyc-glow {
+  0% {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: none;
+  }
+  5% {
+    color: #ff9a56;
+    text-shadow: 0 0 8px rgba(255, 154, 86, 0.5);
+  }
+  10% {
+    color: #ff8c42;
+    text-shadow: 0 0 15px rgba(255, 107, 107, 0.6), 0 0 20px rgba(255, 140, 66, 0.4);
+  }
+  20% {
+    color: #ff6b6b;
+    text-shadow: 0 0 25px rgba(255, 107, 107, 0.8), 0 0 35px rgba(255, 140, 66, 0.5);
+  }
+  30% {
+    color: #ff9a56;
+    text-shadow: 0 0 30px rgba(255, 154, 86, 0.7), 0 0 40px rgba(255, 107, 107, 0.4);
+  }
+  40% {
+    color: #ffb07c;
+    text-shadow: 0 0 35px rgba(255, 176, 124, 0.6), 0 0 45px rgba(255, 140, 66, 0.5);
+  }
+  50% {
+    color: #ff8c42;
+    text-shadow: 0 0 40px rgba(255, 140, 66, 0.9), 0 0 50px rgba(255, 107, 107, 0.6);
+  }
+  60% {
+    color: #ff6b6b;
+    text-shadow: 0 0 35px rgba(255, 107, 107, 0.8), 0 0 45px rgba(255, 140, 66, 0.5);
+  }
+  70% {
+    color: #ff9a56;
+    text-shadow: 0 0 25px rgba(255, 154, 86, 0.6), 0 0 35px rgba(255, 107, 107, 0.4);
+  }
+  80% {
+    color: #ffb07c;
+    text-shadow: 0 0 20px rgba(255, 176, 124, 0.5);
+  }
+  90% {
+    color: #ff8c42;
+    text-shadow: 0 0 12px rgba(255, 140, 66, 0.4);
+  }
+  95% {
+    color: #ff9a56;
+    text-shadow: 0 0 8px rgba(255, 154, 86, 0.3);
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.8);
+    text-shadow: none;
+  }
+}
+
 #header img {
   padding: 0;
   margin: 0;
@@ -102,43 +175,43 @@ h6 {
 #header .social-links {
   margin-top: 40px;
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 #header .social-links a {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
-  margin-right: 8px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #header .social-links a:hover {
-  background: #18d26e;
   color: #fff;
-  transform: translateY(-3px);
 }
 
 /* Individual social link hover colors */
+#header .social-links a.portfolio:hover {
+  color: #4a90e2;
+}
+
+#header .social-links a.twitter:hover {
+  color: #9b4dca;
+}
+
 #header .social-links a.github:hover {
-  background: #18d26e;
+  color: #18d26e;
 }
 
 #header .social-links a.linkedin:hover {
-  background: #0077b5;
+  color: #0077b5;
 }
 
-#header .social-links a[href*="x.com"]:hover {
-  background: #1da1f2;
-}
-
-#header .social-links a[href="/"]:hover {
-  background: #18d26e;
+#header .social-links a.location:hover {
+  color: #ff6b6b;
 }
 
 @media (max-width: 992px) {
@@ -153,6 +226,11 @@ h6 {
 
   #header .social-links {
     margin-top: 15px;
+    gap: 15px;
+  }
+
+  #header .social-links a {
+    font-size: 18px;
   }
 
   #header .container {
@@ -289,7 +367,7 @@ h6 {
   left: 0;
   display: none;
   position: absolute;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 5px;
   padding: 10px 0;
   border: none;
@@ -797,43 +875,43 @@ section .container {
 #header .social-links {
   margin-top: 40px;
   display: flex;
+  align-items: center;
+  gap: 20px;
 }
 
 #header .social-links a {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
-  margin-right: 8px;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #header .social-links a:hover {
-  background: #18d26e;
   color: #fff;
-  transform: translateY(-3px);
 }
 
 /* Individual social link hover colors */
+#header .social-links a.portfolio:hover {
+  color: #4a90e2;
+}
+
+#header .social-links a.twitter:hover {
+  color: #9b4dca;
+}
+
 #header .social-links a.github:hover {
-  background: #18d26e;
+  color: #18d26e;
 }
 
 #header .social-links a.linkedin:hover {
-  background: #0077b5;
+  color: #0077b5;
 }
 
-#header .social-links a[href*="x.com"]:hover {
-  background: #1da1f2;
-}
-
-#header .social-links a[href="/"]:hover {
-  background: #18d26e;
+#header .social-links a.location:hover {
+  color: #ff6b6b;
 }
 
 .resume h3 {
@@ -1427,3 +1505,92 @@ section .container {
     transform: rotate(360deg);
   }
 } */
+
+/**
+* Vlad's Lab - Coming Soon Badge
+*/
+.nav-link-lab {
+  position: relative;
+  display: inline-block !important;
+  vertical-align: baseline;
+  text-align: center;
+}
+
+.lab-title {
+  display: block;
+  line-height: normal;
+  white-space: nowrap;
+}
+
+.coming-soon-badge {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  margin-top: 8px;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 2px 14px;
+  min-width: 95px;
+  background: linear-gradient(135deg, #18d26e, #13a058);
+  color: #fff;
+  border-radius: 3px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  animation: pulse-badge 2s ease-in-out infinite, badge-glow 3s ease-in-out infinite;
+  box-shadow: 0 2px 8px rgba(24, 210, 110, 0.3);
+  text-align: center;
+  white-space: nowrap;
+  overflow: hidden;
+}
+
+.coming-soon-badge::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -100%;
+  width: 50%;
+  height: 200%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  animation: badge-shimmer 4s ease-in-out infinite;
+}
+
+@keyframes pulse-badge {
+  0%, 100% {
+    opacity: 1;
+    transform: translateX(-50%) scale(1);
+  }
+  50% {
+    opacity: 0.85;
+    transform: translateX(-50%) scale(0.98);
+  }
+}
+
+@keyframes badge-glow {
+  0%, 100% {
+    box-shadow: 0 2px 8px rgba(24, 210, 110, 0.3);
+  }
+  50% {
+    box-shadow: 0 2px 12px rgba(24, 210, 110, 0.5), 0 0 20px rgba(24, 210, 110, 0.2);
+  }
+}
+
+@keyframes badge-shimmer {
+  0% {
+    left: -100%;
+  }
+  50%, 100% {
+    left: 200%;
+  }
+}
+
+/* Mobile specific styling */
+.navbar-mobile .nav-link-lab {
+  align-items: flex-start;
+}
+
+.navbar-mobile .coming-soon-badge {
+  font-size: 8px;
+  padding: 2px 6px;
+  margin-top: 3px;
+}

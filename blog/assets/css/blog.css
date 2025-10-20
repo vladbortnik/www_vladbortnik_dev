@@ -1,6 +1,50 @@
 /*======================
   BLOG SPECIFIC STYLES
+  All features integrated in ONE file
 ======================*/
+
+/* Reading Progress Bar */
+.reading-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 0%;
+  height: 4px;
+  background: linear-gradient(90deg, #18d26e, #090593);
+  z-index: 9999;
+  transition: width 0.1s ease;
+}
+
+/* Search Box - Less Prominent */
+.blog-search {
+  margin-bottom: 50px;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.blog-search-input {
+  width: 100%;
+  padding: 12px 18px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  color: #fff;
+  font-size: 14px;
+  transition: all 0.3s ease;
+}
+
+.blog-search-input:focus {
+  outline: none;
+  border-color: rgba(24, 210, 110, 0.5);
+  background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(24, 210, 110, 0.15);
+}
+
+.blog-search-input::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+  font-size: 13px;
+}
 
 /* Override main site section styles that conflict with blog */
 section#blog,
@@ -91,23 +135,46 @@ section.blog-post {
   color: rgba(255, 255, 255, 0.6);
 }
 
+/* Fix Bootstrap column spacing - THIS is the real fix */
+.blog .row > [class*="col-"] {
+  margin-bottom: 40px;
+}
+
 /* Blog Post Cards */
 .blog-post-card {
   background: rgba(255, 255, 255, 0.05);
   border-radius: 10px;
   padding: 30px;
-  margin-bottom: 30px;
+  margin-bottom: 0;
   transition: all 0.3s ease-in-out;
   border: 1px solid rgba(255, 255, 255, 0.1);
   height: 100%;
   display: flex;
   flex-direction: column;
+  position: relative;
+  overflow: hidden;
+}
+
+.blog-post-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+  transition: left 0.5s;
+}
+
+.blog-post-card:hover::before {
+  left: 100%;
 }
 
 .blog-post-card:hover {
   background: rgba(255, 255, 255, 0.08);
   transform: translateY(-5px);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  border-color: rgba(24, 210, 110, 0.3);
 }
 
 .blog-post-card .post-meta {
@@ -159,6 +226,15 @@ section.blog-post {
   line-height: 1.6;
   margin-bottom: 20px;
   flex-grow: 1;
+}
+
+.blog-post-card .text-muted {
+  color: rgba(255, 255, 255, 0.6) !important;
+  font-weight: 500;
+}
+
+.blog-post-card .bi-clock {
+  color: rgba(24, 210, 110, 0.8);
 }
 
 .blog-post-card .read-more {
@@ -342,9 +418,52 @@ section.blog-post {
   margin: 40px 0;
 }
 
+/* Social Share Buttons */
+.social-share {
+  margin-top: 50px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.social-share h4 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.share-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.share-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  text-decoration: none;
+  color: rgba(255, 255, 255, 0.7);
+  transition: all 0.3s ease;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.share-icon i {
+  font-size: 20px;
+}
+
+.share-icon:hover {
+  color: #18d26e;
+  background: rgba(24, 210, 110, 0.1);
+  transform: translateY(-3px);
+}
+
 /* Comments Section */
 .comments-section {
-  margin-top: 60px;
+  margin-top: 40px;
   padding-top: 40px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -377,21 +496,73 @@ section.blog-post {
   gap: 12px;
 }
 
-/* Footer */
+/* Enhanced Footer - Compact & Professional */
 #footer {
-  background: rgba(0, 0, 0, 0.3);
+  background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 14px;
-  text-align: center;
-  padding: 30px 0;
-  margin-top: 60px;
+  padding: 21px 0;
+  margin-top: 80px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
 }
 
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.footer-icons {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+}
+
+.footer-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: rgba(255, 255, 255, 0.6);
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-size: 18px;
+}
+
+.footer-icons a:hover {
+  color: #18d26e;
+  transform: translateY(-2px);
+}
+
+.footer-icons a.github:hover {
+  color: #18d26e;
+}
+
+.footer-icons a.linkedin:hover {
+  color: #0077b5;
+}
+
+.footer-icons a.twitter:hover {
+  color: #1da1f2;
+}
+
+.footer-copyright {
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+}
+
+/* Old simple footer for compatibility */
 #footer .copyright {
   color: rgba(255, 255, 255, 0.6);
 }
 
 /* Responsive Styles */
+@media (max-width: 992px) {
+  .blog .section-title h2 {
+    font-size: 28px;
+  }
+}
+
 @media (max-width: 768px) {
   .blog {
     padding: 100px 0 40px 0;
@@ -420,14 +591,85 @@ section.blog-post {
   .article-content {
     font-size: 15px;
   }
+  
+  .share-buttons {
+    flex-direction: column;
+  }
+  
+  .share-btn {
+    justify-content: center;
+    width: 100%;
+  }
+  
+  .blog-search {
+    margin-bottom: 30px;
+  }
+  
+  .blog-search-input {
+    font-size: 13px;
+    padding: 10px 16px;
+  }
+  
+  .blog .row > [class*="col-"] {
+    margin-bottom: 30px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-icons {
+    justify-content: center;
+  }
+  
+  .footer-copyright {
+    text-align: center;
+  }
+  
+  #footer {
+    padding: 18px 0;
+    margin-top: 40px;
+  }
 }
 
 @media (max-width: 576px) {
+  .blog .row > [class*="col-"] {
+    margin-bottom: 25px;
+  }
+  
   .blog-post-card {
     padding: 20px;
   }
 
   .blog-post-header h1 {
     font-size: 24px;
+  }
+  
+  .blog .section-title h2 {
+    font-size: 24px;
+  }
+  
+  .blog-post-card h3 {
+    font-size: 20px;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 15px;
+    text-align: center;
+  }
+  
+  .footer-icons {
+    gap: 18px;
+  }
+  
+  .footer-icons a {
+    font-size: 16px;
+  }
+  
+  #footer {
+    padding: 18px 0;
   }
 }

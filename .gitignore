@@ -1,14 +1,12 @@
 # Project Specific
-.claude/
-CLAUDE.md
-_*
+# .claude/
+# CLAUDE.md
 .*
+blog/screenshots
 # blog/
 #archive/RESEND-SETUP.md
 #archive/
-DEPLOYMENT/_README-Portfolio-Info.md
-DEPLOYMENT/BUSINESS-CARD.md
-DEPLOYMENT/SHORTCUT-URLS.md
+
 
 # Cloudflare Worker
 contact-worker/

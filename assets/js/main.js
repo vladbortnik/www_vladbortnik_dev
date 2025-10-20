@@ -319,4 +319,25 @@ document.addEventListener('DOMContentLoaded', function() {
     }
   });
 
+  /**
+   * NYC text hover animation - completes 15 seconds regardless of mouse position
+   */
+  const nycText = select('.nyc-text');
+  if (nycText) {
+    let isAnimating = false;
+
+    nycText.addEventListener('mouseenter', function() {
+      if (!isAnimating) {
+        isAnimating = true;
+        this.classList.add('nyc-animating');
+
+        // Remove class after 15 seconds
+        setTimeout(() => {
+          this.classList.remove('nyc-animating');
+          isAnimating = false;
+        }, 15000);
+      }
+    });
+  }
+
 });

@@ -34,7 +34,10 @@
 
     <!-- Main CSS Files -->
     <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/blog.css" rel="stylesheet">
+    <link href="../assets/css/blog.css?v=6" rel="stylesheet">
+    
+    <!-- Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -57,6 +60,8 @@
 </head>
 
 <body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
     <!-- ======= HEADER ======= -->
     <header id="header" class="header-top">
         <div class="container">
@@ -135,7 +140,7 @@
                         Let's Encrypt provides free SSL/TLS certificates with automated renewal. Here's how to set it up:
                     </p>
 
-                    <pre><code># Install Certbot (Ubuntu/Debian)
+                    <pre><code class="language-bash"># Install Certbot (Ubuntu/Debian)
 sudo apt update
 sudo apt install certbot python3-certbot-nginx
 
@@ -150,7 +155,7 @@ sudo certbot renew --dry-run</code></pre>
                         Here's a production-ready Nginx configuration with SSL/TLS:
                     </p>
 
-                    <pre><code># /etc/nginx/sites-available/your-site
+                    <pre><code class="language-nginx"># /etc/nginx/sites-available/your-site
 server {
     listen 80;
     server_name example.com www.example.com;
@@ -199,7 +204,7 @@ server {
                         Implementing security headers is crucial for protecting against common web vulnerabilities:
                     </p>
 
-                    <pre><code># Add these inside your server block
+                    <pre><code class="language-nginx"># Add these inside your server block
 
 # Strict Transport Security (HSTS)
 add_header Strict-Transport-Security "max-age=31536000; includeSubDomains; preload" always;
@@ -236,7 +241,7 @@ add_header Permissions-Policy "geolocation=(), microphone=(), camera=()" always;
                         If you're using Nginx as a reverse proxy for a backend application (e.g., Flask, Node.js):
                     </p>
 
-                    <pre><code>upstream backend {
+                    <pre><code class="language-nginx">upstream backend {
     server 127.0.0.1:5000;
     keepalive 32;
 }
@@ -269,7 +274,7 @@ server {
                     <h2>Performance Optimizations</h2>
 
                     <h3>Gzip Compression</h3>
-                    <pre><code># Enable Gzip compression
+                    <pre><code class="language-nginx"># Enable Gzip compression
 gzip on;
 gzip_vary on;
 gzip_proxied any;
@@ -280,7 +285,7 @@ gzip_types text/plain text/css text/xml text/javascript
            application/vnd.ms-fontobject image/svg+xml;</code></pre>
 
                     <h3>Caching Static Assets</h3>
-                    <pre><code>location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$ {
+                    <pre><code class="language-nginx">location ~* \.(jpg|jpeg|png|gif|ico|css|js|svg|woff|woff2|ttf|eot)$ {
     expires 1y;
     add_header Cache-Control "public, immutable";
     access_log off;
@@ -291,7 +296,7 @@ gzip_types text/plain text/css text/xml text/javascript
                         Protect your server from DDoS and brute-force attacks:
                     </p>
 
-                    <pre><code># In http block
+                    <pre><code class="language-nginx"># In http block
 limit_req_zone $binary_remote_addr zone=mylimit:10m rate=10r/s;
 
 # In server/location block
@@ -303,10 +308,10 @@ location /api/ {
                     <h2>Testing Your Configuration</h2>
 
                     <h3>1. Test Nginx Configuration</h3>
-                    <pre><code>sudo nginx -t</code></pre>
+                    <pre><code class="language-bash">sudo nginx -t</code></pre>
 
                     <h3>2. Reload Nginx</h3>
-                    <pre><code>sudo systemctl reload nginx</code></pre>
+                    <pre><code class="language-bash">sudo systemctl reload nginx</code></pre>
 
                     <h3>3. Check SSL Configuration</h3>
                     <p>
@@ -325,7 +330,7 @@ location /api/ {
                         Let's Encrypt certificates expire after 90 days. Certbot automatically sets up a systemd timer for renewal:
                     </p>
 
-                    <pre><code># Check renewal timer status
+                    <pre><code class="language-bash"># Check renewal timer status
 sudo systemctl status certbot.timer
 
 # Manual renewal test
@@ -346,13 +351,13 @@ sudo journalctl -u certbot.timer</code></pre>
                     <p>
                         Always use <code>fullchain.pem</code> instead of <code>cert.pem</code> to include intermediate certificates:
                     </p>
-                    <pre><code>ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;</code></pre>
+                    <pre><code class="language-nginx">ssl_certificate /etc/letsencrypt/live/example.com/fullchain.pem;</code></pre>
 
                     <h3>Firewall Configuration</h3>
                     <p>
                         Ensure ports 80 and 443 are open:
                     </p>
-                    <pre><code>sudo ufw allow 'Nginx Full'
+                    <pre><code class="language-bash">sudo ufw allow 'Nginx Full'
 sudo ufw status</code></pre>
 
                     <h2>Best Practices Checklist</h2>
@@ -386,6 +391,22 @@ sudo ufw status</code></pre>
                     </p>
                 </article>
 
+                <!-- Social Share -->
+                <div class="social-share">
+                    <h4>Share this article</h4>
+                    <div class="share-icons">
+                        <a href="https://twitter.com/intent/tweet?url=https://vladbortnik.dev/blog/posts/nginx-ssl-configuration.html&text=Nginx%20Configuration%20for%20Production%3A%20SSL%2FTLS%20Setup" target="_blank" rel="noopener" class="share-icon" title="Share on Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://vladbortnik.dev/blog/posts/nginx-ssl-configuration.html" target="_blank" rel="noopener" class="share-icon" title="Share on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'bi bi-check-lg\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'bi bi-link-45deg\'></i>', 2000); return false;" class="share-icon" title="Copy link">
+                            <i class="bi bi-link-45deg"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Comments Section -->
                 <div class="comments-section">
                     <h3>Comments</h3>
@@ -398,17 +419,36 @@ sudo ufw status</code></pre>
     <!-- ======= FOOTER ======= -->
     <footer id="footer">
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="../feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year"></span> Vlad Bortnik
+                </div>
             </div>
         </div>
     </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Blog JS (with progress bar) -->
+    <script src="../assets/js/blog.js?v=2"></script>
 
     <!-- Main JS File -->
     <script src="../../assets/js/main.js"></script>
+    
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-nginx.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 
     <!-- CommentBox.io -->
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>

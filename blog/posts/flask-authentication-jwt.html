@@ -34,7 +34,10 @@
 
     <!-- Main CSS Files -->
     <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/blog.css" rel="stylesheet">
+    <link href="../assets/css/blog.css?v=6" rel="stylesheet">
+    
+    <!-- Prism.js for Syntax Highlighting -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-okaidia.min.css" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -57,6 +60,8 @@
 </head>
 
 <body>
+    <!-- Reading Progress Bar -->
+    <div class="reading-progress"></div>
     <!-- ======= HEADER ======= -->
     <header id="header" class="header-top">
         <div class="container">
@@ -138,11 +143,11 @@
                         We'll use the <code>Flask-JWT-Extended</code> library, which provides comprehensive JWT support for Flask applications.
                     </p>
 
-                    <pre><code># Install required packages
+                    <pre><code class="language-bash"># Install required packages
 pip install Flask Flask-JWT-Extended Flask-SQLAlchemy python-dotenv</code></pre>
 
                     <h3>Basic Configuration</h3>
-                    <pre><code>from flask import Flask, jsonify, request
+                    <pre><code class="language-python">from flask import Flask, jsonify, request
 from flask_jwt_extended import (
     JWTManager, create_access_token, create_refresh_token,
     jwt_required, get_jwt_identity
@@ -164,7 +169,7 @@ jwt = JWTManager(app)</code></pre>
                         First, let's implement user registration with password hashing:
                     </p>
 
-                    <pre><code>from werkzeug.security import generate_password_hash, check_password_hash
+                    <pre><code class="language-python">from werkzeug.security import generate_password_hash, check_password_hash
 from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy(app)
@@ -206,7 +211,7 @@ def register():
                         Implement login functionality that returns both access and refresh tokens:
                     </p>
 
-                    <pre><code>@app.route('/login', methods=['POST'])
+                    <pre><code class="language-python">@app.route('/login', methods=['POST'])
 def login():
     data = request.get_json()
     
@@ -232,7 +237,7 @@ def login():
                         Use the <code>@jwt_required()</code> decorator to protect routes:
                     </p>
 
-                    <pre><code>@app.route('/protected', methods=['GET'])
+                    <pre><code class="language-python">@app.route('/protected', methods=['GET'])
 @jwt_required()
 def protected():
     current_user_id = get_jwt_identity()
@@ -251,7 +256,7 @@ def protected():
                         Implement token refresh to allow users to get new access tokens without re-authenticating:
                     </p>
 
-                    <pre><code>@app.route('/refresh', methods=['POST'])
+                    <pre><code class="language-python">@app.route('/refresh', methods=['POST'])
 @jwt_required(refresh=True)
 def refresh():
     current_user_id = get_jwt_identity()
@@ -265,7 +270,7 @@ def refresh():
                     <p>
                         Generate a cryptographically secure secret key and store it in environment variables:
                     </p>
-                    <pre><code>import secrets
+                    <pre><code class="language-python">import secrets
 secret_key = secrets.token_hex(32)  # 64 character hex string</code></pre>
 
                     <h3>2. Implement Token Blacklisting</h3>
@@ -273,7 +278,7 @@ secret_key = secrets.token_hex(32)  # 64 character hex string</code></pre>
                         For logout functionality, implement a token blacklist to revoke tokens before expiration:
                     </p>
 
-                    <pre><code>from flask_jwt_extended import get_jwt
+                    <pre><code class="language-python">from flask_jwt_extended import get_jwt
 
 # Store revoked tokens (use Redis in production)
 revoked_tokens = set()
@@ -301,7 +306,7 @@ def logout():
                         Add custom claims validation to verify additional token properties:
                     </p>
 
-                    <pre><code>@jwt.additional_claims_loader
+                    <pre><code class="language-python">@jwt.additional_claims_loader
 def add_claims_to_access_token(identity):
     user = User.query.get(identity)
     return {
@@ -314,7 +319,7 @@ def add_claims_to_access_token(identity):
                         Implement custom error handlers for JWT-related errors:
                     </p>
 
-                    <pre><code>@jwt.expired_token_loader
+                    <pre><code class="language-python">@jwt.expired_token_loader
 def expired_token_callback(jwt_header, jwt_payload):
     return jsonify({
         'error': 'Token has expired',
@@ -340,7 +345,7 @@ def missing_token_callback(error):
                         Here's how to use the JWT authentication from a JavaScript frontend:
                     </p>
 
-                    <pre><code>// Login
+                    <pre><code class="language-javascript">// Login
 const response = await fetch('/login', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },
@@ -381,6 +386,22 @@ const protectedResponse = await fetch('/protected', {
                     </p>
                 </article>
 
+                <!-- Social Share -->
+                <div class="social-share">
+                    <h4>Share this article</h4>
+                    <div class="share-icons">
+                        <a href="https://twitter.com/intent/tweet?url=https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html&text=Implementing%20Secure%20Authentication%20in%20Flask%20with%20JWT" target="_blank" rel="noopener" class="share-icon" title="Share on Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html" target="_blank" rel="noopener" class="share-icon" title="Share on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'bi bi-check-lg\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'bi bi-link-45deg\'></i>', 2000); return false;" class="share-icon" title="Copy link">
+                            <i class="bi bi-link-45deg"></i>
+                        </a>
+                    </div>
+                </div>
+
                 <!-- Comments Section -->
                 <div class="comments-section">
                     <h3>Comments</h3>
@@ -393,17 +414,37 @@ const protectedResponse = await fetch('/protected', {
     <!-- ======= FOOTER ======= -->
     <footer id="footer">
         <div class="container">
-            <div class="copyright">
-                &copy; Copyright <strong><span>Vlad Bortnik</span></strong>. All Rights Reserved
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="../feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year"></span> Vlad Bortnik
+                </div>
             </div>
         </div>
     </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
     <!-- Vendor JS Files -->
     <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Blog JS (with progress bar) -->
+    <script src="../assets/js/blog.js?v=2"></script>
 
     <!-- Main JS File -->
     <script src="../../assets/js/main.js"></script>
+    
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
 
     <!-- CommentBox.io -->
     <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
