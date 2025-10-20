@@ -100,70 +100,48 @@ h6 {
   padding-bottom: 0;
   cursor: pointer;
   position: relative;
-  transition: color 0.2s ease;
-}
-
-#header h2 .nyc-text:hover {
-  color: #ff9a56;
 }
 
 #header h2 .nyc-text.nyc-animating {
-  animation: nyc-glow 15s ease-in-out forwards !important;
-  transition: none;
+  animation: nyc-glow 15s ease-in-out forwards;
 }
 
 @keyframes nyc-glow {
-  0% {
+  0%, 100% {
     color: rgba(255, 255, 255, 0.8);
     text-shadow: none;
   }
   5% {
-    color: #ff9a56;
-    text-shadow: 0 0 8px rgba(255, 154, 86, 0.5);
-  }
-  10% {
     color: #ff8c42;
-    text-shadow: 0 0 15px rgba(255, 107, 107, 0.6), 0 0 20px rgba(255, 140, 66, 0.4);
+    text-shadow: 0 0 10px rgba(255, 107, 107, 0.5);
   }
-  20% {
+  15% {
     color: #ff6b6b;
-    text-shadow: 0 0 25px rgba(255, 107, 107, 0.8), 0 0 35px rgba(255, 140, 66, 0.5);
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.7), 0 0 30px rgba(255, 140, 66, 0.4);
   }
-  30% {
+  25% {
     color: #ff9a56;
-    text-shadow: 0 0 30px rgba(255, 154, 86, 0.7), 0 0 40px rgba(255, 107, 107, 0.4);
+    text-shadow: 0 0 15px rgba(255, 154, 86, 0.6);
   }
-  40% {
+  35% {
     color: #ffb07c;
-    text-shadow: 0 0 35px rgba(255, 176, 124, 0.6), 0 0 45px rgba(255, 140, 66, 0.5);
+    text-shadow: 0 0 25px rgba(255, 176, 124, 0.5);
   }
   50% {
     color: #ff8c42;
-    text-shadow: 0 0 40px rgba(255, 140, 66, 0.9), 0 0 50px rgba(255, 107, 107, 0.6);
+    text-shadow: 0 0 30px rgba(255, 140, 66, 0.8), 0 0 40px rgba(255, 107, 107, 0.5);
   }
-  60% {
+  65% {
     color: #ff6b6b;
-    text-shadow: 0 0 35px rgba(255, 107, 107, 0.8), 0 0 45px rgba(255, 140, 66, 0.5);
-  }
-  70% {
-    color: #ff9a56;
-    text-shadow: 0 0 25px rgba(255, 154, 86, 0.6), 0 0 35px rgba(255, 107, 107, 0.4);
+    text-shadow: 0 0 20px rgba(255, 107, 107, 0.7);
   }
   80% {
-    color: #ffb07c;
-    text-shadow: 0 0 20px rgba(255, 176, 124, 0.5);
-  }
-  90% {
-    color: #ff8c42;
-    text-shadow: 0 0 12px rgba(255, 140, 66, 0.4);
+    color: #ff9a56;
+    text-shadow: 0 0 15px rgba(255, 154, 86, 0.5);
   }
   95% {
-    color: #ff9a56;
-    text-shadow: 0 0 8px rgba(255, 154, 86, 0.3);
-  }
-  100% {
-    color: rgba(255, 255, 255, 0.8);
-    text-shadow: none;
+    color: #ff8c42;
+    text-shadow: 0 0 10px rgba(255, 140, 66, 0.3);
   }
 }
 

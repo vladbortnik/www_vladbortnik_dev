@@ -45,7 +45,7 @@
 
     <!-- Main CSS Files -->
     <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/blog.css?v=6" rel="stylesheet">
+    <link href="assets/css/blog.css?v=7" rel="stylesheet">
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -99,17 +99,24 @@
     <!-- ======= BLOG SECTION ======= -->
     <section id="blog" class="blog">
         <div class="container">
-            <div class="section-title">
-                <h2>Blog</h2>
-                <p>Technical articles and insights</p>
-            </div>
-
-            <!-- Search Box -->
-            <div class="blog-search">
-                <input type="text" 
-                       id="blog-search-input" 
-                       class="blog-search-input" 
-                       placeholder="🔍 Search articles... (try 'October', 'Docker', 'Python')">
+            <!-- Blog Header with Logo & Search -->
+            <div class="blog-header">
+                <div class="blog-brand">
+                    <div class="blog-icon">
+                        <i class="bi bi-code-slash"></i>
+                    </div>
+                    <div class="blog-title">
+                        <h2>Engineering Blog</h2>
+                        <p>Technical insights & tutorials</p>
+                    </div>
+                </div>
+                <div class="blog-search">
+                    <i class="bi bi-search"></i>
+                    <input type="text" 
+                           id="blog-search-input" 
+                           class="blog-search-input" 
+                           placeholder="Search articles...">
+                </div>
             </div>
 
             <!-- Blog Posts Grid -->

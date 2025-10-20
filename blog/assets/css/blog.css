@@ -15,35 +15,87 @@
   transition: width 0.1s ease;
 }
 
-/* Search Box - Less Prominent */
+/* Blog Header - Modern Logo + Search Layout */
+.blog-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 60px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.blog-brand {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.blog-icon {
+  width: 56px;
+  height: 56px;
+  background: linear-gradient(135deg, #18d26e 0%, #149c52 100%);
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 15px rgba(24, 210, 110, 0.3);
+}
+
+.blog-icon i {
+  font-size: 28px;
+  color: #fff;
+}
+
+.blog-title h2 {
+  font-size: 26px;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+  letter-spacing: -0.5px;
+}
+
+.blog-title p {
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 2px 0 0 0;
+}
+
 .blog-search {
-  margin-bottom: 50px;
-  max-width: 450px;
-  margin-left: auto;
-  margin-right: auto;
+  position: relative;
+  width: 280px;
+}
+
+.blog-search i {
+  position: absolute;
+  left: 14px;
+  top: 50%;
+  transform: translateY(-50%);
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 14px;
+  pointer-events: none;
 }
 
 .blog-search-input {
   width: 100%;
-  padding: 12px 18px;
+  padding: 10px 14px 10px 38px;
   border-radius: 8px;
-  background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
   color: #fff;
-  font-size: 14px;
+  font-size: 13px;
   transition: all 0.3s ease;
 }
 
 .blog-search-input:focus {
   outline: none;
-  border-color: rgba(24, 210, 110, 0.5);
+  border-color: rgba(24, 210, 110, 0.4);
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 15px rgba(24, 210, 110, 0.15);
+  box-shadow: 0 0 12px rgba(24, 210, 110, 0.1);
 }
 
 .blog-search-input::placeholder {
-  color: rgba(255, 255, 255, 0.3);
-  font-size: 13px;
+  color: rgba(255, 255, 255, 0.35);
 }
 
 /* Override main site section styles that conflict with blog */
@@ -92,48 +144,7 @@ section.blog-post {
   display: block !important;
 }
 
-.blog .section-title {
-  text-align: center;
-  padding-bottom: 30px;
-}
-
-.blog .section-title h2 {
-  font-size: 32px;
-  font-weight: bold;
-  text-transform: uppercase;
-  margin-bottom: 20px;
-  padding-bottom: 20px;
-  position: relative;
-  color: #fff;
-}
-
-.blog .section-title h2::before {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 120px;
-  height: 1px;
-  background: #ddd;
-  bottom: 1px;
-  left: calc(50% - 60px);
-}
-
-.blog .section-title h2::after {
-  content: "";
-  position: absolute;
-  display: block;
-  width: 40px;
-  height: 3px;
-  background: #18d26e;
-  bottom: 0;
-  left: calc(50% - 20px);
-}
-
-.blog .section-title p {
-  margin-bottom: 0;
-  font-size: 14px;
-  color: rgba(255, 255, 255, 0.6);
-}
+/* Old section-title styles removed - using blog-header now */
 
 /* Fix Bootstrap column spacing - THIS is the real fix */
 .blog .row > [class*="col-"] {
@@ -418,23 +429,27 @@ section.blog-post {
   margin: 40px 0;
 }
 
-/* Social Share Buttons */
+/* Social Share - Compact Right-Aligned */
 .social-share {
   margin-top: 50px;
   padding-top: 30px;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 12px;
 }
 
 .social-share h4 {
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  margin-bottom: 20px;
+  font-size: 14px;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.6);
+  margin: 0;
 }
 
 .share-icons {
   display: flex;
-  gap: 20px;
+  gap: 10px;
   align-items: center;
 }
 
@@ -442,8 +457,8 @@ section.blog-post {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 40px;
-  height: 40px;
+  width: 32px;
+  height: 32px;
   border-radius: 50%;
   text-decoration: none;
   color: rgba(255, 255, 255, 0.7);
@@ -452,13 +467,13 @@ section.blog-post {
 }
 
 .share-icon i {
-  font-size: 20px;
+  font-size: 16px;
 }
 
 .share-icon:hover {
   color: #18d26e;
   background: rgba(24, 210, 110, 0.1);
-  transform: translateY(-3px);
+  transform: translateY(-2px);
 }
 
 /* Comments Section */
@@ -558,8 +573,13 @@ section.blog-post {
 
 /* Responsive Styles */
 @media (max-width: 992px) {
-  .blog .section-title h2 {
-    font-size: 28px;
+  .blog-title h2 {
+    font-size: 24px;
+  }
+  
+  .blog-icon {
+    width: 52px;
+    height: 52px;
   }
 }
 
@@ -601,13 +621,15 @@ section.blog-post {
     width: 100%;
   }
   
-  .blog-search {
-    margin-bottom: 30px;
+  .blog-header {
+    flex-direction: column;
+    gap: 25px;
+    align-items: flex-start;
   }
   
-  .blog-search-input {
-    font-size: 13px;
-    padding: 10px 16px;
+  .blog-search {
+    width: 100%;
+    max-width: 400px;
   }
   
   .blog .row > [class*="col-"] {
@@ -647,7 +669,16 @@ section.blog-post {
     font-size: 24px;
   }
   
-  .blog .section-title h2 {
+  .blog-title h2 {
+    font-size: 22px;
+  }
+  
+  .blog-icon {
+    width: 48px;
+    height: 48px;
+  }
+  
+  .blog-icon i {
     font-size: 24px;
   }
   

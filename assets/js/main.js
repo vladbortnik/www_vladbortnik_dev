@@ -322,7 +322,7 @@ document.addEventListener('DOMContentLoaded', function() {
   /**
    * NYC text hover animation - completes 15 seconds regardless of mouse position
    */
-  const nycText = select('.nyc-text');
+  const nycText = document.querySelector('.nyc-text');
   if (nycText) {
     let isAnimating = false;
 
@@ -333,7 +333,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         // Remove class after 15 seconds
         setTimeout(() => {
-          this.classList.remove('nyc-animating');
+          nycText.classList.remove('nyc-animating');
           isAnimating = false;
         }, 15000);
       }
