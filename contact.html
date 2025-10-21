@@ -49,6 +49,28 @@
   <!-- Cloudflare Turnstile -->
   <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
 
+  <!-- Structured Data / Schema.org - ContactPage (2025 best practice) -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "ContactPage",
+      "name": "Contact Vlad Bortnik",
+      "description": "Get in touch for backend development projects, DevOps consulting, or general inquiries",
+      "url": "https://vladbortnik.dev/contact.html",
+      "mainEntity": {
+        "@type": "Person",
+        "name": "Vlad Bortnik",
+        "jobTitle": "Software Engineer",
+        "url": "https://vladbortnik.dev",
+        "sameAs": [
+          "https://github.com/vladbortnik",
+          "https://linkedin.com/in/vladbortnik",
+          "https://x.com/vladbortnik_dev"
+        ]
+      }
+    }
+  </script>
+
   <!-- Umami Analytics -->
   <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="b386b8f9-b644-4400-a091-208983cb8340"></script>
 </head>

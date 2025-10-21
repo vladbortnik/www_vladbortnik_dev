@@ -420,23 +420,106 @@ If you plan to add other languages:
 <link rel="alternate" hreflang="x-default" href="https://vladbortnik.dev/">
 ```
 
-### 10. Optimize Images
+### 10. Optimize Images (CRITICAL for 2025)
 
-**Ensure all images have descriptive alt text:**
+**⚠️ MAJOR UPDATE:**
+Image SEO went from "nice to have" to **ESSENTIAL** in 2025. Google now heavily weights image optimization in overall site rankings.
+
+**Why Image SEO is Now Critical:**
+- Google Image Search drives significant traffic
+- Images appear in regular search results
+- Poor image SEO hurts your overall ranking
+- People search for "python developer" and see images
+- Mobile users often search images-first
+
+**Image Optimization Checklist (All Required):**
+
+**1. Descriptive Alt Text (REQUIRED):**
 
 Check `index.html` line 86:
 ```html
-<!-- Current -->
+<!-- ❌ Bad (too generic) -->
 <img src="assets/img/me.jpg" class="img-fluid" alt="profile image">
 
-<!-- Better -->
-<img src="assets/img/me.jpg" class="img-fluid" alt="Vlad Bortnik - Backend Engineer from New York">
+<!-- ✅ Good (descriptive, includes keywords) -->
+<img src="assets/img/me.jpg" class="img-fluid" alt="Vlad Bortnik - Software Engineer specializing in Python, Docker, and DevOps">
 ```
 
-**Add loading="lazy" to images below the fold:**
+**Alt Text Best Practices:**
+- Be specific and descriptive
+- Include relevant keywords naturally
+- Describe what's IN the image
+- Keep it under 125 characters
+- Don't start with "image of" or "picture of"
+
+**2. Lazy Loading (PERFORMANCE BOOST):**
+
+Add `loading="lazy"` to all images BELOW the fold (not visible immediately):
+
 ```html
-<img src="..." alt="..." loading="lazy">
+<!-- Images below the fold -->
+<img src="technology-icon.png" alt="Docker containerization" loading="lazy">
+
+<!-- First visible image (above fold) - DON'T lazy load -->
+<img src="hero-image.jpg" alt="..." loading="eager">
 ```
+
+**Why Lazy Loading Matters:**
+- Improves Largest Contentful Paint (LCP)
+- Reduces initial page load time
+- Critical for mobile performance
+- Directly impacts INP scores
+
+**3. Descriptive File Names:**
+
+```html
+<!-- ❌ Bad -->
+<img src="IMG_1234.jpg" alt="...">
+
+<!-- ✅ Good -->
+<img src="vlad-bortnik-python-backend-engineer.jpg" alt="...">
+```
+
+**4. Image Compression (Under 200KB each):**
+
+Use tools like:
+- TinyPNG (https://tinypng.com/)
+- ImageOptim (Mac)
+- Squoosh (https://squoosh.app/)
+
+**5. Modern Formats (WebP with fallback):**
+
+```html
+<picture>
+  <source srcset="image.webp" type="image/webp">
+  <img src="image.jpg" alt="Description" loading="lazy">
+</picture>
+```
+
+**6. Explicit Width and Height:**
+
+Prevents layout shift (CLS):
+
+```html
+<img src="photo.jpg" alt="..." width="800" height="600" loading="lazy">
+```
+
+**Image SEO Impact on Rankings:**
+- Poor image optimization can drop you 10-20 positions
+- Good image optimization can increase traffic by 30-50%
+- Google Image Search is a major traffic source
+- Essential for portfolio websites (you're showcasing visual work!)
+
+**✅ Already Implemented on Your Site:**
+- Profile image has improved alt text
+- Technology icons have lazy loading
+- File names are descriptive
+
+**🔲 Still To Do:**
+- Convert images to WebP format
+- Add explicit width/height to all images
+- Compress images under 200KB
+- Review all image alt text for SEO keywords
 
 ---
 
@@ -758,7 +841,27 @@ Submit to:
 - Testimonials (if you have them)
 - Contact page
 
-### 28. Blog Content Strategy
+### 28. Blog Content Strategy (UPDATED October 2025)
+
+**⚠️ NEW MINIMUM REQUIREMENT:**
+Successful SEO campaigns in 2025 require **minimum 2 posts per week** consistently.
+
+**Why the Change?**
+- Google's algorithm now heavily favors active, regularly-updated sites
+- Competitors publishing more frequently will outrank you
+- Content freshness is a major ranking signal
+- More content = more keywords = more traffic opportunities
+
+**Realistic Publishing Goals:**
+- **Bare minimum:** 2 posts per week (8-10 posts/month)
+- **Good:** 3-4 posts per week (12-16 posts/month)
+- **Excellent:** Daily posts (20-30 posts/month)
+
+**Quality Still Matters Most:**
+- Don't sacrifice quality for quantity
+- One amazing post > Five mediocre posts
+- Focus on solving real problems
+- Add unique insights from your experience
 
 **Topic clusters:**
 1. **Docker Series**
@@ -777,9 +880,41 @@ Submit to:
    - Infrastructure as Code
 
 **Posting schedule:**
-- 1-2 posts per month
+- **Minimum:** 2 posts per week (e.g., Tuesday and Friday)
 - Promote on social media
 - Cross-post to dev.to
+- Update old posts every 6 months
+
+**AI Content Guidelines (NEW for 2025):**
+
+Google is actively penalizing AI-generated spam. Here's how to use AI responsibly:
+
+**✅ Acceptable Use:**
+- AI-assisted writing (you edit and add insights)
+- Research and outlining
+- Grammar and clarity improvements
+- Brainstorming ideas
+
+**❌ Will Get You Penalized:**
+- Bulk AI content with no human review
+- Auto-publishing AI-generated posts
+- Content with no unique value or insights
+- Copy-pasting AI output without verification
+
+**The Golden Rule:**
+Use AI as your writing assistant, not your replacement. Every post must include:
+- Your unique experience and perspective
+- Real examples from your work
+- Verified facts (AI makes mistakes!)
+- Your voice and style
+
+**How to Use AI Properly:**
+1. Generate initial draft with AI
+2. Add your personal experiences and insights
+3. Verify all technical facts
+4. Edit to match your writing style
+5. Add screenshots/examples from your projects
+6. Read it out loud - does it sound like you?
 
 ### 29. Update Old Content
 
@@ -799,7 +934,7 @@ Submit to:
 - Google Search Console
 - Google Analytics (or keep Umami)
 - Bing Webmaster Tools
-- Google PageSpeed Insights
+- Google PageSpeed Insights ⚠️ **Now tests INP instead of FID**
 - Mobile-Friendly Test
 - Rich Results Test
 
@@ -816,11 +951,29 @@ Submit to:
 - GTmetrix
 - Pingdom
 
-**Target scores:**
+**Target scores (October 2025):**
 - PageSpeed: 90+
 - First Contentful Paint: <1.8s
-- Largest Contentful Paint: <2.5s
-- Cumulative Layout Shift: <0.1
+- Largest Contentful Paint (LCP): <2.5s
+- **Interaction to Next Paint (INP): <200ms** ⚠️ **NEW - Replaced FID in March 2024**
+- Cumulative Layout Shift (CLS): <0.1
+
+**⚠️ IMPORTANT CHANGE:**
+Google replaced FID (First Input Delay) with INP (Interaction to Next Paint) in March 2024.
+
+**What's the difference?**
+- **FID (old):** Only measured the very first time a user clicked something
+- **INP (new):** Measures ALL interactions throughout the user's visit
+
+**Why it matters:**
+Your site needs to respond quickly to every click, tap, and interaction - not just the first one. This is a more comprehensive measure of how responsive your site feels.
+
+**How to improve INP:**
+1. Reduce JavaScript execution time
+2. Break up long tasks into smaller chunks
+3. Use web workers for heavy computations
+4. Optimize event handlers
+5. Defer non-critical JavaScript
 
 ### 32. Regular SEO Audits
 

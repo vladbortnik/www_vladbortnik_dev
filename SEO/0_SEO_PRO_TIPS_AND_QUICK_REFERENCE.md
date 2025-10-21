@@ -681,4 +681,144 @@ Before you deploy, verify:
 
 **Pro tip:** Bookmark this guide and refer back to it when adding new pages!
 
-**Last updated:** January 2025
+---
+
+## 🆕 October 2025 Updates (IMPORTANT!)
+
+### Core Web Vitals Changed - Action Required
+
+**What Changed:**
+In March 2024, Google replaced FID (First Input Delay) with a new metric called INP (Interaction to Next Paint).
+
+**What This Means in Plain English:**
+- **Old way (FID):** Google only measured the first time you clicked something
+- **New way (INP):** Google now measures ALL your clicks and interactions throughout your visit
+- **Why it matters:** Your site needs to respond quickly to EVERY click, not just the first one
+
+**New Performance Targets:**
+- ✅ **LCP** (Largest Contentful Paint): Under 2.5 seconds - "How fast does the main content load?"
+- ✅ **INP** (Interaction to Next Paint): Under 200 milliseconds - "How fast do clicks respond?" ⚠️ **NEW**
+- ✅ **CLS** (Cumulative Layout Shift): Under 0.1 - "Does content jump around while loading?"
+
+**How to Test:**
+1. Go to: https://pagespeed.web.dev/
+2. Enter your URL
+3. Check all three metrics are GREEN
+4. If INP is red/yellow, reduce JavaScript and optimize event handlers
+
+---
+
+### Image SEO is Now Essential (Not Optional)
+
+**What Changed:**
+In 2025, image SEO went from "nice to have" to "must have" for ALL websites.
+
+**Why It Matters:**
+- Google Image Search drives more traffic than before
+- People search for "python developer" and see images in results
+- Poorly optimized images hurt your overall SEO ranking
+
+**Quick Image SEO Checklist:**
+- [ ] All images have descriptive alt text (not "image1.jpg")
+- [ ] Images use `loading="lazy"` for images below the fold
+- [ ] File names are descriptive: `vlad-bortnik-python-developer.jpg` not `IMG_1234.jpg`
+- [ ] Images are compressed (under 200KB each)
+- [ ] Use WebP format when possible (with JPG/PNG fallback)
+
+**Example:**
+```html
+<!-- ❌ Bad -->
+<img src="photo.jpg" alt="photo">
+
+<!-- ✅ Good -->
+<img src="vlad-bortnik-backend-engineer.jpg"
+     alt="Vlad Bortnik - Backend Engineer specializing in Python and Docker"
+     loading="lazy">
+```
+
+---
+
+### Content Publishing Strategy for 2025
+
+**What Changed:**
+Research shows successful websites now publish at minimum 2x per week consistently.
+
+**What This Means:**
+- **Bare minimum:** 2 blog posts per week
+- **Good:** 3-4 posts per week
+- **Not enough:** 1 post per month (you'll lose to competitors)
+
+**Why Frequency Matters:**
+1. Google favors active websites
+2. More content = more keywords = more traffic
+3. Builds authority faster
+4. Keeps you top-of-mind with readers
+
+**But Quality Still Beats Quantity:**
+- One great post > Five mediocre posts
+- Focus on solving real problems
+- Update old content every 6 months
+- Don't publish just to hit a number
+
+---
+
+### AI Content Guidelines (New for 2025)
+
+**The Situation:**
+AI writing tools (ChatGPT, etc.) are everywhere. Google is cracking down on low-quality AI spam.
+
+**What's Allowed:**
+- ✅ AI-assisted writing (you write, AI helps polish)
+- ✅ AI for research and outlines
+- ✅ AI for brainstorming ideas
+- ✅ AI to improve grammar and clarity
+
+**What's NOT Allowed:**
+- ❌ Bulk AI-generated content without human review
+- ❌ Auto-publishing AI content
+- ❌ AI content with no unique insights
+- ❌ Copy-pasting AI output without editing
+
+**The Golden Rule:**
+"Use AI as your assistant, not your replacement."
+
+**How to Use AI Responsibly:**
+1. Generate draft with AI
+2. Add your unique experience/insights
+3. Verify all facts (AI makes mistakes!)
+4. Edit for your voice and style
+5. Add examples from your work
+6. Read it out loud - does it sound like you?
+
+---
+
+### Multiple Schema Types (Advanced)
+
+**What Changed:**
+Google now expects portfolio websites to use MULTIPLE schema types, not just one.
+
+**What This Means in Plain English:**
+Instead of just telling Google "I'm a person," you now tell them:
+- "I'm a person" (Person schema)
+- "This is my website" (WebSite schema)
+- "Here's my contact page" (ContactPage schema)
+- "This is an article" (Article/TechArticle schema)
+
+**Why Multiple Schemas:**
+- Google understands your site better
+- Better chance of rich results (your photo in search)
+- Improved voice search results
+- Higher rankings (more signals = more authority)
+
+**Already Implemented:**
+✅ Person schema on homepage
+✅ WebSite schema on homepage (NEW - October 2025)
+✅ TechArticle schema on server-setup.html
+✅ ContactPage schema on contact.html (NEW - October 2025)
+
+**Don't worry:** Your site already has these implemented!
+
+---
+
+**Last updated:** October 2025
+**Next review:** January 2026

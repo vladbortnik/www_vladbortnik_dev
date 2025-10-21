@@ -6,43 +6,13 @@
 // Blog posts data (can be moved to a separate JSON file or API in the future)
 const blogPosts = [
   {
-    id: 4,
+    id: 1,
     slug: "deploy-multi-app-production-setup",
     title: "Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix",
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
     date: "2025-10-21",
     readTime: "16 min read",
-    author: "Vlad Bortnik"
-  },
-  {
-    id: 1,
-    slug: "docker-python-best-practices",
-    title: "Docker & Python: Production Best Practices",
-    excerpt: "Learn how to containerize Python applications effectively with Docker, including multi-stage builds, security considerations, and optimization techniques for production environments.",
-    category: "DevOps",
-    date: "2024-01-15",
-    readTime: "8 min read",
-    author: "Vlad Bortnik"
-  },
-  {
-    id: 2,
-    slug: "flask-authentication-jwt",
-    title: "Implementing Secure Authentication in Flask with JWT",
-    excerpt: "A comprehensive guide to building secure authentication systems in Flask applications using JSON Web Tokens, including best practices for token management and security.",
-    category: "Python",
-    date: "2024-01-10",
-    readTime: "10 min read",
-    author: "Vlad Bortnik"
-  },
-  {
-    id: 3,
-    slug: "nginx-ssl-configuration",
-    title: "Nginx Configuration for Production: SSL/TLS Setup",
-    excerpt: "Step-by-step guide to configuring Nginx with SSL/TLS certificates, including Let's Encrypt integration, security headers, and performance optimization.",
-    category: "Server Config",
-    date: "2024-01-05",
-    readTime: "6 min read",
     author: "Vlad Bortnik"
   }
 ];

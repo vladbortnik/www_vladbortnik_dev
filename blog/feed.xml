@@ -17,35 +17,5 @@
       <category>DevOps</category>
       <author>vlad@vladbortnik.dev (Vlad Bortnik)</author>
     </item>
-    
-    <item>
-      <title>Docker &amp; Python: Production Best Practices</title>
-      <link>https://vladbortnik.dev/blog/posts/docker-python-best-practices.html</link>
-      <guid>https://vladbortnik.dev/blog/posts/docker-python-best-practices.html</guid>
-      <pubDate>Mon, 15 Jan 2024 00:00:00 GMT</pubDate>
-      <description>Learn how to containerize Python applications effectively with Docker, including multi-stage builds, security considerations, and optimization techniques for production environments.</description>
-      <category>DevOps</category>
-      <author>vlad@vladbortnik.dev (Vlad Bortnik)</author>
-    </item>
-    
-    <item>
-      <title>Implementing Secure Authentication in Flask with JWT</title>
-      <link>https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html</link>
-      <guid>https://vladbortnik.dev/blog/posts/flask-authentication-jwt.html</guid>
-      <pubDate>Tue, 09 Jan 2024 00:00:00 GMT</pubDate>
-      <description>A comprehensive guide to building secure authentication systems in Flask applications using JSON Web Tokens, including best practices for token management and security.</description>
-      <category>Python</category>
-      <author>vlad@vladbortnik.dev (Vlad Bortnik)</author>
-    </item>
-    
-    <item>
-      <title>Nginx Configuration for Production: SSL/TLS Setup</title>
-      <link>https://vladbortnik.dev/blog/posts/nginx-ssl-configuration.html</link>
-      <guid>https://vladbortnik.dev/blog/posts/nginx-ssl-configuration.html</guid>
-      <pubDate>Thu, 04 Jan 2024 00:00:00 GMT</pubDate>
-      <description>Step-by-step guide to configuring Nginx with SSL/TLS certificates, including Let's Encrypt integration, security headers, and performance optimization.</description>
-      <category>Server Config</category>
-      <author>vlad@vladbortnik.dev (Vlad Bortnik)</author>
-    </item>
   </channel>
 </rss>
