@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix | Vlad Bortnik</title>
+    <meta name="description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
+    <meta name="keywords" content="Docker, DevOps, Nginx, DigitalOcean, VPS, Production Server, Multi-App Hosting, SSL, Let's Encrypt, Infrastructure">
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://vladbortnik.dev/blog/posts/deploy-multi-app-production-setup.html">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://vladbortnik.dev/blog/posts/deploy-multi-app-production-setup.html">
+    <meta property="og:title" content="Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix">
+    <meta property="og:description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
+    <meta property="og:image" content="https://vladbortnik.dev/assets/img/me.jpg">
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:url" content="https://vladbortnik.dev/blog/posts/deploy-multi-app-production-setup.html">
+    <meta name="twitter:title" content="Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix">
+    <meta name="twitter:description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
+
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../../assets/img/favicon.ico">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+    <!-- Vendor CSS Files -->
+    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main CSS Files -->
+    <link href="../../assets/css/style.css" rel="stylesheet">
+    <link href="../assets/css/blog.css?v=10" rel="stylesheet">
+    
+    <!-- Prism.js for Syntax Highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css" rel="stylesheet">
+
+    <!-- Structured Data - Enhanced Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "TechArticle",
+        "headline": "Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix",
+        "description": "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
+            "width": 1200,
+            "height": 1200
+        },
+        "author": {
+            "@type": "Person",
+            "name": "Vlad Bortnik",
+            "url": "https://vladbortnik.dev",
+            "sameAs": [
+                "https://twitter.com/vladbortnik_dev",
+                "https://github.com/vladbortnik",
+                "https://linkedin.com/in/vladbortnik"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Vlad Bortnik",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
+                "width": 512,
+                "height": 512
+            }
+        },
+        "datePublished": "2025-10-21",
+        "dateModified": "2025-10-21",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://vladbortnik.dev/blog/posts/deploy-multi-app-production-setup.html"
+        },
+        "keywords": "Docker, DevOps, Nginx, DigitalOcean, VPS, Production Server, Multi-App Hosting, SSL, Let's Encrypt, Infrastructure",
+        "proficiencyLevel": "Intermediate",
+        "dependencies": "Docker, Docker Compose, Nginx, Ubuntu 24.04 LTS"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://vladbortnik.dev"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://vladbortnik.dev/blog/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix",
+            "item": "https://vladbortnik.dev/blog/posts/deploy-multi-app-production-setup.html"
+        }]
+    }
+    </script>
+</head>
+
+<body>
+    <!-- ======= HEADER ======= -->
+    <header id="header" class="header-top">
+        <div class="container">
+            <h1><a href="/">Vlad Bortnik</a></h1>
+
+            <nav id="navbar" class="navbar">
+                <ul>
+                    <li><a class="nav-link" href="/">Home</a></li>
+                    <li><a class="nav-link" href="/#about">About</a></li>
+                    <li><a class="nav-link" href="/#portfolio">Projects</a></li>
+                    <li><a class="nav-link" href="/#resume">Resume</a></li>
+                    <li><a class="nav-link active" href="/blog/">Blog</a></li>
+                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
+                </ul>
+                <i class="bi bi-list mobile-nav-toggle"></i>
+            </nav>
+
+            <div class="social-links">
+                <a href="/" title="Portfolio"><i class="bi bi-briefcase-fill"></i></a>
+                <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="bi bi-twitter"></i></a>
+                <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+            </div>
+        </div>
+    </header>
+
+    <!-- ======= BLOG POST SECTION ======= -->
+    <section class="blog-post">
+        <div class="container">
+            <a href="/blog/" class="back-to-blog">
+                <i class="bi bi-arrow-left"></i> Back to Blog
+            </a>
+
+            <div class="blog-post-content">
+                <!-- Post Header -->
+                <div class="blog-post-header">
+                    <h1>Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix</h1>
+                    <div class="post-meta">
+                        <div>
+                            <i class="bi bi-calendar3"></i>
+                            <span>October 21, 2025</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-clock"></i>
+                            <span>16 min read</span>
+                        </div>
+                        <div>
+                            <i class="bi bi-person"></i>
+                            <span>Vlad Bortnik</span>
+                        </div>
+                        <span class="post-category">DevOps</span>
+                    </div>
+                </div>
+
+                <!-- Article Content -->
+                <article class="article-content">
+                    <!-- 
+                    ========================================
+                    ARTICLE CONTENT GOES HERE
+                    ========================================
+                    
+                    Available HTML elements:
+                    
+                    <h2>Main Section Heading</h2>
+                    <h3>Subsection Heading</h3>
+                    <h4>Minor Heading</h4>
+                    
+                    <p>Regular paragraph text...</p>
+                    
+                    <ul>
+                        <li>Unordered list item</li>
+                    </ul>
+                    
+                    <ol>
+                        <li>Ordered list item</li>
+                    </ol>
+                    
+                    <pre><code>Code block
+Multiple lines of code
+With proper indentation</code></pre>
+                    
+                    <blockquote>
+                        Important note or quote
+                    </blockquote>
+                    
+                    <a href="URL">Link text</a>
+                    
+                    <img src="path/to/image.jpg" alt="Description">
+                    
+                    <hr> (horizontal rule)
+                    
+                    Inline <code>code</code> for commands or short snippets
+                    
+                    ========================================
+                    -->
+                    
+                    <p>
+                        Introduction paragraph goes here. Set the context and hook the reader...
+                    </p>
+
+                    <h2>First Major Section</h2>
+                    <p>
+                        Content for first section...
+                    </p>
+
+                    <h3>Subsection</h3>
+                    <p>
+                        More detailed content...
+                    </p>
+
+                    <pre><code>// Code example
+function example() {
+    console.log("Hello World");
+}</code></pre>
+
+                    <h2>Conclusion</h2>
+                    <p>
+                        Wrap up your post with key takeaways...
+                    </p>
+                </article>
+
+                <!-- Social Share -->
+                <div class="social-share">
+                    <h4>Share:</h4>
+                    <div class="share-icons">
+                        <a href="https://twitter.com/intent/tweet?url=https://vladbortnik.dev/blog/posts/[POST-SLUG].html&text=[POST-TITLE]" target="_blank" rel="noopener" class="share-icon" title="Share on Twitter">
+                            <i class="bi bi-twitter-x"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/sharing/share-offsite/?url=https://vladbortnik.dev/blog/posts/[POST-SLUG].html" target="_blank" rel="noopener" class="share-icon" title="Share on LinkedIn">
+                            <i class="bi bi-linkedin"></i>
+                        </a>
+                        <a href="#" onclick="navigator.clipboard.writeText(window.location.href); this.innerHTML='<i class=\'bi bi-check-lg\'></i>'; setTimeout(()=>this.innerHTML='<i class=\'bi bi-link-45deg\'></i>', 2000); return false;" class="share-icon" title="Copy link">
+                            <i class="bi bi-link-45deg"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Author Bio -->
+                <section class="author-bio">
+                    <img src="../../assets/img/vlad-bortnik.jpg" alt="Vlad Bortnik" class="author-photo">
+                    <div class="author-info">
+                        <h3>About the Author</h3>
+                        <h4>Vlad Bortnik</h4>
+                        <p>
+                            Vlad Bortnik is a software engineer who builds scalable systems and shares practical insights on Python, Docker, DevOps, and cloud infrastructure. 
+                            He specializes in helping teams optimize their development workflows and deployment pipelines. 
+                            When not writing code or technical articles, he's exploring new technologies and contributing to open source.
+                        </p>
+                        <div class="author-social">
+                            <a href="https://twitter.com/vladbortnik_dev" target="_blank" rel="noopener">
+                                <i class="bi bi-twitter-x"></i> Twitter
+                            </a>
+                            <a href="https://github.com/vladbortnik" target="_blank" rel="noopener">
+                                <i class="bi bi-github"></i> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter CTA -->
+                <section class="newsletter-cta">
+                    <div class="newsletter-content">
+                        <h3><i class="bi bi-envelope-fill"></i> Get Weekly Python & DevOps Tutorials</h3>
+                        <p>Join developers learning modern software engineering practices. No spam, unsubscribe anytime.</p>
+                        <form class="newsletter-form" action="#" method="post">
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </section>
+
+                <!-- Comments Section -->
+                <div class="comments-section">
+                    <h3>Comments</h3>
+                    <div class="commentbox"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ======= FOOTER ======= -->
+    <footer id="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="../feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright">
+                    &copy; <span id="current-year"></span> Vlad Bortnik
+                </div>
+            </div>
+        </div>
+    </footer>
+    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+
+    <!-- Vendor JS Files -->
+    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Main JS File -->
+    <script src="../../assets/js/main.js"></script>
+
+    <!-- Prism.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-python.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-bash.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-javascript.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-yaml.min.js"></script>
+
+    <!-- CommentBox.io -->
+    <script src="https://unpkg.com/commentbox.io/dist/commentBox.min.js"></script>
+    <script>
+        commentBox('5698637896089600-proj', {
+            backgroundColor: '#040404',
+            textColor: '#fff',
+            subtextColor: 'rgba(255, 255, 255, 0.6)'
+        });
+    </script>
+
+</body>
+</html>
