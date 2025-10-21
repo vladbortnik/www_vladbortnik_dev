@@ -33,8 +33,6 @@
       "Bash(rm -rf:*)",
       "Bash(sudo:*)",
       "Bash(chmod 777:*)",
-      "Bash(curl:*)",
-      "Bash(wget:*)",
       "Bash(chown:*)",
       "Bash(chgrp:*)",
       "Bash(systemctl:*)",
@@ -46,6 +44,7 @@
     ],
     "allowUnsafeOperations": false
   },
+  "model": "opusplan",
   "hooks": {
     "PreToolUse": [
       {
@@ -90,7 +89,6 @@
       }
     ]
   },
-  "model": "opusplan",
   "spinnerTipsEnabled": false,
   "alwaysThinkingEnabled": true,
   "autoUpdates": true,
