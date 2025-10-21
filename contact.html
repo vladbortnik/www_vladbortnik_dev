@@ -288,13 +288,24 @@
   </section>
 
   <!-- ======= Footer ======= -->
-  <footer class="contact-footer">
+  <footer id="footer">
     <div class="container">
-      <div class="credits">
-        &copy; 2025 <strong>Vlad Bortnik</strong>. All rights reserved.
+      <div class="footer-content">
+        <div class="footer-icons">
+          <a href="/#about" title="Portfolio"><i class="bi bi-globe2"></i></a>
+          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+          <a href="/blog/" title="Blog"><i class="bi bi-journal-text"></i></a>
+        </div>
+        <div class="footer-copyright">
+          &copy; <span id="current-year"></span> Vlad Bortnik
+        </div>
       </div>
     </div>
   </footer>
+  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
 
   <!-- Vendor JS Files -->
   <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
