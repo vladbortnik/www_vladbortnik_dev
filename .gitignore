@@ -2,6 +2,7 @@
 blog/screenshots
 archive/
 blog/temp/
+TO-DO.md
 
 # Cloudflare Worker
 contact-worker/

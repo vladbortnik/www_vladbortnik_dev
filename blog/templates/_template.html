@@ -41,25 +41,75 @@
 
     <!-- Main CSS Files -->
     <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/blog.css?v=9" rel="stylesheet">
+    <link href="../assets/css/blog.css?v=10" rel="stylesheet">
     
     <!-- Prism.js for Syntax Highlighting -->
     <link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css" rel="stylesheet">
 
-    <!-- Structured Data -->
+    <!-- Structured Data - Enhanced Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BlogPosting",
+        "@type": "TechArticle",
         "headline": "[POST TITLE]",
         "description": "[POST DESCRIPTION]",
+        "image": {
+            "@type": "ImageObject",
+            "url": "https://vladbortnik.dev/assets/img/vlad-bortnik.jpg",
+            "width": 1200,
+            "height": 630
+        },
         "author": {
             "@type": "Person",
             "name": "Vlad Bortnik",
-            "url": "https://vladbortnik.dev"
+            "url": "https://vladbortnik.dev",
+            "sameAs": [
+                "https://twitter.com/vladbortnik_dev",
+                "https://github.com/vladbortnik",
+                "https://linkedin.com/in/vladbortnik"
+            ]
+        },
+        "publisher": {
+            "@type": "Organization",
+            "name": "Vlad Bortnik",
+            "logo": {
+                "@type": "ImageObject",
+                "url": "https://vladbortnik.dev/assets/img/vlad-bortnik.jpg"
+            }
         },
         "datePublished": "[YYYY-MM-DD]",
-        "dateModified": "[YYYY-MM-DD]"
+        "dateModified": "[YYYY-MM-DD]",
+        "mainEntityOfPage": {
+            "@type": "WebPage",
+            "@id": "https://vladbortnik.dev/blog/posts/[POST-SLUG].html"
+        },
+        "keywords": "[KEYWORDS]",
+        "proficiencyLevel": "[PROFICIENCY-LEVEL]",
+        "dependencies": "[TECH-DEPENDENCIES]"
+    }
+    </script>
+    
+    <!-- BreadcrumbList Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [{
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://vladbortnik.dev"
+        },{
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://vladbortnik.dev/blog/"
+        },{
+            "@type": "ListItem",
+            "position": 3,
+            "name": "[POST TITLE]",
+            "item": "https://vladbortnik.dev/blog/posts/[POST-SLUG].html"
+        }]
     }
     </script>
 </head>
@@ -201,6 +251,43 @@ function example() {
                         </a>
                     </div>
                 </div>
+
+                <!-- Author Bio -->
+                <section class="author-bio">
+                    <img src="../../assets/img/vlad-bortnik.jpg" alt="Vlad Bortnik" class="author-photo">
+                    <div class="author-info">
+                        <h3>About the Author</h3>
+                        <h4>Vlad Bortnik</h4>
+                        <p>
+                            Vlad Bortnik is a software engineer who builds scalable systems and shares practical insights on Python, Docker, DevOps, and cloud infrastructure. 
+                            He specializes in helping teams optimize their development workflows and deployment pipelines. 
+                            When not writing code or technical articles, he's exploring new technologies and contributing to open source.
+                        </p>
+                        <div class="author-social">
+                            <a href="https://twitter.com/vladbortnik_dev" target="_blank" rel="noopener">
+                                <i class="bi bi-twitter-x"></i> Twitter
+                            </a>
+                            <a href="https://github.com/vladbortnik" target="_blank" rel="noopener">
+                                <i class="bi bi-github"></i> GitHub
+                            </a>
+                            <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener">
+                                <i class="bi bi-linkedin"></i> LinkedIn
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Newsletter CTA -->
+                <section class="newsletter-cta">
+                    <div class="newsletter-content">
+                        <h3><i class="bi bi-envelope-fill"></i> Get Weekly Python & DevOps Tutorials</h3>
+                        <p>Join developers learning modern software engineering practices. No spam, unsubscribe anytime.</p>
+                        <form class="newsletter-form" action="#" method="post">
+                            <input type="email" name="email" placeholder="your@email.com" required>
+                            <button type="submit">Subscribe</button>
+                        </form>
+                    </div>
+                </section>
 
                 <!-- Comments Section -->
                 <div class="comments-section">
