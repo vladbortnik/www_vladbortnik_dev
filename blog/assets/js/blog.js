@@ -6,6 +6,16 @@
 // Blog posts data (can be moved to a separate JSON file or API in the future)
 const blogPosts = [
   {
+    id: 4,
+    slug: "deploy-multi-app-production-setup",
+    title: "Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix",
+    excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
+    category: "DevOps",
+    date: "2025-10-21",
+    readTime: "16 min read",
+    author: "Vlad Bortnik"
+  },
+  {
     id: 1,
     slug: "docker-python-best-practices",
     title: "Docker & Python: Production Best Practices",
