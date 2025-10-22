@@ -1,401 +1,567 @@
 /*===========================================
-  ABOUT SECTION - TECH STACK ECOSYSTEM
-  New design: All three layers simultaneously
-  Author: Blog Agent (Cascade)
-  Date: October 22, 2025
+  ABOUT SECTION - CINEMATIC ANIMATION
+  Version 3: Sequential storytelling through motion
+  Author: Blog Agent (Cascade)  
+  Date: October 22, 2025 - FINAL ANIMATION
 ===========================================*/
 
-/* Bio Title Section */
 .bio-title {
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   text-align: center;
+  opacity: 0;
+  animation: titleFadeIn 0.8s ease-out forwards;
 }
 
 .bio-title h3 {
-  color: #00ff9d;
-  font-size: 2rem;
+  color: #18d26e;
+  font-size: 3rem;
   font-weight: 700;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.8rem;
+  text-shadow: 0 0 25px rgba(24, 210, 110, 0.4);
+  letter-spacing: 2px;
 }
 
 .tech-subtitle {
   color: #a8a8a8;
   font-size: 1.1rem;
-  font-weight: 300;
-  letter-spacing: 1px;
+  font-weight: 500;
+  letter-spacing: 1.5px;
   margin-bottom: 0;
-  font-style: italic;
+  font-style: normal;
+  text-transform: uppercase;
+}
+
+/* Title fade-in with gentle glow */
+@keyframes titleFadeIn {
+  0% {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /*===========================================
-  TECH STACK ECOSYSTEM - Three Equal Layers
+  SEALS OF APPROVAL - MIDDLE SECTION
+  Appears between title and foundation
 ===========================================*/
 
-.tech-stack-ecosystem {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-  gap: 1.5rem;
-  margin: 2.5rem 0;
-  padding: 0;
-}
-
-.stack-layer {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(0, 255, 157, 0.2);
-  border-radius: 12px;
-  padding: 1.5rem 1rem;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  position: relative;
-  overflow: hidden;
-  backdrop-filter: blur(10px);
-  
-  /* Synchronized pulse animation - ALL layers pulse together */
-  animation: layerPulse 3s ease-in-out infinite;
-}
-
-/* Synchronized pulse - all layers glow at the same time */
-@keyframes layerPulse {
-  0%, 100% {
-    box-shadow: 0 0 15px rgba(0, 255, 157, 0.1),
-                inset 0 0 15px rgba(0, 255, 157, 0.05);
-    border-color: rgba(0, 255, 157, 0.2);
-  }
-  50% {
-    box-shadow: 0 0 25px rgba(0, 255, 157, 0.3),
-                inset 0 0 25px rgba(0, 255, 157, 0.1);
-    border-color: rgba(0, 255, 157, 0.4);
-  }
-}
-
-.stack-layer:hover {
-  transform: translateY(-5px);
-  border-color: rgba(0, 255, 157, 0.5);
-  box-shadow: 0 8px 30px rgba(0, 255, 157, 0.2),
-              inset 0 0 30px rgba(0, 255, 157, 0.1);
-}
-
-/* Gradient overlay for each layer */
-.stack-layer::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(135deg, rgba(0, 255, 157, 0.05) 0%, transparent 50%);
-  opacity: 0;
-  transition: opacity 0.3s;
-  pointer-events: none;
-}
-
-.stack-layer:hover::before {
-  opacity: 1;
-}
-
-/* Layer Icons */
-.layer-icon {
-  font-size: 2.5rem;
-  color: #00ff9d;
-  margin-bottom: 1rem;
+.seals-of-approval {
   display: flex;
-  align-items: center;
   justify-content: center;
-  height: 60px;
+  align-items: center;
+  gap: 3rem;
+  margin: 3.5rem 0 4.5rem;
+  min-height: 120px;
 }
 
-.layer-icon i {
-  filter: drop-shadow(0 0 10px rgba(0, 255, 157, 0.3));
-}
-
-/* Layer Content */
-.layer-content h4 {
-  color: #ffffff;
+/* Seal Stamps (Left & Right) */
+.seal-stamp {
+  opacity: 0;
+  padding: 1.2rem 2.5rem;
+  background: rgba(255, 255, 255, 0.02);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 10px;
+  color: #cccccc;
   font-size: 1.1rem;
   font-weight: 600;
-  margin-bottom: 0.5rem;
-  letter-spacing: 0.5px;
+  transform: rotate(0deg);
+  transition: all 0.3s;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
 }
 
-.layer-content p {
-  color: #a8a8a8;
-  font-size: 0.9rem;
-  margin: 0;
-  line-height: 1.4;
+.seal-stamp:hover {
+  background: rgba(24, 210, 110, 0.05);
+  border-color: rgba(24, 210, 110, 0.3);
+  color: #18d26e;
 }
 
-/* Slide-in animation on page load */
-.frontend-layer {
-  animation: slideInLeft 0.6s ease-out, layerPulse 3s ease-in-out 0.6s infinite;
+/* Left stamp animation - stamp from left with rotation */
+.stamp-left {
+  animation: stampLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 5s forwards;
 }
 
-.backend-layer {
-  animation: slideInLeft 0.6s ease-out 0.2s backwards, layerPulse 3s ease-in-out 0.8s infinite;
+@keyframes stampLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-50px) rotate(-15deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(-3deg) scale(1);
+  }
 }
 
-.infrastructure-layer {
-  animation: slideInLeft 0.6s ease-out 0.4s backwards, layerPulse 3s ease-in-out 1s infinite;
+/* Right stamp animation - stamp from right with rotation */
+.stamp-right {
+  animation: stampRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 5.7s forwards;
 }
 
-@keyframes slideInLeft {
+@keyframes stampRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) rotate(15deg) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) rotate(3deg) scale(1);
+  }
+}
+
+/*===========================================
+  CENTER SEAL - "5 APPS" with Circular Dots
+===========================================*/
+
+.seal-center {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 140px;
+  height: 140px;
+  text-decoration: none;
+  opacity: 0;
+  background: radial-gradient(circle, rgba(24, 210, 110, 0.05) 0%, transparent 70%);
+  border: 3px solid transparent;
+  border-radius: 50%;
+  animation: sealAppear 1s ease-out 4s forwards;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.seal-center:hover {
+  transform: scale(1.1) rotate(5deg);
+  border-color: rgba(24, 210, 110, 0.3);
+}
+
+@keyframes sealAppear {
+  0% {
+    opacity: 0;
+    transform: scale(0.5) rotate(-180deg);
+  }
+  60% {
+    transform: scale(1.1) rotate(10deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+  }
+}
+
+/* Seal Content (5 stacked above Apps) */
+.seal-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.1rem;
+  z-index: 2;
+}
+
+.seal-number {
+  color: #18d26e;
+  font-size: 3.5rem;
+  font-weight: 800;
+  line-height: 1;
+  text-shadow: 0 0 20px rgba(24, 210, 110, 0.6);
+}
+
+.seal-text {
+  color: #ffffff;
+  font-size: 1rem;
+  font-weight: 600;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* Circular Dots around seal */
+.seal-dots {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.dot {
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #18d26e;
+  opacity: 0;
+}
+
+/* Dot positions (clock positions) */
+.dot-12 {
+  top: 8px;
+  left: 50%;
+  transform: translateX(-50%);
+  animation: dotAppear 0.3s ease-out 6.5s forwards;
+  box-shadow: 0 0 6px rgba(24, 210, 110, 0.8);
+  width: 8px;
+  height: 8px;
+}
+
+.dot-2 {
+  top: 22%;
+  right: 18%;
+  animation: dotAppear 0.3s ease-out 6.7s forwards;
+  width: 8px;
+  height: 8px;
+}
+
+.dot-5 {
+  bottom: 22%;
+  right: 18%;
+  animation: dotAppear 0.3s ease-out 6.9s forwards;
+  width: 8px;
+  height: 8px;
+}
+
+.dot-7 {
+  bottom: 22%;
+  left: 18%;
+  animation: dotAppear 0.3s ease-out 7.1s forwards;
+  width: 8px;
+  height: 8px;
+}
+
+.dot-10 {
+  top: 22%;
+  left: 18%;
+  animation: dotAppear 0.3s ease-out 7.3s forwards;
+  width: 8px;
+  height: 8px;
+}
+
+@keyframes dotAppear {
   from {
     opacity: 0;
-    transform: translateX(-30px);
+    transform: scale(0);
   }
   to {
+    transform: scale(1);
+  }
+}
+
+/* Dot brightness variations - set as final state */
+.dot-12 {
+  opacity: 1 !important;
+}
+
+.dot-2,
+.dot-10 {
+  opacity: 0.4 !important;
+}
+
+.dot-5,
+.dot-7 {
+  opacity: 0.6 !important;
+}
+
+/*===========================================
+  TECH FOUNDATION - BOTTOM SECTION
+  Cards come from different directions
+===========================================*/
+
+.tech-foundation {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  margin: 3rem 0 0;
+}
+
+.foundation-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.8rem;
+  
+  background: rgba(255, 255, 255, 0.02);
+  border: 3px solid transparent;
+  border-radius: 12px;
+  padding: 2rem 2.5rem;
+  min-width: 180px;
+  min-height: 140px;
+  opacity: 0;
+  position: relative;
+  overflow: hidden;
+  
+  transition: all 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+/* Animated gradient border effect */
+.foundation-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 12px;
+  padding: 3px;
+  background: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2), var(--gradient-color-1));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  background-size: 200% 100%;
+  animation: borderFlow 3s linear infinite;
+}
+
+@keyframes borderFlow {
+  0% {
+    background-position: 200% 0;
+  }
+  100% {
+    background-position: -200% 0;
+  }
+}
+
+.foundation-card:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 30px var(--glow-color);
+}
+
+.card-label {
+  color: #ffffff;
+  font-size: 1.3rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  z-index: 1;
+}
+
+.card-tech {
+  color: #333;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+  opacity: 0.2;
+  text-align: center;
+  z-index: 1;
+  animation: techPulse 4s ease-in-out 7.5s infinite;
+}
+
+@keyframes techPulse {
+  0%, 100% {
+    color: #333;
+    opacity: 0.2;
+  }
+  50% {
+    color: #ffffff;
+    opacity: 1;
+  }
+}
+
+.card-frontend {
+  --gradient-color-1: rgba(24, 210, 110, 0.6);
+  --gradient-color-2: rgba(20, 156, 82, 0.3);
+  --glow-color: rgba(24, 210, 110, 0.3);
+  animation: slideFromLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards,
+             settleDown 0.5s ease-out 3.8s forwards;
+}
+
+.card-frontend:hover {
+  box-shadow: 0 8px 30px rgba(24, 210, 110, 0.4);
+}
+
+.card-backend {
+  --gradient-color-1: rgba(0, 128, 255, 0.6);
+  --gradient-color-2: rgba(0, 86, 179, 0.3);
+  --glow-color: rgba(0, 128, 255, 0.3);
+  animation: slideFromRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 3.2s forwards,
+             settleDown 0.5s ease-out 3.8s forwards;
+}
+
+.card-backend:hover {
+  box-shadow: 0 8px 30px rgba(0, 128, 255, 0.4);
+}
+
+.card-infrastructure {
+  --gradient-color-1: rgba(255, 140, 66, 0.6);
+  --gradient-color-2: rgba(255, 87, 34, 0.3);
+  --glow-color: rgba(255, 140, 66, 0.3);
+  animation: fadeFromCenter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 2.35s forwards,
+             settleDown 0.5s ease-out 3.8s forwards;
+}
+
+.card-infrastructure:hover {
+  box-shadow: 0 8px 30px rgba(255, 140, 66, 0.4);
+}
+
+/* Slide animations from different directions */
+@keyframes slideFromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-60px);
+  }
+  100% {
     opacity: 1;
     transform: translateX(0);
   }
 }
 
-/*===========================================
-  PROOF BADGES - Below Tech Stack
-===========================================*/
-
-.proof-badges {
-  display: flex;
-  justify-content: center;
-  gap: 1rem;
-  margin: 2rem 0 1.5rem;
-  flex-wrap: wrap;
+@keyframes slideFromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
 }
 
-.proof-badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  padding: 0.6rem 1.2rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(0, 255, 157, 0.2);
-  border-radius: 20px;
-  color: #ffffff;
-  font-size: 0.9rem;
-  font-weight: 500;
-  transition: all 0.3s;
-  text-decoration: none;
+@keyframes slideFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-40px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-.proof-badge i {
-  color: #00ff9d;
-  font-size: 1rem;
+@keyframes fadeFromCenter {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
 }
 
-.proof-badge:hover {
-  background: rgba(0, 255, 157, 0.05);
-  border-color: rgba(0, 255, 157, 0.4);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 15px rgba(0, 255, 157, 0.2);
-  color: #ffffff;
+/* Settle down animation (all cards together) */
+@keyframes settleDown {
+  0% {
+    transform: translateY(0) scale(1);
+  }
+  40% {
+    transform: translateY(8px) scale(0.98);
+  }
+  100% {
+    transform: translateY(0) scale(1);
+  }
 }
 
-.proof-badge.apps {
-  border-color: rgba(0, 255, 157, 0.3);
-}
-
-.proof-badge.apps:hover {
-  background: rgba(0, 255, 157, 0.1);
-}
-
-/*===========================================
-  SOCIAL LINKS ROW - Compact
-===========================================*/
-
-.social-links-row {
-  display: flex;
-  justify-content: center;
-  gap: 1.5rem;
-  margin: 1.5rem 0;
-  padding: 1rem 0;
-  border-top: 1px solid rgba(255, 255, 255, 0.05);
-  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
-}
-
-.social-link {
-  color: #a8a8a8;
-  font-size: 1.3rem;
-  transition: all 0.3s;
-}
-
-.social-link:hover {
-  color: #00ff9d;
-  transform: translateY(-3px);
+/* Tech names start animation after everything settles */
+.card-frontend .card-tech,
+.card-backend .card-tech,
+.card-infrastructure .card-tech {
+  animation-delay: 7.5s;
 }
 
 /*===========================================
-  CORE INFO - Compact Single Row
+  IDLE STATE - Continuous subtle animations
 ===========================================*/
 
-.core-info {
-  display: flex;
-  justify-content: center;
-  gap: 2rem;
-  flex-wrap: wrap;
-  margin: 1.5rem 0;
-  padding: 0.8rem 0;
+/* Cards pulse in sync after animation completes */
+.foundation-card {
+  animation-iteration-count: 1, 1, infinite !important;
+  animation-duration: 0.6s, 0.5s, 3s !important;
+  animation-delay: var(--slide-delay), 3.8s, 8s !important;
 }
 
-.info-item {
-  color: #a8a8a8;
-  font-size: 0.85rem;
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
+.card-frontend {
+  --slide-delay: 1.5s;
 }
 
-.info-item i {
-  color: #00ff9d;
-  font-size: 0.9rem;
+.card-backend {
+  --slide-delay: 3.2s;
 }
 
-/*===========================================
-  PERSONALITY GRID - Redesigned
-===========================================*/
-
-.personality-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
-  gap: 0.8rem;
-  margin-top: 2rem;
+.card-infrastructure {
+  --slide-delay: 2.35s;
 }
 
-.trait {
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  border-radius: 8px;
-  padding: 0.7rem 1rem;
-  text-align: center;
-  color: #a8a8a8;
-  font-size: 0.85rem;
-  font-weight: 500;
-  transition: all 0.3s;
-}
-
-.trait:hover {
-  background: rgba(0, 255, 157, 0.05);
-  border-color: rgba(0, 255, 157, 0.2);
-  color: #ffffff;
-  transform: translateY(-2px);
-}
-
-.trait.highlight {
-  background: rgba(0, 255, 157, 0.05);
-  border-color: rgba(0, 255, 157, 0.2);
-  color: #00ff9d;
-  font-weight: 600;
-}
-
-.trait.highlight:hover {
-  background: rgba(0, 255, 157, 0.1);
-  border-color: rgba(0, 255, 157, 0.3);
+/* Synchronized pulse for idle state */
+@keyframes cardPulse {
+  0%, 100% {
+    box-shadow: 0 0 8px rgba(0, 255, 157, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.2);
+  }
 }
 
 /*===========================================
   RESPONSIVE DESIGN
 ===========================================*/
 
-/* Tablets */
-@media (max-width: 992px) {
-  .tech-stack-ecosystem {
-    grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-    gap: 1rem;
-  }
-  
-  .bio-title h3 {
-    font-size: 1.8rem;
-  }
-  
-  .tech-subtitle {
-    font-size: 1rem;
-  }
-}
-
-/* Mobile */
 @media (max-width: 768px) {
-  .tech-stack-ecosystem {
-    grid-template-columns: 1fr;
+  .seals-of-approval {
+    flex-direction: column;
     gap: 1rem;
-    max-width: 350px;
-    margin-left: auto;
-    margin-right: auto;
   }
   
-  .stack-layer {
-    padding: 1.2rem 1rem;
-  }
-  
-  .proof-badges {
+  .tech-foundation {
     flex-direction: column;
     align-items: stretch;
-    max-width: 250px;
+    max-width: 200px;
     margin-left: auto;
     margin-right: auto;
   }
   
-  .proof-badge {
-    justify-content: center;
+  .foundation-card {
+    min-width: 100%;
   }
   
-  .core-info {
-    flex-direction: column;
-    align-items: center;
-    gap: 0.8rem;
-  }
-  
-  .personality-grid {
-    grid-template-columns: 1fr;
-    max-width: 250px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  
-  .social-links-row {
-    gap: 1.2rem;
+  /* Simplify animations on mobile */
+  .card-frontend,
+  .card-backend,
+  .card-infrastructure {
+    animation: slideFromTop 0.6s ease-out 1.5s forwards,
+               settleDown 0.5s ease-out 3.8s forwards;
   }
 }
 
-/* Small mobile */
 @media (max-width: 480px) {
   .bio-title h3 {
     font-size: 1.5rem;
   }
   
-  .tech-subtitle {
-    font-size: 0.9rem;
+  .seal-center {
+    width: 70px;
+    height: 70px;
   }
   
-  .layer-icon {
-    font-size: 2rem;
-    height: 50px;
+  .seal-number {
+    font-size: 1.4rem;
   }
   
-  .layer-content h4 {
-    font-size: 1rem;
-  }
-  
-  .layer-content p {
-    font-size: 0.85rem;
+  .seal-text {
+    font-size: 0.65rem;
   }
 }
 
 /*===========================================
-  ACCESSIBILITY - Reduced Motion
+  ACCESSIBILITY
 ===========================================*/
 
 @media (prefers-reduced-motion: reduce) {
-  .stack-layer {
-    animation: none !important;
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
   
-  .frontend-layer,
-  .backend-layer,
-  .infrastructure-layer {
-    animation: none !important;
-  }
-  
-  .stack-layer:hover,
-  .proof-badge:hover,
-  .trait:hover,
-  .social-link:hover {
+  .bio-title,
+  .foundation-card,
+  .seal-stamp,
+  .seal-center,
+  .dot {
+    opacity: 1 !important;
     transform: none !important;
   }
 }
@@ -405,13 +571,17 @@
 ===========================================*/
 
 @media print {
-  .tech-stack-ecosystem {
+  .tech-foundation {
     border: 1px solid #000;
     page-break-inside: avoid;
   }
   
-  .stack-layer {
+  .foundation-card {
     border-color: #000 !important;
     box-shadow: none !important;
+  }
+  
+  .seal-dots {
+    display: none;
   }
 }
