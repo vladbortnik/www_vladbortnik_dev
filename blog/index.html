@@ -1,165 +1,255 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
     <title>Blog | Vlad Bortnik - Software Engineering & DevOps Insights</title>
-    <meta name="description" content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure. Learn from real-world software engineering experiences.">
-    <meta name="keywords" content="Software Engineering Blog, Python Tutorial, Docker Guide, DevOps Best Practices, Web Development, Backend Development, Cloud Infrastructure">
+    <meta
+      name="description"
+      content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure. Learn from real-world software engineering experiences."
+    />
+    <meta
+      name="keywords"
+      content="Software Engineering Blog, Python Tutorial, Docker Guide, DevOps Best Practices, Web Development, Backend Development, Cloud Infrastructure"
+    />
 
     <!-- Canonical URL -->
-    <link rel="canonical" href="https://vladbortnik.dev/blog/">
+    <link rel="canonical" href="https://vladbortnik.dev/blog/" />
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://vladbortnik.dev/blog/">
-    <meta property="og:title" content="Blog | Vlad Bortnik - Software Engineering Insights">
-    <meta property="og:description" content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure from a software engineer's perspective.">
-    <meta property="og:image" content="https://vladbortnik.dev/assets/img/me.jpg">
-    <meta property="og:site_name" content="Vlad Bortnik Portfolio">
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://vladbortnik.dev/blog/" />
+    <meta
+      property="og:title"
+      content="Blog | Vlad Bortnik - Software Engineering Insights"
+    />
+    <meta
+      property="og:description"
+      content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure from a software engineer's perspective."
+    />
+    <meta
+      property="og:image"
+      content="https://vladbortnik.dev/assets/img/vlad-bortnik-headshot.jpg"
+    />
+    <meta property="og:image:alt" content="Vlad Bortnik - Backend Software Engineer" />
+    <meta property="og:site_name" content="Vlad Bortnik Portfolio" />
+    <meta property="og:locale" content="en_US" />
 
     <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://vladbortnik.dev/blog/">
-    <meta name="twitter:title" content="Blog | Vlad Bortnik">
-    <meta name="twitter:description" content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure.">
-    <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/me.jpg">
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:url" content="https://vladbortnik.dev/blog/" />
+    <meta name="twitter:title" content="Blog | Vlad Bortnik" />
+    <meta
+      name="twitter:description"
+      content="Technical articles about Python, Flask, Docker, DevOps, and cloud infrastructure."
+    />
+    <meta
+      name="twitter:image"
+      content="https://vladbortnik.dev/assets/img/vlad-bortnik-headshot.jpg"
+    />
 
     <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="dns-prefetch" href="https://analytics.vladbortnik.dev">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="dns-prefetch" href="https://analytics.vladbortnik.dev" />
 
     <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../assets/img/favicon.ico">
-    
+    <link
+      rel="icon"
+      type="image/x-icon"
+      sizes="16x16 32x32"
+      href="../assets/img/favicon.ico"
+    />
+
     <!-- RSS Feed Auto-Discovery -->
-    <link rel="alternate" type="application/rss+xml" title="Vlad Bortnik's Blog RSS Feed" href="https://vladbortnik.dev/blog/feed.xml">
+    <link
+      rel="alternate"
+      type="application/rss+xml"
+      title="Vlad Bortnik's Blog RSS Feed"
+      href="https://vladbortnik.dev/blog/feed.xml"
+    />
 
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+      rel="stylesheet"
+    />
 
     <!-- Vendor CSS Files -->
-    <link href="../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="../assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+    <link
+      href="../assets/vendor/bootstrap/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/bootstrap-icons/bootstrap-icons.css"
+      rel="stylesheet"
+    />
+    <link
+      href="../assets/vendor/boxicons/css/boxicons.min.css"
+      rel="stylesheet"
+    />
 
     <!-- Main CSS Files -->
-    <link href="../assets/css/style.css" rel="stylesheet">
-    <link href="assets/css/blog.css?v=9" rel="stylesheet">
+    <link href="../assets/css/style.css" rel="stylesheet" />
+    <link href="assets/css/blog.css?v=9" rel="stylesheet" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
-    {
+      {
         "@context": "https://schema.org",
         "@type": "Blog",
         "name": "Vlad Bortnik's Blog",
         "description": "Technical articles about software engineering, Python, Docker, and DevOps",
         "url": "https://vladbortnik.dev/blog/",
         "author": {
-            "@type": "Person",
-            "name": "Vlad Bortnik",
-            "url": "https://vladbortnik.dev"
+          "@type": "Person",
+          "name": "Vlad Bortnik",
+          "url": "https://vladbortnik.dev"
         }
-    }
+      }
     </script>
+  </head>
 
-    <!-- Umami Analytics -->
-<!--    <script defer src="https://analytics.vladbortnik.dev/script.js" data-website-id="b386b8f9-b644-4400-a091-208983cb8340"></script>-->
-</head>
-
-<body class="blog-page">
+  <body class="blog-page">
     <!-- Reading Progress Bar -->
     <div class="reading-progress"></div>
     <!-- ======= HEADER ======= -->
     <header id="header" class="header-top">
-        <div class="container">
-            <h1><a href="/">Vlad Bortnik</a></h1>
+      <div class="container">
+        <h1><a href="/">Vlad Bortnik</a></h1>
 
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link" href="/">Home</a></li>
-                    <li><a class="nav-link" href="/#about">About</a></li>
-                    <li><a class="nav-link" href="/#portfolio">Projects</a></li>
-                    <li><a class="nav-link" href="/#resume">Resume</a></li>
-                    <li><a class="nav-link active" href="/blog/">Blog</a></li>
-                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
+        <nav id="navbar" class="navbar">
+          <ul>
+            <li><a class="nav-link" href="/">Home</a></li>
+            <li><a class="nav-link" href="/#about">About</a></li>
+            <li><a class="nav-link" href="/#portfolio">Projects</a></li>
+            <li><a class="nav-link" href="/#resume">Resume</a></li>
+            <li><a class="nav-link active" href="/blog/">Blog</a></li>
+            <li><a class="nav-link" href="/contact.html">Contact</a></li>
+          </ul>
+          <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
 
-            <div class="social-links">
-                <a href="/" title="Portfolio"><i class="bi bi-briefcase-fill"></i></a>
-                <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="bi bi-twitter"></i></a>
-                <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-                <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-            </div>
+        <div class="social-links">
+          <a href="/" title="Portfolio"><i class="bi bi-briefcase-fill"></i></a>
+          <a
+            href="https://x.com/vladbortnik_dev"
+            target="_blank"
+            rel="noopener noreferrer"
+            title="Twitter/X"
+            ><i class="bi bi-twitter"></i
+          ></a>
+          <a
+            href="https://github.com/vladbortnik"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="github"
+            title="GitHub"
+            ><i class="bi bi-github"></i
+          ></a>
+          <a
+            href="https://linkedin.com/in/vladbortnik"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="linkedin"
+            title="LinkedIn"
+            ><i class="bi bi-linkedin"></i
+          ></a>
         </div>
+      </div>
     </header>
 
     <!-- ======= BLOG SECTION ======= -->
     <section id="blog" class="blog">
-        <div class="container">
-            <!-- Blog Header with Logo & Search -->
-            <div class="blog-header">
-                <div class="blog-brand">
-                    <div class="blog-icon">
-                        <i class="bi bi-code-slash"></i>
-                    </div>
-                    <div class="blog-title">
-                        <h2>Engineering Blog</h2>
-                        <p>Technical insights & tutorials</p>
-                    </div>
-                </div>
-                <div class="blog-search">
-                    <i class="bi bi-search"></i>
-                    <input type="text" 
-                           id="blog-search-input" 
-                           class="blog-search-input" 
-                           placeholder="Search articles...">
-                </div>
+      <div class="container">
+        <!-- Blog Header with Logo & Search -->
+        <div class="blog-header">
+          <div class="blog-brand">
+            <div class="blog-icon">
+              <i class="bi bi-code-slash"></i>
             </div>
-
-            <!-- Blog Posts Grid -->
-            <div class="row blog-posts" id="blog-posts-container">
-                <!-- Blog posts will be dynamically loaded here -->
-                <div class="col-lg-12 text-center">
-                    <p class="text-muted">Loading blog posts...</p>
-                </div>
+            <div class="blog-title">
+              <h2>Engineering Blog</h2>
+              <p>Technical insights & tutorials</p>
             </div>
+          </div>
+          <div class="blog-search">
+            <i class="bi bi-search"></i>
+            <input
+              type="text"
+              id="blog-search-input"
+              class="blog-search-input"
+              placeholder="Search articles..."
+            />
+          </div>
         </div>
+
+        <!-- Blog Posts Grid -->
+        <div class="row blog-posts" id="blog-posts-container">
+          <!-- Blog posts will be dynamically loaded here -->
+          <div class="col-lg-12 text-center">
+            <p class="text-muted">Loading blog posts...</p>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- ======= FOOTER ======= -->
     <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-icons">
-                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
-                    <a href="feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
-                </div>
-                <div class="footer-copyright">
-                    &copy; <span id="current-year"></span> Vlad Bortnik
-                </div>
-            </div>
+      <div class="container">
+        <div class="footer-content">
+          <div class="footer-icons">
+            <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+            <a
+              href="https://x.com/vladbortnik_dev"
+              target="_blank"
+              rel="me noopener"
+              class="twitter"
+              title="Twitter/X"
+              ><i class="bi bi-twitter-x"></i
+            ></a>
+            <a
+              href="https://github.com/vladbortnik"
+              target="_blank"
+              rel="me noopener"
+              class="github"
+              title="GitHub"
+              ><i class="bi bi-github"></i
+            ></a>
+            <a
+              href="https://linkedin.com/in/vladbortnik"
+              target="_blank"
+              rel="me noopener"
+              class="linkedin"
+              title="LinkedIn"
+              ><i class="bi bi-linkedin"></i
+            ></a>
+            <a href="/contact.html" title="Contact"
+              ><i class="bi bi-envelope"></i
+            ></a>
+            <a href="feed.xml" title="RSS"
+              ><i class="bi bi-rss-fill"></i> RSS</a
+            >
+          </div>
+          <div class="footer-copyright">
+            &copy; <span id="current-year"></span> Vlad Bortnik
+          </div>
         </div>
+      </div>
     </footer>
-    <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
+    <script>
+      document.getElementById("current-year").textContent =
+        new Date().getFullYear();
+    </script>
 
     <!-- Vendor JS Files -->
     <script src="../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Main JS File -->
     <script src="../assets/js/main.js"></script>
-    
+
     <!-- Blog JS (all features integrated) -->
     <script src="assets/js/blog.js?v=2"></script>
-
-</body>
+  </body>
 </html>

@@ -110,66 +110,134 @@ h6 {
 }
 
 #header .social-links {
-  margin-top: 30px;
+  margin-top: 40px;
   display: flex;
   justify-content: center;
-  gap: 8px;
+  align-items: center;
+  gap: 20px;
 }
 
 #header .social-links a {
-  font-size: 16px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+  font-size: 20px;
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1;
-  border-radius: 50%;
-  width: 40px;
-  height: 40px;
-  transition: all 0.3s ease;
+  transition: color 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 #header .social-links a:hover {
-  background: #18d26e;
   color: #fff;
-  transform: translateY(-3px);
 }
 
 /* Individual social link hover colors */
-#header .social-links a.github:hover {
-  background: #18d26e;
-}
-
-#header .social-links a.linkedin:hover {
-  background: #0077b5;
+#header .social-links a[href="/"]:hover {
+  color: #4a90e2;
 }
 
 #header .social-links a[href*="x.com"]:hover {
-  background: #1da1f2;
+  color: #9b4dca;
 }
 
-#header .social-links a[href="/"]:hover {
-  background: #18d26e;
-}
-
-.back-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  font-size: 16px;
-  margin-bottom: 30px;
-  padding: 10px 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  border-radius: 5px;
-  transition: all 0.3s ease;
-  color: #fff;
-}
-
-.back-link:hover {
-  background: rgba(255, 255, 255, 0.1);
-  border-color: #18d26e;
+#header .social-links a.github:hover {
   color: #18d26e;
+}
+
+#header .social-links a.linkedin:hover {
+  color: #0077b5;
+}
+
+/* ====================== */
+/* Floating Return Button */
+.floating-return-btn {
+  /* Top-Left Position */
+  position: fixed;
+  top: 90px;
+  left: 30px;
+  background-color: rgba(0, 123, 255, 0.9);
+  color: white;
+  padding: 6px 10px;
+  border-radius: 25px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  font-size: 0.8rem;
+  gap: 4px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  font-weight: 500;
+
+  /* Animated Appear on Scroll */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 1s, visibility 1s, transform 1s;
+}
+
+.floating-return-btn.visible {
+  visibility: visible;
+}
+
+.floating-return-btn:hover {
+  background-color: rgba(0, 123, 255, 1);
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+  color: white;
+  text-decoration: none;
+}
+
+.floating-return-btn i {
+  font-size: 0.9rem;
+}
+
+/* Gradient Border Animation - Cherry on Cake */
+.floating-return-btn::before {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  border-radius: 25px;
+  padding: 2px;
+  background: linear-gradient(
+    45deg,
+    #18d26e,
+    #007bff,
+    #18d26e,
+    #007bff
+  );
+  background-size: 300% 300%;
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  z-index: -1;
+  animation: gradient-rotate 4s ease infinite;
+}
+
+@keyframes gradient-rotate {
+  0%, 100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* For mobile devices */
+@media (max-width: 768px) {
+  .floating-return-btn {
+    top: 65px;
+    left: 15px;
+    padding: 5px 8px;
+  }
+
+  .floating-return-btn span {
+    display: none; /* Hide text on mobile, show only icon */
+  }
+
+  .floating-return-btn i {
+    font-size: 0.9rem;
+    margin: 0;
+  }
 }
 
 @media (max-width: 768px) {
@@ -234,6 +302,26 @@ h6 {
   font-family: "Raleway", sans-serif;
   font-size: 16px;
   font-weight: 500;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+/* Subtle shimmer on mode buttons */
+.mode-btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.1),
+    transparent
+  );
+  animation: shimmer 6s infinite;
 }
 
 .mode-btn i {
@@ -278,10 +366,30 @@ h6 {
 .form-container {
   display: none;
   animation: fadeIn 0.4s ease;
+  position: relative;
+  overflow: hidden;
 }
 
 .form-container.active {
   display: block;
+}
+
+/* Shimmer effect on form container */
+.form-container::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.03),
+    transparent
+  );
+  animation: shimmer 8s infinite;
+  pointer-events: none;
 }
 
 @keyframes fadeIn {
@@ -292,6 +400,27 @@ h6 {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+/* ==================== SHIMMER ANIMATION ==================== */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+@keyframes pulse-glow {
+  0%, 100% {
+    box-shadow: 0 0 20px rgba(24, 210, 110, 0.2),
+                0 0 40px rgba(24, 210, 110, 0.1);
+  }
+  50% {
+    box-shadow: 0 0 30px rgba(24, 210, 110, 0.3),
+                0 0 60px rgba(24, 210, 110, 0.15);
   }
 }
 
@@ -461,6 +590,26 @@ textarea.form-control {
   cursor: pointer;
   transition: all 0.3s ease;
   background: rgba(255, 255, 255, 0.02);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle shimmer on file upload zone */
+.file-upload-zone::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  animation: shimmer 10s infinite;
+  pointer-events: none;
 }
 
 .file-upload-zone:hover {
@@ -599,6 +748,25 @@ textarea.form-control {
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: "Raleway", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Subtle shimmer on submit button */
+.btn-submit::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.3),
+    transparent
+  );
+  animation: shimmer 4s infinite;
 }
 
 .btn-submit:hover {
@@ -702,6 +870,12 @@ textarea.form-control {
 
 .footer-icons a.twitter:hover {
   color: #1da1f2;
+}
+
+/* Orange hover for globe (portfolio) and RSS icons */
+.footer-icons a:first-child:hover,
+.footer-icons a:last-child:hover {
+  color: #ff5722;
 }
 
 .footer-copyright {
