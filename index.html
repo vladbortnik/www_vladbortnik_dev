@@ -25,7 +25,8 @@
     <meta property="og:title" content="Vlad Bortnik | Software Engineer Portfolio">
     <meta property="og:description"
           content="Software Engineer specializing in Python/Flask, Docker, DevOps, and cloud infrastructure. View my portfolio of production_grade web applications.">
-    <meta property="og:image" content="https://vladbortnik.dev/assets/img/me.jpg">
+    <meta property="og:image" content="https://vladbortnik.dev/assets/img/vlad-bortnik-headshot.jpg">
+    <meta property="og:image:alt" content="Vlad Bortnik - Backend Software Engineer">
     <meta property="og:site_name" content="Vlad Bortnik Portfolio">
     <meta property="og:locale" content="en_US">
 
@@ -35,7 +36,7 @@
     <meta name="twitter:title" content="Vlad Bortnik | Software Engineer Portfolio">
     <meta name="twitter:description"
           content="Software Engineer specializing in Python/Flask, Docker, DevOps, and cloud infrastructure. View my portfolio of production_grade web applications.">
-    <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/me.jpg">
+    <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/vlad-bortnik-headshot.jpg">
 
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/img/favicon.ico">
@@ -54,6 +55,9 @@
 
     <!-- Main CSS File -->
     <link href="assets/css/style.css" rel="stylesheet">
+    
+    <!-- About Section - Tech Stack Ecosystem CSS -->
+    <link href="assets/css/about-tech-stack.css" rel="stylesheet">
 
     <!-- Structured Data / Schema.org - Person -->
     <script type="application/ld+json">
@@ -62,7 +66,7 @@
             "@type": "Person",
             "name": "Vlad Bortnik",
             "url": "https://vladbortnik.dev",
-            "image": "https://vladbortnik.dev/assets/img/me.jpg",
+            "image": "https://vladbortnik.dev/assets/img/vlad-bortnik-headshot.jpg",
             "sameAs": [
                 "https://github.com/vladbortnik",
                 "https://linkedin.com/in/vladbortnik"
@@ -189,63 +193,104 @@
 
         <div class="row">
             <div class="col-lg-4" data-aos="fade-right">
-                <img src="assets/img/me.jpg" class="img-fluid" alt="Vlad Bortnik - Software Engineer specializing in Python, Docker, and DevOps">
+                <img src="assets/img/vlad-bortnik-headshot.jpg" class="img-fluid" alt="Vlad Bortnik - Software Engineer specializing in Python, Docker, and DevOps" width="1121" height="1121">
             </div>
             <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
+                
+                <!-- Bio Title -->
                 <div class="bio-title">
                     <h3>Software Engineer</h3>
-                    <div class="tech-flow">
-                        <span class="tech-badge frontend">Frontend <small>React 19</small></span>
-                        <i class="bi bi-arrow-right"></i>
-                        <span class="tech-badge backend">Backend <small>Flask, PostgreSQL</small></span>
-                        <i class="bi bi-arrow-right"></i>
-                        <span class="tech-badge infra">Infrastructure <small>Docker, Nginx, Cloud</small></span>
+                    <p class="tech-subtitle">Full-Stack. All Layers. Simultaneously.</p>
+                </div>
+
+                <!-- Tech Stack Ecosystem - All Three Layers Equal -->
+                <div class="tech-stack-ecosystem">
+                    <div class="stack-layer frontend-layer">
+                        <div class="layer-icon">
+                            <i class="bi bi-window-stack"></i>
+                        </div>
+                        <div class="layer-content">
+                            <h4>Frontend</h4>
+                            <p>React 19</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-layer backend-layer">
+                        <div class="layer-icon">
+                            <i class="bi bi-database-fill-gear"></i>
+                        </div>
+                        <div class="layer-content">
+                            <h4>Backend</h4>
+                            <p>Flask + PostgreSQL</p>
+                        </div>
+                    </div>
+
+                    <div class="stack-layer infrastructure-layer">
+                        <div class="layer-icon">
+                            <i class="bi bi-layers-fill"></i>
+                        </div>
+                        <div class="layer-content">
+                            <h4>Infrastructure</h4>
+                            <p>Docker + Nginx + Cloud</p>
+                        </div>
                     </div>
                 </div>
 
-                <div class="proof-section">
-                    <a href="#portfolio" class="btn-proof">
-                        <i class="bi bi-box-arrow-up-right"></i>
-                        5 Live Apps · GitHub · Demos
+                <!-- Proof Badges -->
+                <div class="proof-badges">
+                    <a href="#portfolio" class="proof-badge apps">
+                        <i class="bi bi-rocket-takeoff-fill"></i>
+                        <span>5 Production Apps</span>
+                    </a>
+                    <span class="proof-badge credential">
+                        <i class="bi bi-book-fill"></i>
+                        <span>Self-Taught</span>
+                    </span>
+                    <span class="proof-badge experience">
+                        <i class="bi bi-lightning-charge-fill"></i>
+                        <span>3+ Years</span>
+                    </span>
+                </div>
+
+                <!-- Social Links - Kept for accessibility -->
+                <div class="social-links-row">
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener" class="social-link" title="X / Twitter">
+                        <i class="bi bi-twitter-x"></i>
+                    </a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="noopener" class="social-link" title="GitHub">
+                        <i class="bi bi-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener" class="social-link" title="LinkedIn">
+                        <i class="bi bi-linkedin"></i>
+                    </a>
+                    <a href="/blog/" class="social-link" title="Blog">
+                        <i class="bi bi-journal-text"></i>
                     </a>
                 </div>
 
-                <div class="row">
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-twitter-x"></i> <span><a href="https://x.com/vladbortnik_dev"
-                                                                         target="_blank" rel="noopener">X / Twitter</a></span></li>
-                            <li><i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik"
-                                                                      target="_blank" rel="noopener">GitHub</a></span></li>
-                            <li><i class="bi bi-linkedin"></i> <span><a href="https://linkedin.com/in/vladbortnik"
-                                                                        target="_blank" rel="noopener">LinkedIn</a></span></li>
-                            <li><i class="bi bi-journal-text"></i> <span><a href="/blog/">Blog</a></span></li>
-                        </ul>
-                    </div>
-                    <div class="col-lg-6">
-                        <ul>
-                            <li><i class="bi bi-geo-alt"></i> <span><a href="https://maps.app.goo.gl/SdRioKgXnLUcCLV99"
-                                                                       target="_blank" rel="noopener">NYC Metropolitan Area</a></span></li>
-                            <li><i class="bi bi-briefcase"></i> <strong>Experience:</strong> <span>3+ yrs</span></li>
-                            <li><i class="bi bi-mortarboard"></i> <strong>Degree:</strong>
-                                <span>BS in Computer Science</span></li>
-                            <li><i class="bi bi-bar-chart"></i> <strong>GPA:</strong> <span>3.87 / 4.00</span></li>
-                        </ul>
-                    </div>
+                <!-- Core Info - Compact -->
+                <div class="core-info">
+                    <span class="info-item">
+                        <i class="bi bi-geo-alt-fill"></i> NYC Metropolitan Area
+                    </span>
+                    <span class="info-item">
+                        <i class="bi bi-mortarboard-fill"></i> BS in Computer Science
+                    </span>
+                    <span class="info-item">
+                        <i class="bi bi-bar-chart-fill"></i> GPA: 3.87 / 4.00
+                    </span>
                 </div>
-                <div class="bio-personality">
-                    <div class="personality-left">
-                        <ul>
-                            <li>Self-taught</li>
-                            <li>Production-proven</li>
-                            <li>Documentation-obsessed</li>
-                        </ul>
-                    </div>
-                    <div class="personality-right">
-                        <p class="no-war-stories">I don't have corporate war stories</p>
-                        <p class="evidence">Live demos · Clean code · GitHub history</p>
-                    </div>
+
+                <!-- Personality Traits - Redesigned -->
+                <div class="personality-grid">
+                    <div class="trait">Production-Proven</div>
+                    <div class="trait">Clean Code</div>
+                    <div class="trait">Documentation-Obsessed</div>
+                    <div class="trait highlight">No Corporate War Stories</div>
+                    <div class="trait">Live Demos</div>
+                    <div class="trait">GitHub History</div>
                 </div>
+
             </div>
         </div>
     </div><!-- END: About Me -->

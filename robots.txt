@@ -13,9 +13,8 @@ Disallow: /assets/vendor/
 Disallow: /.wrangler/
 Disallow: /contact-worker/
 
-# Sitemap locations
+# Sitemap location
 Sitemap: https://vladbortnik.dev/sitemap.xml
-Sitemap: https://vladbortnik.dev/blog/sitemap.xml
 
 # Crawl-delay (helps with server load)
 Crawl-delay: 1
