@@ -14,10 +14,11 @@ This portfolio website is a static site deployed with custom infrastructure and 
 - **Hosting:** Static file hosting (likely Cloudflare Pages, GitHub Pages, or custom server)
 
 ### Backend Services
-- **Contact Form:** Cloudflare Worker (`contact-worker/`)
+- **Contact Form:** Cloudflare Worker (`cloudflare-worker-resend.js`)
   - Handles form submissions from `/contact.html`
   - Integrates with Cloudflare Turnstile for bot protection
-  - Likely sends emails via Resend API or similar service
+  - Sends emails via **Resend API** (replaced discontinued MailChannels service)
+  - See [RESEND-SETUP.md](RESEND-SETUP.md) for configuration details
 
 - **Analytics:** Self-hosted Umami Analytics
   - Endpoint: `https://analytics.vladbortnik.dev`
@@ -46,18 +47,23 @@ cd www_vladbortnik_dev
 # - Custom Server: rsync or FTP to web root
 ```
 
-### 2. Cloudflare Worker Deployment
+### 2. Cloudflare Worker Deployment (Contact Form)
+
+**Prerequisites:**
+- Resend API account and verified domain (see [RESEND-SETUP.md](RESEND-SETUP.md))
+- Cloudflare Turnstile keys for bot protection
 
 ```bash
-# Navigate to worker directory
-cd contact-worker/
+# Deploy the contact form worker
+wrangler deploy cloudflare-worker-resend.js \
+  --name portfolio-contact-form \
+  --compatibility-date 2025-10-13
 
-# Install dependencies
-npm install
-
-# Deploy to Cloudflare
+# Or if using wrangler.toml:
 wrangler deploy
 ```
+
+**Note:** The worker file contains inline configuration. Update `RESEND_API_KEY` and `TURNSTILE_SECRET_KEY` before deploying.
 
 ### 3. DNS Configuration
 
@@ -79,15 +85,28 @@ CNAME   analytics   <analytics-server>  Auto
 
 ## Environment Variables
 
-### Contact Worker
-Required environment variables for the Cloudflare Worker:
+### Contact Worker Configuration
 
-```bash
-RESEND_API_KEY=<your-resend-api-key>
-TURNSTILE_SECRET_KEY=<your-turnstile-secret>
+The worker uses **Resend API** for email delivery (MailChannels service was discontinued in 2024).
+
+**Required API Keys:**
+
+```javascript
+// In cloudflare-worker-resend.js
+const CONFIG = {
+  RESEND_API_KEY: 're_your_actual_key_here',
+  TURNSTILE_SECRET_KEY: 'your_turnstile_key',
+  TO_EMAIL: 'contact.me@vladbortnik.dev',
+  FROM_EMAIL: 'portfolio-contact-form@vladbortnik.dev'
+};
 ```
 
-Set via Cloudflare dashboard or `wrangler secret put`
+**Setup Instructions:**
+1. **Resend API Key:** Get from https://resend.com (free tier: 3,000 emails/month)
+2. **Domain Verification:** Add DNS records to verify `vladbortnik.dev` in Resend
+3. **Turnstile Key:** Get from Cloudflare dashboard (bot protection)
+
+See [RESEND-SETUP.md](RESEND-SETUP.md) for detailed setup instructions.
 
 ## SEO Configuration
 
@@ -141,18 +160,22 @@ wrangler rollback
 
 ## Notes
 
+- **Contact Form Migration (Oct 2024):** Migrated from MailChannels to Resend API due to MailChannels service discontinuation
 - Blog moved to separate repository but still served at `/blog/` URL
 - `blog/` directory in this repo is gitignored (empty placeholder)
 - SCSS compilation can be done with: `sass --watch assets/scss/style.scss:assets/css/style.css`
 - No build step required for deployment - pure static files
+- Code formatting handled by global Prettier + Git hooks (see [PRETTIER-SETUP.md](PRETTIER-SETUP.md))
 
 ## Support & Troubleshooting
 
 ### Common Issues
 
 **Issue:** Contact form not submitting
-- Check Cloudflare Worker logs
+- Check Cloudflare Worker logs: `wrangler tail`
+- Verify Resend API key is valid and domain is verified
 - Verify Turnstile keys are correct
+- Check Resend dashboard logs for delivery status
 - Ensure CORS settings allow vladbortnik.dev
 
 **Issue:** Analytics not tracking
@@ -167,5 +190,10 @@ wrangler rollback
 
 ---
 
-**Last Updated:** 2025-10-17
+**Last Updated:** 2025-10-23
 **Maintainer:** Vlad Bortnik
+
+## Additional Documentation
+
+- [RESEND-SETUP.md](RESEND-SETUP.md) - Resend API configuration for contact form
+- [PRETTIER-SETUP.md](PRETTIER-SETUP.md) - Complete Prettier setup guide (global, per-project, and hybrid options)

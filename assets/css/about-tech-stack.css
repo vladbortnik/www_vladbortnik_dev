@@ -1,7 +1,7 @@
 /*===========================================
   ABOUT SECTION - CINEMATIC ANIMATION
   Version 3: Sequential storytelling through motion
-  Author: Blog Agent (Cascade)  
+  Author: Blog Agent (Cascade)
   Date: October 22, 2025 - FINAL ANIMATION
 ===========================================*/
 
@@ -10,15 +10,58 @@
   text-align: center;
   opacity: 0;
   animation: titleFadeIn 0.8s ease-out forwards;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 
 .bio-title h3 {
   color: #18d26e;
-  font-size: 3rem;
+  font-size: 4.05rem;
   font-weight: 700;
-  margin-bottom: 0.8rem;
+  margin-bottom: 0.5rem;
   text-shadow: 0 0 25px rgba(24, 210, 110, 0.4);
   letter-spacing: 2px;
+  animation: titleGlow 3s ease-in-out infinite;
+}
+
+@keyframes titleGlow {
+  0%, 100% {
+    text-shadow: 0 0 20px rgba(24, 210, 110, 0.3);
+  }
+  50% {
+    text-shadow: 0 0 35px rgba(24, 210, 110, 0.6), 0 0 45px rgba(24, 210, 110, 0.4);
+  }
+}
+
+.title-separator {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0.8rem 0;
+  width: 100%;
+  opacity: 0;
+  animation: separatorFadeIn 0.6s ease-out 0.5s forwards;
+}
+
+.equals-sign {
+  font-size: 2.5rem;
+  color: rgba(255, 255, 255, 0.3);
+  font-weight: 300;
+  letter-spacing: 0;
+  line-height: 1;
+}
+
+@keyframes separatorFadeIn {
+  from {
+    opacity: 0;
+    transform: scaleY(0);
+  }
+  to {
+    opacity: 1;
+    transform: scaleY(1);
+  }
 }
 
 .tech-subtitle {
@@ -27,8 +70,11 @@
   font-weight: 500;
   letter-spacing: 1.5px;
   margin-bottom: 0;
+  margin-top: 0.5rem;
   font-style: normal;
-  text-transform: uppercase;
+  width: 100%;
+  text-align: center;
+  /* text-transform: uppercase; */
 }
 
 /* Title fade-in with gentle glow */
@@ -48,223 +94,135 @@
   Appears between title and foundation
 ===========================================*/
 
+/* Seals of Approval Container - Two stamps only */
 .seals-of-approval {
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  gap: 3rem;
-  margin: 3.5rem 0 4.5rem;
+  max-width: 600px;
+  margin: 2.5rem auto 4rem;
+  padding: 0 2rem;
   min-height: 120px;
 }
 
-/* Seal Stamps (Left & Right) */
+/* Seal Stamps (Left & Right) - Rectangular Rubber Stamps */
 .seal-stamp {
   opacity: 0;
-  padding: 1.2rem 2.5rem;
-  background: rgba(255, 255, 255, 0.02);
-  border: 2px solid rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-  color: #cccccc;
+  position: relative;
+  padding: 1.2rem 3.5rem;
+  background: rgba(0, 0, 0, 0.15);
+  border: none;
+  color: #e0e0e0;
   font-size: 1.1rem;
-  font-weight: 600;
+  font-weight: 700;
+  letter-spacing: 3px;
   transform: rotate(0deg);
   transition: all 0.3s;
   cursor: pointer;
   text-decoration: none;
-  display: inline-block;
-}
-
-.seal-stamp:hover {
-  background: rgba(24, 210, 110, 0.05);
-  border-color: rgba(24, 210, 110, 0.3);
-  color: #18d26e;
-}
-
-/* Left stamp animation - stamp from left with rotation */
-.stamp-left {
-  animation: stampLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 5s forwards;
-}
-
-@keyframes stampLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-50px) rotate(-15deg) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(-3deg) scale(1);
-  }
-}
-
-/* Right stamp animation - stamp from right with rotation */
-.stamp-right {
-  animation: stampRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 5.7s forwards;
-}
-
-@keyframes stampRight {
-  0% {
-    opacity: 0;
-    transform: translateX(50px) rotate(15deg) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0) rotate(3deg) scale(1);
-  }
-}
-
-/*===========================================
-  CENTER SEAL - "5 APPS" with Circular Dots
-===========================================*/
-
-.seal-center {
-  position: relative;
-  display: flex;
-  flex-direction: column;
+  display: inline-flex;
   align-items: center;
   justify-content: center;
-  width: 140px;
-  height: 140px;
-  text-decoration: none;
-  opacity: 0;
-  background: radial-gradient(circle, rgba(24, 210, 110, 0.05) 0%, transparent 70%);
-  border: 3px solid transparent;
-  border-radius: 50%;
-  animation: sealAppear 1s ease-out 4s forwards;
-  cursor: pointer;
-  transition: transform 0.3s ease;
-}
-
-.seal-center:hover {
-  transform: scale(1.1) rotate(5deg);
-  border-color: rgba(24, 210, 110, 0.3);
-}
-
-@keyframes sealAppear {
-  0% {
-    opacity: 0;
-    transform: scale(0.5) rotate(-180deg);
-  }
-  60% {
-    transform: scale(1.1) rotate(10deg);
-  }
-  100% {
-    opacity: 1;
-    transform: scale(1) rotate(0deg);
-  }
-}
-
-/* Seal Content (5 stacked above Apps) */
-.seal-content {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: 0.1rem;
-  z-index: 2;
-}
-
-.seal-number {
-  color: #18d26e;
-  font-size: 3.5rem;
-  font-weight: 800;
-  line-height: 1;
-  text-shadow: 0 0 20px rgba(24, 210, 110, 0.6);
-}
-
-.seal-text {
-  color: #ffffff;
-  font-size: 1rem;
-  font-weight: 600;
-  letter-spacing: 1px;
+  min-width: 200px;
+  min-height: 80px;
   text-transform: uppercase;
+  font-family: 'Arial Black', sans-serif;
 }
 
-/* Circular Dots around seal */
-.seal-dots {
+.stamp-outline {
   position: absolute;
   width: 100%;
   height: 100%;
   top: 0;
   left: 0;
+  color: rgba(255, 255, 255, 0.35);
+  transition: all 0.3s;
+  pointer-events: none;
+  filter: blur(0.4px);
+}
+
+.stamp-rect .stamp-outline {
+  opacity: 1;
+}
+
+.stamp-rect .stamp-text {
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.stamp-text {
+  position: relative;
   z-index: 1;
+  text-align: center;
 }
 
-.dot {
-  position: absolute;
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: #18d26e;
-  opacity: 0;
+.seal-stamp:hover {
+  color: #18d26e;
+  background: rgba(24, 210, 110, 0.08);
+  transform: scale(1.05);
 }
 
-/* Dot positions (clock positions) */
-.dot-12 {
-  top: 8px;
-  left: 50%;
-  transform: translateX(-50%);
-  animation: dotAppear 0.3s ease-out 6.5s forwards;
-  box-shadow: 0 0 6px rgba(24, 210, 110, 0.8);
-  width: 8px;
-  height: 8px;
+.stamp-left:hover {
+  transform: scale(1.05) rotate(-4deg);
 }
 
-.dot-2 {
-  top: 22%;
-  right: 18%;
-  animation: dotAppear 0.3s ease-out 6.7s forwards;
-  width: 8px;
-  height: 8px;
+.stamp-right:hover {
+  transform: scale(1.05) rotate(6deg);
 }
 
-.dot-5 {
-  bottom: 22%;
-  right: 18%;
-  animation: dotAppear 0.3s ease-out 6.9s forwards;
-  width: 8px;
-  height: 8px;
+.seal-stamp:hover .stamp-outline {
+  color: rgba(24, 210, 110, 0.6);
+  filter: blur(0.3px) drop-shadow(0 0 10px rgba(24, 210, 110, 0.4));
 }
 
-.dot-7 {
-  bottom: 22%;
-  left: 18%;
-  animation: dotAppear 0.3s ease-out 7.1s forwards;
-  width: 8px;
-  height: 8px;
+/* Left stamp animation - stamp from left with slight rotation */
+.stamp-left {
+  animation: stampLeft 0.78s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards;
 }
 
-.dot-10 {
-  top: 22%;
-  left: 18%;
-  animation: dotAppear 0.3s ease-out 7.3s forwards;
-  width: 8px;
-  height: 8px;
-}
-
-@keyframes dotAppear {
-  from {
+@keyframes stampLeft {
+  0% {
     opacity: 0;
-    transform: scale(0);
+    transform: translateX(-50px) translateY(-10px) scale(0.8) rotate(-12deg);
   }
-  to {
-    transform: scale(1);
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1) rotate(-4deg);
   }
 }
 
-/* Dot brightness variations - set as final state */
-.dot-12 {
-  opacity: 1 !important;
+/* Right stamp animation - stamp from right with rotation */
+.stamp-right {
+  animation: stampRight 0.78s cubic-bezier(0.34, 1.56, 0.64, 1) 2.3s forwards;
 }
 
-.dot-2,
-.dot-10 {
-  opacity: 0.4 !important;
+@keyframes stampRight {
+  0% {
+    opacity: 0;
+    transform: translateX(50px) translateY(-10px) scale(0.8) rotate(15deg);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0) translateY(0) scale(1) rotate(6deg);
+  }
 }
 
-.dot-5,
-.dot-7 {
-  opacity: 0.6 !important;
-}
+/*===========================================
+  CENTER SEAL - REMOVED
+  Now using only two angled stamps
+===========================================*/
+
+/* CENTER SEAL CODE COMMENTED OUT - NO LONGER NEEDED
+.seal-center { ... }
+.seal-center:hover { ... }
+@keyframes sealAppear { ... }
+.seal-content { ... }
+.seal-number { ... }
+.seal-text { ... }
+.seal-dots { ... }
+.dot { ... }
+.dot-12, .dot-2, .dot-5, .dot-7, .dot-10 { ... }
+@keyframes dotAppear { ... }
+*/
 
 /*===========================================
   TECH FOUNDATION - BOTTOM SECTION
@@ -285,49 +243,68 @@
   align-items: center;
   justify-content: center;
   gap: 0.8rem;
-  
+
   background: rgba(255, 255, 255, 0.02);
-  border: 3px solid transparent;
+  border: none;
   border-radius: 12px;
   padding: 2rem 2.5rem;
   min-width: 180px;
   min-height: 140px;
   opacity: 0;
   position: relative;
-  overflow: hidden;
-  
+  overflow: visible;
+
   transition: all 0.4s;
   cursor: pointer;
   text-decoration: none;
 }
 
-/* Animated gradient border effect */
+/* Distressed stamp-like border effect - using outline with dashes */
 .foundation-card::before {
   content: '';
   position: absolute;
-  inset: 0;
-  border-radius: 12px;
-  padding: 3px;
-  background: linear-gradient(90deg, var(--gradient-color-1), var(--gradient-color-2), var(--gradient-color-1));
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  background-size: 200% 100%;
-  animation: borderFlow 3s linear infinite;
+  inset: -2px;
+  border-radius: 15px;
+  border: 2.5px dashed var(--gradient-color-1);
+  border-style: dashed;
+  opacity: 0.3;
+  z-index: -1;
+  filter: blur(0.4px);
+  animation: borderPulse 4s ease-in-out infinite;
 }
 
-@keyframes borderFlow {
-  0% {
-    background-position: 200% 0;
+.foundation-card::after {
+  content: '';
+  position: absolute;
+  inset: -6px;
+  border-radius: 17px;
+  border: 2px dashed var(--gradient-color-1);
+  opacity: 0.15;
+  z-index: -2;
+  filter: blur(0.6px);
+}
+
+@keyframes borderPulse {
+  0%, 100% {
+    opacity: 0.3;
   }
-  100% {
-    background-position: -200% 0;
+  50% {
+    opacity: 0.5;
   }
 }
 
 .foundation-card:hover {
   transform: translateY(-5px) scale(1.05);
   box-shadow: 0 8px 30px var(--glow-color);
+}
+
+.foundation-card:hover::before {
+  opacity: 0.6;
+  border-width: 3px;
+}
+
+.foundation-card:hover::after {
+  opacity: 0.3;
 }
 
 .card-label {
@@ -347,7 +324,7 @@
   opacity: 0.2;
   text-align: center;
   z-index: 1;
-  animation: techPulse 4s ease-in-out 7.5s infinite;
+  animation: techPulse 4s ease-in-out 10s infinite;
 }
 
 @keyframes techPulse {
@@ -365,8 +342,8 @@
   --gradient-color-1: rgba(24, 210, 110, 0.6);
   --gradient-color-2: rgba(20, 156, 82, 0.3);
   --glow-color: rgba(24, 210, 110, 0.3);
-  animation: slideFromLeft 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 1.5s forwards,
-             settleDown 0.5s ease-out 3.8s forwards;
+  animation: slideFromLeft 0.78s cubic-bezier(0.34, 1.56, 0.64, 1) 2s forwards,
+             settleDown 0.65s ease-out 5s forwards;
 }
 
 .card-frontend:hover {
@@ -377,8 +354,8 @@
   --gradient-color-1: rgba(0, 128, 255, 0.6);
   --gradient-color-2: rgba(0, 86, 179, 0.3);
   --glow-color: rgba(0, 128, 255, 0.3);
-  animation: slideFromRight 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 3.2s forwards,
-             settleDown 0.5s ease-out 3.8s forwards;
+  animation: slideFromRight 0.78s cubic-bezier(0.34, 1.56, 0.64, 1) 3.1s forwards,
+             settleDown 0.65s ease-out 5s forwards;
 }
 
 .card-backend:hover {
@@ -389,8 +366,8 @@
   --gradient-color-1: rgba(255, 140, 66, 0.6);
   --gradient-color-2: rgba(255, 87, 34, 0.3);
   --glow-color: rgba(255, 140, 66, 0.3);
-  animation: fadeFromCenter 0.6s cubic-bezier(0.34, 1.56, 0.64, 1) 2.35s forwards,
-             settleDown 0.5s ease-out 3.8s forwards;
+  animation: fadeFromCenter 0.78s cubic-bezier(0.34, 1.56, 0.64, 1) 4.2s forwards,
+             settleDown 0.65s ease-out 5s forwards;
 }
 
 .card-infrastructure:hover {
@@ -459,7 +436,7 @@
 .card-frontend .card-tech,
 .card-backend .card-tech,
 .card-infrastructure .card-tech {
-  animation-delay: 7.5s;
+  animation-delay: 10s;
 }
 
 /*===========================================
@@ -469,20 +446,20 @@
 /* Cards pulse in sync after animation completes */
 .foundation-card {
   animation-iteration-count: 1, 1, infinite !important;
-  animation-duration: 0.6s, 0.5s, 3s !important;
-  animation-delay: var(--slide-delay), 3.8s, 8s !important;
+  animation-duration: 0.78s, 0.65s, 3s !important;
+  animation-delay: var(--slide-delay), 5s, 10.5s !important;
 }
 
 .card-frontend {
-  --slide-delay: 1.5s;
+  --slide-delay: 2s;
 }
 
 .card-backend {
-  --slide-delay: 3.2s;
+  --slide-delay: 3.1s;
 }
 
 .card-infrastructure {
-  --slide-delay: 2.35s;
+  --slide-delay: 4.2s;
 }
 
 /* Synchronized pulse for idle state */
@@ -500,11 +477,23 @@
 ===========================================*/
 
 @media (max-width: 768px) {
+  .bio-title h3 {
+    font-size: 3rem;
+  }
+
   .seals-of-approval {
     flex-direction: column;
     gap: 1rem;
   }
-  
+
+  .seal-stamp {
+    min-width: 180px;
+    min-height: 70px;
+    font-size: 0.95rem;
+    padding: 1rem 2.5rem;
+    letter-spacing: 2px;
+  }
+
   .tech-foundation {
     flex-direction: column;
     align-items: stretch;
@@ -512,36 +501,31 @@
     margin-left: auto;
     margin-right: auto;
   }
-  
+
   .foundation-card {
     min-width: 100%;
   }
-  
+
   /* Simplify animations on mobile */
   .card-frontend,
   .card-backend,
   .card-infrastructure {
-    animation: slideFromTop 0.6s ease-out 1.5s forwards,
-               settleDown 0.5s ease-out 3.8s forwards;
+    animation: slideFromTop 0.78s ease-out 2s forwards,
+               settleDown 0.65s ease-out 5s forwards;
   }
 }
 
 @media (max-width: 480px) {
   .bio-title h3 {
-    font-size: 1.5rem;
+    font-size: 2rem;
   }
-  
-  .seal-center {
-    width: 70px;
-    height: 70px;
-  }
-  
-  .seal-number {
-    font-size: 1.4rem;
-  }
-  
-  .seal-text {
-    font-size: 0.65rem;
+
+  .seal-stamp {
+    min-width: 160px;
+    min-height: 60px;
+    font-size: 0.85rem;
+    padding: 0.8rem 2rem;
+    letter-spacing: 1.5px;
   }
 }
 
@@ -555,12 +539,10 @@
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
-  
+
   .bio-title,
   .foundation-card,
-  .seal-stamp,
-  .seal-center,
-  .dot {
+  .seal-stamp {
     opacity: 1 !important;
     transform: none !important;
   }
@@ -575,12 +557,12 @@
     border: 1px solid #000;
     page-break-inside: avoid;
   }
-  
+
   .foundation-card {
     border-color: #000 !important;
     box-shadow: none !important;
   }
-  
+
   .seal-dots {
     display: none;
   }

@@ -22,7 +22,7 @@ node_modules/
 .DS_Store
 
 # VS Code
-.vscode/
+# .vscode/    # Commented out to save Prettier configuration.
 .idea/
 
 # Files that might appear in the root of a volume

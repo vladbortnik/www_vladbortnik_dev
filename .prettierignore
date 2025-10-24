@@ -1,0 +1,32 @@
+# Dependencies
+node_modules/
+vendor/
+
+# Build outputs
+dist/
+build/
+.cache/
+
+# Minified files
+*.min.js
+*.min.css
+
+# Archives
+archive/
+
+# Git
+.git/
+
+# IDE
+.idea/
+.vscode/
+.claude/
+.qodo/
+
+# Deployment
+DEPLOYMENT/
+
+# Other
+*.log
+package-lock.json
+yarn.lock
