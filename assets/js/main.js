@@ -39,6 +39,32 @@
   }
 
   /**
+   * Reset About section animations
+   */
+  const resetAboutAnimations = () => {
+    // Find all animated elements in the about section
+    const animatedElements = [
+      '.stamp-left',
+      '.stamp-right', 
+      '.card-frontend',
+      '.card-backend',
+      '.card-infrastructure'
+    ];
+
+    animatedElements.forEach(selector => {
+      const element = document.querySelector(selector);
+      if (element) {
+        // Reset animation by setting to none
+        element.style.animation = 'none';
+        // Force reflow
+        element.offsetHeight;
+        // Remove inline style to let CSS animation play
+        element.style.animation = '';
+      }
+    });
+  }
+
+  /**
    * Mobile nav toggle
    */
   on('click', '.mobile-nav-toggle', function(e) {
@@ -92,12 +118,21 @@
           })
           section.classList.add('section-show')
 
+          // Reset animations if navigating to about section
+          if (section.id === 'about') {
+            setTimeout(resetAboutAnimations, 50);
+          }
         }, 350);
       } else {
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
         section.classList.add('section-show')
+        
+        // Reset animations if navigating to about section
+        if (section.id === 'about') {
+          setTimeout(resetAboutAnimations, 50);
+        }
       }
 
       scrollto(this.hash)
