@@ -44,6 +44,8 @@
   const resetAboutAnimations = () => {
     // Find all animated elements in the about section
     const animatedElements = [
+      '.bio-title h3',
+      '.equals-sign',
       '.stamp-left',
       '.stamp-right', 
       '.card-frontend',
@@ -61,6 +63,14 @@
         // Remove inline style to let CSS animation play
         element.style.animation = '';
       }
+    });
+
+    // Reset formula elements (multiple elements)
+    const formulaElements = document.querySelectorAll('.tech-subtitle span');
+    formulaElements.forEach(element => {
+      element.style.animation = 'none';
+      element.offsetHeight;
+      element.style.animation = '';
     });
   }
 
