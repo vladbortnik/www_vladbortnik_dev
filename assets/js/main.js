@@ -244,7 +244,7 @@ function openFullscreen(img) {
 
 // Add this function at the end of your main.js file
 function scrollToAnchorInPortfolio(anchorId) {
-  // Wait for any section transitions to complete
+  // Wait for any section transitions to complete (350ms transition + buffer)
   setTimeout(() => {
     const element = document.getElementById(anchorId);
     if (element) {
@@ -262,7 +262,7 @@ function scrollToAnchorInPortfolio(anchorId) {
         behavior: 'smooth'
       });
     }
-  }, 500);
+  }, 800);
 }
 
 /**
@@ -295,7 +295,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (anchorId) {
       // Add click event listener
       link.addEventListener('click', function(e) {
-        scrollToAnchorInPortfolio(anchorId);
+        // Let the navigation to #portfolio happen naturally
+        // Then scroll to the specific project after section transition
+        setTimeout(function() {
+          scrollToAnchorInPortfolio(anchorId);
+        }, 100);
       });
     }
   });
