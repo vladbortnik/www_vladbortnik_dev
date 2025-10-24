@@ -176,12 +176,15 @@
   if (skilsContent && typeof Waypoint !== 'undefined') {
     new Waypoint({
       element: skilsContent,
-      offset: '80%',
+      offset: '95%',
       handler: function(direction) {
-        let progress = select('.progress .progress-bar', true);
-        progress.forEach((el) => {
-          el.style.width = el.getAttribute('aria-valuenow') + '%'
-        });
+        // Add 750ms delay before starting animation
+        setTimeout(function() {
+          let progress = select('.progress .progress-bar', true);
+          progress.forEach((el) => {
+            el.style.width = el.getAttribute('aria-valuenow') + '%'
+          });
+        }, 750);
       }
     })
   }
@@ -228,10 +231,27 @@
   }
 
   /**
-   * Init Pure Counter
-   * (Animated Number Counters Lib)
+   * Init Pure Counter with Waypoint
+   * Wait until counter section is visible before starting animation
    */
-  if (typeof PureCounter !== 'undefined') {
+  let countsSection = select('.counts');
+  if (countsSection && typeof PureCounter !== 'undefined' && typeof Waypoint !== 'undefined') {
+    let counterInitialized = false;
+    new Waypoint({
+      element: countsSection,
+      offset: '90%',
+      handler: function(direction) {
+        if (!counterInitialized && direction === 'down') {
+          counterInitialized = true;
+          // Add 750ms delay before starting counters
+          setTimeout(function() {
+            new PureCounter();
+          }, 750);
+        }
+      }
+    })
+  } else if (typeof PureCounter !== 'undefined') {
+    // Fallback if Waypoint not available
     new PureCounter();
   }
 })()
