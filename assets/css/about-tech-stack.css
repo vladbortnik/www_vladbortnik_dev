@@ -35,8 +35,15 @@
     transform: scale(0.8);
     text-shadow: 0 0 5px rgba(24, 210, 110, 0.2);
   }
-  50% {
-    text-shadow: 0 0 40px rgba(24, 210, 110, 0.7), 0 0 50px rgba(24, 210, 110, 0.5);
+  40% {
+    text-shadow: 0 0 60px rgba(24, 210, 110, 0.9),
+                 0 0 80px rgba(24, 210, 110, 0.7),
+                 0 0 100px rgba(24, 210, 110, 0.5),
+                 0 0 120px rgba(24, 210, 110, 0.3);
+  }
+  70% {
+    text-shadow: 0 0 30px rgba(24, 210, 110, 0.6),
+                 0 0 40px rgba(24, 210, 110, 0.4);
   }
   100% {
     opacity: 1;
@@ -48,10 +55,13 @@
 /* Continuous glow pulse after initial animation */
 @keyframes titleGlow {
   0%, 100% {
-    text-shadow: 0 0 20px rgba(24, 210, 110, 0.3);
+    text-shadow: 0 0 20px rgba(24, 210, 110, 0.3),
+                 0 0 30px rgba(24, 210, 110, 0.2);
   }
   50% {
-    text-shadow: 0 0 35px rgba(24, 210, 110, 0.6), 0 0 45px rgba(24, 210, 110, 0.4);
+    text-shadow: 0 0 50px rgba(24, 210, 110, 0.8),
+                 0 0 70px rgba(24, 210, 110, 0.6),
+                 0 0 90px rgba(24, 210, 110, 0.4);
   }
 }
 
@@ -68,7 +78,8 @@
   font-size: 2.5rem;
   color: rgba(255, 255, 255, 0.3);
   opacity: 0;
-  animation: symbolBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s forwards;
+  animation: symbolBounce 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55) 1.2s forwards,
+             symbolGlow 0.8s ease-in-out 1.2s forwards;
   font-weight: 300;
   letter-spacing: 0;
   line-height: 1;
@@ -87,6 +98,25 @@
   100% {
     opacity: 1;
     transform: translateY(0) rotate(360deg) scale(1);
+  }
+}
+
+/* Intense glow and white flash for equals sign */
+@keyframes symbolGlow {
+  0% {
+    color: rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.2));
+  }
+  50% {
+    color: rgba(255, 255, 255, 1);
+    filter: drop-shadow(0 0 30px rgba(255, 255, 255, 1))
+            drop-shadow(0 0 50px rgba(255, 255, 255, 0.8))
+            drop-shadow(0 0 70px rgba(255, 255, 255, 0.6))
+            drop-shadow(0 0 90px rgba(24, 210, 110, 0.4));
+  }
+  100% {
+    color: rgba(255, 255, 255, 0.3);
+    filter: drop-shadow(0 0 5px rgba(255, 255, 255, 0.3));
   }
 }
 
