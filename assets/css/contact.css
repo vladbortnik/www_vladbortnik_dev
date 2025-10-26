@@ -70,7 +70,7 @@ h6 {
   display: flex;
   align-items: center;
   z-index: 997;
-  padding: 80px 0 40px;
+  padding: 20px 0 20px;
 }
 
 #header .container {
@@ -152,7 +152,7 @@ h6 {
 /* Back to Portfolio Button */
 .back-button-container {
   text-align: center;
-  padding: 20px 0;
+  padding: 40px 0 20px;
   position: relative;
   z-index: 998;
 }
@@ -186,9 +186,9 @@ h6 {
 /* Mobile responsive */
 @media (max-width: 768px) {
   .back-button-container {
-    padding: 15px 0;
+    padding: 25px 0 15px;
   }
-  
+
   .back-to-portfolio {
     font-size: 13px;
     padding: 8px 16px;
@@ -198,7 +198,7 @@ h6 {
 @media (max-width: 768px) {
   #header {
     min-height: 30vh;
-    padding: 60px 0 30px;
+    padding: 45px 0 21px;
   }
 
   #header h1 {
