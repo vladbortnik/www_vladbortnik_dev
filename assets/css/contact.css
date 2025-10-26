@@ -149,94 +149,49 @@ h6 {
 }
 
 /* ====================== */
-/* Floating Return Button */
-.floating-return-btn {
-  /* Top-Left Position */
-  position: fixed;
-  top: 90px;
-  left: 30px;
-  background-color: rgba(0, 123, 255, 0.9);
-  color: white;
-  padding: 6px 10px;
-  border-radius: 25px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
-  z-index: 999;
-  display: flex;
+/* Back to Portfolio Button */
+.back-button-container {
+  text-align: center;
+  padding: 20px 0;
+  position: relative;
+  z-index: 998;
+}
+
+.back-to-portfolio {
+  display: inline-flex;
   align-items: center;
-  font-size: 0.8rem;
-  gap: 4px;
+  gap: 8px;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px 20px;
+  border-radius: 5px;
   text-decoration: none;
-  transition: all 0.3s ease;
+  font-size: 14px;
   font-weight: 500;
-
-  /* Animated Appear on Scroll */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 1s, visibility 1s, transform 1s;
+  transition: all 0.3s ease;
+  border: 1px solid transparent;
 }
 
-.floating-return-btn.visible {
-  visibility: visible;
-}
-
-.floating-return-btn:hover {
-  background-color: rgba(0, 123, 255, 1);
-  transform: translateY(-3px);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
-  color: white;
+.back-to-portfolio:hover {
+  background-color: #18d26e;
+  color: #fff;
   text-decoration: none;
+  transform: translateX(-3px);
 }
 
-.floating-return-btn i {
-  font-size: 0.9rem;
+.back-to-portfolio i {
+  font-size: 14px;
 }
 
-/* Gradient Border Animation - Cherry on Cake */
-.floating-return-btn::before {
-  content: "";
-  position: absolute;
-  inset: -2px;
-  border-radius: 25px;
-  padding: 2px;
-  background: linear-gradient(
-    45deg,
-    #18d26e,
-    #007bff,
-    #18d26e,
-    #007bff
-  );
-  background-size: 300% 300%;
-  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
-  -webkit-mask-composite: xor;
-  mask-composite: exclude;
-  z-index: -1;
-  animation: gradient-rotate 4s ease infinite;
-}
-
-@keyframes gradient-rotate {
-  0%, 100% {
-    background-position: 0% 50%;
-  }
-  50% {
-    background-position: 100% 50%;
-  }
-}
-
-/* For mobile devices */
+/* Mobile responsive */
 @media (max-width: 768px) {
-  .floating-return-btn {
-    top: 65px;
-    left: 15px;
-    padding: 5px 8px;
+  .back-button-container {
+    padding: 15px 0;
   }
-
-  .floating-return-btn span {
-    display: none; /* Hide text on mobile, show only icon */
-  }
-
-  .floating-return-btn i {
-    font-size: 0.9rem;
-    margin: 0;
+  
+  .back-to-portfolio {
+    font-size: 13px;
+    padding: 8px 16px;
   }
 }
 

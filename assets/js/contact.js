@@ -361,58 +361,12 @@
     return text.replace(/[&<>"']/g, m => map[m]);
   }
 
-  // ==================== FLOATING RETURN BUTTON ====================
-  // Appears On Scroll or After Timeout
-  let buttonRevealed = false;
-  let scrollTimer;
-  let autoShowTimer;
-
-  function initFloatingButton() {
-    const button = document.querySelector('.floating-return-btn');
-    if (!button) return;
-
-    // Show immediately if already scrolled
-    if (window.scrollY >= 100) {
-      button.classList.add('visible');
-      buttonRevealed = true;
-    } else {
-      // Auto-show after 3 seconds
-      autoShowTimer = setTimeout(function() {
-        if (!buttonRevealed) {
-          button.classList.add('visible');
-          buttonRevealed = true;
-          button.style.opacity = "1";
-        }
-      }, 3000);
-    }
-
-    // Handle scroll events
-    window.addEventListener('scroll', function() {
-      // Make semi-transparent while scrolling
-      button.style.opacity = "0.3";
-
-      // If scrolled enough and button hasn't been revealed yet
-      if (window.scrollY >= 100 && !buttonRevealed) {
-        button.classList.add('visible');
-        buttonRevealed = true;
-      }
-
-      // Set timeout to restore full opacity when scrolling stops
-      clearTimeout(scrollTimer);
-      scrollTimer = setTimeout(function() {
-        if (buttonRevealed) {
-          button.style.opacity = "1";
-        }
-      }, 1000);
-    });
-  }
 
   // ==================== INITIALIZATION ====================
   function init() {
     initModeSwitch();
     initFileUpload();
     initFormSubmission();
-    initFloatingButton();
 
     console.log('Contact form initialized with security features:');
     console.log('- Honeypot protection');
