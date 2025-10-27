@@ -117,6 +117,7 @@
         sections.forEach((item) => {
           item.classList.remove('section-show')
         })
+        history.replaceState(null, null, '/');
         return;
       }
 
@@ -132,6 +133,9 @@
           if (section.id === 'about') {
             setTimeout(resetAboutAnimations, 50);
           }
+
+          // Clean URL immediately after animation completes
+          history.replaceState(null, null, '/');
         }, 350);
       } else {
         sections.forEach((item) => {
@@ -143,6 +147,9 @@
         if (section.id === 'about') {
           setTimeout(resetAboutAnimations, 50);
         }
+
+        // Clean URL immediately
+        history.replaceState(null, null, '/');
       }
 
       scrollto(this.hash)
@@ -172,6 +179,9 @@
 
         setTimeout(function() {
           initial_nav.classList.add('section-show')
+          
+          // Clean URL immediately after animation completes
+          history.replaceState(null, null, '/');
         }, 350);
 
         scrollto(window.location.hash)
