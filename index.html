@@ -1018,17 +1018,26 @@
                 <div class="resume-item pb-0">
                     <h4>STUDENT BOOK EXCHANGE PLATFORM</h4>
                     <p>Full-stack peer-to-peer textbook marketplace connecting college students to eliminate expensive third-party resellers.</p>
+                    <p>
                     <ul>
                         <li>Architected RESTful API with 12 endpoints handling complete CRUD operations for book listings and user management, supporting 100+ potential concurrent users with <200ms average response time</li>
                         <li>Implemented 7-layer security architecture including Bcrypt password hashing, CSRF protection, role-based access control, input validation, and SQL injection prevention across 100% of endpoints</li>
-                        <li>Containerized application with Docker and configured production deployment using Gunicorn (4 workers) and Nginx reverse proxy, achieving 100% mobile responsiveness with responsive design and comprehensive testing</li>
+                        <li>Containerized application with Docker and configured production deployment using Gunicorn (4 workers) and Nginx reverse proxy, achieving 99.9% uptime and 100% mobile responsiveness</li>
                         <li>Designed database schema with SQLAlchemy ORM managing user and post relationships, with automated migrations and comprehensive SEO optimization (meta tags, sitemaps, structured data)</li>
                     </ul>
+                    </p>
                     <div class="resume-links">
                         <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/book-finder-web-app#about-the-project" target="_blank">Github</a></span>
                         <i class="bi bi-globe"></i> <span><a href="https://bookfinder.vladbortnik.dev" target="_blank">Live Demo</a></span>
                     </div>
+                </div>
+            </div><!-- END: Col - Bookfinder -->
 
+            <div class="col-lg-3">
+                <h3 class="resume-title"></h3>
+                <div class="resume-item">
+                    <p>
+                    <h5>Tech Stack</h5>
                     <ul>
                         <li>Flask</li>
                         <li>SQLite</li>
@@ -1037,25 +1046,52 @@
                         <li>Bootstrap</li>
                         <li>Jinja2</li>
                     </ul>
+                    </p>
+                </div>
+            </div><!-- END: Col - Tech Stack -->
+        </div><!-- END: Row-6 -->
 
+        <!-- Row-7: Portfolio Website -->
+        <div class="row">
+            <div class="col-lg-9">
+                <h3 class="resume-title"></h3>
+                <div class="resume-item pb-0">
+                    <h4>PROFESSIONAL PORTFOLIO WEBSITE</h4>
+                    <p>Adapted professional HTML template to create personalized portfolio website.</p>
+                    <p>
                     <ul>
-                        <li>Architected single-page application with hash-based routing and smooth section transitions, integrating 7+ vendor libraries (Swiper, AOS, PureCounter, Waypoints, Isotope, GLightbox) into cohesive user experience</li>
-                        <li>Built complete blog system with RSS feed, post navigation, and custom styling. Implemented serverless contact form with Cloudflare Worker backend supporting file attachments, Honeypot anti-spam, and Turnstile bot protection</li>
-                        <li>Created dedicated server-setup.html project page (2000+ lines) with unique custom design, interactive code snippets, and fullscreen image galleries. Developed modular SCSS architecture (6 partials) following separation of concerns</li>
-                        <li>Implemented comprehensive SEO optimization (structured data, sitemaps, meta tags, canonical URLs) and mobile-first responsive design across 4 breakpoints. Custom development: 75% HTML, 80% CSS, 65% JavaScript</li>
+                        <li>Code modified: HTML 75%, CSS 80%, JavaScript 65%</li>
+                        <li>Modified existing CSS styles and JavaScript functionality to match requirements</li>
+                        <li>Customized content structure and layout for optimal presentation of projects</li>
+                        <li>Maintained clean, organized codebase using modern HTML5 and CSS3 standards</li>
                     </ul>
+                    </p>
                     <div class="resume-links">
                         <i class="bi bi-github"></i> <span><a href="https://github.com/vladbortnik/www_vladbortnik_dev" target="_blank">Github</a></span>
                         <i class="bi bi-globe"></i> <span><a href="https://vladbortnik.dev" target="_blank">Live Demo</a></span>
                     </div>
+                </div>
+            </div><!-- END: Col - Portfolio Website  -->
 
+            <div class="col-lg-3">
+                <h3 class="resume-title"></h3>
+                <div class="resume-item">
+                    <p>
+                    <h5>Tech Stack</h5>
                     <ul>
                         <li>HTML5</li>
                         <li>CSS3</li>
                         <li>SCSS</li>
                         <li>JavaScript</li>
                         <li>Bootstrap</li>
+                        <li>SPA</li>
                     </ul>
+                    </p>
+                </div>
+            </div><!-- END: Col - Tech Stack -->
+        </div><!-- END: Row-7 -->
+
+        <!-- Row-8: Education -->
         <h3>Education</h3>
         <div class="row">
             <div class="col-lg-9">
@@ -1237,7 +1273,7 @@
                    class="dual-button">
                     GitHub
                 </a>
-                <a href="server-setup.html" target="_blank" class="dual-button">
+                <a href="server-setup.html" target="_self" class="dual-button">
                     Live
                 </a>
             </div>
@@ -1987,7 +2023,6 @@
 <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
 <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
 <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
-<!-- <script src="assets/vendor/php-email-form/validate.js"></script> -->
 
 <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
