@@ -47,7 +47,7 @@
       '.bio-title h3',
       '.equals-sign',
       '.stamp-left',
-      '.stamp-right', 
+      '.stamp-right',
       '.card-frontend',
       '.card-backend',
       '.card-infrastructure'
@@ -142,7 +142,7 @@
           item.classList.remove('section-show')
         })
         section.classList.add('section-show')
-        
+
         // Reset animations if navigating to about section
         if (section.id === 'about') {
           setTimeout(resetAboutAnimations, 50);
@@ -179,7 +179,7 @@
 
         setTimeout(function() {
           initial_nav.classList.add('section-show')
-          
+
           // Clean URL immediately after animation completes
           history.replaceState(null, null, '/');
         }, 350);
