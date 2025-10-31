@@ -9,6 +9,11 @@
     "BASH_MAX_OUTPUT_LENGTH": "150000",
     "MAX_THINKING_TOKENS": "10000"
   },
+  "statusLine": {
+    "type": "command",
+    "command": "npx -y ccstatusline@latest",
+    "padding": 0
+  },
   "includeCoAuthoredBy": false,
   "permissions": {
     "allow": [
@@ -40,11 +45,10 @@
     ],
     "defaultMode": "plan",
     "additionalDirectories": [
-      "/Users/vladbortnik/Desktop/_screenshots"
+      "/Users/vladbortnik/Desktop/-screenshots-"
     ],
     "allowUnsafeOperations": false
   },
-  "model": "opusplan",
   "hooks": {
     "PreToolUse": [
       {
@@ -68,7 +72,7 @@
     ],
     "PostToolUse": [
       {
-        "matcher": "Write(*.js|*.ts|*.jsx|*.tsx|*.vue)",
+        "matcher": "Write(*.js|*.ts|*.jsx|*.tsx|*.vue|*.md)",
         "hooks": [
           {
             "type": "command",
@@ -115,14 +119,6 @@
       },
       "name": "FireCrawl"
     },
-    "puppeteer": {
-      "args": [
-        "-y",
-        "@modelcontextprotocol/server-puppeteer"
-      ],
-      "command": "npx",
-      "name": "Puppeteer"
-    },
     "sequential-thinking": {
       "args": [
         "-y",
@@ -130,16 +126,6 @@
       ],
       "command": "npx",
       "name": "Sequential-Thinking"
-    },
-    "MCP_DOCKER": {
-      "command": "docker",
-      "args": [
-        "mcp",
-        "gateway",
-        "run"
-      ],
-      "type": "stdio",
-      "disabled": true
     }
   }
 }
