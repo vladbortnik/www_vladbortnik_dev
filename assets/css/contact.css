@@ -70,7 +70,7 @@ h6 {
   display: flex;
   align-items: center;
   z-index: 997;
-  padding: 20px 0 20px;
+  padding: 15px 0 15px;
 }
 
 #header .container {
@@ -152,7 +152,7 @@ h6 {
 /* Back to Portfolio Button */
 .back-button-container {
   text-align: center;
-  padding: 40px 0 20px;
+  padding: 15px 0 10px;
   position: relative;
   z-index: 998;
 }
@@ -162,7 +162,7 @@ h6 {
   align-items: center;
   gap: 8px;
   background-color: #007bff;
-  color: #fff;
+  color: #fff !important;
   padding: 10px 20px;
   border-radius: 5px;
   text-decoration: none;
@@ -210,6 +210,26 @@ h6 {
   }
 }
 
+@media (max-width: 576px) {
+  .back-button-container {
+    padding: 10px 0 8px;
+  }
+  
+  #header {
+    padding: 10px 0 15px;
+  }
+  
+  #header h1 {
+    font-size: 26px;
+    margin-bottom: 8px;
+  }
+
+  #header h2 {
+    font-size: 16px;
+    margin-top: 8px;
+  }
+}
+
 /*======================
   MAIN CONTACT SECTION
 ======================*/
@@ -226,6 +246,16 @@ h6 {
 @media (max-width: 768px) {
   .contact .container {
     padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .contact .container {
+    padding: 15px;
+  }
+  
+  .contact {
+    padding: 0 0 40px 0;
   }
 }
 
@@ -308,6 +338,20 @@ h6 {
   .mode-btn {
     padding: 15px 30px;
     font-size: 14px;
+  }
+}
+
+@media (max-width: 576px) {
+  .mode-selector {
+    gap: 15px;
+    margin-bottom: 30px;
+    padding-bottom: 20px;
+  }
+  
+  .mode-btn {
+    padding: 12px 24px;
+    font-size: 13px;
+    gap: 8px;
   }
 
   .mode-btn i {

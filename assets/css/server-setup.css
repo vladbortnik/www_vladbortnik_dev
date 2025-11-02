@@ -30,7 +30,7 @@ body::before {
 a {
   /* color: #18d26e; */
   text-decoration: none;
-  
+
 }
 
 a:hover {
@@ -120,17 +120,17 @@ h6 {
     flex-direction: column;
     align-items: flex-start;
   }
-  
+
   .project-badge.pill {
     margin-bottom: 10px;
     align-self: flex-start;
   }
-  
+
   .project-title {
     margin-bottom: 10px;
     width: 100%;
   }
-  
+
   .back-to-portfolio {
     margin-left: 0;
     margin-bottom: 15px;
@@ -257,7 +257,7 @@ h6 {
   transition: all 0.3s ease;
   font-weight: 500;
 
-  /* Animated Appear on Scroll. 
+  /* Animated Appear on Scroll.
   backref: line ~356 in server-setup.js */
   opacity: 0;
   visibility: hidden;
@@ -288,11 +288,11 @@ h6 {
     left: 15px;
     padding: 5px 8px;
   }
-  
+
   .floating-return-btn span {
     display: none; /* Hide text on mobile, show only icon */
   }
-  
+
   .floating-return-btn i {
     font-size: 0.9rem;
     margin: 0;
@@ -981,12 +981,12 @@ section .container {
 }
 
 .code-section {
-  position: absolute; 
+  position: absolute;
   left: 50%;
   width: 50%;
   height: 80px;
   cursor: pointer;
-  background: rgba(24, 210, 110, 0.1); 
+  background: rgba(24, 210, 110, 0.1);
   border-right: 2px solid #18d26e;
   transition: background 0.3s ease;
 }
