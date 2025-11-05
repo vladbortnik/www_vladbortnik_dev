@@ -7,7 +7,7 @@
 const blogPosts = [
   {
     id: 1,
-    slug: "1-production-grade-multi-app-server-12-month",
+    slug: "1-production-grade-multi-app-server-12-dollar-month",
     title: "Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month",
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
