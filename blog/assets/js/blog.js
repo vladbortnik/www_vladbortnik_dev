@@ -7,12 +7,12 @@
 const blogPosts = [
   {
     id: 1,
-    slug: "deploy-multi-app-production-setup",
-    title: "Deploy Like a Pro: Multi-App Production Setup for Less Than Netflix",
+    slug: "1-production-grade-multi-app-server-12-month",
+    title: "Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month",
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
-    date: "2025-10-21",
-    readTime: "16 min read",
+    date: "2025-11-03",
+    readTime: "22 min read",
     author: "Vlad Bortnik"
   }
 ];
