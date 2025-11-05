@@ -12,7 +12,7 @@ const blogPosts = [
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
     date: "2025-11-03",
-    readTime: "22 min read",
+    readTime: "19 min read",
     author: "Vlad Bortnik"
   }
 ];
@@ -75,13 +75,12 @@ function createPostCard(post) {
  * Format date to US format with ordinal suffixes (October 19th, 2025)
  */
 function formatDate(dateString) {
-  const date = new Date(dateString);
+  // Parse date manually to avoid timezone issues
+  const [year, month, day] = dateString.split('-').map(Number);
   const months = ['January', 'February', 'March', 'April', 'May', 'June',
                  'July', 'August', 'September', 'October', 'November', 'December'];
   
-  const day = date.getDate();
-  const month = months[date.getMonth()];
-  const year = date.getFullYear();
+  const monthName = months[month - 1];
   
   // Add ordinal suffix
   let suffix = 'th';
@@ -89,7 +88,7 @@ function formatDate(dateString) {
   else if (day === 2 || day === 22) suffix = 'nd';
   else if (day === 3 || day === 23) suffix = 'rd';
   
-  return `${month} ${day}${suffix}, ${year}`;
+  return `${monthName} ${day}${suffix}, ${year}`;
 }
 
 /**

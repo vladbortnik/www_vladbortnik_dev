@@ -1,68 +1,56 @@
 <!DOCTYPE html>
+
 <html lang="en">
-
 <head>
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
-    <title>Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month | Vlad Bortnik</title>
-    <meta name="description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
-    <meta name="keywords" content="Docker, DevOps, Nginx, DigitalOcean, VPS, Production Server, Multi-App Hosting, SSL, Infrastructure">
-
-    <!-- Canonical URL -->
-    <link rel="canonical" href="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html">
-
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="article">
-    <meta property="og:url" content="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html">
-    <meta property="og:title" content="Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month">
-    <meta property="og:description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
-    <meta property="og:image" content="https://vladbortnik.dev/assets/img/brand-logo.png">
-    <meta property="og:image:width" content="1200">
-    <meta property="og:image:height" content="630">
-    <meta property="og:image:alt" content="Vlad Bortnik - Software Engineer Portfolio">
-    <meta property="og:site_name" content="Vlad Bortnik Portfolio">
-    <meta property="og:locale" content="en_US">
-    <meta property="article:published_time" content="2025-11-03T00:00:00-04:00">
-    <meta property="article:modified_time" content="2025-11-03T00:00:00-04:00">
-    <meta property="article:author" content="https://vladbortnik.dev">
-    <meta property="article:section" content="DevOps">
-    <meta property="article:tag" content="Docker">
-    <meta property="article:tag" content="Nginx">
-    <meta property="article:tag" content="DevOps">
-
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:url" content="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html">
-    <meta name="twitter:title" content="Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month">
-    <meta name="twitter:description" content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.">
-
-    <!-- Preconnect for performance -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="../../assets/img/favicon.ico">
-
-    <!-- RSS Feed Auto-Discovery -->
-    <link rel="alternate" type="application/rss+xml" title="Vlad Bortnik's Blog RSS Feed" href="https://vladbortnik.dev/blog/feed.xml">
-
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
-
-    <!-- Vendor CSS Files -->
-    <link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-
-    <!-- Main CSS Files -->
-    <link href="../../assets/css/style.css" rel="stylesheet">
-    <link href="../assets/css/blog.css?v=10" rel="stylesheet">
-
-    <!-- Prism.js for Syntax Highlighting -->
-    <link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css" rel="stylesheet">
-
-    <!-- Structured Data - Enhanced Schema -->
-    <script type="application/ld+json">
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month | Vlad Bortnik</title>
+<meta content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs." name="description"/>
+<meta content="Docker, DevOps, Nginx, DigitalOcean, VPS, Production Server, Multi-App Hosting, SSL, Infrastructure" name="keywords"/>
+<!-- Canonical URL -->
+<link href="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html" rel="canonical"/>
+<!-- Open Graph / Facebook -->
+<meta content="article" property="og:type"/>
+<meta content="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html" property="og:url"/>
+<meta content="Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month" property="og:title"/>
+<meta content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs." property="og:description"/>
+<meta content="https://vladbortnik.dev/assets/img/brand-logo.png" property="og:image"/>
+<meta content="1200" property="og:image:width"/>
+<meta content="630" property="og:image:height"/>
+<meta content="Vlad Bortnik - Software Engineer Portfolio" property="og:image:alt"/>
+<meta content="Vlad Bortnik Portfolio" property="og:site_name"/>
+<meta content="en_US" property="og:locale"/>
+<meta content="2025-11-03T00:00:00-04:00" property="article:published_time"/>
+<meta content="2025-11-03T00:00:00-04:00" property="article:modified_time"/>
+<meta content="https://vladbortnik.dev" property="article:author"/>
+<meta content="DevOps" property="article:section"/>
+<meta content="Docker" property="article:tag"/>
+<meta content="Nginx" property="article:tag"/>
+<meta content="DevOps" property="article:tag"/>
+<!-- Twitter Card -->
+<meta content="summary_large_image" name="twitter:card"/>
+<meta content="https://vladbortnik.dev/blog/posts/production-grade-multi-app-server-12-month.html" name="twitter:url"/>
+<meta content="Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month" name="twitter:title"/>
+<meta content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs." name="twitter:description"/>
+<!-- Preconnect for performance -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<!-- Favicon -->
+<link href="../../assets/img/favicon.ico" rel="icon" sizes="16x16 32x32" type="image/x-icon"/>
+<!-- RSS Feed Auto-Discovery -->
+<link href="https://vladbortnik.dev/blog/feed.xml" rel="alternate" title="Vlad Bortnik's Blog RSS Feed" type="application/rss+xml"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet"/>
+<!-- Vendor CSS Files -->
+<link href="../../assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet"/>
+<link href="../../assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet"/>
+<!-- Main CSS Files -->
+<link href="../../assets/css/style.css" rel="stylesheet"/>
+<link href="../assets/css/blog.css?v=10" rel="stylesheet"/>
+<!-- Prism.js for Syntax Highlighting -->
+<link href="https://cdn.jsdelivr.net/npm/prism-themes@1.9.0/themes/prism-dracula.min.css" rel="stylesheet"/>
+<!-- Structured Data - Enhanced Schema -->
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "TechArticle",
@@ -72,7 +60,7 @@
             "@type": "ImageObject",
             "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
             "width": 1200,
-            "height": 1200
+            "height": 630
         },
         "author": {
             "@type": "Person",
@@ -90,8 +78,8 @@
             "logo": {
                 "@type": "ImageObject",
                 "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
-                "width": 512,
-                "height": 512
+                "width": 1200,
+                "height": 630
             }
         },
         "datePublished": "2025-11-03",
@@ -105,9 +93,8 @@
         "dependencies": "Docker, Nginx, Ubuntu, PostgreSQL"
     }
     </script>
-
-    <!-- BreadcrumbList Schema -->
-    <script type="application/ld+json">
+<!-- BreadcrumbList Schema -->
+<script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
@@ -130,209 +117,242 @@
     }
     </script>
 </head>
-
 <body>
-    <!-- Reading Progress Bar -->
-    <div class="reading-progress"></div>
-
-    <!-- ======= HEADER ======= -->
-    <header id="header" class="header-top">
-        <div class="container">
-            <h1><a href="/">Vlad Bortnik</a></h1>
-
-            <nav id="navbar" class="navbar">
-                <ul>
-                    <li><a class="nav-link" href="/">Home</a></li>
-                    <li><a class="nav-link" href="/#about">About</a></li>
-                    <li><a class="nav-link" href="/#portfolio">Projects</a></li>
-                    <li><a class="nav-link" href="/#resume">Resume</a></li>
-                    <li><a class="nav-link active" href="/blog/">Blog</a></li>
-                    <li><a class="nav-link" href="/contact.html">Contact</a></li>
-                </ul>
-                <i class="bi bi-list mobile-nav-toggle"></i>
-            </nav>
-        </div>
-    </header>
-
-    <!-- ======= Blog Post ======= -->
-    <section id="blog-post" class="blog-post">
-        <div class="container">
-
-            <a href="/blog/" class="back-to-blog">
-                <i class="bi bi-arrow-left"></i> Back to Blog
+<!-- Reading Progress Bar -->
+<div class="reading-progress"></div>
+<!-- ======= HEADER ======= -->
+<header class="header-top" id="header">
+<div class="container">
+<h1><a href="/">Vlad Bortnik</a></h1>
+<nav class="navbar" id="navbar">
+<ul>
+<li><a class="nav-link" href="/">Home</a></li>
+<li><a class="nav-link" href="/#about">About</a></li>
+<li><a class="nav-link" href="/#portfolio">Projects</a></li>
+<li><a class="nav-link" href="/#resume">Resume</a></li>
+<li><a class="nav-link active" href="/blog/">Blog</a></li>
+<li><a class="nav-link" href="/contact.html">Contact</a></li>
+</ul>
+<i class="bi bi-list mobile-nav-toggle"></i>
+</nav>
+</div>
+</header>
+<!-- ======= Blog Post ======= -->
+<section class="blog-post" id="blog-post">
+<div class="container">
+<a class="back-to-blog" href="/blog/">
+<i class="bi bi-arrow-left"></i> Back to Blog
             </a>
-
-            <div class="blog-post-content">
-
-                <!-- Post Header -->
-                <div class="blog-post-header">
-                    <h1>Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month</h1>
-
-                    <div class="post-meta">
-                        <div>
-                            <i class="bi bi-calendar3"></i>
-                            <span>November 3, 2025</span>
-                        </div>
-                        <div>
-                            <i class="bi bi-clock"></i>
-                            <span>22 min read</span>
-                        </div>
-                        <div>
-                            <i class="bi bi-person"></i>
-                            <span>Vlad Bortnik</span>
-                        </div>
-                        <span class="post-category">DevOps</span>
-                    </div>
-                </div>
-
-                <!-- Article Content -->
-                <div class="article-content">
+<div class="blog-post-content">
+<!-- Post Header -->
+<div class="blog-post-header">
 <h1>Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month</h1>
-
+<div class="post-meta">
+<div>
+<i class="bi bi-calendar3"></i>
+<span>November 3, 2025</span>
+</div>
+<div>
+<i class="bi bi-clock"></i>
+<span>19 min read</span>
+</div>
+<div>
+<i class="bi bi-person"></i>
+<span>Vlad Bortnik</span>
+</div>
+<span class="post-category">DevOps</span>
+</div>
+</div>
+<!-- Article Content -->
+<div class="article-content">
 <p><em>A practical guide to escaping expensive hosting by building your own production-grade infrastructure on DigitalOcean—complete with Docker, Nginx, and Enterprise-Level security.</em></p>
-
-<hr>
-
-<img src="../../assets/img/blog/server-setup/server-setup-title-img-overlay.jpg" alt="Article screenshot" loading="lazy">
-
-<h2>The Problem That Started Everything</h2>
-
-<p>I was running three web applications: my portfolio site, a recipe app, and a book exchange platform. Between Heroku ($7/app), database hosting, and custom domains with SSL, I was paying $45/month with frustrating limitations. No WebSocket support. Restrictive resource limits. Complex SSL setup. Every time I wanted to deploy a new project, I&#39;d calculate the cost and hesitate.</p>
-
+<hr/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/server-setup-title-img-overlay.jpg"/>
+<hr style="margin: 40px 0; border: none; border-top: 2px solid rgba(24, 210, 110, 0.2);"/>
+<div class="table-of-contents">
+<h2 class="no-counter">Table of Contents</h2>
+<ol>
+<li class="no-number"><a href="#introduction">Introduction</a>
+</li>
+<li class="no-number"><a href="#who-should-read-this">Who Should Read This?</a>
+</li>
+<li><a href="#planning-and-budget">Planning and Budget</a>
+</li>
+<li><a href="#the-architecture-diagram">The Architecture Diagram</a>
+</li>
+<li><a href="#tech-stack-decisions-and-why-i-made-them">Tech Stack Decisions</a>
+<ol>
+<li><a href="#ubuntu-2404-lts">Ubuntu 24.04 LTS</a></li>
+<li><a href="#nginx-as-reverse-proxy">Nginx as Reverse Proxy</a></li>
+<li><a href="#docker-for-application-isolation">Docker for Application Isolation</a></li>
+</ol>
+</li>
+<li><a href="#initial-server-setup-the-foundation">Initial Server Setup: The Foundation</a>
+<ol>
+<li><a href="#create-a-non-root-user">Create a Non-Root User</a></li>
+<li><a href="#ssh-key-authentication-critical">SSH Key Authentication (Critical)</a></li>
+<li><a href="#ufw-firewall-configuration">UFW Firewall Configuration</a></li>
+<li><a href="#fail2ban-for-brute-force-protection">Fail2Ban for Brute Force Protection</a></li>
+</ol>
+</li>
+<li><a href="#docker-installation-getting-the-foundation-right">Docker Installation: Getting the Foundation Right</a>
+</li>
+<li><a href="#nginx-configuration-the-deep-dive">Nginx Configuration: The Deep Dive</a>
+<ol>
+<li><a href="#understanding-nginx-as-a-reverse-proxy">Understanding Nginx as a Reverse Proxy</a></li>
+<li><a href="#basic-reverse-proxy-configuration">Basic Reverse Proxy Configuration</a></li>
+<li><a href="#server-blocks-hosting-multiple-domains">Server Blocks: Hosting Multiple Domains</a></li>
+<li><a href="#load-balancing-when-one-instance-isnt-enough">Load Balancing: When One Instance Isn't Enough</a></li>
+</ol>
+</li>
+<li><a href="#docker-configuration-application-isolation-done-right">Docker Configuration: Application Isolation Done Right</a>
+<ol>
+<li><a href="#network-segregation-the-security-game-changer">Network Segregation: The Security Game-Changer</a></li>
+<li><a href="#docker-compose-for-simple-single-instance-app">Docker Compose for Simple Single-Instance App</a></li>
+<li><a href="#docker-compose-for-load-balanced-setup">Docker Compose for Load-Balanced Setup</a></li>
+<li><a href="#resource-limits-preventing-cascade-failures">Resource Limits: Preventing Cascade Failures</a></li>
+</ol>
+</li>
+<li><a href="#ssltls-configuration-the-dns-01-challenge-story">SSL/TLS Configuration: The DNS-01 Challenge Story</a>
+<ol>
+<li><a href="#why-dns-01-made-sense-for-my-setup">Why DNS-01 Made Sense for My Setup</a></li>
+<li><a href="#setting-up-certbot-with-dns-01">Setting Up Certbot with DNS-01</a></li>
+<li><a href="#achieving-a-security-rating">Achieving A+ Security Rating</a></li>
+</ol>
+</li>
+<li><a href="#deployment-workflow-the-practical-reality">Deployment Workflow: The Practical Reality</a>
+<ol>
+<li><a href="#manual-deployment-first">Manual Deployment First</a></li>
+<li><a href="#automation-later-github-actions">Automation Later (GitHub Actions)</a></li>
+</ol>
+</li>
+<li><a href="#monitoring-and-maintenance-the-real-cost">Monitoring and Maintenance: The Real Cost</a>
+<ol>
+<li><a href="#essential-monitoring-tools">Essential Monitoring Tools</a></li>
+<li><a href="#regular-maintenance-tasks">Regular Maintenance Tasks</a></li>
+<li><a href="#automated-updates">Automated Updates</a></li>
+</ol>
+</li>
+<li><a href="#performance-optimization-what-actually-worked">Performance Optimization: What Actually Worked</a>
+<ol>
+<li><a href="#nginx-caching-for-static-assets">Nginx Caching for Static Assets</a></li>
+<li><a href="#gzip-compression">Gzip Compression</a></li>
+<li><a href="#database-connection-pooling">Database Connection Pooling</a></li>
+</ol>
+</li>
+<li><a href="#common-issues-and-how-i-fixed-them">Common Issues and How I Fixed Them</a>
+<ol>
+<li><a href="#issue-application-cant-connect-to-database">Issue: Application Can't Connect to Database</a></li>
+<li><a href="#issue-nginx-shows-502-bad-gateway">Issue: Nginx Shows 502 Bad Gateway</a></li>
+<li><a href="#issue-ssl-certificate-wont-renew">Issue: SSL Certificate Won't Renew</a></li>
+</ol>
+</li>
+<li class="no-number"><a href="#what-id-do-differently">What I'd Do Differently</a>
+</li>
+<li class="no-number"><a href="#the-honest-truth-about-self-hosting">The Honest Truth About Self-Hosting</a>
+</li>
+<li class="no-number"><a href="#resources-and-next-steps">Resources and Next Steps</a>
+</li>
+<li class="no-number"><a href="#conclusion-build-it-and-learn">Conclusion: Build It and Learn</a>
+</li>
+<li class="no-number"><a href="#get-in-touch">Get in Touch</a>
+</li>
+</ol>
+</div>
+<h2 id="introduction" class="no-number">Introduction</h2>
+<p>I was running three web applications (at that time): my portfolio site, a recipe app, and a book exchange platform. Between Heroku ($7/app), database hosting, and custom domains with SSL, I was paying $45/month with frustrating limitations. No WebSocket support. Restrictive resource limits. Complex SSL setup. Every time I wanted to deploy a new project, I'd calculate the cost and hesitate.</p>
 <p>The breaking point came when I realized I was paying more for hosting than for the actual domain names. There had to be a better way.</p>
-
 <p><strong>This guide shows you how to host multiple production applications on a single $12/month VPS</strong> with A+ security ratings, sub-100ms response times, and complete control over your infrastructure.</p>
-
-<p>This isn&#39;t a theoretical guide. These are the actual configurations I use in production, the mistakes I made along the way, and the lessons I learned debugging at 2 AM when my server went down.</p>
-
-<p>By the end, you&#39;ll understand:</p>
-
+<p>This isn't a theoretical guide. These are the actual configurations I use in production, the mistakes I made along the way, and the lessons I learned debugging at 2 AM when my server went down.</p>
+<p>By the end, you'll understand:</p>
 <ul>
-	<li>How to set up a secure production server from scratch</li>
-	<li>How to configure Nginx as a reverse proxy for multiple apps</li>
-	<li>How to implement Docker network segregation for security</li>
-	<li>How to obtain and configure wildcard SSL certificates</li>
-	<li>How to achieve A+ security ratings on a budget VPS</li>
+<li>How to set up a secure production server from scratch</li>
+<li>How to configure Nginx as a reverse proxy for multiple apps</li>
+<li>How to implement Docker network segregation for security</li>
+<li>How to obtain and configure wildcard SSL certificates</li>
+<li>How to achieve A+ security ratings on a budget VPS</li>
 </ul>
-
-<p>Let me be honest: <strong>this takes time to set up</strong>. But the skills you&#39;ll learn and the money you&#39;ll save make it worth every minute.</p>
-
-<hr>
-
-<h2>The Complete Architecture (What I Actually Built)</h2>
-
-<p>Here&#39;s what my final setup looks like. This diagram represents everything I&#39;m going to walk you through:</p>
-
-<img src="../../assets/img/blog/server-setup/server-setup-diagram.webp" alt="Article screenshot" loading="lazy">
-
-<p><em>My complete production infrastructure: DigitalOcean droplet with Nginx reverse proxy, Docker containers, network segregation, and SSL termination</em></p>
-
-<p>The architecture has several layers:</p>
-
+<p>Let me be honest: <strong>this takes time to set up</strong>. But the skills you'll learn and the money you'll save make it worth every minute.</p>
+<hr/>
+<h2 id="who-should-read-this" class="no-number">Who Should Read This?</h2>
+<p>This guide is for developers and engineers who want to enhance their DevOps skills while significantly reducing hosting costs. Whether you're building portfolio projects or running production applications, this hands-on approach will give you complete control over your infrastructure.</p>
+<p><strong>The complete project documentation and configurations are available at:</strong></p>
 <ul>
-	<li><strong>External Layer</strong>: Nginx handles all incoming HTTP/HTTPS traffic</li>
-	<li><strong>Application Layer</strong>: Docker containers running isolated web applications</li>
-	<li><strong>Network Layer</strong>: Custom Docker bridges for secure internal communication</li>
-	<li><strong>Data Layer</strong>: PostgreSQL databases isolated from the internet</li>
-	<li><strong>Security Layer</strong>: Fail2Ban, UFW firewall, and Let&#39;s Encrypt SSL</li>
+<li><a href="https://vladbortnik.dev/server-setup.html" target="_blank" rel="noopener noreferrer">Portfolio</a></li>
+<li><a href="https://github.com/vladbortnik/production-server-infrastructure" target="_blank" rel="noopener noreferrer">Github</a></li>
 </ul>
-
-<p>Let me be honest: I didn&#39;t build this all at once. It evolved over several weeks of experimentation, reading documentation, and fixing things that broke. But now that it&#39;s running, it&#39;s been rock solid.</p>
-
-<hr>
-
-<h2>Planning: What You Actually Need</h2>
-
+<hr/>
+<h2 id="planning-and-budget">Planning and Budget</h2>
 <p>Before touching any server, I mapped out my requirements:</p>
-
 <p><strong>Essential requirements:</strong></p>
-
 <ul>
-	<li>Multiple application hosting with isolation (Docker with network segregation)</li>
-	<li>Custom domain and subdomains (<a href="https://recipe.vladbortnik.dev">recipe.vladbortnik.dev</a>, <a href="https://tldrx.vladbortnik.dev">tldrx.vladbortnik.dev</a>, etc.)</li>
-	<li>Free SSL certificate covering the domain and all subdomains</li>
-	<li>Separate database per application</li>
-	<li>Production-grade security</li>
-	<li>Room for scaling</li>
+<li>Multiple application hosting with isolation (Docker with network segregation)</li>
+<li>Custom domain and subdomains (<a href="https://vladbortnik.dev" target="_blank" rel="noopener noreferrer">vladbortnik.dev</a>, <a href="https://recipe.vladbortnik.dev" target="_blank" rel="noopener noreferrer">recipe.vladbortnik.dev</a>, <a href="https://tldrx.vladbortnik.dev" target="_blank" rel="noopener noreferrer">tldrx.vladbortnik.dev</a>, etc.)</li>
+<li>Free SSL certificate covering the domain and all subdomains</li>
+<li>Separate database per application</li>
+<li>Production-grade security</li>
+<li>Room for scaling</li>
 </ul>
-
 <p><strong>Budget reality check:</strong></p>
-
 <ul>
-	<li>DigitalOcean Droplet (2GB RAM): $12/month</li>
-	<li>Automated backups: $2.40/month</li>
-	<li>Domain names: ~$3/month (yearly cost divided)</li>
-	<li><strong>Total: ~$17/month</strong></li>
+<li>DigitalOcean Droplet (2GB RAM): <code>$12/month</code></li>
+<li>Automated backups: <code>$2.40/month</code></li>
+<li>Domain names: <code>~$3/month (yearly cost divided)</code></li>
+<li><strong>Total: <code>~$17/month</code></strong></li>
 </ul>
-
-<p>Compare this to platform alternatives where three apps with databases cost $35-60/month minimum. <strong>That&#39;s $240-480 in annual savings</strong>.</p>
-
+<p>Compare this to platform alternatives where three apps with databases cost <code>$35-60/month</code> minimum. <strong>That's <code>$240-480/annually</code> in savings</strong>.</p>
 <p>The math made sense, but the real question was: could I actually pull this off?</p>
-
-<hr>
-
-<h2>Tech Stack Decisions (And Why I Made Them)</h2>
-
-<h3>Ubuntu 24.04 LTS</h3>
-
-<p>I chose Ubuntu because <a href="https://www.digitalocean.com/community/tutorials">DigitalOcean&#39;s Documentation</a> is excellent for it, and the LTS version means stability for years. No surprises, no breaking updates. If you&#39;re new to DigitalOcean, their <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ubuntu-server-on-a-digitalocean-droplet">Droplet Creation Guide</a> walks through the entire process.</p>
-
-<h3>Nginx as Reverse Proxy</h3>
-
-<p>Nginx became the heart of my setup. It sits at the front, handling all incoming traffic and routing it to the right application. Here&#39;s what it does:</p>
-
+<hr/>
+<h2 id="the-architecture-diagram">The Architecture Diagram</h2>
+<p>Here's what my final setup looks like. This diagram represents everything I'm going to walk you through:</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/server-setup-diagram.webp"/>
+<p><em>My complete production infrastructure: DigitalOcean droplet with Nginx reverse proxy, Docker containers, network segregation, and SSL termination</em></p>
+<p>The architecture has several layers:</p>
 <ul>
-	<li>Routes traffic to different applications based on domain/subdomain</li>
-	<li>Terminates SSL (handles HTTPS encryption/decryption)</li>
-	<li>Provides load balancing when I need it</li>
-	<li>Caches static content automatically</li>
+<li><strong>External Layer</strong>: Nginx handles all incoming HTTP/HTTPS traffic</li>
+<li><strong>Application Layer</strong>: Docker containers running isolated web applications</li>
+<li><strong>Network Layer</strong>: Custom Docker bridges for secure internal communication</li>
+<li><strong>Data Layer</strong>: PostgreSQL databases isolated from the internet</li>
+<li><strong>Security Layer</strong>: Fail2Ban, UFW firewall, and Let's Encrypt SSL</li>
 </ul>
-
+<p>Let me be honest: I didn't build this all at once. It evolved over several weeks of experimentation, reading documentation, and fixing things that broke. But now that it's running, it's been rock solid.</p>
+<hr/>
+<h2 id="tech-stack-decisions-and-why-i-made-them">Tech Stack Decisions</h2>
+<h3 id="ubuntu-2404-lts">Ubuntu 24.04 LTS</h3>
+<p>I chose Ubuntu because <a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener noreferrer">Digitalocean's Documentation</a> is excellent for it, and the LTS version means stability for years. No surprises, no breaking updates. If you're new to DigitalOcean, their <a href="https://www.digitalocean.com/community/tutorials/how-to-set-up-an-ubuntu-server-on-a-digitalocean-droplet" target="_blank" rel="noopener noreferrer">Droplet Creation Guide</a> walks through the entire process.</p>
+<h3 id="nginx-as-reverse-proxy">Nginx as Reverse Proxy</h3>
+<p>Nginx became the heart of my setup. It sits at the front, handling all incoming traffic and routing it to the right application. Here's what it does:</p>
+<ul>
+<li>Routes traffic to different applications based on domain/subdomain</li>
+<li>Terminates SSL (handles HTTPS encryption/decryption)</li>
+<li>Provides load balancing when I need it</li>
+<li>Caches static content automatically</li>
+</ul>
 <p>The key insight: <strong>Nginx is your traffic cop</strong>. All HTTP/HTTPS requests hit Nginx first, and it decides where they go.</p>
-
-<p>For deeper understanding, check out the <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/">Official Nginx Reverse Proxy Documentation</a> and this excellent <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html">Nginx Proxy Module Reference</a>.</p>
-
-<h3>Docker for Application Isolation</h3>
-
-<p>Docker solved my &quot;works on my machine&quot; problem. Each application runs in its own container with its own dependencies, Python version, and configuration. If one app crashes, the others keep running.</p>
-
-<p>The <a href="https://docs.docker.com/get-started/">Docker Documentation</a> is excellent for understanding containerization concepts, and <a href="https://docs.docker.com/compose/networking/">Docker Compose Networking</a> explains how containers communicate securely.</p>
-
-<hr>
-
-<h2>Initial Server Setup: The Foundation</h2>
-
-<p>I started with <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu">DigitalOcean&#39;s Initial Server Setup Guide</a>, but let me highlight what actually matters:</p>
-
-<h3>1. Create a Non-Root User</h3>
-
+<p>For deeper understanding, check out the <a href="https://docs.nginx.com/nginx/admin-guide/web-server/reverse-proxy/" target="_blank" rel="noopener noreferrer">Official Nginx Reverse Proxy Documentation</a> and this excellent <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank" rel="noopener noreferrer">Nginx Proxy Module Reference</a>.</p>
+<h3 id="docker-for-application-isolation">Docker for Application Isolation</h3>
+<p>Docker solved my "works on my machine" problem. Each application runs in its own container with its own dependencies, Python version, and configuration. If one app crashes, the others keep running.</p>
+<p>The <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreferrer">Docker Documentation</a> is excellent for understanding containerization concepts, and <a href="https://docs.docker.com/compose/networking/" target="_blank" rel="noopener noreferrer">Docker Compose Networking</a> explains how containers communicate securely.</p>
+<hr/>
+<h2 id="initial-server-setup-the-foundation">Initial Server Setup: The Foundation</h2>
+<p>I started with <a href="https://www.digitalocean.com/community/tutorials/initial-server-setup-with-ubuntu" target="_blank" rel="noopener noreferrer">Digitalocean's Initial Server Setup Guide</a>, but let me highlight what actually matters:</p>
+<h3 id="create-a-non-root-user">Create a Non-Root User</h3>
 <p>Never run things as root in production. Ever.</p>
-
 <pre><code class="language-bash">adduser yourusername
 usermod -aG sudo yourusername</code></pre>
-
-<h3>2. SSH Key Authentication (Critical)</h3>
-
+<h3 id="ssh-key-authentication-critical">SSH Key Authentication (Critical)</h3>
 <p>Set up SSH keys and disable password login. This was the first real security measure that made me feel like I was doing things right:</p>
-
 <pre><code class="language-bash"># On your local machine
-ssh-keygen -t ed25519 -C &quot;your_email@example.com&quot;
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
 # Copy to server
 ssh-copy-id yourusername@your_server_ip</code></pre>
-
 <p>Then disable password authentication in <code>/etc/ssh/sshd_config</code>:</p>
-
 <pre><code class="language-bash">PasswordAuthentication no</code></pre>
-
-<h3>3. UFW Firewall Configuration</h3>
-
+<h3 id="ufw-firewall-configuration">UFW Firewall Configuration</h3>
 <p>This is where I almost locked myself out. <strong>Critical lesson: Always allow SSH before enabling the firewall.</strong></p>
-
-<img src="../../assets/img/blog/server-setup/ufw-status.png" alt="Article screenshot" loading="lazy">
-
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/ufw-status.png"/>
 <p><em>UFW firewall configuration showing only essential ports open</em></p>
-
 <pre><code class="language-bash">sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw allow OpenSSH  # CRITICAL: Allow SSH before enabling firewall
@@ -342,16 +362,11 @@ sudo ufw enable
 
 # Verify firewall status
 sudo ufw status</code></pre>
-
-<h3>4. Fail2Ban for Brute Force Protection</h3>
-
+<h3 id="fail2ban-for-brute-force-protection">Fail2Ban for Brute Force Protection</h3>
 <p>Fail2Ban monitors logs and bans IPs after failed login attempts. My configuration bans after three failures:</p>
-
 <pre><code class="language-bash">sudo apt install fail2ban
 sudo cp /etc/fail2ban/jail.conf /etc/fail2ban/jail.local</code></pre>
-
 <p>In <code>/etc/fail2ban/jail.local</code>:</p>
-
 <pre><code class="language-ini">[sshd]
 enabled = true
 port = ssh
@@ -359,26 +374,20 @@ filter = sshd
 logpath = /var/log/auth.log
 maxretry = 3
 bantime = 86400  # 24 hours</code></pre>
-
 <p>Within a week, Fail2Ban had blocked 47 IP addresses trying to brute force their way in. It works.</p>
-
-<p>For more details on Fail2Ban setup, see this <a href="https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-22-04">Comprehensive Guide from DigitalOcean</a>.</p>
-
-<hr>
-
-<h2>Docker Installation: Getting the Foundation Right</h2>
-
-<p>I initially tried installing Docker the &quot;easy&quot; way and ran into permission errors. Here&#39;s what actually works:</p>
-
+<p>For more details on Fail2Ban setup, see this <a href="https://www.digitalocean.com/community/tutorials/how-to-protect-ssh-with-fail2ban-on-ubuntu-22-04" target="_blank" rel="noopener noreferrer">Comprehensive Guide From Digitalocean</a>.</p>
+<hr/>
+<h2 id="docker-installation-getting-the-foundation-right">Docker Installation: Getting the Foundation Right</h2>
+<p>I initially tried installing Docker the "easy" way and ran into permission errors. Here's what actually works:</p>
 <pre><code class="language-bash"># Update package index
 sudo apt update
 sudo apt install -y apt-transport-https ca-certificates curl software-properties-common
 
-# Add Docker&#39;s official GPG key
+# Add Docker's official GPG key
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
 # Set up Docker repository
-echo &quot;deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable&quot; | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
+echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list &gt; /dev/null
 
 # Install Docker Engine
 sudo apt update
@@ -391,38 +400,24 @@ su - ${USER}  # Re-login to apply group changes
 # Verify installation
 docker --version
 docker compose version</code></pre>
-
-<p><strong>Personal note:</strong> I initially forgot to add my user to the docker group and spent an hour troubleshooting &quot;permission denied&quot; errors. Always run that <code>usermod</code> command!</p>
-
-<p>For the complete installation guide, see <a href="https://docs.docker.com/get-started/">Docker&#39;s Official Installation Docs</a> or this <a href="https://www.digitalocean.com/community/tutorials">Excellent DigitalOcean Docker Tutorial</a>.</p>
-
-<hr>
-
-<h2>Nginx Configuration: The Deep Dive</h2>
-
+<p><strong>Personal note:</strong> I initially forgot to add my user to the docker group and spent an hour troubleshooting "permission denied" errors. Always run that <code>usermod</code> command!</p>
+<p>For the complete installation guide, see <a href="https://docs.docker.com/get-started/" target="_blank" rel="noopener noreferrer">Docker's Official Installation Docs</a> or this <a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener noreferrer">Excellent Digitalocean Docker Tutorial</a>.</p>
+<hr/>
+<h2 id="nginx-configuration-the-deep-dive">Nginx Configuration: The Deep Dive</h2>
 <p>This is where theory met reality. Let me show you the actual configurations I use, not simplified examples.</p>
-
-<h3>Understanding Nginx as a Reverse Proxy</h3>
-
-<p>A reverse proxy sits between clients and your application servers. Here&#39;s what actually happens:</p>
-
+<h3 id="understanding-nginx-as-a-reverse-proxy">Understanding Nginx as a Reverse Proxy</h3>
+<p>A reverse proxy sits between clients and your application servers. Here's what actually happens:</p>
 <ol>
-	<li>Client makes request to <code>https://recipe.vladbortnik.dev</code></li>
-	<li>Nginx receives it, terminates SSL, and forwards to <code>http://localhost:5002</code></li>
-	<li>My Flask app running in Docker at port <code>5002</code> responds</li>
-	<li>Nginx sends the response back to the client</li>
+<li>Client makes request to <code>https://recipe.vladbortnik.dev</code></li>
+<li>Nginx receives it, terminates SSL, and forwards to <code>http://localhost:5002</code></li>
+<li>My Flask app running in Docker at port <code>5002</code> responds</li>
+<li>Nginx sends the response back to the client</li>
 </ol>
-
 <p>The client never talks directly to my application. This provides security (hides backend architecture), enables SSL termination, allows caching, and simplifies backend maintenance.</p>
-
-<img src="../../assets/img/blog/server-setup/reverse-proxy.png" alt="Article screenshot" loading="lazy">
-
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/reverse-proxy.png"/>
 <p><em>Nginx reverse proxy configuration showing SSL termination and proxy headers</em></p>
-
-<h3>Basic Reverse Proxy Configuration</h3>
-
-<p>Here&#39;s my actual configuration for a single application:</p>
-
+<h3 id="basic-reverse-proxy-configuration">Basic Reverse Proxy Configuration</h3>
+<p>Here's my actual configuration for a single application:</p>
 <pre><code class="language-nginx"># HTTP server - redirects everything to HTTPS
 server {
     listen 80;
@@ -454,16 +449,16 @@ server {
     ssl_prefer_server_ciphers off;
 
     # HSTS - tells browsers to always use HTTPS
-    add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+    add_header Strict-Transport-Security "max-age=63072000" always;
 
     # Security headers
-    add_header X-Frame-Options &quot;SAMEORIGIN&quot; always;
-    add_header X-Content-Type-Options &quot;nosniff&quot; always;
-    add_header Referrer-Policy &quot;strict-origin-when-cross-origin&quot; always;
-    add_header Permissions-Policy &quot;camera=(), microphone=(), geolocation=(), payment=()&quot; always;
+    add_header X-Frame-Options "SAMEORIGIN" always;
+    add_header X-Content-Type-Options "nosniff" always;
+    add_header Referrer-Policy "strict-origin-when-cross-origin" always;
+    add_header Permissions-Policy "camera=(), microphone=(), geolocation=(), payment=()" always;
 
     # Content Security Policy - customize based on your needs
-    add_header Content-Security-Policy &quot;default-src &#39;self&#39; data:; img-src &#39;self&#39; data: blob:; font-src &#39;self&#39; data:;&quot; always;
+    add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' data: blob:; font-src 'self' data:;" always;
 
     # Root directory (if serving static files)
     root /var/www/recipe.vladbortnik.dev/html;
@@ -477,26 +472,18 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }</code></pre>
-
 <p><strong>What each header does (honestly explained):</strong></p>
-
 <ul>
-	<li><code>Host:</code>Preserves the original domain name</li>
-	<li><code>X-Real-IP:</code>The visitor&#39;s actual IP (important for logging)</li>
-	<li><code>X-Forwarded-For:</code>Complete chain if there are multiple proxies</li>
-	<li><code>X-Forwarded-Proto:</code>Tells your app if the original request was HTTP or HTTPS</li>
+<li><code>Host:</code>Preserves the original domain name</li>
+<li><code>X-Real-IP:</code>The visitor's actual IP (important for logging)</li>
+<li><code>X-Forwarded-For:</code>Complete chain if there are multiple proxies</li>
+<li><code>X-Forwarded-Proto:</code>Tells your app if the original request was HTTP or HTTPS</li>
 </ul>
-
-<p>For more details on these proxy headers and settings, check the <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html">Nginx Proxy Module Documentation</a>.</p>
-
-<h3>Server Blocks: Hosting Multiple Domains</h3>
-
-<img src="../../assets/img/blog/server-setup/server-blocks.png" alt="Article screenshot" loading="lazy">
-
+<p>For more details on these proxy headers and settings, check the <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank" rel="noopener noreferrer">Nginx Proxy Module Documentation</a>.</p>
+<h3 id="server-blocks-hosting-multiple-domains">Server Blocks: Hosting Multiple Domains</h3>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/server-blocks.png"/>
 <p><em>Multiple Nginx server blocks for hosting different applications on different subdomains</em></p>
-
 <p>Server blocks (virtual hosts) let you host multiple domains on one server. Each subdomain gets its own configuration file in <code>/etc/nginx/sites-available/</code>:</p>
-
 <pre><code class="language-bash"># Create configuration file
 sudo nano /etc/nginx/sites-available/recipe.vladbortnik.dev
 
@@ -508,9 +495,7 @@ sudo nginx -t
 
 # Reload if test passes
 sudo systemctl reload nginx</code></pre>
-
 <p>I organize my configs like this:</p>
-
 <pre><code>/etc/nginx/
 ├── sites-available/
 │   ├── recipe.vladbortnik.dev
@@ -520,19 +505,12 @@ sudo systemctl reload nginx</code></pre>
     ├── recipe.vladbortnik.dev -&gt; ../sites-available/recipe.vladbortnik.dev
     ├── tldrx.vladbortnik.dev -&gt; ../sites-available/tldrx.vladbortnik.dev
     └── vladbortnik.dev -&gt; ../sites-available/vladbortnik.dev</code></pre>
-
 <p>This keeps things organized and makes it easy to disable a site without deleting the config.</p>
-
-<h3>Load Balancing: When One Instance Isn&#39;t Enough</h3>
-
-<p>When my recipe app started getting traffic, a single instance couldn&#39;t handle peak loads. Load balancing distributes traffic across multiple application instances.</p>
-
-<img src="../../assets/img/blog/server-setup/load-balancer.png" alt="Article screenshot" loading="lazy">
-
+<h3 id="load-balancing-when-one-instance-isnt-enough">Load Balancing: When One Instance Isn't Enough</h3>
+<p>When my recipe app started getting traffic, a single instance couldn't handle peak loads. Load balancing distributes traffic across multiple application instances.</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/load-balancer.png"/>
 <p><em>Load balancer configuration distributing traffic across three application instances</em></p>
-
-<p>Here&#39;s my production load balancer configuration:</p>
-
+<p>Here's my production load balancer configuration:</p>
 <pre><code class="language-nginx"># Define upstream servers (backend application instances)
 upstream recipe_app {
     ip_hash;  # Ensures same client IP always goes to same server (session-friendly)
@@ -565,48 +543,31 @@ server {
         proxy_set_header X-Forwarded-Proto $scheme;
     }
 }</code></pre>
-
 <p><strong>Key points about this setup:</strong></p>
-
 <ul>
-	<li><code>ip_hash</code> ensures users stay on the same backend server (important for sessions)</li>
-	<li><code>max_fails=3</code> means Nginx will mark a server as down after 3 failed attempts</li>
-	<li><code>fail_timeout=30s</code> is how long before Nginx tries the failed server again</li>
-	<li>Health checks are automatic—Nginx removes unhealthy servers from rotation</li>
+<li><code>ip_hash</code> ensures users stay on the same backend server (important for sessions)</li>
+<li><code>max_fails=3</code> means Nginx will mark a server as down after 3 failed attempts</li>
+<li><code>fail_timeout=30s</code> is how long before Nginx tries the failed server again</li>
+<li>Health checks are automatic—Nginx removes unhealthy servers from rotation</li>
 </ul>
-
-<p>For more on load balancing algorithms and strategies, see the <a href="https://nginx.org/en/docs/http/ngx_http_upstream_module.html">Nginx upstream module documentation</a>.</p>
-
-<hr>
-
-<h2>Docker Configuration: Application Isolation Done Right</h2>
-
-<p>Docker was intimidating at first, but it&#39;s worth the learning curve. Here&#39;s how I structured things.</p>
-
-<h3>Network Segregation: The Security Game-Changer</h3>
-
-<p>The biggest security win in my setup: <strong>databases never talk directly to the internet</strong>. They&#39;re on a private Docker network accessible only by application containers.</p>
-
-<img src="../../assets/img/blog/server-setup/networks-diagram.png" alt="Article screenshot" loading="lazy">
-
+<p>For more on load balancing algorithms and strategies, see the <a href="https://nginx.org/en/docs/http/ngx_http_upstream_module.html" target="_blank" rel="noopener noreferrer">Nginx Upstream Module Documentation</a>.</p>
+<hr/>
+<h2 id="docker-configuration-application-isolation-done-right">Docker Configuration: Application Isolation Done Right</h2>
+<p>Docker was intimidating at first, but it's worth the learning curve. Here's how I structured things.</p>
+<h3 id="network-segregation-the-security-game-changer">Network Segregation: The Security Game-Changer</h3>
+<p>The biggest security win in my setup: <strong>databases never talk directly to the internet</strong>. They're on a private Docker network accessible only by application containers.</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/networks-diagram.png"/>
 <p><em>Docker network architecture: databases on backend network, web services bridging frontend and backend</em></p>
-
-<p>Here&#39;s the network diagram that illustrates this critical concept. Notice how:</p>
-
+<p>Here's the network diagram that illustrates this critical concept. Notice how:</p>
 <ul>
-	<li><strong>Frontend Network</strong> (public): Connects web services to the host/Nginx</li>
-	<li><strong>Backend Network</strong> (private): Connects web services to databases only</li>
-	<li><strong>Databases</strong>: NO connection to frontend network = NO internet exposure</li>
+<li><strong>Frontend Network</strong> (public): Connects web services to the host/Nginx</li>
+<li><strong>Backend Network</strong> (private): Connects web services to databases only</li>
+<li><strong>Databases</strong>: NO connection to frontend network = NO internet exposure</li>
 </ul>
-
 <p>This is defense in depth. Even if UFW fails, the database cannot be reached from the internet.</p>
-
-<p>For deeper understanding of Docker networking, check out <a href="https://docs.docker.com/compose/networking/">Docker&#39;s Networking Documentation</a> and <a href="https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html">OWASP Docker Security Best Practices</a>.</p>
-
-<h3>Docker Compose for Simple Single-Instance App</h3>
-
+<p>For deeper understanding of Docker networking, check out <a href="https://docs.docker.com/compose/networking/" target="_blank" rel="noopener noreferrer">Docker's Networking Documentation</a> and <a href="https://cheatsheetseries.owasp.org/cheatsheets/Docker_Security_Cheat_Sheet.html" target="_blank" rel="noopener noreferrer">OWASP Docker Security Best Practices</a>.</p>
+<h3 id="docker-compose-for-simple-single-instance-app">Docker Compose for Simple Single-Instance App</h3>
 <p>For a basic setup with one application instance:</p>
-
 <pre><code class="language-yaml">services:
   web:
     build: .
@@ -614,7 +575,7 @@ server {
     volumes:
       - .:/code
     ports:
-      - &quot;5002:5002&quot;
+      - "5002:5002"
     env_file:
       - .env
     depends_on:
@@ -634,7 +595,7 @@ server {
       - .env
     depends_on:
       - db
-    restart: &quot;no&quot;
+    restart: "no"
 
   db:
     image: postgres:16.4
@@ -643,7 +604,7 @@ server {
     env_file:
       - .env
     ports:
-      - &quot;5432:5432&quot;
+      - "5432:5432"
     restart: unless-stopped
     mem_limit: 384m
     mem_reservation: 192m
@@ -651,11 +612,8 @@ server {
 
 volumes:
   postgres_data:</code></pre>
-
-<h3>Docker Compose for Load-Balanced Setup</h3>
-
-<p>When load balancing, things get more complex. Here&#39;s my production configuration with network segregation:</p>
-
+<h3 id="docker-compose-for-load-balanced-setup">Docker Compose for Load-Balanced Setup</h3>
+<p>When load balancing, things get more complex. Here's my production configuration with network segregation:</p>
 <pre><code class="language-yaml"># Network Segregation
 networks:
   frontend:  # Public-facing network
@@ -670,7 +628,7 @@ services:
       - frontend  # For communication with Internet
       - backend   # For communication with DB only
     ports:
-      - &quot;5002:5002&quot;  # The only necessary external port
+      - "5002:5002"  # The only necessary external port
     env_file:
       - .env
     depends_on:
@@ -688,7 +646,7 @@ services:
       - frontend
       - backend
     ports:
-      - &quot;5003:5002&quot;  # Host port 5003 maps to container port 5002
+      - "5003:5002"  # Host port 5003 maps to container port 5002
     env_file:
       - .env
     depends_on:
@@ -706,7 +664,7 @@ services:
       - frontend
       - backend
     ports:
-      - &quot;5004:5002&quot;
+      - "5004:5002"
     env_file:
       - .env
     depends_on:
@@ -726,7 +684,7 @@ services:
     networks:
       - backend  # Only Web Service has access to DB
     # ports:       # Port is NOT exposed to the host (Isolated from Internet)
-    #   - &#39;5432:5432&#39;
+    #   - '5432:5432'
     mem_limit: 384m
     mem_reservation: 192m
     cpus: 0.3
@@ -735,60 +693,39 @@ services:
 volumes:
   postgres_data:  # Persistent storage for PostgreSQL data
 </code></pre>
-
-<p><strong>Critical insight:</strong> Notice the database has no port mapping to the host. It&#39;s only accessible via the <code>backend</code> network. The web containers connect using the service name: <code>postgresql://db:5432/database_name</code> instead of <code>localhost:5432</code>.</p>
-
-<p>For more on resource constraints and why they matter, see <a href="https://docs.docker.com/config/containers/resource_constraints/">Docker&#39;s Resource Constraints Documentation</a>.</p>
-
-<h3>Resource Limits: Preventing Cascade Failures</h3>
-
+<p><strong>Critical insight:</strong> Notice the database has no port mapping to the host. It's only accessible via the <code>backend</code> network. The web containers connect using the service name: <code>postgresql://db:5432/database_name</code> instead of <code>localhost:5432</code>.</p>
+<p>For more on resource constraints and why they matter, see <a href="https://docs.docker.com/config/containers/resource_constraints/" target="_blank" rel="noopener noreferrer">Docker's Resource Constraints Documentation</a>.</p>
+<h3 id="resource-limits-preventing-cascade-failures">Resource Limits: Preventing Cascade Failures</h3>
 <p>I learned this the hard way: without resource limits, one misbehaving container can crash your entire server. Memory limits and CPU restrictions prevent this:</p>
-
 <pre><code class="language-yaml">mem_limit: 384m         # Hard limit - container gets killed if exceeded
 mem_reservation: 192m   # Soft limit - guaranteed minimum
 cpus: 0.3               # 30% of one CPU core
 </code></pre>
-
-<p>With three application instances and a database, I&#39;m using about 1.5GB of my 2GB RAM, leaving room for system processes and spikes.</p>
-
-<img src="../../assets/img/blog/server-setup/docker-stats.png" alt="Article screenshot" loading="lazy">
-
+<p>With three application instances and a database, I'm using about 1.5GB of my 2GB RAM, leaving room for system processes and spikes.</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/docker-stats.png"/>
 <p><em>Real-time Docker container resource usage showing memory and CPU limits in action</em></p>
-
-<hr>
-
-<h2>SSL/TLS Configuration: The DNS-01 Challenge Story</h2>
-
-<p>Most guides recommend HTTP-01 challenge for Let&#39;s Encrypt SSL certificates. I went with DNS-01 instead, and here&#39;s why.</p>
-
-<h3>Why DNS-01 Made Sense for My Setup</h3>
-
+<hr/>
+<h2 id="ssltls-configuration-the-dns-01-challenge-story">SSL/TLS Configuration: The DNS-01 Challenge Story</h2>
+<p>Most guides recommend HTTP-01 challenge for Let's Encrypt SSL certificates. I went with DNS-01 instead, and here's why.</p>
+<h3 id="why-dns-01-made-sense-for-my-setup">Why DNS-01 Made Sense for My Setup</h3>
 <p>With Nginx terminating HTTPS and routing based on subdomains, I needed wildcard certificates. DNS-01 is the only challenge type that supports wildcards: <code>*.vladbortnik.dev</code>.</p>
-
-<p><strong>The three Let&#39;s Encrypt challenge types:</strong></p>
-
+<p><strong>The three Let's Encrypt challenge types:</strong></p>
 <ol>
-	<li><strong>HTTP-01</strong>: Requires serving a file at <code>http://yourdomain.com/.well-known/acme-challenge/</code></li>
-	<li><strong>DNS-01</strong>: Requires adding a TXT record to your DNS</li>
-	<li><strong>TLS-ALPN-01</strong>: Requires port 443 to be available (least common)</li>
+<li><strong>HTTP-01</strong>: Requires serving a file at <code>http://yourdomain.com/.well-known/acme-challenge/</code></li>
+<li><strong>DNS-01</strong>: Requires adding a TXT record to your DNS</li>
+<li><strong>TLS-ALPN-01</strong>: Requires port 443 to be available (least common)</li>
 </ol>
-
 <p>DNS-01 meant one certificate could cover:</p>
-
 <ul>
-	<li>vladbortnik.dev</li>
-	<li>recipe.vladbortnik.dev</li>
-	<li>tldrx.vladbortnik.dev</li>
-	<li>bookfinder.vladbortnik.dev</li>
-	<li>(any future subdomain)</li>
+<li>vladbortnik.dev</li>
+<li>recipe.vladbortnik.dev</li>
+<li>tldrx.vladbortnik.dev</li>
+<li>bookfinder.vladbortnik.dev</li>
+<li>(any future subdomain)</li>
 </ul>
-
-<p>For a comprehensive explanation of challenge types, see <a href="https://letsencrypt.org/docs/challenge-types/">Let&#39;s Encrypt&#39;s Challenge Types Documentation</a>.</p>
-
-<h3>Setting Up Certbot with DNS-01</h3>
-
+<p>For a comprehensive explanation of challenge types, see <a href="https://letsencrypt.org/docs/challenge-types/" target="_blank" rel="noopener noreferrer">Let's Encrypt's Challenge Types Documentation</a>.</p>
+<h3 id="setting-up-certbot-with-dns-01">Setting Up Certbot with DNS-01</h3>
 <p>I use DigitalOcean for DNS, so I used the Certbot DigitalOcean plugin:</p>
-
 <pre><code class="language-bash">sudo snap install --classic certbot
 sudo snap set certbot trust-plugin-with-root=ok
 sudo snap install certbot-dns-digitalocean
@@ -796,11 +733,8 @@ sudo snap install certbot-dns-digitalocean
 # Create API token file
 sudo mkdir -p /root/.secrets/certbot
 sudo nano /root/.secrets/certbot/digitalocean.ini</code></pre>
-
 <p>In <code>digitalocean.ini</code>:</p>
-
 <pre><code class="language-ini">dns_digitalocean_token = your_digitalocean_api_token_here</code></pre>
-
 <pre><code class="language-bash"># Secure the file
 sudo chmod 600 /root/.secrets/certbot/digitalocean.ini
 
@@ -816,23 +750,14 @@ sudo systemctl enable snap.certbot.renew.timer
 
 # Test renewal
 sudo certbot renew --dry-run</code></pre>
-
-<img src="../../assets/img/blog/server-setup/certbot-certificates.png" alt="Article screenshot" loading="lazy">
-
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/certbot-certificates.png"/>
 <p><em>Certbot SSL certificates showing wildcard coverage for all subdomains</em></p>
-
 <p>Auto-renewal is handled by a snap timer. The certificate renews automatically 30 days before expiration.</p>
-
-<p>For detailed Certbot setup instructions, see the <a href="https://certbot.eff.org/instructions">Official Certbot Documentation</a>.</p>
-
-<h3>Achieving A+ Security Rating</h3>
-
-<p>Getting an A+ on SSL Labs required proper SSL configuration. Here&#39;s what matters:</p>
-
-<img src="../../assets/img/blog/server-setup/ssl-lab-test-score.png" alt="Article screenshot" loading="lazy">
-
+<p>For detailed Certbot setup instructions, see the <a href="https://certbot.eff.org/instructions" target="_blank" rel="noopener noreferrer">Official Certbot Documentation</a>.</p>
+<h3 id="achieving-a-security-rating">Achieving A+ Security Rating</h3>
+<p>Getting an A+ on SSL Labs required proper SSL configuration. Here's what matters:</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/ssl-lab-test-score.png"/>
 <p><em>SSL Labs test showing A rating for production-grade TLS configuration</em></p>
-
 <pre><code class="language-nginx"># Modern TLS only (no outdated protocols)
 ssl_protocols TLSv1.3;
 ssl_prefer_server_ciphers off;
@@ -843,399 +768,250 @@ ssl_session_cache shared:MozSSL:10m;
 ssl_session_tickets off;
 
 # HSTS - force HTTPS for 2 years
-add_header Strict-Transport-Security &quot;max-age=63072000&quot; always;
+add_header Strict-Transport-Security "max-age=63072000" always;
 
 # Security headers
-add_header X-Frame-Options &quot;SAMEORIGIN&quot; always;
-add_header X-Content-Type-Options &quot;nosniff&quot; always;
-add_header Referrer-Policy &quot;strict-origin-when-cross-origin&quot; always;
+add_header X-Frame-Options "SAMEORIGIN" always;
+add_header X-Content-Type-Options "nosniff" always;
+add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 
 # Content Security Policy - start strict, loosen as needed
-add_header Content-Security-Policy &quot;default-src &#39;self&#39; data:; img-src &#39;self&#39; data: blob:; font-src &#39;self&#39; data:;&quot; always;</code></pre>
-
-<img src="../../assets/img/blog/server-setup/security-headers-score.png" alt="Article screenshot" loading="lazy">
-
+add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' data: blob:; font-src 'self' data:;" always;</code></pre>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/security-headers-score.png"/>
 <p><em>Security Headers test showing A+ rating with comprehensive HTTP security headers</em></p>
-
 <p><strong>Honest note about CSP:</strong> Content Security Policy is powerful but can break your site if too strict. I started with a permissive policy and gradually tightened it by checking browser console errors.</p>
-
-<p>For SSL/TLS configuration best practices, see <a href="https://nginx.org/en/docs/http/configuring_https_servers.html">Nginx&#39;s HTTPS Configuration Guide</a> and test your config at <a href="https://www.ssllabs.com/ssltest/">SSL Labs</a>.</p>
-
-<img src="../../assets/img/blog/server-setup/http-observatory-score.png" alt="Article screenshot" loading="lazy">
-
+<p>For SSL/TLS configuration best practices, see <a href="https://nginx.org/en/docs/http/configuring_https_servers.html" target="_blank" rel="noopener noreferrer">Nginx's Https Configuration Guide</a> and test your config at <a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL LABS</a>.</p>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/http-observatory-score.png"/>
 <p><em>Mozilla HTTP Observatory showing A+ overall security score</em></p>
-
-<hr>
-
-<h2>Deployment Workflow: The Practical Reality</h2>
-
-<h3>Manual Deployment First</h3>
-
-<p>I deploy manually using FileZilla (SFTP client) for the first few iterations of any project. Here&#39;s why:</p>
-
+<hr/>
+<h2 id="deployment-workflow-the-practical-reality">Deployment Workflow: The Practical Reality</h2>
+<h3 id="manual-deployment-first">Manual Deployment First</h3>
+<p>I deploy manually using FileZilla (SFTP client) for the first few iterations of any project. Here's why:</p>
 <ol>
-	<li>It helps me understand what&#39;s actually happening</li>
-	<li>I can debug issues more easily</li>
-	<li>No CI/CD complexity until I need it</li>
+<li>It helps me understand what's actually happening</li>
+<li>I can debug issues more easily</li>
+<li>No CI/CD complexity until I need it</li>
 </ol>
-
 <p><strong>FileZilla Setup:</strong></p>
-
 <ul>
-	<li>Download from <a href="https://filezilla-project.org/">filezilla-project.org</a></li>
-	<li>Connect with SFTP protocol</li>
-	<li>Host: your_server_ip</li>
-	<li>Username: your_ssh_user</li>
-	<li>Key file: your SSH private key</li>
+<li>Download from <a href="https://filezilla-project.org/" target="_blank" rel="noopener noreferrer">filezilla-project.org</a></li>
+<li>Connect with SFTP protocol</li>
+<li>Host: your_server_ip</li>
+<li>Username: your_ssh_user</li>
+<li>Key file: your SSH private key</li>
 </ul>
-
 <p>I upload files to <code>/home/username/apps/project-name/</code>, then SSH in and run:</p>
-
 <pre><code class="language-bash">cd /home/username/apps/project-name
 docker-compose build
 docker-compose up -d</code></pre>
-
-<p>For detailed FileZilla usage, see their <a href="https://wiki.filezilla-project.org/Using">Official Documentation</a>.</p>
-
-<h3>Automation Later (GitHub Actions)</h3>
-
-<p>Once the manual process works smoothly, automate it. But don&#39;t start with automation—you&#39;ll spend hours debugging CI/CD instead of debugging your actual application.</p>
-
-<hr>
-
-<h2>Monitoring and Maintenance: The Real Cost</h2>
-
+<p>For detailed FileZilla usage, see their <a href="https://wiki.filezilla-project.org/Using" target="_blank" rel="noopener noreferrer">Official Documentation</a>.</p>
+<h3 id="automation-later-github-actions">Automation Later (GitHub Actions)</h3>
+<p>Once the manual process works smoothly, automate it. But don't start with automation—you'll spend hours debugging CI/CD instead of debugging your actual application.</p>
+<hr/>
+<h2 id="monitoring-and-maintenance-the-real-cost">Monitoring and Maintenance: The Real Cost</h2>
 <p>Setting up the server is one thing. Keeping it running is another.</p>
-
-<h3>Essential Monitoring Tools</h3>
-
-<p><strong>UptimeRobot (free):</strong> Pings my sites every 5 minutes and emails me if they&#39;re down. Has saved me twice when processes crashed. Sign up at <a href="https://uptimerobot.com/">uptimerobot.com</a>.</p>
-
+<h3 id="essential-monitoring-tools">Essential Monitoring Tools</h3>
+<p><strong>UptimeRobot (free):</strong> Pings my sites every 5 minutes and emails me if they're down. Has saved me twice when processes crashed. Sign up at <a href="https://uptimerobot.com/" target="_blank" rel="noopener noreferrer">uptimerobot.com</a>.</p>
 <p><strong>Netdata (free):</strong> Real-time system monitoring. I can see CPU, memory, disk usage, and network traffic in beautiful dashboards. Install with:</p>
-
 <pre><code class="language-bash">bash &lt;(curl -Ss https://my-netdata.io/kickstart.sh)</code></pre>
-
 <p>Access at <code>http://your_server_ip:19999</code></p>
-
-<p>Learn more at <a href="https://www.netdata.cloud/">netdata.cloud</a>.</p>
-
-<p><strong>Sentry (optional):</strong> For application error tracking and monitoring. Great for production apps. Check it out at <a href="https://sentry.io/welcome/">sentry.io</a>.</p>
-
-<h3>Regular Maintenance Tasks</h3>
-
+<p>Learn more at <a href="https://www.netdata.cloud/" target="_blank" rel="noopener noreferrer">netdata.cloud</a>.</p>
+<p><strong>Sentry (optional):</strong> For application error tracking and monitoring. Great for production apps. Check it out at <a href="https://sentry.io/welcome/" target="_blank" rel="noopener noreferrer">sentry.io</a>.</p>
+<h3 id="regular-maintenance-tasks">Regular Maintenance Tasks</h3>
 <p><strong>Weekly checklist:</strong></p>
-
 <ul>
-	<li>Check disk usage: <code>$ df -h</code></li>
-	<li>Review Nginx logs: <code>$ sudo tail -f /var/log/nginx/error.log</code></li>
-	<li>Verify backups are running</li>
+<li>Check disk usage: <code>$ df -h</code></li>
+<li>Review Nginx logs: <code>$ sudo tail -f /var/log/nginx/error.log</code></li>
+<li>Verify backups are running</li>
 </ul>
-
 <p><strong>Monthly checklist:</strong></p>
-
 <ul>
-	<li>Update system packages: <code>$ sudo apt update &amp;&amp; sudo apt upgrade</code></li>
-	<li>Review Fail2Ban logs: <code>$ sudo fail2ban-client status sshd</code></li>
-	<li>Check Docker disk usage: <code>$ docker system df</code></li>
+<li>Update system packages: <code>$ sudo apt update &amp;&amp; sudo apt upgrade</code></li>
+<li>Review Fail2Ban logs: <code>$ sudo fail2ban-client status sshd</code></li>
+<li>Check Docker disk usage: <code>$ docker system df</code></li>
 </ul>
-
 <p><strong>Quarterly:</strong></p>
-
 <ul>
-	<li>Test backup restoration (crucial—untested backups are useless)</li>
-	<li>Review and rotate old logs</li>
-	<li>Audit user access and SSH keys</li>
+<li>Test backup restoration (crucial—untested backups are useless)</li>
+<li>Review and rotate old logs</li>
+<li>Audit user access and SSH keys</li>
 </ul>
-
-<img src="../../assets/img/blog/server-setup/docker-ps.png" alt="Article screenshot" loading="lazy">
-
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/docker-ps.png"/>
 <p><em>Docker containers running in production showing uptime and health status</em></p>
-
-<h3>Automated Updates</h3>
-
+<h3 id="automated-updates">Automated Updates</h3>
 <p>I use unattended-upgrades for security updates:</p>
-
 <pre><code class="language-bash">sudo apt install unattended-upgrades
 sudo dpkg-reconfigure --priority=low unattended-upgrades</code></pre>
-
 <p>This automatically installs security patches but not major version upgrades (which could break things).</p>
-
-<hr>
-
-<h2>Performance Optimization: What Actually Worked</h2>
-
-<h3>Nginx Caching for Static Assets</h3>
-
+<hr/>
+<h2 id="performance-optimization-what-actually-worked">Performance Optimization: What Actually Worked</h2>
+<h3 id="nginx-caching-for-static-assets">Nginx Caching for Static Assets</h3>
 <p>This one setting dramatically improved load times:</p>
-
 <pre><code class="language-nginx">location ~* \.(jpg|jpeg|png|gif|ico|css|js|woff2|svg)$ {
     expires 30d;
-    add_header Cache-Control &quot;public, immutable&quot;;
+    add_header Cache-Control "public, immutable";
 }</code></pre>
-
 <p>Static assets are cached for 30 days. Page load time dropped from 1.2s to 400ms.</p>
-
-<h3>Gzip Compression</h3>
-
+<h3 id="gzip-compression">Gzip Compression</h3>
 <p>Enable in <code>/etc/nginx/nginx.conf</code>:</p>
-
 <pre><code class="language-nginx">gzip on;
 gzip_vary on;
 gzip_proxied any;
 gzip_comp_level 6;
 gzip_types text/plain text/css text/xml text/javascript application/json application/javascript application/xml+rss application/rss+xml font/truetype font/opentype application/vnd.ms-fontobject image/svg+xml;</code></pre>
-
 <p>This reduces transfer sizes by 60-70% for text-based resources.</p>
-
-<p>For more performance optimization techniques, see the <a href="https://www.nginx.com/blog/nginx-caching-guide/">Nginx Caching Guide</a> and consider <a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/">Cloudflare CDN</a> for further improvements.</p>
-
-<h3>Database Connection Pooling</h3>
-
+<p>For more performance optimization techniques, see the <a href="https://www.nginx.com/blog/nginx-caching-guide/" target="_blank" rel="noopener noreferrer">Nginx Caching Guide</a> and consider <a href="https://www.cloudflare.com/learning/cdn/what-is-a-cdn/" target="_blank" rel="noopener noreferrer">Cloudflare CDN</a> for further improvements.</p>
+<h3 id="database-connection-pooling">Database Connection Pooling</h3>
 <p>Using SQLAlchemy with proper connection pooling:</p>
-
 <pre><code class="language-python"># In your Flask app config
 SQLALCHEMY_ENGINE_OPTIONS = {
-    &#39;pool_size&#39;: 10,
-    &#39;pool_recycle&#39;: 3600,
-    &#39;pool_pre_ping&#39;: True,
+    'pool_size': 10,
+    'pool_recycle': 3600,
+    'pool_pre_ping': True,
 }</code></pre>
-
-<p>This prevents the &quot;too many connections&quot; error I hit during traffic spikes.</p>
-
-<hr>
-
-<h2>Cost Analysis: 6 Months Later</h2>
-
-<p><strong>Actual monthly costs:</strong><br/></p>
-
-<ul>
-	<li>DigitalOcean Droplet: <code>$12</code></li>
-	<li>Automated backups: <code>$2.40</code></li>
-	<li>Domain names (3 domains): <code>$3</code></li>
-	<li><strong>Total: <code>$17.40/month</code></strong></li>
-</ul>
-
-<p><strong>Current resource usage:</strong><br/></p>
-
-<ul>
-	<li>CPU: 15-20% average, 40% peak</li>
-	<li>RAM: 1.3GB of 2GB used (65%)</li>
-	<li>Storage: 9GB of 25GB used</li>
-	<li><strong>Could easily host 2-3 more applications</strong></li>
-</ul>
-
-<p><strong>Compared to platform hosting for 3 apps:</strong><br/></p>
-
-<ul>
-	<li>Heroku: <code>$39/month</code></li>
-	<li>Render: <code>$35/month</code></li>
-	<li>Railway: <code>$20/month</code></li>
-</ul>
-
-<p><strong>Monthly savings: <code>$20-30</code></strong></p>
-
-<p><strong>Yearly savings: <code>$240-360</code></strong></p>
-
-<p>Plus I learned skills worth far more than the savings.</p>
-
-<hr>
-
-<h2>Common Issues and How I Fixed Them</h2>
-
-<h3>Issue: Application Can&#39;t Connect to Database</h3>
-
+<p>This prevents the "too many connections" error I hit during traffic spikes.</p>
+<hr/>
+<h2 id="common-issues-and-how-i-fixed-them">Common Issues and How I Fixed Them</h2>
+<h3 id="issue-application-cant-connect-to-database">Issue: Application Can't Connect to Database</h3>
 <p><strong>Error:</strong> <code>psycopg2.OperationalError: could not connect to server</code></p>
-
 <p><strong>Solution:</strong> Check your Docker networks. The database container must be on the same network as the application. In your app, use the service name: <code>postgresql://db:5432/dbname</code>, not <code>localhost:5432</code>.</p>
-
-<h3>Issue: Nginx Shows 502 Bad Gateway</h3>
-
+<h3 id="issue-nginx-shows-502-bad-gateway">Issue: Nginx Shows 502 Bad Gateway</h3>
 <p><strong>Debugging steps:</strong></p>
-
 <ol>
-	<li>Check if application is running: <code>docker ps</code></li>
-	<li>Check application logs: <code>docker logs container_name</code></li>
-	<li>Verify port numbers match between Docker and Nginx config</li>
-	<li>Test application directly: <code>curl http://localhost:5002</code></li>
+<li>Check if application is running: <code>docker ps</code></li>
+<li>Check application logs: <code>docker logs container_name</code></li>
+<li>Verify port numbers match between Docker and Nginx config</li>
+<li>Test application directly: <code>curl http://localhost:5002</code></li>
 </ol>
-
 <p>Most common cause: Application crashed, wrong port number, or firewall blocking the port.</p>
-
-<h3>Issue: SSL Certificate Won&#39;t Renew</h3>
-
+<h3 id="issue-ssl-certificate-wont-renew">Issue: SSL Certificate Won't Renew</h3>
 <p><strong>Check renewal status:</strong></p>
-
 <pre><code class="language-bash">sudo certbot renew --dry-run</code></pre>
-
 <p>With DNS-01, ensure your DigitalOcean API token is still valid and has proper permissions.</p>
-
-<p>For comprehensive SSL troubleshooting, check <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04">DigitalOcean&#39;s Let&#39;s Encrypt Guide</a>.</p>
-
-<hr>
-
-<h2>What I&#39;d Do Differently</h2>
-
+<p>For comprehensive SSL troubleshooting, check <a href="https://www.digitalocean.com/community/tutorials/how-to-secure-nginx-with-let-s-encrypt-on-ubuntu-20-04" target="_blank" rel="noopener noreferrer">Digitalocean's Let's Encrypt Guide</a>.</p>
+<hr/>
+<h2 id="what-id-do-differently" class="no-number">What I'd Do Differently</h2>
 <p>If I started over today:</p>
-
 <ol>
-	<li><strong>Document as you build</strong>: I spent hours remembering what commands I ran. Keep a log.</li>
-	<li><strong>Start with one app</strong>: Don&#39;t try to migrate everything at once. Get one app working perfectly, then add others.</li>
-	<li><strong>Backups from day one</strong>: I waited two weeks before setting up backups. That was stupid. Automate backups immediately.</li>
-	<li><strong>Use Ansible/Terraform</strong>: For anything beyond 1-2 servers, infrastructure-as-code is worth the learning curve.</li>
-	<li><strong>Monitoring before problems</strong>: Install monitoring before you have issues, not after your site goes down.</li>
+<li><strong>Document as you build</strong>: I spent hours remembering what commands I ran. Keep a log.</li>
+<li><strong>Start with one app</strong>: Don't try to migrate everything at once. Get one app working perfectly, then add others.</li>
+<li><strong>Backups from day one</strong>: I waited two weeks before setting up backups. That was stupid. Automate backups immediately.</li>
+<li><strong>Use Ansible/Terraform</strong>: For anything beyond 1-2 servers, infrastructure-as-code is worth the learning curve.</li>
+<li><strong>Monitoring before problems</strong>: Install monitoring before you have issues, not after your site goes down.</li>
 </ol>
-
-<hr>
-
-<h2>The Honest Truth About Self-Hosting</h2>
-
-<p><strong>What you gain:</strong></p>
-
+<hr/>
+<h2 id="the-honest-truth-about-self-hosting" class="no-number">The Honest Truth About Self-Hosting</h2>
+<p><strong>Pros:</strong></p>
 <ul>
-	<li>Complete control over your infrastructure</li>
-	<li>Significant cost savings</li>
-	<li>Deep understanding of how web services work</li>
-	<li>Confidence to debug production issues</li>
-	<li>Flexibility to host unlimited projects</li>
+<li>Complete control over your infrastructure</li>
+<li>Significant cost savings</li>
+<li>Deep understanding of how web services work</li>
+<li>Confidence to debug production issues</li>
+<li>Flexibility to host unlimited projects</li>
 </ul>
-
-<p><strong>What you lose:</strong></p>
-
+<p><strong>Cons:</strong></p>
 <ul>
-	<li>Managed service convenience</li>
-	<li>Automatic scaling (you handle it manually)</li>
-	<li>Someone else to blame when things break</li>
-	<li>Some evenings and weekends debugging</li>
+<li>Managed service convenience</li>
+<li>Automatic scaling (you handle it manually)</li>
+<li>Someone else to blame when things break</li>
+<li>Some evenings and weekends debugging</li>
 </ul>
-
 <p><strong>Is it worth it?</strong> For me, absolutely. The skills I gained are more valuable than the time invested. I can confidently deploy any project, optimize performance, and fix issues without depending on platform support.</p>
-
-<p>But be realistic: if you just want to ship features and don&#39;t care about infrastructure, use a platform. Self-hosting is for people who enjoy the infrastructure layer, for portfolio projects, etc.</p>
-
-<hr>
-
-<h2>Resources and Next Steps</h2>
-
+<p>But be realistic: if you just want to ship features and don't care about infrastructure, use a platforms. Self-hosting is for people who enjoy the infrastructure layer, or for portfolio projects, etc.</p>
+<hr/>
+<h2 id="resources-and-next-steps" class="no-number">Resources and Next Steps</h2>
 <p><strong>Essential documentation:</strong></p>
-
 <ul>
-	<li><a href="https://www.digitalocean.com/community/tutorials">DigitalOcean Community Tutorials</a></li>
-	<li><a href="https://nginx.org/en/docs/">Nginx Documentation</a></li>
-	<li><a href="https://docs.docker.com/">Docker Documentation</a></li>
-	<li><a href="https://letsencrypt.org/docs/">Let&#39;s Encrypt Documentation</a></li>
+<li><a href="https://www.digitalocean.com/community/tutorials" target="_blank" rel="noopener noreferrer">Digitalocean Community Tutorials</a></li>
+<li><a href="https://nginx.org/en/docs/" target="_blank" rel="noopener noreferrer">Nginx Documentation</a></li>
+<li><a href="https://docs.docker.com/" target="_blank" rel="noopener noreferrer">Docker Documentation</a></li>
+<li><a href="https://letsencrypt.org/docs/" target="_blank" rel="noopener noreferrer">Let's Encrypt Documentation</a></li>
 </ul>
-
 <p><strong>My complete configurations:</strong></p>
-
 <ul>
-	<li>All the configs, scripts, and detailed documentation are in my GitHub repository: <a href="https://github.com/vladbortnik/production-server-infrastructure">Production-Server-Infrastructure</a>. </li>
-	<li>You may also check up the <strong>Project</strong> at my <a href="https://vladbortnik.dev/server-setup.html">Portfolio Website</a>.</li>
+<li>All the configs, scripts, and detailed documentation are in my GitHub repository: <a href="https://github.com/vladbortnik/production-server-infrastructure" target="_blank" rel="noopener noreferrer">Production-Server-Infrastructure</a>. </li>
+<li>You may also check up the <strong>Project</strong> at my <a href="https://vladbortnik.dev/server-setup.html" target="_blank" rel="noopener noreferrer">Portfolio Website</a>.</li>
 </ul>
-
 <p><strong>Testing your SSL configuration:</strong></p>
-
 <ul>
-	<li><a href="https://www.ssllabs.com/ssltest/">SSL Labs Server Test</a></li>
-	<li><a href="https://observatory.mozilla.org/">Mozilla Observatory</a></li>
-	<li><a href="https://securityheaders.com/">Security Headers</a></li>
+<li><a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL Labs Server Test</a></li>
+<li><a href="https://observatory.mozilla.org/" target="_blank" rel="noopener noreferrer">Mozilla Observatory</a></li>
+<li><a href="https://securityheaders.com/" target="_blank" rel="noopener noreferrer">Security Headers</a></li>
 </ul>
-
 <p><strong>Additional Resources:</strong></p>
-
-<p>For deeper learning about modern application architecture, I highly recommend <a href="https://12factor.net/">The Twelve-Factor App</a> methodology.</p>
-
-<hr>
-
-<h2>Conclusion: Build It and Learn</h2>
-
+<p>For deeper learning about modern application architecture, I highly recommend <a href="https://12factor.net/" target="_blank" rel="noopener noreferrer">The Twelve-factor App</a> methodology.</p>
+<hr/>
+<h2 id="conclusion-build-it-and-learn" class="no-number">Conclusion: Build It and Learn</h2>
 <p>I started this project to save money on hosting. I ended up with something far more valuable: a deep understanding of production web infrastructure.</p>
-
-<p>The setup I described isn&#39;t theoretical—it&#39;s running in production right now. It has survived traffic spikes, minor DDoS attempts, and my own configuration mistakes.</p>
-
-<p>Your journey will look different. You&#39;ll make different choices, encounter different problems, and find different solutions. That&#39;s the point. Self-hosting isn&#39;t about following a perfect recipe; it&#39;s about understanding the ingredients well enough to adapt when things go wrong.</p>
-
+<p>The setup I described isn't theoretical—it's running in production right now. It has survived traffic spikes, minor DDoS attempts, and my own configuration mistakes.</p>
+<p>Your journey will look different. You'll make different choices, encounter different problems, and find different solutions. That's the point. Self-hosting isn't about following a perfect recipe; it's about understanding the ingredients well enough to adapt when things go wrong.</p>
 <p>Start small. Deploy one application. Break things. Fix them. Learn. Then scale up.</p>
-
 <p><strong>The best time to start was six months ago. The second best time is now.</strong></p>
-
-<hr>
-
-<h2>Get in Touch</h2>
-
+<hr/>
+<h2 id="get-in-touch" class="no-number">Get in Touch</h2>
 <p>Questions about this setup? Find me at:</p>
-
 <ul>
-	<li><a href="https://vladbortnik.dev/">Portfolio</a></li>
-	<li><a href="https://github.com/vladbortnik">GitHub</a></li>
-	<li><a href="https://www.linkedin.com/in/vladbortnik/">LinkedIn</a></li>
-	<li><a href="https://x.com/vladbortnik_dev">X/Twitter</a></li>
-	<li><a href="https://vladbortnik.dev/contact.html">Contact me</a></li>
+<li><a href="https://vladbortnik.dev/" target="_blank" rel="noopener noreferrer">PORTFOLIO</a></li>
+<li><a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
+<li><a href="https://www.linkedin.com/in/vladbortnik/" target="_blank" rel="noopener noreferrer">LINKEDIN</a></li>
+<li><a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer">X/TWITTER</a></li>
+<li><a href="https://vladbortnik.dev/contact.html" target="_blank" rel="noopener noreferrer">CONTACT ME</a></li>
 </ul>
-
-<p>I&#39;m happy to help troubleshoot or discuss infrastructure approaches. We&#39;re all learning together.</p>
-
-<hr>
-
+<p>I'm happy to help troubleshoot or discuss infrastructure approaches. We're all learning together.</p>
+<hr/>
 <p><em>🤖 This infrastructure has been running in production for 6+ months, hosting multiple applications with 99.9% uptime. All configurations shown are production-tested.</em></p>
-                </div>
-
-                <!-- Author Bio -->
-                <section class="author-bio">
-                    <img src="../../assets/img/vlad-bortnik-headshot.jpg" alt="Vlad Bortnik - Backend Software Engineer specializing in Python, Docker, and DevOps" width="1121" height="1121" loading="lazy" class="author-photo">
-                    <div class="author-info">
-                        <h3>About the Author</h3>
-                        <h4>Vlad Bortnik</h4>
-                        <p>Backend software engineer specializing in Python/Flask, Docker, DevOps, and cloud infrastructure. Passionate about building scalable, production-grade web applications and sharing knowledge with the developer community.</p>
-                        <div class="author-links">
-                            <a href="https://github.com/vladbortnik" target="_blank" rel="noopener"><i class="bi bi-github"></i> GitHub</a>
-                            <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener"><i class="bi bi-linkedin"></i> LinkedIn</a>
-                            <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener"><i class="bi bi-twitter-x"></i> X/Twitter</a>
-                        </div>
-                    </div>
-                </section>
-
-            </div>
-        </div>
-    </section>
-
-    <!-- ======= Footer ======= -->
-    <footer id="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-icons">
-                    <a href="https://github.com/vladbortnik" target="_blank" rel="noopener" class="github">
-                        <i class="bi bi-github"></i>
-                    </a>
-                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener" class="linkedin">
-                        <i class="bi bi-linkedin"></i>
-                    </a>
-                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener" class="twitter">
-                        <i class="bi bi-twitter-x"></i>
-                    </a>
-                </div>
-                <div class="footer-copyright">
+</div>
+<!-- Author Bio -->
+<section class="author-bio">
+<img alt="Vlad Bortnik - Backend Software Engineer specializing in Python, Docker, and DevOps" class="author-photo" height="1121" loading="lazy" src="../../assets/img/vlad-bortnik-headshot.jpg" width="1121"/>
+<div class="author-info">
+<h3>About the Author</h3>
+<h4>Vlad Bortnik</h4>
+<p>Backend software engineer specializing in Python/Flask, Docker, DevOps, and cloud infrastructure. Passionate about building scalable, production-grade web applications and sharing knowledge with the developer community.</p>
+<div class="author-links">
+<a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" rel="noopener" target="_blank"><i class="bi bi-github"></i> GitHub</a>
+<a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" rel="noopener" target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
+<a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" rel="noopener" target="_blank"><i class="bi bi-twitter-x"></i> X/Twitter</a>
+</div>
+</div>
+</section>
+</div>
+</div>
+</section>
+<!-- ======= Footer ======= -->
+<footer id="footer">
+<div class="container">
+<div class="footer-content">
+<div class="footer-icons">
+<a class="github" href="https://github.com/vladbortnik" rel="noopener" target="_blank">
+<i class="bi bi-github"></i>
+</a>
+<a class="linkedin" href="https://linkedin.com/in/vladbortnik" rel="noopener" target="_blank">
+<i class="bi bi-linkedin"></i>
+</a>
+<a class="twitter" href="https://x.com/vladbortnik_dev" rel="noopener" target="_blank">
+<i class="bi bi-twitter-x"></i>
+</a>
+</div>
+<div class="footer-copyright">
                     © 2025 Vlad Bortnik. All rights reserved.
                 </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Vendor JS Files -->
-    <script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-    <!-- Prism.js for syntax highlighting -->
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-nginx.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ini.min.js"></script>
-
-    <!-- Main JS -->
-    <script src="../../assets/js/main.js"></script>
-
-    <!-- Reading Progress Bar -->
-    <script>
+</div>
+</div>
+</footer>
+<!-- Vendor JS Files -->
+<script src="../../assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<!-- Prism.js for syntax highlighting -->
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-bash.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-nginx.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-yaml.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-python.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ini.min.js"></script>
+<!-- Main JS -->
+<script src="../../assets/js/main.js"></script>
+<!-- Reading Progress Bar -->
+<script>
         window.addEventListener('scroll', () => {
             const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
             const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1243,6 +1019,5 @@ SQLALCHEMY_ENGINE_OPTIONS = {
             document.querySelector('.reading-progress').style.width = scrolled + '%';
         });
     </script>
-
 </body>
 </html>
