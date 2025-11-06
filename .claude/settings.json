@@ -126,6 +126,19 @@
       ],
       "command": "npx",
       "name": "Sequential-Thinking"
+    },
+    "posthog": {
+      "command": "npx",
+      "args": [
+        "-y",
+        "mcp-remote@latest",
+        "https://mcp.posthog.com/sse",
+        "--header",
+        "Authorization: ${POSTHOG_AUTH_HEADER}"
+      ],
+      "env": {
+        "POSTHOG_AUTH_HEADER": "Bearer phx_6V9WFTGm3n5SX5w9jqe8ZbmUzVE5YNDZDQIz3zah2zhCTTz"
+      }
     }
   }
 }
