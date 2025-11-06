@@ -147,7 +147,7 @@
       ];
 
       if (file.type && !allowedMimeTypes.includes(file.type)) {
-        console.warn(`MIME type validation warning for ${file.name}: ${file.type}`);
+        // MIME type validation warning (removed for production)
       }
 
       uploadedFiles.push(file);
@@ -208,7 +208,6 @@
 
     // Honeypot check
     if (checkHoneypot(e.target)) {
-      console.log('Bot detected via honeypot');
       return;
     }
 
@@ -243,7 +242,6 @@
         throw new Error('Form submission failed');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       showFormMessage(simpleForm, 'Oops! Something went wrong. Please try again later.', 'error');
     }
   }
@@ -253,7 +251,6 @@
 
     // Honeypot check
     if (checkHoneypot(e.target)) {
-      console.log('Bot detected via honeypot');
       return;
     }
 
@@ -303,7 +300,6 @@
         throw new Error('Form submission failed');
       }
     } catch (error) {
-      console.error('Form submission error:', error);
       showFormMessage(projectForm, 'Oops! Something went wrong. Please try again later.', 'error');
     }
   }
@@ -320,7 +316,6 @@
 
     if (timeSinceLastSubmission < CONFIG.RATE_LIMIT_SECONDS) {
       const remainingTime = Math.ceil(CONFIG.RATE_LIMIT_SECONDS - timeSinceLastSubmission);
-      console.log(`Rate limit: Please wait ${remainingTime} seconds`);
       return false;
     }
 
@@ -367,12 +362,6 @@
     initModeSwitch();
     initFileUpload();
     initFormSubmission();
-
-    console.log('Contact form initialized with security features:');
-    console.log('- Honeypot protection');
-    console.log('- Rate limiting (60 seconds)');
-    console.log('- File validation (type, size, count)');
-    console.log('- Cloudflare Turnstile (configure site key)');
   }
 
   // Initialize when DOM is ready
