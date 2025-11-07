@@ -94,7 +94,7 @@
 
     <!-- Main CSS Files -->
     <link href="../assets/css/style.css" rel="stylesheet" />
-    <link href="assets/css/blog.css?v=9" rel="stylesheet" />
+    <link href="assets/css/blog.css?v=14" rel="stylesheet" />
 
     <!-- Structured Data -->
     <script type="application/ld+json">
@@ -220,25 +220,27 @@
     <!-- ======= BLOG SECTION ======= -->
     <section id="blog" class="blog">
       <div class="container">
-        <!-- Blog Header with Logo & Search -->
+        <!-- Blog Header with Logo & RSS -->
         <div class="blog-header">
           <div class="blog-brand">
             <div class="blog-icon">
-              <i class="bi bi-code-slash"></i>
+              <img src="../assets/img/logo.webp?v=2" alt="Vlad Bortnik Logo" />
             </div>
             <div class="blog-title">
               <h2>Engineering Blog</h2>
               <p>Technical insights & tutorials</p>
             </div>
           </div>
-          <div class="blog-search">
-            <i class="bi bi-search"></i>
-            <input
-              type="text"
-              id="blog-search-input"
-              class="blog-search-input"
-              placeholder="Search articles..."
-            />
+          <div class="blog-info">
+            <div class="blog-stats">
+              <a href="feed.xml" class="rss-link" title="Subscribe via RSS">
+                <i class="bi bi-rss-fill"></i> Subscribe via RSS
+              </a>
+              <span class="article-count">
+                <i class="bi bi-file-text"></i> <span id="article-count">1</span> Article
+              </span>
+            </div>
+            <p class="blog-tagline">More DevOps & infrastructure tutorials coming soon</p>
           </div>
         </div>
 

@@ -134,16 +134,19 @@ function fuzzyMatch(text, query) {
 
 /**
  * Initialize search functionality
+ * NOTE: Disabled until blog has 10+ articles
+ * To re-enable: uncomment this function and add search HTML back to index.html
  */
+/*
 function initSearch() {
   const searchInput = document.getElementById('blog-search-input');
   const postsContainer = document.getElementById('blog-posts-container');
-  
+
   if (!searchInput || !postsContainer) return;
 
   searchInput.addEventListener('input', function(e) {
     const searchTerm = e.target.value.trim();
-    
+
     if (!searchTerm) {
       loadBlogPosts();
       return;
@@ -153,7 +156,7 @@ function initSearch() {
       const searchableText = `${post.title} ${post.excerpt} ${post.category} ${post.date}`.toLowerCase();
       return fuzzyMatch(searchableText, searchTerm);
     });
-    
+
     if (filtered.length === 0) {
       postsContainer.innerHTML = '<div class="col-12 text-center"><p style="color: rgba(255, 255, 255, 0.5);">No posts found matching your search.</p></div>';
     } else {
@@ -165,6 +168,7 @@ function initSearch() {
     }
   });
 }
+*/
 
 /**
  * Initialize reading progress bar
@@ -231,7 +235,7 @@ window.blogPosts = blogPosts;
 // Load blog posts and initialize all features when DOM is ready
 document.addEventListener('DOMContentLoaded', function() {
   loadBlogPosts();
-  initSearch();
+  // initSearch(); // Disabled until blog has 10+ articles
   initProgressBar();
   initSocialShare();
 });
