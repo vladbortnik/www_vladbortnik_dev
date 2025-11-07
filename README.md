@@ -203,16 +203,31 @@ Marketplace application connecting students to buy and sell textbooks directly, 
 
 ---
 
-## 📝 Engineering Insights Blog - Launching Soon 🚀
+## 📝 Engineering Insights Blog
 
-Deep dives into production architectures, performance optimization, and building scalable systems. Stay tuned for technical articles on:
+Technical deep dives into production architectures, performance optimization, and building scalable systems. Real-world implementations with measurable results and actionable takeaways.
 
-- **Production Server Architecture** - Building secure, high-performance infrastructure
-- **Docker & Containerization** - Best practices for multi-container deployments
-- **Performance Optimization** - Real-world case studies with measurable results
-- **Security Hardening** - Achieving A+ ratings and perfect security scores
+### 🎯 Latest Article
 
-*Coming soon to [vladbortnik.dev/blog](https://vladbortnik.dev/blog)*
+**[Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month](https://vladbortnik.dev/blog/posts/1-production-grade-multi-app-server-12-dollar-month.html)**
+
+Complete guide to hosting multiple production applications on a single $12/month VPS using Docker, Nginx, and enterprise-level security. Learn how to achieve A+ SSL ratings, implement multi-layered security, and optimize resource allocation—all while saving $240-480/year on hosting costs.
+
+**Topics Covered:**
+- Docker multi-container architecture and network segregation
+- Nginx reverse proxy configuration and load balancing
+- SSL/TLS implementation with LetsEncrypt and automated renewal
+- Multi-layered security with UFW, fail2ban, and security headers
+- Production deployment strategies and monitoring
+
+### 📚 Upcoming Topics
+
+- **Performance Optimization** - Real-world case studies with 93%+ improvements
+- **Docker Best Practices** - Advanced containerization strategies
+- **Security Deep Dives** - Achieving perfect security scores
+- **Cloud Architecture** - Cost-effective infrastructure design
+
+**Visit the blog:** [vladbortnik.dev/blog](https://vladbortnik.dev/blog)
 
 ---
 
@@ -251,6 +266,6 @@ I'm always interested in discussing new opportunities, collaborating on projects
 
 ---
 
-*Last updated: October 2025*
+*Last updated: November 2025*
 
 </div>
