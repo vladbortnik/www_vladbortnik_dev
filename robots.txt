@@ -18,3 +18,4 @@ Sitemap: https://vladbortnik.dev/sitemap.xml
 
 # Crawl-delay (helps with server load)
 Crawl-delay: 1
+Disallow: /original-images/
