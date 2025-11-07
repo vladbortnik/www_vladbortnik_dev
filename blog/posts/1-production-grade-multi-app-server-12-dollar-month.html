@@ -598,7 +598,7 @@ server {
 <p>Docker was intimidating at first, but it's worth the learning curve. Here's how I structured things.</p>
 <h3 id="network-segregation-the-security-game-changer">Network Segregation: The Security Game-Changer</h3>
 <p>The biggest security win in my setup: <strong>databases never talk directly to the internet</strong>. They're on a private Docker network accessible only by application containers.</p>
-<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/networks-diagram.png"/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/networks-diagram.webp"/>
 <p><em>Docker network architecture: databases on backend network, web services bridging frontend and backend</em></p>
 <p>Here's the network diagram that illustrates this critical concept. Notice how:</p>
 <ul>
@@ -823,7 +823,7 @@ add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' dat
 <p><em>Security Headers test showing A+ rating with comprehensive HTTP security headers</em></p>
 <p><strong>Honest note about CSP:</strong> Content Security Policy is powerful but can break your site if too strict. I started with a permissive policy and gradually tightened it by checking browser console errors.</p>
 <p>For SSL/TLS configuration best practices, see <a href="https://nginx.org/en/docs/http/configuring_https_servers.html" target="_blank" rel="noopener noreferrer">Nginx's Https Configuration Guide</a> and test your config at <a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL LABS</a>.</p>
-<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/http-observatory-score.png"/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/http-observatory-score-1-1.webp"/>
 <p><em>Mozilla HTTP Observatory showing A+ overall security score</em></p>
 <hr/>
 <h2 id="deployment-workflow-the-practical-reality">Deployment Workflow: The Practical Reality</h2>
@@ -1017,6 +1017,21 @@ SQLALCHEMY_ENGINE_OPTIONS = {
 </div>
 </div>
 </section>
+<!-- Social Share Buttons -->
+<div class="social-share">
+<h4>Share this article:</h4>
+<div class="share-icons">
+<a href="#" class="share-btn twitter" aria-label="Share on X/Twitter">
+<i class="bi bi-twitter-x"></i>
+</a>
+<a href="#" class="share-btn linkedin" aria-label="Share on LinkedIn">
+<i class="bi bi-linkedin"></i>
+</a>
+<a href="#" class="share-btn copy" aria-label="Copy link">
+<i class="bi bi-link-45deg"></i>
+</a>
+</div>
+</div>
 </div>
 </div>
 </section>
@@ -1052,6 +1067,8 @@ SQLALCHEMY_ENGINE_OPTIONS = {
 <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-ini.min.js"></script>
 <!-- Main JS -->
 <script src="../../assets/js/main.js"></script>
+<!-- Blog JS for share buttons -->
+<script src="../assets/js/blog.js"></script>
 <!-- Reading Progress Bar -->
 <script>
         window.addEventListener('scroll', () => {
