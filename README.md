@@ -82,7 +82,7 @@ A lightweight, performance-optimized portfolio website built from scratch with v
 
 <div align="center">
   <a href="https://vladbortnik.dev" target="_blank">
-    <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.png" alt="Portfolio Website" width="700"/>
+    <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.webp" alt="Portfolio Website" width="700"/>
   </a>
   <p><em>Click to visit live site</em></p>
 </div>
@@ -113,15 +113,15 @@ Enterprise-level server infrastructure hosting multiple web applications on Digi
   <table>
     <tr>
       <td align="center">
-        <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.png" alt="SSL Labs A+ Rating" width="280"/>
+        <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp" alt="SSL Labs A+ Rating" width="280"/>
         <br/><em>SSL Labs: A+ Rating</em>
       </td>
       <td align="center">
-        <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.png" alt="Security Headers A+" width="280"/>
+        <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.webp" alt="Security Headers A+" width="280"/>
         <br/><em>Security Headers: A+</em>
       </td>
       <td align="center">
-        <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.png" alt="HTTP Observatory A+" width="280"/>
+        <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.webp" alt="HTTP Observatory A+" width="280"/>
         <br/><em>HTTP Observatory: A+</em>
       </td>
     </tr>
@@ -150,8 +150,8 @@ Progressive Web App providing lightning-fast Unix/Linux command references with 
 <div align="center">
   <table>
     <tr>
-      <td><img src="assets/img/portfolio/tldrx/desktop.png" alt="TL;DRx Desktop" width="400"/></td>
-      <td><img src="assets/img/portfolio/tldrx/mobile.png" alt="TL;DRx Mobile" width="180"/></td>
+      <td><img src="assets/img/portfolio/tldrx/tldrx-homepage-full.webp" alt="TL;DRx Desktop" width="400"/></td>
+      <td><img src="assets/img/portfolio/tldrx/tldrx-mobile-view.webp" alt="TL;DRx Mobile" width="180"/></td>
     </tr>
     <tr>
       <td align="center"><em>Desktop View - Matrix Theme</em></td>
@@ -178,7 +178,7 @@ Full-stack web application enabling users to upload images of ingredients and ge
 **Tech Stack:** Python, Flask, PostgreSQL, Docker, Docker Compose, Gunicorn, Azure Cognitive Services, Spoonacular API, Bootstrap
 
 <div align="center">
-  <img src="assets/img/portfolio/recipe/recipe-homepage.jpg" alt="Recipe Hub" width="700"/>
+  <img src="assets/img/portfolio/recipe/recipe-homepage.webp" alt="Recipe Hub" width="700"/>
 </div>
 
 ---
@@ -198,7 +198,7 @@ Marketplace application connecting students to buy and sell textbooks directly, 
 **Tech Stack:** Python, Flask, SQLite, SQLAlchemy, Docker, Flask-Login, Flask-Bcrypt, Bootstrap, Jinja2
 
 <div align="center">
-  <img src="assets/img/portfolio/bookfinder/bookfinder-homepage-orig.jpg" alt="Book Finder Platform" width="700"/>
+  <img src="assets/img/portfolio/bookfinder/bookfinder-homepage.webp" alt="Book Finder Platform" width="700"/>
 </div>
 
 ---
