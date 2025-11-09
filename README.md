@@ -18,7 +18,7 @@
 
 ## 🚀 About Me
 
-Software Engineer building production-grade web applications with expertise in full-stack development and DevOps infrastructure. I create secure, high-performance systems using Python/Flask, React, Docker, and Nginx—with proven results including **A+ SSL ratings**, **A+ HTTP Observatory and Security Headers scores**, **100% security ratings**, and **93%+ performance improvements** across deployed projects.
+Software Engineer building production-grade web applications with expertise in full-stack development and DevOps infrastructure. I create secure, high-performance systems using Python/Flask, React, Docker, and Nginx—with proven results including **A SSL ratings**, **A+ HTTP Observatory and Security Headers scores**, **100% security ratings**, and **93%+ performance improvements** across deployed projects.
 
 I specialize in transforming ideas into scalable, secure applications deployed on cloud infrastructure. My work demonstrates a comprehensive understanding of modern web development—from frontend interfaces and backend APIs to containerized deployments and production server architecture.
 

@@ -11,7 +11,7 @@ const blogPosts = [
     title: "Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month",
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
-    date: "2025-11-03",
+    date: "2025-11-09",
     readTime: "19 min read",
     author: "Vlad Bortnik"
   }
