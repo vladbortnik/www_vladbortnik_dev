@@ -7,7 +7,6 @@ DEPLOYMENT/context.md
 
 # Cloudflare Worker
 contact-worker/
-.wrangler/
 node_modules/
 
 # Backups

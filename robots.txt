@@ -2,20 +2,21 @@ User-agent: *
 Allow: /
 
 # Disallow admin/private areas
-Disallow: /forms/
 Disallow: /.git/
 Disallow: /.idea/
 Disallow: /.claude/
-Disallow: /archive/
+Disallow: /.qodo/
+Disallow: /.vscode/
 Disallow: /DEPLOYMENT/
-Disallow: /SEO/
+Disallow: /SEO-Checklist/
+Disallow: /SEO-Info/
 Disallow: /assets/vendor/
-Disallow: /.wrangler/
-Disallow: /contact-worker/
+Disallow: /original-images/
+Disallow: /blog/docs/
+Disallow: /blog/temp/
 
 # Sitemap location
 Sitemap: https://vladbortnik.dev/sitemap.xml
 
 # Crawl-delay (helps with server load)
 Crawl-delay: 1
-Disallow: /original-images/
