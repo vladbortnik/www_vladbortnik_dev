@@ -67,7 +67,7 @@ I specialize in transforming ideas into scalable, secure applications deployed o
 
 ### 1. 🌐 Professional Portfolio Website
 
-**Live:** [vladbortnik.dev](https://vladbortnik.dev) | **GitHub:** [View Repository](https://github.com/vladbortnik/www_vladbortnik_dev)
+**Live:** [vladbortnik.dev](https://vladbortnik.dev) | **GitHub:** [this repo](https://github.com/vladbortnik/www_vladbortnik_dev)
 
 A lightweight, performance-optimized portfolio website built from scratch with vanilla HTML5, CSS3/SCSS, and JavaScript. Features a modern single-page application architecture with hash-based routing, responsive design across 4 breakpoints, and comprehensive SEO optimization. **1000s lines of custom code** demonstrating mastery of core web technologies without framework dependencies.
 
@@ -114,7 +114,7 @@ Enterprise-level server infrastructure hosting multiple web applications on Digi
     <tr>
       <td align="center">
         <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp" alt="SSL Labs A+ Rating" width="280"/>
-        <br/><em>SSL Labs: A+ Rating</em>
+        <br/><em>SSL Labs: A Rating</em>
       </td>
       <td align="center">
         <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.webp" alt="Security Headers A+" width="280"/>
@@ -227,7 +227,7 @@ Complete guide to hosting multiple production applications on a single $12/month
 - **Security Deep Dives** - Achieving perfect security scores
 - **Cloud Architecture** - Cost-effective infrastructure design
 
-**Visit the blog:** [vladbortnik.dev/blog](https://vladbortnik.dev/blog)
+**Visit my blog:** [https://vladbortnik.dev/blog](https://vladbortnik.dev/blog)
 
 ---
 

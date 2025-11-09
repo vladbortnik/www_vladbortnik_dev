@@ -39,6 +39,17 @@ body::before {
   }
 }
 
+/* Waves Animation Canvas */
+#waves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 a {
   color: #18d26e;
   text-decoration: none;
@@ -328,6 +339,7 @@ h6 {
 .mode-btn.active {
   background: rgba(24, 210, 110, 0.1);
   border-color: #18d26e;
+  box-shadow: 0 0 20px rgba(24, 210, 110, 0.25);
 }
 
 .mode-btn.active i {
@@ -367,6 +379,11 @@ h6 {
   animation: fadeIn 0.4s ease;
   position: relative;
   overflow: hidden;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 40px;
+  border-radius: 8px;
+  border: 0.5px solid rgba(24, 210, 110, 0.1);
+  box-shadow: 0 0 30px rgba(24, 210, 110, 0.15);
 }
 
 .form-container.active {
@@ -456,12 +473,15 @@ h6 {
 ======================*/
 .form-section {
   margin-bottom: 35px;
-  padding-bottom: 30px;
+  padding: 25px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  border: 0.5px solid rgba(24, 210, 110, 0.08);
+  border-radius: 5px;
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .form-section:last-of-type {
-  border-bottom: none;
+  border-bottom: 0.5px solid rgba(24, 210, 110, 0.08);
 }
 
 .form-section h3 {
@@ -541,6 +561,7 @@ label {
   background: rgba(255, 255, 255, 0.08);
   color: #fff !important;
   -webkit-text-fill-color: #fff !important;
+  box-shadow: 0 0 15px rgba(24, 210, 110, 0.15);
 }
 
 .form-control::placeholder {
@@ -614,11 +635,13 @@ textarea.form-control {
 .file-upload-zone:hover {
   border-color: rgba(255, 255, 255, 0.4);
   background: rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 15px rgba(24, 210, 110, 0.1);
 }
 
 .file-upload-zone.dragover {
   border-color: #18d26e;
   background: rgba(24, 210, 110, 0.1);
+  box-shadow: 0 0 30px rgba(24, 210, 110, 0.3);
 }
 
 .file-upload-zone i {

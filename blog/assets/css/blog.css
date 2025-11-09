@@ -3,6 +3,17 @@
   All features integrated in ONE file
 ======================*/
 
+/* Waves Animation Canvas */
+#waves {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 0;
+  pointer-events: none;
+}
+
 /* Reading Progress Bar */
 .reading-progress {
   position: fixed;

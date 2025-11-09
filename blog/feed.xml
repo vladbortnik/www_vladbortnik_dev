@@ -5,14 +5,14 @@
     <link>https://vladbortnik.dev/blog/</link>
     <description>Technical articles about Python, Docker, Flask, DevOps, and Cloud Infrastructure from a software engineer's perspective</description>
     <language>en-us</language>
-    <lastBuildDate>Sun, 03 Nov 2025 00:00:00 GMT</lastBuildDate>
+    <lastBuildDate>Sun, 09 Nov 2025 00:00:00 GMT</lastBuildDate>
     <atom:link href="https://vladbortnik.dev/blog/feed.xml" rel="self" type="application/rss+xml"/>
 
     <item>
       <title>Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month</title>
       <link>https://vladbortnik.dev/blog/posts/1-production-grade-multi-app-server-12-dollar-month.html</link>
       <guid>https://vladbortnik.dev/blog/posts/1-production-grade-multi-app-server-12-dollar-month.html</guid>
-      <pubDate>Sun, 03 Nov 2025 00:00:00 GMT</pubDate>
+      <pubDate>Sun, 09 Nov 2025 00:00:00 GMT</pubDate>
       <description>Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and Enterprise-Level Security. Save $240-480/year on hosting costs.</description>
       <category>DevOps</category>
       <author>vlad@vladbortnik.dev (Vlad Bortnik)</author>
