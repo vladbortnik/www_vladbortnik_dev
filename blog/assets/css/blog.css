@@ -6,7 +6,7 @@ body {
   background-color: #040404;
   color: #fff;
   position: relative;
-  background: transparent;
+  /* background: transparent; */
 }
 
 /* Global horizontal separator - glow instead of line */
@@ -2130,10 +2130,10 @@ section#blog,
 section.blog,
 section#blog-post,
 section.blog-post {
-  position: static !important;
+  position: sticky !important;
   overflow: visible !important;
   opacity: 1 !important;
-  display: block !important;
+  /* display: block !important; */
   top: auto !important;
   bottom: auto !important;
   left: auto !important;
@@ -2143,12 +2143,12 @@ section.blog-post {
 }
 
 /* Ensure footer stays at bottom */
-#footer {
+/* #footer {
   position: relative !important;
   opacity: 1 !important;
   display: block !important;
   width: 100% !important;
-}
+} */
 
 /* Ensure header is fixed at top for blog pages */
 #header.header-top {
@@ -2820,7 +2820,7 @@ section.blog-post {
 }
 
 /* Enhanced Footer - Compact & Professional */
-#footer {
+/* #footer {
   background: rgba(0, 0, 0, 0.6);
   color: #fff;
   font-size: 14px;
@@ -2874,12 +2874,12 @@ section.blog-post {
   color: rgba(255, 255, 255, 0.7);
   font-size: 16px;
   font-weight: 400;
-}
+} */
 
 /* Old simple footer for compatibility */
-#footer .copyright {
+/* #footer .copyright {
   color: rgba(255, 255, 255, 0.6);
-}
+} */
 
 /* Responsive Styles */
 @media (max-width: 992px) {
@@ -2956,7 +2956,7 @@ section.blog-post {
     margin-bottom: 30px;
   }
 
-  .footer-content {
+  /* .footer-content {
     flex-direction: column;
     gap: 15px;
     text-align: center;
@@ -2973,7 +2973,7 @@ section.blog-post {
   #footer {
     padding: 18px 0;
     margin-top: 22px;
-  }
+  } */
 
   .author-bio {
     flex-direction: column;
@@ -3045,7 +3045,7 @@ section.blog-post {
     font-size: 20px;
   }
 
-  .footer-content {
+  /* .footer-content {
     flex-direction: column;
     gap: 15px;
     text-align: center;
@@ -3061,5 +3061,5 @@ section.blog-post {
 
   #footer {
     padding: 18px 0;
-  }
+  } */
 }
