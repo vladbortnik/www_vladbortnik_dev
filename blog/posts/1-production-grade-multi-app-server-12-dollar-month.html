@@ -456,7 +456,7 @@ docker compose version</code></pre>
 <li>Nginx sends the response back to the client</li>
 </ol>
 <p>The client never talks directly to my application. This provides security (hides backend architecture), enables SSL termination, allows caching, and simplifies backend maintenance.</p>
-<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/reverse-proxy.png"/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/reverse-proxy.webp"/>
 <p><em>Nginx reverse proxy configuration showing SSL termination and proxy headers</em></p>
 <h3 id="basic-reverse-proxy-configuration">Basic Reverse Proxy Configuration</h3>
 <p>Here's my actual configuration for a single application:</p>
@@ -523,7 +523,7 @@ server {
 </ul>
 <p>For more details on these proxy headers and settings, check the <a href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank" rel="noopener noreferrer">Nginx Proxy Module Documentation</a>.</p>
 <h3 id="server-blocks-hosting-multiple-domains">Server Blocks: Hosting Multiple Domains</h3>
-<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/server-blocks.png"/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/server-blocks.webp"/>
 <p><em>Multiple Nginx server blocks for hosting different applications on different subdomains</em></p>
 <p>Server blocks (virtual hosts) let you host multiple domains on one server. Each subdomain gets its own configuration file in <code>/etc/nginx/sites-available/</code>:</p>
 <pre><code class="language-bash"># Create configuration file
@@ -823,7 +823,7 @@ add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' dat
 <p><em>Security Headers test showing A+ rating with comprehensive HTTP security headers</em></p>
 <p><strong>Honest note about CSP:</strong> Content Security Policy is powerful but can break your site if too strict. I started with a permissive policy and gradually tightened it by checking browser console errors.</p>
 <p>For SSL/TLS configuration best practices, see <a href="https://nginx.org/en/docs/http/configuring_https_servers.html" target="_blank" rel="noopener noreferrer">Nginx's Https Configuration Guide</a> and test your config at <a href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL LABS</a>.</p>
-<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/http-observatory-score-1-1.webp"/>
+<img alt="Article screenshot" loading="lazy" src="../../assets/img/blog/server-setup/http-observatory-score.webp"/>
 <p><em>Mozilla HTTP Observatory showing A+ overall security score</em></p>
 <hr/>
 <h2 id="deployment-workflow-the-practical-reality">Deployment Workflow: The Practical Reality</h2>

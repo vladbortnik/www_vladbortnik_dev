@@ -1,6 +1,6 @@
 <div align="center">
 
-![Vlad Bortnik Portfolio Banner](assets/readme-main/portfolio-for-readme-wide.webp)
+![Vlad Bortnik Portfolio Banner](assets/img/readme-file/portfolio-for-readme-wide.webp)
 
 # Vlad Bortnik | Software Engineer
 
