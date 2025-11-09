@@ -6,7 +6,8 @@
   <meta content="width=device-width, initial-scale=1.0" name="viewport">
 
   <title>Production-Grade Server Setup | Docker & Nginx | Vlad Bortnik</title>
-  <meta name="description" content="Learn how to deploy and manage a production-grade multi-application server with Docker, Nginx, SSL certificates, and custom DNS configuration on DigitalOcean.">
+  <meta name="description"
+    content="Learn how to deploy and manage a production-grade multi-application server with Docker, Nginx, SSL certificates, and custom DNS configuration on DigitalOcean.">
   <meta name="keywords"
     content="Personal Backend Development Project, Nginx Configuration, Ubuntu Server Setup, DigitalOcean Deployment, SSL Certificate Installation, DNS Configuration, Static Website Deployment, Subdomain Management, Docker Web Apps, Shared Server Environment, DigitalOcean Droplet, Web App Deployment, Full Stack Development, Server Management, Backend Developer Portfolio, Cloud Hosting Solutions, Custom Server Setup, Web Application Hosting, DevOps Practices, Manual Server Configuration">
 
@@ -22,8 +23,10 @@
   <meta property="og:type" content="article">
   <meta property="og:url" content="https://vladbortnik.dev/server-setup.html">
   <meta property="og:title" content="Production-Grade Multi-Application Server | Vlad Bortnik">
-  <meta property="og:description" content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
-  <meta property="og:image" content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp">
+  <meta property="og:description"
+    content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
+  <meta property="og:image"
+    content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp">
   <meta property="og:image:alt" content="Production-Grade Multi-Application Server Architecture Diagram">
   <meta property="og:site_name" content="Vlad Bortnik Portfolio">
   <meta property="og:locale" content="en_US">
@@ -35,14 +38,18 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:url" content="https://vladbortnik.dev/server-setup.html">
   <meta name="twitter:title" content="Production-Grade Multi-Application Server | Vlad Bortnik">
-  <meta name="twitter:description" content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
-  <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp">
+  <meta name="twitter:description"
+    content="Complete guide to deploying and managing a production server with Docker, Nginx, SSL, and DNS configuration on DigitalOcean.">
+  <meta name="twitter:image"
+    content="https://vladbortnik.dev/assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp">
 
   <!-- Favicons -->
   <link rel="icon" type="image/x-icon" sizes="16x16" href="assets/img/favicon.ico">
 
   <!-- Google Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+    rel="stylesheet">
 
   <!-- Vendor CSS Files -->
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -87,44 +94,44 @@
 
   <!-- PostHog Analytics - Production Only -->
   <script>
-      // Only initialize PostHog on production domain
-      const isProduction = window.location.hostname === 'vladbortnik.dev';
-      const isLocalhost = window.location.hostname === 'localhost' ||
-                         window.location.hostname === '127.0.0.1' ||
-                         window.location.protocol === 'file:';
+    // Only initialize PostHog on production domain
+    const isProduction = window.location.hostname === 'vladbortnik.dev';
+    const isLocalhost = window.location.hostname === 'localhost' ||
+      window.location.hostname === '127.0.0.1' ||
+      window.location.protocol === 'file:';
 
-      if (isProduction || (!isLocalhost && window.location.protocol === 'https:')) {
-          !function(t,e){var o,n,p,r;e.__SV||(window.posthog && window.posthog.__loaded)||(window.posthog=e,e._i=[],e.init=function(i,s,a){function g(t,e){var o=e.split(".");2==o.length&&(t=t[o[0]],e=o[1]),t[e]=function(){t.push([e].concat(Array.prototype.slice.call(arguments,0)))}}(p=t.createElement("script")).type="text/javascript",p.crossOrigin="anonymous",p.async=!0,p.src=s.api_host.replace(".i.posthog.com","-assets.i.posthog.com")+"/static/array.js",(r=t.getElementsByTagName("script")[0]).parentNode.insertBefore(p,r);var u=e;for(void 0!==a?u=e[a]=[]:a="posthog",u.people=u.people||[],u.toString=function(t){var e="posthog";return"posthog"!==a&&(e+="."+a),t||(e+=" (stub)"),e},u.people.toString=function(){return u.toString(1)+".people (stub)"},o="init hi $r kr ui wr Er capture Ri calculateEventProperties Ir register register_once register_for_session unregister unregister_for_session Fr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Cr Tr createPersonProfile Or yr Mr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Pr debug L Rr getPageViewId captureTraceFeedback captureTraceMetric gr".split(" "),n=0;n<o.length;n++)g(u,o[n]);e._i.push([i,s,a])},e.__SV=1)}(document,window.posthog||[]);
+    if (isProduction || (!isLocalhost && window.location.protocol === 'https:')) {
+      !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init hi $r kr ui wr Er capture Ri calculateEventProperties Ir register register_once register_for_session unregister unregister_for_session Fr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Cr Tr createPersonProfile Or yr Mr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Pr debug L Rr getPageViewId captureTraceFeedback captureTraceMetric gr".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
 
-          posthog.init('phc_PtXY59P30Ckark4eFmib3xrXlMd9H2eibBsFTd302Yv', {
-              api_host: 'https://us.i.posthog.com',
-              autocapture: true,
-              capture_pageview: true,
-              capture_pageleave: true,
-              disable_session_recording: true,
-              persistence: 'localStorage+cookie',
-              person_profiles: 'identified_only'
-          });
-      } else {
-          console.log('🚫 [Dev Mode] PostHog disabled on localhost');
-      }
+      posthog.init('phc_PtXY59P30Ckark4eFmib3xrXlMd9H2eibBsFTd302Yv', {
+        api_host: 'https://us.i.posthog.com',
+        autocapture: true,
+        capture_pageview: true,
+        capture_pageleave: true,
+        disable_session_recording: true,
+        persistence: 'localStorage+cookie',
+        person_profiles: 'identified_only'
+      });
+    } else {
+      console.log('🚫 [Dev Mode] PostHog disabled on localhost');
+    }
   </script>
 
   <!-- Umami Analytics - Production Only -->
   <script>
-      // Only load Umami on production domain
-      if (window.location.hostname === 'vladbortnik.dev' ||
-          (window.location.hostname !== 'localhost' &&
-           window.location.hostname !== '127.0.0.1' &&
-           window.location.protocol === 'https:')) {
-          const script = document.createElement('script');
-          script.defer = true;
-          script.src = 'https://analytics.vladbortnik.dev/script.js';
-          script.setAttribute('data-website-id', 'aa07340d-e426-4f86-a8f2-7736dd49d7aa');
-          document.head.appendChild(script);
-      } else {
-          console.log('🚫 [Dev Mode] Umami Analytics disabled on localhost');
-      }
+    // Only load Umami on production domain
+    if (window.location.hostname === 'vladbortnik.dev' ||
+      (window.location.hostname !== 'localhost' &&
+        window.location.hostname !== '127.0.0.1' &&
+        window.location.protocol === 'https:')) {
+      const script = document.createElement('script');
+      script.defer = true;
+      script.src = 'https://analytics.vladbortnik.dev/script.js';
+      script.setAttribute('data-website-id', 'aa07340d-e426-4f86-a8f2-7736dd49d7aa');
+      document.head.appendChild(script);
+    } else {
+      console.log('🚫 [Dev Mode] Umami Analytics disabled on localhost');
+    }
   </script>
 </head>
 
@@ -177,14 +184,14 @@
       </div>
 
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
-          <div class="overview-image" id="image-shadow-light">
-            <img src="assets/img/portfolio/server-setup/server-setup-title-img.webp" class="img-fluid"
-              alt="server setup image">
-            <div class="overview-overlay">
-              <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp" alt="server setup overlay"
-                class="overlay-image">
-            </div>
+        <div class="overview-image" id="image-shadow-light">
+          <img src="assets/img/portfolio/server-setup/server-setup-title-img.webp" class="img-fluid"
+            alt="server setup image">
+          <div class="overview-overlay">
+            <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp" alt="server setup overlay"
+              class="overlay-image">
           </div>
+        </div>
       </div><!-- END: class="diagram-container" -->
 
       <div class="row align-items-center" id="overview-content">
@@ -204,7 +211,8 @@
             <div class="tech-overview">
               <h3>Tech Stack</h3>
               <ul class="tech-list">
-                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual Environment)</span></li>
+                <li><i class="bi bi-chevron-right"></i> <strong>Hosting:</strong> <span>DigitalOcean (Shared Virtual
+                    Environment)</span></li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Security:</strong> <span>SSL, Firewall, HTTPS</span>
                 </li>
                 <li><i class="bi bi-chevron-right"></i> <strong>Deployment:</strong> <span>Docker, SFTP</span></li>
@@ -232,10 +240,8 @@
 
       <!-- Architecture Diagram -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
-        <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
-        class="img-fluid base-diagram"
-        alt="Server Architecture Diagram"
-        onclick="openFullscreen(this)">
+        <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp" class="img-fluid base-diagram"
+          alt="Server Architecture Diagram" onclick="openFullscreen(this)">
 
         <!-- Hotspot On Hover -->
         <div class="hotspot-container">
@@ -348,11 +354,9 @@
 
       <!-- DNS DNS DNS -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
-        <img src="assets/img/portfolio/server-setup/DNS/dns-dashboard.webp"
-             class="img-fluid base-diagram"
-             data-fullscreen-src="assets/img/portfolio/server-setup/DNS/dns-dashboard-fullscreen.webp"
-             alt="DNS Details"
-             onclick="openFullscreen(this)">
+        <img src="assets/img/portfolio/server-setup/DNS/dns-dashboard.webp" class="img-fluid base-diagram"
+          data-fullscreen-src="assets/img/portfolio/server-setup/DNS/dns-dashboard-fullscreen.webp" alt="DNS Details"
+          onclick="openFullscreen(this)">
       </div><!-- END: DNS -->
 
       <!-- Droplet Dashboard -->
@@ -371,15 +375,12 @@
 
       <!-- OPEN IMG SIDE-by-SIDE -->
       <div class="diagram-container" id="section-container" data-aos="zoom-in">
-        <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.webp"
-            class="img-fluid base-diagram"
-            data-img1-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.webp"
-            data-img2-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-2.webp"
-            data-img1-alt="Droplet Dashboard 1"
-            data-img2-alt="Droplet Dashboard 2"
-            alt="Droplet Dashboard"
-            onclick="openSideBySideFullscreen(this)">
-            <!-- <div class="caption">Droplet Dashboard</div> -->
+        <img src="assets/img/portfolio/server-setup/dashboard/droplet-dashboard.webp" class="img-fluid base-diagram"
+          data-img1-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-1.webp"
+          data-img2-fullscreen="assets/img/portfolio/server-setup/dashboard/droplet-dashboard-part-2.webp"
+          data-img1-alt="Droplet Dashboard 1" data-img2-alt="Droplet Dashboard 2" alt="Droplet Dashboard"
+          onclick="openSideBySideFullscreen(this)">
+        <!-- <div class="caption">Droplet Dashboard</div> -->
       </div>
 
     </div><!-- END: Architecture Container -->
@@ -389,9 +390,12 @@
       <div class="footer-content">
         <div class="footer-icons">
           <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i
+              class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
+            title="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
           <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
         </div>
@@ -492,7 +496,7 @@
 
           <!-- Highlight Overlays -->
           <div class="code-section networks" onclick="showCodeSnippet('networks')">
-             <p>Network Segregation</p>
+            <p>Network Segregation</p>
           </div>
           <div class="code-section resource-management" onclick="showCodeSnippet('resource-management')">
             <p>Resource Management</p>
@@ -514,37 +518,32 @@
         <div class="masonry-grid">
           <!-- First item -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.webp"
-            alt="Docker Networks Diagram"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/networks-diagram.webp" alt="Docker Networks Diagram"
+              onclick="openFullscreen(this)">
             <div class="caption">Networks Diagram</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-ps.webp"
-            alt="Docker Running Containers Details"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/docker-ps.webp" alt="Docker Running Containers Details"
+              onclick="openFullscreen(this)">
             <div class="caption">Container/Port Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.webp"
-            alt="Docker Volumes Details"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/docker-volume-ls.webp" alt="Docker Volumes Details"
+              onclick="openFullscreen(this)">
             <div class="caption">Volume Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.webp"
-            alt="Docker Network Details"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/docker-network-ls.webp" alt="Docker Network Details"
+              onclick="openFullscreen(this)">
             <div class="caption">Network Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/docker/docker-stats.webp"
-            alt="Docker Stats"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/docker/docker-stats.webp" alt="Docker Stats"
+              onclick="openFullscreen(this)">
             <div class="caption">Container Stats</div>
           </div>
           <!-- More items ??? -->
@@ -559,9 +558,12 @@
       <div class="footer-content">
         <div class="footer-icons">
           <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i
+              class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
+            title="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
           <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
         </div>
@@ -590,77 +592,66 @@
         <div class="masonry-grid">
 
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp"
-            alt="SSL Lab Test Score"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp" alt="SSL Lab Test Score"
+              onclick="openFullscreen(this)">
             <div class="caption">SSL Lab Test Score</div>
           </div>
 
           <!-- OPEN IMG SIDE-by-SIDE -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test.webp"
-                data-img1-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-1.webp"
-                data-img2-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-2.webp"
-                data-img1-alt="SSL Lab Test 1"
-                data-img2-alt="SSL Lab Test 2"
-                alt="SSL Lab Test"
-                onclick="openSideBySideFullscreen(this)">
-                <div class="caption">SSL Lab Test (Qualys® Vulnerability Scan)</div>
+              data-img1-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-1.webp"
+              data-img2-fullscreen="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-part-2.webp"
+              data-img1-alt="SSL Lab Test 1" data-img2-alt="SSL Lab Test 2" alt="SSL Lab Test"
+              onclick="openSideBySideFullscreen(this)">
+            <div class="caption">SSL Lab Test (Qualys® Vulnerability Scan)</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification.webp"
-            alt="SSL Verification"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-verification.webp" alt="SSL Verification"
+              onclick="openFullscreen(this)">
             <div class="caption">SSL Verification</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-config.webp"
-            alt="SSL Config Details"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-config.webp" alt="SSL Config Details"
+              onclick="openFullscreen(this)">
             <div class="caption">SSL Config Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/systemctl-status-certbot-timer.webp"
-            alt="Certbot Timer"
-            onclick="openFullscreen(this)">
+              alt="Certbot Timer" onclick="openFullscreen(this)">
             <div class="caption">Certbot Timer</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/certbot-certificates.webp"
-            alt="Certbot Certificates"
-            onclick="openFullscreen(this)">
+              alt="Certbot Certificates" onclick="openFullscreen(this)">
             <div class="caption">Certbot Certificates</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/letsencrypt-renewal.webp"
-            alt="Letsencrypt Renewal"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/security/ssl/letsencrypt-renewal.webp" alt="Letsencrypt Renewal"
+              onclick="openFullscreen(this)">
             <div class="caption">Letsencrypt Renewal</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-details.webp"
-            alt="SSL Details"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/security/ssl/ssl-details.webp" alt="SSL Details"
+              onclick="openFullscreen(this)">
             <div class="caption">SSL Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/ssl-certificate-chain.webp"
-            alt="SSL Certificate Chain"
-            onclick="openFullscreen(this)">
+              alt="SSL Certificate Chain" onclick="openFullscreen(this)">
             <div class="caption">SSL Certificate Chain</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/ssl/browser-padlock-certificate-info.webp"
-            alt="SSL Certificate"
-            onclick="openFullscreen(this)">
+              alt="SSL Certificate" onclick="openFullscreen(this)">
             <div class="caption">SSL Certificate (Browser Padlock)</div>
           </div>
           <!-- More items ??? -->
@@ -680,41 +671,41 @@
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.webp"
-            alt="Scoring Details"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.webp"
-            onclick="openFullscreen(this)">
+              alt="Scoring Details"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-score.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">HTTP Observatory Score</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score.webp"
-            alt="Scoring Details"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score-fullscreen.webp"
-            onclick="openFullscreen(this)">
+              alt="Scoring Details"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score-fullscreen.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">Scoring Details</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-csp-analysis.webp"
-            alt="CSP Analysis"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-csp-analysis-fullscreen.webp"
-            onclick="openFullscreen(this)">
+              alt="CSP Analysis"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-csp-analysis-fullscreen.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">CSP Analysis</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-server-headers.webp"
-            alt="Server Headers Details"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-server-headers-fullscreen.webp"
-            onclick="openFullscreen(this)">
+              alt="Server Headers Details"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-server-headers-fullscreen.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">Server Headers</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark.webp"
-            alt="Benchmark Comparison"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-fullscreen.webp"
-            onclick="openFullscreen(this)">
+              alt="Benchmark Comparison"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/http-observatory/http-observatory-benchmark-fullscreen.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">Benchmark</div>
           </div>
           <!-- More items ??? -->
@@ -734,23 +725,21 @@
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-score.webp"
-            alt="Security Headers Score"
-            onclick="openFullscreen(this)">
+              alt="Security Headers Score" onclick="openFullscreen(this)">
             <div class="caption">Security Headers Score</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-report.webp"
-            alt="Security Headers Test"
-            data-fullscreen-src="assets/img/portfolio/server-setup/security/security-headers/security-headers-report-fullscreen.webp"
-            onclick="openFullscreen(this)">
+              alt="Security Headers Test"
+              data-fullscreen-src="assets/img/portfolio/server-setup/security/security-headers/security-headers-report-fullscreen.webp"
+              onclick="openFullscreen(this)">
             <div class="caption">Security Headers Test</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/security-headers/security-headers-config.webp"
-            alt="Security Headers Config"
-            onclick="openFullscreen(this)">
+              alt="Security Headers Config" onclick="openFullscreen(this)">
             <div class="caption">Security Headers Config</div>
           </div>
           <!-- More items ??? -->
@@ -770,13 +759,13 @@
         <div class="masonry-grid">
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/firewall/fail2ban.webp" alt="fail2ban Details"
-            onclick="openFullscreen(this)">
+              onclick="openFullscreen(this)">
             <div class="caption">fail2ban</div>
           </div>
           <!-- More items -->
           <div class="gallery-item" id="image-shadow">
             <img src="assets/img/portfolio/server-setup/security/firewall/ufw-status.webp" alt="UFW Details"
-            onclick="openFullscreen(this)">
+              onclick="openFullscreen(this)">
             <div class="caption">UFW</div>
           </div>
           <!-- More items ??? -->
@@ -791,9 +780,12 @@
       <div class="footer-content">
         <div class="footer-icons">
           <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i
+              class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
+            title="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
           <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
         </div>
@@ -820,30 +812,30 @@
 
       <div class="row align-items-center" id="section-container">
         <p>
-          Nginx reverse proxy acts as an intermediary server that forwards client requests to appropriate backend servers. It handles incoming requests and distributes them to backend applications while providing an additional layer of abstraction and security.
+          Nginx reverse proxy acts as an intermediary server that forwards client requests to appropriate backend
+          servers. It handles incoming requests and distributes them to backend applications while providing an
+          additional layer of abstraction and security.
         </p>
         <div class="col-lg-5" data-aos="fade-right">
           <div class="overview-content">
 
             <div class="tech-overview">
               <h4>Key Benefits</h4>
-                <ul class="tech-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>Hides backend server architecture</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Provides SSL termination</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Enables caching and compression</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Enhances security through IP masking</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Simplifies backend maintenance</span></li>
-                </ul>
+              <ul class="tech-list">
+                <li><i class="bi bi-chevron-right"></i> <span>Hides backend server architecture</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Provides SSL termination</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Enables caching and compression</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Enhances security through IP masking</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Simplifies backend maintenance</span></li>
+              </ul>
             </div><!-- END: class="tech-overview" -->
           </div><!-- END: class="overview-content" -->
         </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
 
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.webp"
-            class="img-fluid base-diagram"
-            alt="Reverse Proxy Configuration"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/nginx/reverse-proxy.webp" class="img-fluid base-diagram"
+              alt="Reverse Proxy Configuration" onclick="openFullscreen(this)">
           </div><!-- END: class="overview-image" id="image-shadow-light" -->
         </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
       </div><!-- END: 1. Reverse Proxy (class="row") -->
@@ -857,15 +849,14 @@
 
       <div class="row align-items-center" id="load-balancer-section">
         <p>
-          Nginx load balancer distributes incoming network traffic across multiple backend servers, ensuring no single server bears too much load. It monitors servers' health and automatically removes failed ones from the pool.
+          Nginx load balancer distributes incoming network traffic across multiple backend servers, ensuring no single
+          server bears too much load. It monitors servers' health and automatically removes failed ones from the pool.
         </p>
 
         <div class="col-lg-7 pt-4 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/nginx/load-balancer.webp"
-            class="img-fluid base-diagram"
-            alt="Load Balancer Configuration"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/nginx/load-balancer.webp" class="img-fluid base-diagram"
+              alt="Load Balancer Configuration" onclick="openFullscreen(this)">
           </div><!-- END: class="overview-image" id="image-shadow-light" -->
         </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
 
@@ -874,16 +865,16 @@
 
             <div class="tech-overview">
               <h4>Features</h4>
-                <ul class="tech-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
-                </ul>
+              <ul class="tech-list">
+                <li><i class="bi bi-chevron-right"></i> <span>High availability and reliability</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Scalable architecture</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Automatic health checks</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Flexible distribution algorithms</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Session persistence options</span></li>
+              </ul>
             </div><!-- END: class="tech-overview" -->
           </div><!-- END: class="overview-content" -->
-       </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
+        </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
       </div><!-- END: 2. Load Balancer -->
 
 
@@ -895,30 +886,29 @@
 
       <div class="row align-items-center" id="section-container">
         <p>
-          Server Blocks (or Virtual Hosts) allow hosting multiple domains on a single Nginx server. Each server block can have its own configuration, enabling different settings for different domains.
+          Server Blocks (or Virtual Hosts) allow hosting multiple domains on a single Nginx server. Each server block
+          can have its own configuration, enabling different settings for different domains.
         </p>
         <div class="col-lg-5" data-aos="fade-right">
           <div class="overview-content">
 
             <div class="tech-overview">
               <h4>Main Purpose</h4>
-                <ul class="tech-list">
-                  <li><i class="bi bi-chevron-right"></i> <span>Host multiple domains on one server</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Domain-specific configurations</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Separate logging per domain</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Individual SSL certificates</span></li>
-                  <li><i class="bi bi-chevron-right"></i> <span>Resource isolation</span></li>
-                </ul>
+              <ul class="tech-list">
+                <li><i class="bi bi-chevron-right"></i> <span>Host multiple domains on one server</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Domain-specific configurations</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Separate logging per domain</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Individual SSL certificates</span></li>
+                <li><i class="bi bi-chevron-right"></i> <span>Resource isolation</span></li>
+              </ul>
             </div><!-- END: class="tech-overview" -->
           </div><!-- END: class="overview-content" -->
         </div><!-- END: class="col-lg-7" data-aos="fade-right" -->
 
         <div class="col-lg-7 pt-5 pt-lg-0" data-aos="fade-left">
           <div class="overview-image" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/nginx/server-blocks.webp"
-            class="img-fluid base-diagram"
-            alt="Server Blocks Configuration"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/nginx/server-blocks.webp" class="img-fluid base-diagram"
+              alt="Server Blocks Configuration" onclick="openFullscreen(this)">
           </div><!-- END: class="overview-image" id="image-shadow-light" -->
         </div><!-- END: class="col-lg-5 pt-4 pt-lg-0" data-aos="fade-left" -->
       </div><!-- END: 3. Server Blocks (class="row") -->
@@ -933,9 +923,8 @@
         <div class="masonry-grid">
           <!-- First item -->
           <div class="gallery-item" id="image-shadow">
-            <img src="assets/img/portfolio/server-setup/nginx/load-balancer-logs.webp"
-            alt="Load Balancer Logs"
-            onclick="openFullscreen(this)">
+            <img src="assets/img/portfolio/server-setup/nginx/load-balancer-logs.webp" alt="Load Balancer Logs"
+              onclick="openFullscreen(this)">
             <div class="caption">Load Balancer Logs</div>
           </div>
           <!-- More items ??? -->
@@ -950,9 +939,12 @@
       <div class="footer-content">
         <div class="footer-icons">
           <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
-          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
-          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+          <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i
+              class="bi bi-twitter-x"></i></a>
+          <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i
+              class="bi bi-github"></i></a>
+          <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
+            title="LinkedIn"><i class="bi bi-linkedin"></i></a>
           <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
           <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
         </div>
