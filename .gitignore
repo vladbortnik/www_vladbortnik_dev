@@ -3,6 +3,8 @@ blog/screenshots
 archive/
 blog/temp/
 TO-DO.md
+vladbortnik.dev
+*.backup
 
 # Cloudflare Worker
 contact-worker/

@@ -357,11 +357,42 @@
   }
 
 
+  // ==================== TURNSTILE INITIALIZATION ====================
+  function initTurnstile() {
+    var isLocalhost = window.location.hostname === 'localhost' ||
+                     window.location.hostname === '127.0.0.1' ||
+                     window.location.hostname === '0.0.0.0';
+    var sitekey = isLocalhost ? '1x00000000000000000000AA' : '0x4AAAAAAB6AEVcPkpc4oM3Q';
+
+    document.querySelectorAll('.cf-turnstile').forEach(function(el) {
+      el.setAttribute('data-sitekey', sitekey);
+    });
+
+    // Load Turnstile API
+    if (!document.querySelector('script[src*="challenges.cloudflare.com"]')) {
+      var script = document.createElement('script');
+      script.src = 'https://challenges.cloudflare.com/turnstile/v0/api.js';
+      script.async = true;
+      script.defer = true;
+      document.body.appendChild(script);
+    }
+  }
+
+  // ==================== COPYRIGHT YEAR ====================
+  function updateCopyrightYear() {
+    var yearElement = document.getElementById('current-year');
+    if (yearElement) {
+      yearElement.textContent = new Date().getFullYear();
+    }
+  }
+
   // ==================== INITIALIZATION ====================
   function init() {
     initModeSwitch();
     initFileUpload();
     initFormSubmission();
+    initTurnstile();
+    updateCopyrightYear();
   }
 
   // Initialize when DOM is ready

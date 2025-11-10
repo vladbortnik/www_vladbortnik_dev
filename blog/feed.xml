@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="feed.xsl" type="text/xsl"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Vlad Bortnik's Blog</title>
+    <title>Vlad's Blog</title>
     <link>https://vladbortnik.dev/blog/</link>
     <description>Technical articles about Python, Docker, Flask, DevOps, and Cloud Infrastructure from a software engineer's perspective</description>
     <language>en-us</language>

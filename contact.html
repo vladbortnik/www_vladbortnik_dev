@@ -1,409 +1,340 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta content="width=device-width, initial-scale=1.0" name="viewport" />
 
-<head>
-  <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <title>Contact Me | Vlad Bortnik - Software Engineer</title>
+        <meta name="description" content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries. Upload project files and documentation securely." />
+        <meta
+            name="keywords"
+            content="Contact Software Engineer NYC, Hire Full Stack Developer, Python Flask Backend Developer, React Frontend Engineer, DevOps Infrastructure Consulting, PostgreSQL Database Expert, Docker Nginx Deployment Services, Cloud Infrastructure Consultant, REST API Development, Production Server Setup, DigitalOcean Expert NYC"
+        />
 
-  <title>Contact Me | Vlad Bortnik - Software Engineer</title>
-  <meta name="description"
-    content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries. Upload project files and documentation securely.">
-  <meta name="keywords"
-    content="Contact Software Engineer NYC, Hire Full Stack Developer, Python Flask Backend Developer, React Frontend Engineer, DevOps Infrastructure Consulting, PostgreSQL Database Expert, Docker Nginx Deployment Services, Cloud Infrastructure Consultant, REST API Development, Production Server Setup, DigitalOcean Expert NYC">
+        <!-- Canonical URL -->
+        <link rel="canonical" href="https://vladbortnik.dev/contact.html" />
 
-  <!-- Canonical URL -->
-  <link rel="canonical" href="https://vladbortnik.dev/contact.html">
+        <!-- Open Graph / Facebook -->
+        <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://vladbortnik.dev/contact.html" />
+        <meta property="og:title" content="Contact Vlad Bortnik | Software Engineer" />
+        <meta property="og:description" content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries. Upload project files and documentation securely." />
+        <meta property="og:image" content="https://vladbortnik.dev/assets/img/brand-logo.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:alt" content="Vlad Bortnik - Software Engineer Portfolio" />
+        <meta property="og:site_name" content="Vlad Bortnik Portfolio" />
+        <meta property="og:locale" content="en_US" />
 
-  <!-- Open Graph / Facebook -->
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://vladbortnik.dev/contact.html">
-  <meta property="og:title" content="Contact Vlad Bortnik | Software Engineer">
-  <meta property="og:description"
-    content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries. Upload project files and documentation securely.">
-  <meta property="og:image" content="https://vladbortnik.dev/assets/img/brand-logo.png">
-  <meta property="og:image:width" content="1200">
-  <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Vlad Bortnik - Software Engineer Portfolio">
-  <meta property="og:site_name" content="Vlad Bortnik Portfolio">
-  <meta property="og:locale" content="en_US">
+        <!-- Twitter Card -->
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:url" content="https://vladbortnik.dev/contact.html" />
+        <meta name="twitter:title" content="Contact Vlad Bortnik | Software Engineer" />
+        <meta name="twitter:description" content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries." />
+        <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/brand-logo.png" />
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:url" content="https://vladbortnik.dev/contact.html">
-  <meta name="twitter:title" content="Contact Vlad Bortnik | Software Engineer">
-  <meta name="twitter:description"
-    content="Get in touch for Software Engineer Projects, DevOps Consulting, or general inquiries.">
-  <meta name="twitter:image" content="https://vladbortnik.dev/assets/img/brand-logo.png">
+        <!-- Preconnect for performance -->
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link rel="dns-prefetch" href="https://analytics.vladbortnik.dev" />
 
-  <!-- Preconnect for performance -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="dns-prefetch" href="https://analytics.vladbortnik.dev">
+        <!-- Favicon -->
+        <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/img/favicon.ico" />
 
-  <!-- Favicon -->
-  <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/img/favicon.ico">
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+            rel="stylesheet"
+        />
 
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
-    rel="stylesheet">
+        <!-- Vendor CSS Files -->
+        <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet" />
+        <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet" />
 
-  <!-- Vendor CSS Files -->
-  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+        <!-- Main CSS File -->
+        <link href="assets/css/contact.css" rel="stylesheet" />
 
-  <!-- Main CSS File -->
-  <link href="assets/css/contact.css" rel="stylesheet">
+        <!-- Structured Data / Schema.org - ContactPage (2025 best practice) -->
+        <script type="application/ld+json">
+            {
+                "@context": "https://schema.org",
+                "@type": "ContactPage",
+                "name": "Contact Vlad Bortnik",
+                "description": "Get in touch for Software Engineer Projects, DevOps Consulting, or General Inquiries",
+                "url": "https://vladbortnik.dev/contact.html",
+                "mainEntity": {
+                    "@type": "Person",
+                    "name": "Vlad Bortnik",
+                    "jobTitle": "Software Engineer",
+                    "url": "https://vladbortnik.dev",
+                    "sameAs": ["https://github.com/vladbortnik", "https://linkedin.com/in/vladbortnik", "https://x.com/vladbortnik_dev"]
+                }
+            }
+        </script>
 
-  <!-- Cloudflare Turnstile -->
-  <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+        <!-- Analytics (PostHog + Umami) -->
+        <script src="assets/js/analytics.js"></script>
+    </head>
 
-  <!-- Structured Data / Schema.org - ContactPage (2025 best practice) -->
-  <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "ContactPage",
-      "name": "Contact Vlad Bortnik",
-      "description": "Get in touch for Software Engineer Projects, DevOps Consulting, or General Inquiries",
-      "url": "https://vladbortnik.dev/contact.html",
-      "mainEntity": {
-        "@type": "Person",
-        "name": "Vlad Bortnik",
-        "jobTitle": "Software Engineer",
-        "url": "https://vladbortnik.dev",
-        "sameAs": [
-          "https://github.com/vladbortnik",
-          "https://linkedin.com/in/vladbortnik",
-          "https://x.com/vladbortnik_dev"
-        ]
-      }
-    }
-  </script>
+    <body>
+        <!-- Waves Animation Canvas -->
+        <canvas id="waves"></canvas>
 
-  <!-- PostHog Analytics - Production Only -->
-  <script>
-    // Only initialize PostHog on production domain
-    const isProduction = window.location.hostname === 'vladbortnik.dev';
-    const isLocalhost = window.location.hostname === 'localhost' ||
-      window.location.hostname === '127.0.0.1' ||
-      window.location.protocol === 'file:';
-
-    if (isProduction || (!isLocalhost && window.location.protocol === 'https:')) {
-      !function (t, e) { var o, n, p, r; e.__SV || (window.posthog && window.posthog.__loaded) || (window.posthog = e, e._i = [], e.init = function (i, s, a) { function g(t, e) { var o = e.split("."); 2 == o.length && (t = t[o[0]], e = o[1]), t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } } (p = t.createElement("script")).type = "text/javascript", p.crossOrigin = "anonymous", p.async = !0, p.src = s.api_host.replace(".i.posthog.com", "-assets.i.posthog.com") + "/static/array.js", (r = t.getElementsByTagName("script")[0]).parentNode.insertBefore(p, r); var u = e; for (void 0 !== a ? u = e[a] = [] : a = "posthog", u.people = u.people || [], u.toString = function (t) { var e = "posthog"; return "posthog" !== a && (e += "." + a), t || (e += " (stub)"), e }, u.people.toString = function () { return u.toString(1) + ".people (stub)" }, o = "init hi $r kr ui wr Er capture Ri calculateEventProperties Ir register register_once register_for_session unregister unregister_for_session Fr getFeatureFlag getFeatureFlagPayload isFeatureEnabled reloadFeatureFlags updateEarlyAccessFeatureEnrollment getEarlyAccessFeatures on onFeatureFlags onSurveysLoaded onSessionId getSurveys getActiveMatchingSurveys renderSurvey displaySurvey canRenderSurvey canRenderSurveyAsync identify setPersonProperties group resetGroups setPersonPropertiesForFlags resetPersonPropertiesForFlags setGroupPropertiesForFlags resetGroupPropertiesForFlags reset get_distinct_id getGroups get_session_id get_session_replay_url alias set_config startSessionRecording stopSessionRecording sessionRecordingStarted captureException loadToolbar get_property getSessionProperty Cr Tr createPersonProfile Or yr Mr opt_in_capturing opt_out_capturing has_opted_in_capturing has_opted_out_capturing get_explicit_consent_status is_capturing clear_opt_in_out_capturing Pr debug L Rr getPageViewId captureTraceFeedback captureTraceMetric gr".split(" "), n = 0; n < o.length; n++)g(u, o[n]); e._i.push([i, s, a]) }, e.__SV = 1) }(document, window.posthog || []);
-
-      posthog.init('phc_PtXY59P30Ckark4eFmib3xrXlMd9H2eibBsFTd302Yv', {
-        api_host: 'https://us.i.posthog.com',
-        autocapture: true,
-        capture_pageview: true,
-        capture_pageleave: true,
-        disable_session_recording: true,
-        persistence: 'localStorage+cookie',
-        person_profiles: 'identified_only'
-      });
-    } else {
-      console.log('🚫 [Dev Mode] PostHog disabled on localhost');
-    }
-  </script>
-
-  <!-- Umami Analytics - Production Only -->
-  <script>
-    // Only load Umami on production domain
-    if (window.location.hostname === 'vladbortnik.dev' ||
-      (window.location.hostname !== 'localhost' &&
-        window.location.hostname !== '127.0.0.1' &&
-        window.location.protocol === 'https:')) {
-      const script = document.createElement('script');
-      script.defer = true;
-      script.src = 'https://analytics.vladbortnik.dev/script.js';
-      script.setAttribute('data-website-id', 'b386b8f9-b644-4400-a091-208983cb8340');
-      document.head.appendChild(script);
-    } else {
-      console.log('🚫 [Dev Mode] Umami Analytics disabled on localhost');
-    }
-  </script>
-</head>
-
-<body>
-
-  <!-- Waves Animation Canvas -->
-  <canvas id="waves"></canvas>
-
-  <!-- ====================== -->
-  <!-- BACK TO PORTFOLIO Button -->
-  <div class="back-button-container">
-    <a href="/" class="back-to-portfolio">
-      <i class="bi bi-arrow-left"></i> Back to Portfolio
-    </a>
-  </div>
-  <!-- END: Back to Portfolio -->
-
-  <!-- ====================== -->
-  <!-- ======= Header ======= -->
-  <header id="header">
-    <div class="container">
-      <h1>Let's <span class="color-accent">Work Together</span></h1>
-      <h2>Choose how you'd like to <span>get in touch</span></h2>
-
-      <div class="social-links">
-        <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-        <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i
-            class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github"
-          title="GitHub"><i class="bi bi-github"></i></a>
-        <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin"
-          title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-      </div>
-    </div>
-  </header>
-
-  <!-- ======= Main Content ======= -->
-  <section id="contact" class="contact">
-    <div class="container">
-
-      <!-- Mode Selector -->
-      <div class="mode-selector">
-        <button class="mode-btn active" data-mode="simple">
-          <i class="bi bi-envelope"></i>
-          <span>Quick Contact</span>
-        </button>
-        <button class="mode-btn" data-mode="project">
-          <i class="bi bi-briefcase"></i>
-          <span>Project Request</span>
-        </button>
-      </div>
-
-      <!-- ======= SIMPLE CONTACT FORM ======= -->
-      <div class="form-container active" id="simple-form">
-        <div class="form-header">
-          <h2>Send Me a Message</h2>
-          <p>Have a question or just want to say hello? Drop me a line.</p>
+        <!-- ====================== -->
+        <!-- BACK TO PORTFOLIO Button -->
+        <div class="back-button-container">
+            <a href="/" class="back-to-portfolio"> <i class="bi bi-arrow-left"></i> Back to Portfolio </a>
         </div>
+        <!-- END: Back to Portfolio -->
 
-        <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form"
-          id="simple-contact-form">
-          <!-- Cloudflare Worker endpoint - update after deployment -->
-          <input type="hidden" name="form_type" value="simple">
+        <!-- ====================== -->
+        <!-- ======= Header ======= -->
+        <header id="header">
+            <div class="container">
+                <h1>Let's <span class="color-accent">Work Together</span></h1>
+                <h2>Choose how you'd like to <span>get in touch</span></h2>
 
-          <!-- Honeypot -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-          <div class="row">
-            <div class="col-md-6 form-group">
-              <label for="simple-name">Your Name *</label>
-              <input type="text" name="name" class="form-control" id="simple-name" required>
+                <div class="social-links">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                </div>
             </div>
+        </header>
 
-            <div class="col-md-6 form-group">
-              <label for="simple-email">Your Email *</label>
-              <input type="email" name="email" class="form-control" id="simple-email" required>
+        <!-- ======= Main Content ======= -->
+        <section id="contact" class="contact">
+            <div class="container">
+                <!-- Mode Selector -->
+                <div class="mode-selector">
+                    <button class="mode-btn active" data-mode="simple">
+                        <i class="bi bi-envelope"></i>
+                        <span>Quick Contact</span>
+                    </button>
+                    <button class="mode-btn" data-mode="project">
+                        <i class="bi bi-briefcase"></i>
+                        <span>Project Request</span>
+                    </button>
+                </div>
+
+                <!-- ======= SIMPLE CONTACT FORM ======= -->
+                <div class="form-container active" id="simple-form">
+                    <div class="form-header">
+                        <h2>Send Me a Message</h2>
+                        <p>Have a question or just want to say hello? Drop me a line.</p>
+                    </div>
+
+                    <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form" id="simple-contact-form">
+                        <!-- Cloudflare Worker endpoint - update after deployment -->
+                        <input type="hidden" name="form_type" value="simple" />
+
+                        <!-- Honeypot -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+
+                        <div class="row">
+                            <div class="col-md-6 form-group">
+                                <label for="simple-name">Your Name *</label>
+                                <input type="text" name="name" class="form-control" id="simple-name" required />
+                            </div>
+
+                            <div class="col-md-6 form-group">
+                                <label for="simple-email">Your Email *</label>
+                                <input type="email" name="email" class="form-control" id="simple-email" required />
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="simple-subject">Subject *</label>
+                            <input type="text" name="subject_line" class="form-control" id="simple-subject" required />
+                        </div>
+
+                        <div class="form-group">
+                            <label for="simple-message">Message *</label>
+                            <textarea class="form-control" name="message" id="simple-message" rows="8" required></textarea>
+                        </div>
+
+                        <!-- Cloudflare Turnstile (rendered via explicit JavaScript) -->
+                        <div class="turnstile-wrapper">
+                            <div class="cf-turnstile"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn-submit"> <i class="bi bi-send"></i> Send Message </button>
+                        </div>
+
+                        <div class="form-message"></div>
+                    </form>
+                </div>
+
+                <!-- ======= PROJECT REQUEST FORM ======= -->
+                <div class="form-container" id="project-form">
+                    <div class="form-header">
+                        <h2>Start Your Project</h2>
+                        <p>Tell me about your project and upload any relevant files or documentation.</p>
+                    </div>
+
+                    <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form" id="project-request-form" enctype="multipart/form-data">
+                        <!-- Cloudflare Worker endpoint - update after deployment -->
+                        <input type="hidden" name="form_type" value="project" />
+
+                        <!-- Honeypot -->
+                        <input type="checkbox" name="botcheck" class="hidden" style="display: none" />
+
+                        <!-- CLIENT INFORMATION -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-person-circle"></i> Client Information</h3>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="project-name">Your Name *</label>
+                                    <input type="text" name="name" class="form-control" id="project-name" required />
+                                </div>
+
+                                <div class="col-md-6 form-group">
+                                    <label for="project-company">Company / Organization</label>
+                                    <input type="text" name="company" class="form-control" id="project-company" />
+                                </div>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="project-email">Email Address *</label>
+                                    <input type="email" name="email" class="form-control" id="project-email" required />
+                                </div>
+
+                                <div class="col-md-6 form-group">
+                                    <label for="project-phone">Phone Number</label>
+                                    <input type="tel" name="phone" class="form-control" id="project-phone" />
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- PROJECT DETAILS -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-clipboard-data"></i> Project Details</h3>
+
+                            <div class="form-group">
+                                <label for="project-type">Project Type *</label>
+                                <select name="project_type" class="form-control" id="project-type" required>
+                                    <option value="">-- Select Project Type --</option>
+                                    <option value="Backend Development">Backend Development (APIs, Databases)</option>
+                                    <option value="Full Stack Web App">Full Stack Web Application</option>
+                                    <option value="DevOps & Infrastructure">DevOps & Infrastructure</option>
+                                    <option value="Docker Deployment">Docker & Containerization</option>
+                                    <option value="Server Setup">Server Setup & Configuration</option>
+                                    <option value="Database Design">Database Design & Optimization</option>
+                                    <option value="Code Review">Code Review & Consulting</option>
+                                    <option value="Other">Other (Please specify)</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="project-description">Project Description *</label>
+                                <textarea
+                                    class="form-control"
+                                    name="project_description"
+                                    id="project-description"
+                                    rows="6"
+                                    placeholder="Describe your project goals, requirements, and any specific technologies you have in mind..."
+                                    required
+                                ></textarea>
+                            </div>
+
+                            <div class="row">
+                                <div class="col-md-6 form-group">
+                                    <label for="project-budget">Budget Range</label>
+                                    <select name="budget" class="form-control" id="project-budget">
+                                        <option value="">-- Select Budget Range --</option>
+                                        <option value="Under $5,000">Under $5,000</option>
+                                        <option value="$5,000 - $10,000">$5,000 - $10,000</option>
+                                        <option value="$10,000 - $25,000">$10,000 - $25,000</option>
+                                        <option value="$25,000 - $50,000">$25,000 - $50,000</option>
+                                        <option value="$50,000+">$50,000+</option>
+                                        <option value="Not Sure Yet">Not Sure Yet</option>
+                                    </select>
+                                </div>
+
+                                <div class="col-md-6 form-group">
+                                    <label for="project-timeline">Desired Timeline *</label>
+                                    <select name="timeline" class="form-control" id="project-timeline" required>
+                                        <option value="">-- Select Timeline --</option>
+                                        <option value="ASAP (Within 2 weeks)">ASAP (Within 2 weeks)</option>
+                                        <option value="1 Month">1 Month</option>
+                                        <option value="2-3 Months">2-3 Months</option>
+                                        <option value="3-6 Months">3-6 Months</option>
+                                        <option value="6+ Months">6+ Months</option>
+                                        <option value="Flexible">Flexible</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- FILE UPLOADS -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-cloud-upload"></i> Project Files & Documentation (Optional)</h3>
+                            <p class="section-description"> Upload any relevant files: mockups, wireframes, documentation, data files, etc. </p>
+                            <p class="file-info">
+                                <small>Accepted: Images (JPG, PNG, WebP), Documents (PDF, DOCX, TXT), Data (CSV, XML, JSON), Web (HTML, CSS)</small><br />
+                                <small>Max 10MB per file • Up to 5 files total</small>
+                            </p>
+
+                            <div class="file-upload-zone" id="file-drop-zone">
+                                <i class="bi bi-cloud-arrow-up"></i>
+                                <p class="upload-text">Drag & drop files here or <span class="browse-link">browse</span></p>
+                                <input type="file" name="attachments" id="file-input" multiple accept=".jpg,.jpeg,.png,.webp,.pdf,.docx,.doc,.txt,.csv,.xml,.json,.html,.css" hidden />
+                            </div>
+
+                            <div class="file-preview-container" id="file-preview"></div>
+                        </div>
+
+                        <!-- ADDITIONAL NOTES -->
+                        <div class="form-section">
+                            <h3><i class="bi bi-chat-left-text"></i> Additional Information</h3>
+
+                            <div class="form-group">
+                                <label for="project-notes">Anything else I should know?</label>
+                                <textarea class="form-control" name="additional_notes" id="project-notes" rows="4" placeholder="Any specific requirements, constraints, or questions..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Cloudflare Turnstile (rendered via explicit JavaScript) -->
+                        <div class="turnstile-wrapper">
+                            <div class="cf-turnstile"></div>
+                        </div>
+
+                        <div class="text-center">
+                            <button type="submit" class="btn-submit btn-submit-large"> <i class="bi bi-send-check"></i> Submit Project Request </button>
+                        </div>
+
+                        <div class="form-message"></div>
+                    </form>
+                </div>
             </div>
-          </div>
+        </section>
 
-          <div class="form-group">
-            <label for="simple-subject">Subject *</label>
-            <input type="text" name="subject_line" class="form-control" id="simple-subject" required>
-          </div>
-
-          <div class="form-group">
-            <label for="simple-message">Message *</label>
-            <textarea class="form-control" name="message" id="simple-message" rows="8" required></textarea>
-          </div>
-
-          <!-- Cloudflare Turnstile (replace with your site key) -->
-          <div class="turnstile-wrapper">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB6AEVcPkpc4oM3Q"></div>
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="btn-submit">
-              <i class="bi bi-send"></i> Send Message
-            </button>
-          </div>
-
-          <div class="form-message"></div>
-        </form>
-      </div>
-
-      <!-- ======= PROJECT REQUEST FORM ======= -->
-      <div class="form-container" id="project-form">
-        <div class="form-header">
-          <h2>Start Your Project</h2>
-          <p>Tell me about your project and upload any relevant files or documentation.</p>
-        </div>
-
-        <form action="https://portfolio-contact-form.vladbortnik.workers.dev" method="POST" class="contact-form"
-          id="project-request-form" enctype="multipart/form-data">
-          <!-- Cloudflare Worker endpoint - update after deployment -->
-          <input type="hidden" name="form_type" value="project">
-
-          <!-- Honeypot -->
-          <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
-
-          <!-- CLIENT INFORMATION -->
-          <div class="form-section">
-            <h3><i class="bi bi-person-circle"></i> Client Information</h3>
-
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="project-name">Your Name *</label>
-                <input type="text" name="name" class="form-control" id="project-name" required>
-              </div>
-
-              <div class="col-md-6 form-group">
-                <label for="project-company">Company / Organization</label>
-                <input type="text" name="company" class="form-control" id="project-company">
-              </div>
+        <!-- ======= Footer ======= -->
+        <footer id="footer">
+            <div class="footer-content">
+                <div class="footer-icons">
+                    <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
+                    <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i class="bi bi-twitter-x"></i></a>
+                    <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i class="bi bi-github"></i></a>
+                    <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin" title="LinkedIn"><i class="bi bi-linkedin"></i></a>
+                    <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
+                    <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+                </div>
+                <div class="footer-copyright"> &copy; <span id="current-year"></span> Vlad Bortnik </div>
             </div>
+        </footer>
 
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="project-email">Email Address *</label>
-                <input type="email" name="email" class="form-control" id="project-email" required>
-              </div>
+        <!-- Vendor JS Files -->
+        <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
-              <div class="col-md-6 form-group">
-                <label for="project-phone">Phone Number</label>
-                <input type="tel" name="phone" class="form-control" id="project-phone">
-              </div>
-            </div>
-          </div>
+        <!-- Contact Form JS -->
+        <script src="assets/js/contact.js"></script>
 
-          <!-- PROJECT DETAILS -->
-          <div class="form-section">
-            <h3><i class="bi bi-clipboard-data"></i> Project Details</h3>
-
-            <div class="form-group">
-              <label for="project-type">Project Type *</label>
-              <select name="project_type" class="form-control" id="project-type" required>
-                <option value="">-- Select Project Type --</option>
-                <option value="Backend Development">Backend Development (APIs, Databases)</option>
-                <option value="Full Stack Web App">Full Stack Web Application</option>
-                <option value="DevOps & Infrastructure">DevOps & Infrastructure</option>
-                <option value="Docker Deployment">Docker & Containerization</option>
-                <option value="Server Setup">Server Setup & Configuration</option>
-                <option value="Database Design">Database Design & Optimization</option>
-                <option value="Code Review">Code Review & Consulting</option>
-                <option value="Other">Other (Please specify)</option>
-              </select>
-            </div>
-
-            <div class="form-group">
-              <label for="project-description">Project Description *</label>
-              <textarea class="form-control" name="project_description" id="project-description" rows="6"
-                placeholder="Describe your project goals, requirements, and any specific technologies you have in mind..."
-                required></textarea>
-            </div>
-
-            <div class="row">
-              <div class="col-md-6 form-group">
-                <label for="project-budget">Budget Range</label>
-                <select name="budget" class="form-control" id="project-budget">
-                  <option value="">-- Select Budget Range --</option>
-                  <option value="Under $5,000">Under $5,000</option>
-                  <option value="$5,000 - $10,000">$5,000 - $10,000</option>
-                  <option value="$10,000 - $25,000">$10,000 - $25,000</option>
-                  <option value="$25,000 - $50,000">$25,000 - $50,000</option>
-                  <option value="$50,000+">$50,000+</option>
-                  <option value="Not Sure Yet">Not Sure Yet</option>
-                </select>
-              </div>
-
-              <div class="col-md-6 form-group">
-                <label for="project-timeline">Desired Timeline *</label>
-                <select name="timeline" class="form-control" id="project-timeline" required>
-                  <option value="">-- Select Timeline --</option>
-                  <option value="ASAP (Within 2 weeks)">ASAP (Within 2 weeks)</option>
-                  <option value="1 Month">1 Month</option>
-                  <option value="2-3 Months">2-3 Months</option>
-                  <option value="3-6 Months">3-6 Months</option>
-                  <option value="6+ Months">6+ Months</option>
-                  <option value="Flexible">Flexible</option>
-                </select>
-              </div>
-            </div>
-          </div>
-
-          <!-- FILE UPLOADS -->
-          <div class="form-section">
-            <h3><i class="bi bi-cloud-upload"></i> Project Files & Documentation (Optional)</h3>
-            <p class="section-description">
-              Upload any relevant files: mockups, wireframes, documentation, data files, etc.
-            </p>
-            <p class="file-info">
-              <small>Accepted: Images (JPG, PNG, WebP), Documents (PDF, DOCX, TXT), Data (CSV, XML, JSON), Web (HTML,
-                CSS)</small><br>
-              <small>Max 10MB per file • Up to 5 files total</small>
-            </p>
-
-            <div class="file-upload-zone" id="file-drop-zone">
-              <i class="bi bi-cloud-arrow-up"></i>
-              <p class="upload-text">Drag & drop files here or <span class="browse-link">browse</span></p>
-              <input type="file" name="attachments" id="file-input" multiple
-                accept=".jpg,.jpeg,.png,.webp,.pdf,.docx,.doc,.txt,.csv,.xml,.json,.html,.css" hidden>
-            </div>
-
-            <div class="file-preview-container" id="file-preview"></div>
-          </div>
-
-          <!-- ADDITIONAL NOTES -->
-          <div class="form-section">
-            <h3><i class="bi bi-chat-left-text"></i> Additional Information</h3>
-
-            <div class="form-group">
-              <label for="project-notes">Anything else I should know?</label>
-              <textarea class="form-control" name="additional_notes" id="project-notes" rows="4"
-                placeholder="Any specific requirements, constraints, or questions..."></textarea>
-            </div>
-          </div>
-
-          <!-- Cloudflare Turnstile (replace with your site key) -->
-          <div class="turnstile-wrapper">
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAAB6AEVcPkpc4oM3Q"></div>
-          </div>
-
-          <div class="text-center">
-            <button type="submit" class="btn-submit btn-submit-large">
-              <i class="bi bi-send-check"></i> Submit Project Request
-            </button>
-          </div>
-
-          <div class="form-message"></div>
-        </form>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ======= Footer ======= -->
-  <footer id="footer">
-    <div class="footer-content">
-      <div class="footer-icons">
-        <a href="/" title="Portfolio"><i class="bi bi-globe2"></i></a>
-        <a href="https://x.com/vladbortnik_dev" target="_blank" rel="me noopener" class="twitter" title="Twitter/X"><i
-            class="bi bi-twitter-x"></i></a>
-        <a href="https://github.com/vladbortnik" target="_blank" rel="me noopener" class="github" title="GitHub"><i
-            class="bi bi-github"></i></a>
-        <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
-          title="LinkedIn"><i class="bi bi-linkedin"></i></a>
-        <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
-        <a href="/blog/feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
-      </div>
-      <div class="footer-copyright">
-        &copy; <span id="current-year"></span> Vlad Bortnik
-      </div>
-    </div>
-  </footer>
-  <script>document.getElementById('current-year').textContent = new Date().getFullYear();</script>
-
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
-  <!-- Contact Form JS -->
-  <script src="assets/js/contact.js"></script>
-
-  <!-- Waves Animation -->
-  <script src="assets/js/waves.js"></script>
-
-</body>
-
+        <!-- Waves Animation -->
+        <script src="assets/js/waves.js"></script>
+    </body>
 </html>

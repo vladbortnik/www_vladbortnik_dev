@@ -404,3 +404,15 @@ function openSideBySideFullscreen(img) {
     if (e.key === 'Escape') closeFullscreen();
   });
 }
+
+// ===== UPDATE COPYRIGHT YEAR ====== //
+function updateCopyrightYear() {
+  const yearElements = document.querySelectorAll('#current-year');
+  const currentYear = new Date().getFullYear();
+  yearElements.forEach(el => {
+    el.textContent = currentYear;
+  });
+}
+
+// Initialize copyright year
+updateCopyrightYear();
