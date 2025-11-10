@@ -3,7 +3,6 @@ blog/screenshots
 archive/
 blog/temp/
 TO-DO.md
-DEPLOYMENT/context.md
 
 # Cloudflare Worker
 contact-worker/

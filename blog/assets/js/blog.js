@@ -11,7 +11,7 @@ const blogPosts = [
     title: "Deploy Like a Pro: Production-Grade Multi-Application Server for $12/Month",
     excerpt: "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
     category: "DevOps",
-    date: "2025-11-09",
+    date: "2025-11-10",
     readTime: "19 min read",
     author: "Vlad Bortnik"
   }
@@ -215,14 +215,57 @@ function initSocialShare() {
   if (copyBtn) {
     copyBtn.addEventListener('click', function(e) {
       e.preventDefault();
-      navigator.clipboard.writeText(window.location.href).then(() => {
+
+      const copyToClipboard = (text) => {
+        // Try modern Clipboard API first (requires HTTPS)
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          return navigator.clipboard.writeText(text);
+        } else {
+          // Fallback for non-HTTPS/older browsers
+          return new Promise((resolve, reject) => {
+            const textArea = document.createElement('textarea');
+            textArea.value = text;
+            textArea.style.position = 'fixed';
+            textArea.style.left = '-999999px';
+            textArea.style.top = '-999999px';
+            document.body.appendChild(textArea);
+            textArea.focus();
+            textArea.select();
+
+            try {
+              const successful = document.execCommand('copy');
+              document.body.removeChild(textArea);
+              if (successful) {
+                resolve();
+              } else {
+                reject(new Error('Copy command failed'));
+              }
+            } catch (err) {
+              document.body.removeChild(textArea);
+              reject(err);
+            }
+          });
+        }
+      };
+
+      copyToClipboard(window.location.href).then(() => {
         const originalText = copyBtn.innerHTML;
         copyBtn.innerHTML = '<i class="bi bi-check"></i> Copied!';
         copyBtn.classList.add('copied');
-        
+
         setTimeout(() => {
           copyBtn.innerHTML = originalText;
           copyBtn.classList.remove('copied');
+        }, 2000);
+      }).catch(err => {
+        console.error('Failed to copy:', err);
+        const originalText = copyBtn.innerHTML;
+        copyBtn.innerHTML = '<i class="bi bi-x"></i> Copy failed';
+        copyBtn.classList.add('error');
+
+        setTimeout(() => {
+          copyBtn.innerHTML = originalText;
+          copyBtn.classList.remove('error');
         }, 2000);
       });
     });

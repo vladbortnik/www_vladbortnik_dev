@@ -22,14 +22,14 @@
   <meta
     content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs."
     property="og:description" />
-  <meta content="https://vladbortnik.dev/blog/assets/img/brand-logo.png" property="og:image" />
+  <meta content="https://vladbortnik.dev/blog/assets/img/logo/brand-logo.png" property="og:image" />
   <meta content="1200" property="og:image:width" />
   <meta content="630" property="og:image:height" />
   <meta content="Vlad Bortnik - Software Engineer Portfolio" property="og:image:alt" />
   <meta content="Vlad Bortnik Portfolio" property="og:site_name" />
   <meta content="en_US" property="og:locale" />
-  <meta content="2025-11-09T00:00:00-05:00" property="article:published_time" />
-  <meta content="2025-11-09T00:00:00-05:00" property="article:modified_time" />
+  <meta content="2025-11-10T00:00:00-05:00" property="article:published_time" />
+  <meta content="2025-11-10T00:00:00-05:00" property="article:modified_time" />
   <meta content="https://vladbortnik.dev" property="article:author" />
   <meta content="DevOps" property="article:section" />
   <meta content="Docker" property="article:tag" />
@@ -82,7 +82,7 @@
             "name": "Vlad Bortnik",
             "url": "https://vladbortnik.dev",
             "sameAs": [
-                "https://twitter.com/vladbortnik_dev",
+                "https://x.com/vladbortnik_dev",
                 "https://github.com/vladbortnik",
                 "https://linkedin.com/in/vladbortnik"
             ]
@@ -97,8 +97,8 @@
                 "height": 630
             }
         },
-        "datePublished": "2025-11-09",
-        "dateModified": "2025-11-09",
+        "datePublished": "2025-11-10",
+        "dateModified": "2025-11-10",
         "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://vladbortnik.dev/blog/posts/1-production-grade-multi-app-server-12-dollar-month.html"
@@ -173,6 +173,24 @@
       console.log('🚫 [Dev Mode] Umami Analytics disabled on localhost');
     }
   </script>
+
+  <!-- Cloudflare Web Analytics - Production Only -->
+  <script>
+    // Only load Cloudflare Web Analytics on production domain
+    if (window.location.hostname === 'vladbortnik.dev' ||
+      (window.location.hostname !== 'localhost' &&
+        window.location.hostname !== '127.0.0.1' &&
+        window.location.protocol === 'https:')) {
+      const cfScript = document.createElement('script');
+      cfScript.defer = true;
+      cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
+      cfScript.setAttribute('data-cf-beacon', '{"token": "f6413ab81d184d10a5a833134568ab89"}');
+      document.head.appendChild(cfScript);
+    } else {
+      console.log('🚫 [Dev Mode] Cloudflare Web Analytics disabled on localhost');
+    }
+  </script>
+  <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>
@@ -208,7 +226,7 @@
           <div class="post-meta">
             <div>
               <i class="bi bi-calendar3"></i>
-              <span>November 9, 2025</span>
+              <span>November 10, 2025</span>
             </div>
             <div>
               <i class="bi bi-clock"></i>
@@ -1145,7 +1163,7 @@ SQLALCHEMY_ENGINE_OPTIONS = {
           <ul>
             <li><a href="../../index.html" target="_blank" rel="noopener noreferrer">PORTFOLIO</a></li>
             <li><a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer">GITHUB</a></li>
-            <li><a href="https://www.linkedin.com/in/vladbortnik/" target="_blank"
+            <li><a href="https://linkedin.com/in/vladbortnik" target="_blank"
                 rel="noopener noreferrer">LINKEDIN</a></li>
             <li><a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer">X/TWITTER</a></li>
             <li><a href="../../contact.html" target="_blank" rel="noopener noreferrer">CONTACT ME</a></li>
@@ -1167,12 +1185,9 @@ SQLALCHEMY_ENGINE_OPTIONS = {
               Cloud). Passionate about building scalable, production-grade web applications and sharing knowledge with
               the developer community.</p>
             <div class="author-links">
-              <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer" rel="noopener"
-                target="_blank"><i class="bi bi-github"></i> GitHub</a>
-              <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer" rel="noopener"
-                target="_blank"><i class="bi bi-linkedin"></i> LinkedIn</a>
-              <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer" rel="noopener"
-                target="_blank"><i class="bi bi-twitter-x"></i> X/Twitter</a>
+              <a href="https://github.com/vladbortnik" target="_blank" rel="noopener noreferrer"><i class="bi bi-github"></i> GitHub</a>
+              <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i> LinkedIn</a>
+              <a href="https://x.com/vladbortnik_dev" target="_blank" rel="noopener noreferrer"><i class="bi bi-twitter-x"></i> X/Twitter</a>
             </div>
           </div>
         </section>
@@ -1207,7 +1222,7 @@ SQLALCHEMY_ENGINE_OPTIONS = {
         <a href="https://linkedin.com/in/vladbortnik" target="_blank" rel="me noopener" class="linkedin"
           title="LinkedIn"><i class="bi bi-linkedin"></i></a>
         <a href="/contact.html" title="Contact"><i class="bi bi-envelope"></i></a>
-        <a href="feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
+        <a href="../feed.xml" title="RSS"><i class="bi bi-rss-fill"></i> RSS</a>
       </div>
       <div class="footer-copyright">
         © 2025 Vlad Bortnik. All rights reserved.

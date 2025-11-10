@@ -426,6 +426,21 @@ h6 {
   color: #18d26e;
 }
 
+/* Remove dropdown on mobile - make Projects a direct link */
+@media (max-width: 992px) {
+  .navbar .dropdown-menu {
+    display: none !important;
+  }
+
+  .dropdown .toggle-dropdown {
+    display: none !important;
+  }
+
+  .navbar-mobile .dropdown-menu {
+    display: none !important;
+  }
+}
+
 /* MOBILE NAVIGATION */
 .mobile-nav-toggle {
   color: #fff;
@@ -439,7 +454,7 @@ h6 {
   top: 15px;
 }
 
-@media (max-width: 991px) {
+@media (max-width: 992px) {
   .mobile-nav-toggle {
     display: block;
   }

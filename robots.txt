@@ -8,6 +8,7 @@ Disallow: /.claude/
 Disallow: /.qodo/
 Disallow: /.vscode/
 Disallow: /DEPLOYMENT/
+Disallow: /CLOUDFLARE-Info/
 Disallow: /SEO-Checklist/
 Disallow: /SEO-Info/
 Disallow: /assets/vendor/
