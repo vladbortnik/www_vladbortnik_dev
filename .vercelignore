@@ -1,0 +1,48 @@
+# Development files
+.git
+.github
+.vscode
+.idea
+.DS_Store
+.qodo
+
+# Cloudflare Worker files (NOT NEEDED for Vercel)
+wrangler.toml
+cloudflare-worker-resend.js
+deploy-worker.sh
+
+# Documentation and notes
+DEPLOYMENT/
+SEO-Checklist/
+SEO-Info/
+CLOUDFLARE-Info/
+archive/
+original-images/
+blog/docs/
+
+# Claude Code files
+.claude/
+
+# Backup files
+*.backup
+*.bak
+
+# Logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Build artifacts (if any in future)
+node_modules/
+dist/
+build/
+
+# Nginx config (DigitalOcean specific)
+vladbortnik.dev
+vladbortnik.dev.backup
