@@ -3063,3 +3063,45 @@ section.blog-post {
     padding: 18px 0;
   } */
 }
+
+/*======================
+#### COMMENTS SECTION ###
+======================*/
+.commentbox {
+  margin: 50px auto 80px;
+  max-width: 900px;
+  padding: 30px;
+  background: rgba(0, 0, 0, 0.75);
+  border: 0.5px solid rgba(24, 210, 110, 0.1);
+  box-shadow: 0 0 30px rgba(24, 210, 110, 0.2);
+  border-radius: 8px;
+}
+
+/* Add title above comments */
+.commentbox::before {
+  content: "";
+  display: block;
+  margin-bottom: 20px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+  .commentbox {
+    margin: 40px auto 60px;
+    padding: 25px;
+  }
+}
+
+@media (max-width: 768px) {
+  .commentbox {
+    margin: 30px 15px 50px;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 576px) {
+  .commentbox {
+    margin: 20px 10px 40px;
+    padding: 15px;
+  }
+}
