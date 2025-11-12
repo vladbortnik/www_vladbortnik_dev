@@ -442,6 +442,12 @@ h6 {
     position: fixed;
     right: 15px;
     top: 15px;
+    z-index: 9999;
+    padding: 10px;
+    -webkit-tap-highlight-color: rgba(24, 210, 110, 0.3);
+    touch-action: manipulation;
+    user-select: none;
+    -webkit-user-select: none;
 }
 
 @media (max-width: 991px) {

@@ -18,21 +18,65 @@
         }
 
         body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            background: linear-gradient(135deg, #0f1419 0%, #1a1f2e 100%);
-            color: #e0e0e0;
+            font-family: 'Courier New', 'Monaco', monospace;
+            background: #000000;
+            background-image:
+                repeating-linear-gradient(0deg, transparent, transparent 1px, rgba(24, 210, 110, 0.03) 1px, rgba(24, 210, 110, 0.03) 2px),
+                repeating-linear-gradient(90deg, transparent, transparent 1px, rgba(24, 210, 110, 0.03) 1px, rgba(24, 210, 110, 0.03) 2px);
+            background-size: 20px 20px;
+            color: #00ff41;
             line-height: 1.6;
-            padding: 20px;
+            padding: 50px 20px 20px;
+            min-height: 100vh;
+            position: relative;
+        }
+
+        /* Terminal scanline effect */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.15),
+                rgba(0, 0, 0, 0.15) 1px,
+                transparent 1px,
+                transparent 2px
+            );
+            pointer-events: none;
+            z-index: 1000;
+            opacity: 0.1;
+        }
+
+        /* Terminal cursor blink */
+        @keyframes blink {
+            0%, 49% { opacity: 1; }
+            50%, 100% { opacity: 0; }
         }
 
         .container {
             max-width: 900px;
             margin: 0 auto;
-            background: rgba(255, 255, 255, 0.03);
-            border-radius: 12px;
-            padding: 40px;
-            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
-            border: 1px solid rgba(24, 210, 110, 0.1);
+            background: rgba(0, 20, 10, 0.7);
+            border: 2px solid #00ff41;
+            box-shadow: 0 0 30px rgba(0, 255, 65, 0.3),
+                        inset 0 0 50px rgba(0, 255, 65, 0.05);
+            padding: 40px 20px;
+            position: relative;
+        }
+
+        .container::before {
+            content: '> RSS_FEED.XML';
+            position: absolute;
+            top: -35px;
+            left: 20px;
+            font-size: 0.85em;
+            color: #00ff41;
+            opacity: 0.6;
+            letter-spacing: 2px;
         }
 
         header {
@@ -46,68 +90,103 @@
             width: 64px;
             height: 64px;
             margin: 0 auto 20px;
-            background: linear-gradient(135deg, #ff6b35 0%, #f7931e 100%);
-            border-radius: 12px;
+            background: rgba(0, 255, 65, 0.1);
+            border: 2px solid #00ff41;
+            border-radius: 4px;
             display: flex;
             align-items: center;
             justify-content: center;
             font-size: 32px;
-            box-shadow: 0 4px 15px rgba(255, 107, 53, 0.3);
+            box-shadow: 0 0 25px rgba(0, 255, 65, 0.4);
+            position: relative;
         }
 
+
         h1 {
-            color: #18d26e;
+            color: #00ff41;
             font-size: 2.5em;
             margin-bottom: 10px;
             font-weight: 700;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.5);
+            letter-spacing: 2px;
+        }
+
+        h1::before {
+            content: '█';
+            color: #00ff41;
+            opacity: 0.7;
+            animation: blink 1.2s infinite;
+            font-size: 0.7em;
+            margin-right: 38px;
+            display: inline-block;
+            vertical-align: middle;
+            border-radius: 2px;
+            box-shadow: 0 0 8px rgba(0, 255, 65, 0.4);
         }
 
         .subtitle {
-            color: #a0a0a0;
+            color: #00cc33;
             font-size: 1.1em;
             margin-bottom: 20px;
+            font-family: 'Courier New', monospace;
         }
 
         .info-box {
-            background: rgba(24, 210, 110, 0.08);
-            border-left: 4px solid #18d26e;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 0.5px solid rgba(24, 210, 110, 0.2);
+            box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+            padding: 25px;
             margin: 30px 0;
             border-radius: 8px;
         }
 
         .info-box h2 {
-            color: #18d26e;
-            font-size: 1.4em;
+            color: #00ff41;
+            font-size: 1.3em;
             margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .info-box h2::before {
+            content: '// ';
+            opacity: 0.5;
         }
 
         .info-box p {
             margin-bottom: 12px;
-            color: #c0c0c0;
+            color: #00cc33;
+            line-height: 1.7;
         }
 
         .how-to-subscribe {
-            background: rgba(59, 130, 246, 0.08);
-            border-left: 4px solid #3b82f6;
-            padding: 20px;
+            background: rgba(0, 0, 0, 0.5);
+            border: 0.5px solid rgba(24, 210, 110, 0.2);
+            box-shadow: 0 0 20px rgba(24, 210, 110, 0.15);
+            padding: 25px;
             margin: 30px 0;
             border-radius: 8px;
         }
 
         .how-to-subscribe h2 {
-            color: #3b82f6;
-            font-size: 1.4em;
+            color: #00ff41;
+            font-size: 1.3em;
             margin-bottom: 15px;
+            font-weight: 600;
+        }
+
+        .how-to-subscribe h2::before {
+            content: '// ';
+            opacity: 0.5;
         }
 
         .how-to-subscribe ol {
             margin-left: 20px;
-            color: #c0c0c0;
+            color: #00cc33;
         }
 
         .how-to-subscribe li {
             margin-bottom: 10px;
+            line-height: 1.6;
         }
 
         .feed-url-container {
@@ -116,13 +195,20 @@
         }
 
         .feed-url {
-            background: rgba(0, 0, 0, 0.3);
+            background: rgba(0, 0, 0, 0.8);
             padding: 12px 70px 12px 15px;
-            border-radius: 6px;
+            border-radius: 4px;
             font-family: 'Courier New', monospace;
-            color: #18d26e;
-            border: 1px solid rgba(24, 210, 110, 0.2);
+            color: #00ff41;
+            border: 1px solid #00ff41;
             word-break: break-all;
+            text-shadow: 0 0 5px rgba(0, 255, 65, 0.5);
+        }
+
+        .feed-url::before {
+            content: '$ ';
+            color: #00ff41;
+            font-weight: bold;
         }
 
         .copy-btn {
@@ -130,20 +216,23 @@
             right: 8px;
             top: 50%;
             transform: translateY(-50%);
-            background: rgba(24, 210, 110, 0.15);
-            border: 1px solid rgba(24, 210, 110, 0.3);
-            color: #18d26e;
+            background: rgba(0, 255, 65, 0.2);
+            border: 1px solid #00ff41;
+            color: #00ff41;
             padding: 6px 12px;
             border-radius: 4px;
             cursor: pointer;
             font-size: 0.85em;
             transition: all 0.3s ease;
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            font-family: 'Courier New', monospace;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .copy-btn:hover {
-            background: rgba(24, 210, 110, 0.25);
-            border-color: #18d26e;
+            background: rgba(0, 255, 65, 0.3);
+            border-color: #00ff41;
+            box-shadow: 0 0 15px rgba(0, 255, 65, 0.5);
             transform: translateY(-50%) scale(1.05);
         }
 
@@ -164,19 +253,23 @@
         }
 
         .reader-link {
-            background: rgba(255, 255, 255, 0.05);
-            padding: 10px;
-            border-radius: 6px;
+            background: rgba(0, 0, 0, 0.8);
+            padding: 12px;
+            border-radius: 4px;
             text-align: center;
-            color: #18d26e;
+            color: #00ff41;
             text-decoration: none;
-            border: 1px solid rgba(24, 210, 110, 0.2);
+            border: 1px solid #00ff41;
+            box-shadow: 0 0 10px rgba(0, 255, 65, 0.2);
             transition: all 0.3s ease;
+            font-size: 0.9em;
+            font-family: 'Courier New', monospace;
         }
 
         .reader-link:hover {
-            background: rgba(24, 210, 110, 0.1);
-            border-color: #18d26e;
+            background: rgba(0, 255, 65, 0.1);
+            border-color: #00ff41;
+            box-shadow: 0 0 20px rgba(0, 255, 65, 0.4);
             transform: translateY(-2px);
         }
 
@@ -185,16 +278,22 @@
         }
 
         .posts-section h2 {
-            color: #18d26e;
+            color: #00ff41;
             font-size: 1.8em;
             margin-bottom: 25px;
             padding-bottom: 10px;
-            border-bottom: 2px solid rgba(24, 210, 110, 0.3);
+            border-bottom: 2px solid #00ff41;
+        }
+
+        .posts-section h2::before {
+            content: '> ';
+            opacity: 0.7;
         }
 
         .post-item {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid rgba(24, 210, 110, 0.15);
+            background: rgba(0, 0, 0, 0.5);
+            border: 0.5px solid rgba(24, 210, 110, 0.1);
+            box-shadow: 0 0 15px rgba(24, 210, 110, 0.1);
             border-radius: 8px;
             padding: 25px;
             margin-bottom: 20px;
@@ -202,9 +301,9 @@
         }
 
         .post-item:hover {
-            background: rgba(255, 255, 255, 0.05);
             border-color: rgba(24, 210, 110, 0.3);
-            transform: translateX(5px);
+            box-shadow: 0 0 25px rgba(24, 210, 110, 0.2);
+            transform: translateY(-2px);
         }
 
         .post-title {
@@ -213,35 +312,45 @@
         }
 
         .post-title a {
-            color: #18d26e;
+            color: #00ff41;
             text-decoration: none;
-            transition: color 0.3s ease;
+            transition: all 0.3s ease;
+        }
+
+        .post-title a::before {
+            content: '[+] ';
+            opacity: 0.6;
         }
 
         .post-title a:hover {
-            color: #20f080;
+            color: #00ff41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
             text-decoration: underline;
         }
 
         .post-meta {
-            color: #888;
+            color: #00cc33;
             font-size: 0.9em;
             margin-bottom: 12px;
         }
 
         .post-category {
             display: inline-block;
-            background: rgba(24, 210, 110, 0.15);
-            color: #18d26e;
+            background: rgba(0, 255, 65, 0.1);
+            color: #00ff41;
             padding: 4px 12px;
-            border-radius: 15px;
+            border-radius: 3px;
             font-size: 0.85em;
             margin-right: 10px;
-            border: 1px solid rgba(24, 210, 110, 0.3);
+            border: 1px solid #00ff41;
+        }
+
+        .post-category::before {
+            content: '# ';
         }
 
         .post-description {
-            color: #b0b0b0;
+            color: #00cc33;
             line-height: 1.7;
         }
 
@@ -249,30 +358,212 @@
             text-align: center;
             margin-top: 50px;
             padding-top: 30px;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #888;
+            border-top: 1px solid #00ff41;
+            color: #00cc33;
         }
 
         .footer a {
-            color: #18d26e;
+            color: #00ff41;
             text-decoration: none;
+            transition: all 0.3s ease;
         }
 
         .footer a:hover {
+            color: #00ff41;
+            text-shadow: 0 0 10px rgba(0, 255, 65, 0.7);
             text-decoration: underline;
         }
 
+        /* Tablet */
         @media (max-width: 768px) {
+            body {
+                padding: 30px 15px 20px;
+            }
+
             .container {
-                padding: 25px;
+                padding: 30px 20px;
+                border-width: 1.5px;
+            }
+
+            .container::before {
+                font-size: 0.75em;
+                left: 15px;
             }
 
             h1 {
-                font-size: 1.8em;
+                font-size: 2em;
+                letter-spacing: 1px;
+            }
+
+            h1::before {
+                margin-right: 25px;
+                font-size: 0.65em;
+            }
+
+            .subtitle {
+                font-size: 1em;
+            }
+
+            .info-box, .how-to-subscribe {
+                padding: 20px;
+                margin: 25px 0;
             }
 
             .readers-list {
                 grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+                gap: 8px;
+            }
+
+            .post-item {
+                padding: 20px;
+            }
+        }
+
+        /* Mobile */
+        @media (max-width: 480px) {
+            body {
+                padding: 25px 10px 15px;
+                background-size: 15px 15px;
+            }
+
+            .container {
+                padding: 25px 15px;
+                border-width: 1px;
+            }
+
+            .container::before {
+                display: none; /* Hide on very small screens */
+            }
+
+            .rss-icon {
+                width: 48px;
+                height: 48px;
+                font-size: 24px;
+                margin-bottom: 15px;
+            }
+
+            h1 {
+                font-size: 1.6em;
+                letter-spacing: 0.5px;
+                margin-bottom: 8px;
+            }
+
+            h1::before {
+                margin-right: 15px;
+                font-size: 0.6em;
+            }
+
+            .subtitle {
+                font-size: 0.9em;
+                margin-bottom: 15px;
+            }
+
+            .feed-url {
+                padding: 10px 60px 10px 10px;
+                font-size: 0.75em;
+                word-break: break-all;
+            }
+
+            .copy-btn {
+                padding: 5px 10px;
+                font-size: 0.75em;
+                right: 5px;
+            }
+
+            .info-box, .how-to-subscribe {
+                padding: 15px;
+                margin: 20px 0;
+                border-radius: 6px;
+            }
+
+            .info-box h2, .how-to-subscribe h2 {
+                font-size: 1.1em;
+                margin-bottom: 12px;
+            }
+
+            .info-box p, .how-to-subscribe p, .how-to-subscribe li {
+                font-size: 0.9em;
+                line-height: 1.6;
+            }
+
+            .how-to-subscribe ol {
+                margin-left: 15px;
+            }
+
+            .readers-list {
+                grid-template-columns: 1fr 1fr;
+                gap: 6px;
+            }
+
+            .reader-link {
+                padding: 10px 8px;
+                font-size: 0.8em;
+            }
+
+            .posts-section h2 {
+                font-size: 1.5em;
+                margin-bottom: 20px;
+            }
+
+            .post-item {
+                padding: 15px;
+                margin-bottom: 15px;
+                border-radius: 6px;
+            }
+
+            .post-title {
+                font-size: 1.2em;
+            }
+
+            .post-title a::before {
+                content: '[+] ';
+                display: inline;
+            }
+
+            .post-meta {
+                font-size: 0.85em;
+            }
+
+            .post-category {
+                font-size: 0.75em;
+                padding: 3px 10px;
+            }
+
+            .post-description {
+                font-size: 0.9em;
+            }
+
+            .footer {
+                margin-top: 40px;
+                padding-top: 20px;
+                font-size: 0.9em;
+            }
+        }
+
+        /* Very small screens */
+        @media (max-width: 360px) {
+            body {
+                padding: 20px 8px 12px;
+            }
+
+            .container {
+                padding: 20px 12px;
+            }
+
+            h1 {
+                font-size: 1.4em;
+            }
+
+            h1::before {
+                margin-right: 10px;
+            }
+
+            .readers-list {
+                grid-template-columns: 1fr;
+            }
+
+            .post-title {
+                font-size: 1.1em;
             }
         }
     </style>

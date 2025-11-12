@@ -186,6 +186,47 @@ function initProgressBar() {
 }
 
 /**
+ * Initialize mobile navigation toggle
+ */
+function initMobileNav() {
+  const mobileNavToggle = document.querySelector('.mobile-nav-toggle');
+  const navbar = document.querySelector('#navbar');
+
+  if (!mobileNavToggle || !navbar) return;
+
+  // Toggle mobile navigation on click
+  mobileNavToggle.addEventListener('click', function(e) {
+    e.preventDefault();
+    navbar.classList.toggle('navbar-mobile');
+    mobileNavToggle.classList.toggle('bi-list');
+    mobileNavToggle.classList.toggle('bi-x');
+  });
+
+  // Close mobile nav when clicking a link
+  const navLinks = document.querySelectorAll('#navbar .nav-link');
+  navLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      if (navbar.classList.contains('navbar-mobile')) {
+        navbar.classList.remove('navbar-mobile');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
+    });
+  });
+
+  // Close mobile nav when clicking outside
+  document.addEventListener('click', function(e) {
+    if (navbar.classList.contains('navbar-mobile')) {
+      if (!navbar.contains(e.target) && !mobileNavToggle.contains(e.target)) {
+        navbar.classList.remove('navbar-mobile');
+        mobileNavToggle.classList.add('bi-list');
+        mobileNavToggle.classList.remove('bi-x');
+      }
+    }
+  });
+}
+
+/**
  * Initialize social share buttons
  */
 function initSocialShare() {
@@ -281,4 +322,5 @@ document.addEventListener('DOMContentLoaded', function() {
   // initSearch(); // Disabled until blog has 10+ articles
   initProgressBar();
   initSocialShare();
+  initMobileNav();
 });
