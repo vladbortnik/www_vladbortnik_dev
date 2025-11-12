@@ -3,21 +3,13 @@ Allow: /
 
 # Disallow admin/private areas
 Disallow: /.git/
-Disallow: /.idea/
 Disallow: /.claude/
-Disallow: /.qodo/
 Disallow: /.vscode/
 Disallow: /DEPLOYMENT/
-Disallow: /CLOUDFLARE-Info/
-Disallow: /SEO-Checklist/
-Disallow: /SEO-Info/
 Disallow: /assets/vendor/
-Disallow: /original-images/
-Disallow: /blog/docs/
-Disallow: /blog/temp/
 
 # Sitemap location
 Sitemap: https://vladbortnik.dev/sitemap.xml
 
-# Crawl-delay (helps with server load)
-Crawl-delay: 1
+# Crawl-delay (Rule ignored by Googlebot)
+# Crawl-delay: 1

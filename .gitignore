@@ -2,9 +2,12 @@
 blog/screenshots
 archive/
 blog/temp/
+DEPLOYMENT/nginx-config/
 TO-DO.md
 vladbortnik.dev
-*.backup
+vladbortnik.dev.backup
+DUPLICATE-BLOG-IMAGES.md
+MODIFY-YOUR-PLAN.md
 
 # Cloudflare Worker
 contact-worker/
@@ -22,7 +25,7 @@ node_modules/
 .DS_Store
 
 # VS Code
-# .vscode/    # Commented out to save Prettier configuration.
+# .vscode/
 .idea/
 
 # Files that might appear in the root of a volume
