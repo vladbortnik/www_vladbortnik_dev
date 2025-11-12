@@ -283,6 +283,27 @@
 </div>
 </section>
 
+<!-- Separator with glow effect -->
+<hr>
+
+<!-- CommentBox -->
+<div class="commentbox"></div>
+<script src="https://unpkg.com/commentbox.io/dist/commentbox.min.js"></script>
+<script>
+commentBox('5698637896089600-proj', {
+  backgroundColor: '#040404',
+  textColor: '#ffffff',
+  subtextColor: 'rgba(255, 255, 255, 0.7)',
+  accentColor: '#18d26e',
+  defaultBoxId: 'commentbox',
+  createBoxUrl(boxId, pageLocation) {
+    pageLocation.hash = boxId;
+    return pageLocation.href;
+  },
+  sortOrder: 'best'
+});
+</script>
+
 <!-- ======= Footer ======= -->
 <footer id="footer">
 <div class="container">
