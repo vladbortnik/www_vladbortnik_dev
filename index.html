@@ -43,17 +43,18 @@
     <!-- Favicon -->
     <link rel="icon" type="image/x-icon" sizes="16x16 32x32" href="assets/img/favicon.ico">
 
-    <!-- Google Fonts -->
+    <!-- Preconnect to Google Fonts for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <!-- Google Fonts with display=swap to prevent FOIT (Flash of Invisible Text) -->
     <link
-        href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i"
+        href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;600;700&family=Raleway:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
 
     <!-- Vendor CSS Files -->
     <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
     <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
-    <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
-    <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
-    <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
     <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
     <!-- Main CSS File -->
@@ -198,9 +199,18 @@
 
             <div class="row">
                 <div class="col-lg-4" data-aos="fade-right">
-                    <img src="assets/img/vlad-bortnik-headshot.jpg" class="img-fluid"
-                        alt="Vlad Bortnik - Software Engineer specializing in Python, Docker, and DevOps" width="1121"
-                        height="1121">
+                    <img srcset="assets/img/vlad-bortnik-headshot-320w.jpg 320w,
+                                 assets/img/vlad-bortnik-headshot-640w.jpg 640w,
+                                 assets/img/vlad-bortnik-headshot-1024w.jpg 1024w,
+                                 assets/img/vlad-bortnik-headshot-1920w.jpg 1920w"
+                         sizes="(max-width: 640px) 90vw,
+                                (max-width: 1024px) 400px,
+                                350px"
+                         src="assets/img/vlad-bortnik-headshot.jpg"
+                         class="img-fluid"
+                         alt="Vlad Bortnik - Software Engineer specializing in Python, Docker, and DevOps"
+                         width="1121"
+                         height="1121">
                 </div>
                 <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
 
@@ -1279,7 +1289,7 @@
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp"
                                     class="img-fluid base-diagram" alt="Reverse Proxy Configuration"
-                                    data-fullscreen="true">
+                                    data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1287,9 +1297,18 @@
                     <div class="col-lg-4 pt-3 pt-lg-5" data-aos="fade-left">
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
-                                <img src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
-                                    class="img-fluid base-diagram" alt="Reverse Proxy Configuration"
-                                    data-fullscreen="true">
+                                <img srcset="assets/img/portfolio/server-setup/server-setup-diagram-320w.webp 320w,
+                                             assets/img/portfolio/server-setup/server-setup-diagram-640w.webp 640w,
+                                             assets/img/portfolio/server-setup/server-setup-diagram-1024w.webp 1024w,
+                                             assets/img/portfolio/server-setup/server-setup-diagram-1920w.webp 1920w"
+                                     sizes="(max-width: 640px) 90vw,
+                                            (max-width: 1024px) 45vw,
+                                            400px"
+                                     src="assets/img/portfolio/server-setup/server-setup-diagram.webp"
+                                     class="img-fluid base-diagram"
+                                     alt="Reverse Proxy Configuration"
+                                     data-fullscreen="true"
+                                     loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1299,7 +1318,7 @@
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp"
                                     class="img-fluid base-diagram" alt="Reverse Proxy Configuration"
-                                    data-fullscreen="true">
+                                    data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1423,7 +1442,7 @@
                             <h4>Screenshots && Details</h4>
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/tldrx/tldrx-logo-branding.webp"
-                                    class="img-fluid base-diagram" alt="TLDRx Logo and Branding" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="TLDRx Logo and Branding" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1432,7 +1451,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/tldrx/tldrx-homepage-full.webp"
-                                    class="img-fluid base-diagram" alt="TLDRx Desktop Interface" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="TLDRx Desktop Interface" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1441,7 +1460,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/tldrx/tldrx-mobile-view.webp"
-                                    class="img-fluid base-diagram" alt="TLDRx Mobile View" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="TLDRx Mobile View" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1566,7 +1585,7 @@
                             <h4>Screenshots && Details</h4>
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/recipe/recipe-homepage.webp"
-                                    class="img-fluid base-diagram" alt="Recipe Homepage" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Recipe Homepage" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1576,7 +1595,7 @@
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/recipe/recipe-docker-compose.webp"
                                     class="img-fluid base-diagram" alt="Docker Compose Screenshot"
-                                    data-fullscreen="true">
+                                    data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1585,7 +1604,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/recipe/recipe-migration-scripts.webp"
-                                    class="img-fluid base-diagram" alt="Migration Scripts" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Migration Scripts" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1706,7 +1725,7 @@
                             <h4>Diagram && Screenshots</h4>
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/bookfinder/bookfinder-homepage.webp"
-                                    class="img-fluid base-diagram" alt="Bookfinder Homepage" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Bookfinder Homepage" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1715,7 +1734,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/bookfinder/bookfinder-diagram.webp"
-                                    class="img-fluid base-diagram" alt="Overview Diagram" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Overview Diagram" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1724,7 +1743,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/bookfinder/brooklyn-college-campus.webp"
-                                    class="img-fluid base-diagram" alt="Brooklyn College Campus" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Brooklyn College Campus" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1828,7 +1847,7 @@
                             <h4>Diagram && Screenshots</h4>
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/website-portfolio/website-portfolio-main.webp"
-                                    class="img-fluid base-diagram" alt="Portfolio Homepage" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Portfolio Homepage" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1837,7 +1856,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/website-portfolio/website-portfolio-projects.webp"
-                                    class="img-fluid base-diagram" alt="Projects" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Projects" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -1846,7 +1865,7 @@
                         <div class="project overview">
                             <div class="overview-image" id="image-shadow">
                                 <img src="assets/img/portfolio/website-portfolio/vlads-lab.webp"
-                                    class="img-fluid base-diagram" alt="Resume" data-fullscreen="true">
+                                    class="img-fluid base-diagram" alt="Resume" data-fullscreen="true" loading="lazy">
                             </div><!-- END: class="overview-image" id="image-shadow" -->
                         </div><!-- END: class="project overview" -->
                     </div><!-- END: class="col-lg-4" -->
@@ -2066,22 +2085,20 @@
     </section><!-- END: Projects Section -->
 
 
-    <!-- Vendor JS Files -->
-    <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-    <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-    <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
-    <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-    <script src="assets/vendor/waypoints/noframework.waypoints.js"></script>
+    <!-- Vendor JS Files - Defer non-critical scripts -->
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js" defer></script>
+    <script src="assets/vendor/swiper/swiper-bundle.min.js" defer></script>
+    <script src="assets/vendor/waypoints/noframework.waypoints.js" defer></script>
+    <script src="assets/vendor/purecounter/purecounter_vanilla.js" defer></script>
 
-    <!-- Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- Main JS File - Defer to unblock LCP -->
+    <script src="assets/js/main.js" defer></script>
 
-    <!-- AOS JS -->
-    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js"></script>
+    <!-- AOS JS - Defer animation library -->
+    <script src="https://cdn.jsdelivr.net/npm/aos@2.3.1/dist/aos.js" defer></script>
 
-    <!-- Waves Animation -->
-    <script src="assets/js/waves.js"></script>
+    <!-- Waves Animation - Defer non-critical animation -->
+    <script src="assets/js/waves.js" defer></script>
 
 </body>
 

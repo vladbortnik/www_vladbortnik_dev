@@ -108,9 +108,12 @@ function draw() {
 }
 
 (function init() {
-  resizeCanvas();
-  animate();
-  window.addEventListener('resize', resizeCanvas);
+  // Only run animation on desktop (>= 1024px) for performance
+  if (window.matchMedia('(min-width: 1024px)').matches) {
+    resizeCanvas();
+    animate();
+    window.addEventListener('resize', resizeCanvas);
+  }
 })();
 
 function animate() {
