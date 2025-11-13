@@ -22,7 +22,7 @@
   <meta
     content="Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs."
     property="og:description" />
-  <meta content="https://vladbortnik.dev/blog/assets/img/logo/brand-logo.png" property="og:image" />
+  <meta content="https://vladbortnik.dev/assets/img/brand-logo.png" property="og:image" />
   <meta content="1200" property="og:image:width" />
   <meta content="630" property="og:image:height" />
   <meta content="Vlad Bortnik - Software Engineer Portfolio" property="og:image:alt" />
@@ -47,7 +47,7 @@
   <link href="https://fonts.googleapis.com" rel="preconnect" />
   <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect" />
   <!-- Favicon -->
-  <link href="../assets/img/logo/favicon.ico" rel="icon" sizes="16x16 32x32" type="image/x-icon" />
+  <link href="../../assets/img/favicon.ico" rel="icon" sizes="16x16 32x32" type="image/x-icon" />
   <!-- RSS Feed Auto-Discovery -->
   <link href="https://vladbortnik.dev/blog/feed.xml" rel="alternate" title="Vlad's Blog RSS Feed"
     type="application/rss+xml" />
@@ -73,7 +73,7 @@
         "description": "Learn how to host multiple production apps on a $12/month VPS with Docker, Nginx, and enterprise-level security. Save $240-480/year on hosting costs.",
         "image": {
             "@type": "ImageObject",
-            "url": "https://vladbortnik.dev/blog/assets/img/logo/brand-logo.png",
+            "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
             "width": 1200,
             "height": 630
         },
@@ -92,7 +92,7 @@
             "name": "Vlad Bortnik",
             "logo": {
                 "@type": "ImageObject",
-                "url": "https://vladbortnik.dev/blog/assets/img/logo/brand-logo.png",
+                "url": "https://vladbortnik.dev/assets/img/brand-logo.png",
                 "width": 1200,
                 "height": 630
             }
@@ -174,23 +174,6 @@
     }
   </script>
 
-  <!-- Cloudflare Web Analytics - Production Only -->
-  <script>
-    // Only load Cloudflare Web Analytics on production domain
-    if (window.location.hostname === 'vladbortnik.dev' ||
-      (window.location.hostname !== 'localhost' &&
-        window.location.hostname !== '127.0.0.1' &&
-        window.location.protocol === 'https:')) {
-      const cfScript = document.createElement('script');
-      cfScript.defer = true;
-      cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-      cfScript.setAttribute('data-cf-beacon', '{"token": "f6413ab81d184d10a5a833134568ab89"}');
-      document.head.appendChild(cfScript);
-    } else {
-      console.log('🚫 [Dev Mode] Cloudflare Web Analytics disabled on localhost');
-    }
-  </script>
-  <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>
@@ -244,7 +227,7 @@
           <p><em>A practical guide to escaping expensive hosting by building your own production-grade infrastructure on
               DigitalOcean—complete with Docker, Nginx, and Enterprise-Level security.</em></p>
           <hr />
-          <img loading="lazy" src="../assets/img/1/server-setup-title-img-overlay.jpg" alt="Server Setup Title Image" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/server-setup-title-img-overlay.webp" alt="Server Setup Title Image" />
           <hr style="margin: 40px 0; border: none; border-top: 2px solid rgba(24, 210, 110, 0.2);" />
           <div class="table-of-contents">
             <h2 class="no-counter">Table of Contents</h2>
@@ -408,7 +391,7 @@
           <h2 id="the-architecture-diagram">The Architecture Diagram</h2>
           <p>Here's what my final setup looks like. This diagram represents everything I'm going to walk you through:
           </p>
-          <img loading="lazy" src="../assets/img/1/server-setup-diagram.webp" alt="Server Setup Diagram" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/server-setup-diagram.webp" alt="Server Setup Diagram" />
           <p><em>My complete production infrastructure: DigitalOcean droplet with Nginx reverse proxy, Docker
               containers, network segregation, and SSL termination</em></p>
           <p>The architecture has several layers:</p>
@@ -474,7 +457,7 @@ ssh-copy-id yourusername@your_server_ip</code></pre>
           <h3 id="ufw-firewall-configuration">UFW Firewall Configuration</h3>
           <p>This is where I almost locked myself out. <strong>Critical lesson: Always allow SSH before enabling the
               firewall.</strong></p>
-          <img loading="lazy" src="../assets/img/1/ufw-status.png" alt="UFW Status" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/security/firewall/ufw-status.webp" alt="UFW Status" />
           <p><em>UFW firewall configuration showing only essential ports open</em></p>
           <pre><code class="language-bash">sudo ufw default deny incoming
 sudo ufw default allow outgoing
@@ -548,7 +531,7 @@ docker compose version</code></pre>
           </ol>
           <p>The client never talks directly to my application. This provides security (hides backend architecture),
             enables SSL termination, allows caching, and simplifies backend maintenance.</p>
-          <img loading="lazy" src="../assets/img/1/reverse-proxy.webp" alt="Reverse Proxy" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/nginx/reverse-proxy.webp" alt="Reverse Proxy" />
           <p><em>Nginx reverse proxy configuration showing SSL termination and proxy headers</em></p>
           <h3 id="basic-reverse-proxy-configuration">Basic Reverse Proxy Configuration</h3>
           <p>Here's my actual configuration for a single application:</p>
@@ -617,7 +600,7 @@ server {
               href="https://nginx.org/en/docs/http/ngx_http_proxy_module.html" target="_blank"
               rel="noopener noreferrer">Nginx Proxy Module Documentation</a>.</p>
           <h3 id="server-blocks-hosting-multiple-domains">Server Blocks: Hosting Multiple Domains</h3>
-          <img loading="lazy" src="../assets/img/1/server-blocks.webp" alt="Server Blocks" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/nginx/server-blocks.webp" alt="Server Blocks" />
           <p><em>Multiple Nginx server blocks for hosting different applications on different subdomains</em></p>
           <p>Server blocks (virtual hosts) let you host multiple domains on one server. Each subdomain gets its own
             configuration file in <code>/etc/nginx/sites-available/</code>:</p>
@@ -646,7 +629,7 @@ sudo systemctl reload nginx</code></pre>
           <h3 id="load-balancing-when-one-instance-isnt-enough">Load Balancing: When One Instance Isn't Enough</h3>
           <p>When my recipe app started getting traffic, a single instance couldn't handle peak loads. Load balancing
             distributes traffic across multiple application instances.</p>
-          <img loading="lazy" src="../assets/img/1/load-balancer.png" alt="Load Balancer" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/nginx/load-balancer.webp" alt="Load Balancer" />
           <p><em>Load balancer configuration distributing traffic across three application instances</em></p>
           <p>Here's my production load balancer configuration:</p>
           <pre><code class="language-nginx"># Define upstream servers (backend application instances)
@@ -698,7 +681,7 @@ server {
           <h3 id="network-segregation-the-security-game-changer">Network Segregation: The Security Game-Changer</h3>
           <p>The biggest security win in my setup: <strong>databases never talk directly to the internet</strong>.
             They're on a private Docker network accessible only by application containers.</p>
-          <img loading="lazy" src="../assets/img/1/networks-diagram.webp" alt="Networks Diagram" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/docker/networks-diagram.webp" alt="Networks Diagram" />
           <p><em>Docker network architecture: databases on backend network, web services bridging frontend and
               backend</em></p>
           <p>Here's the network diagram that illustrates this critical concept. Notice how:</p>
@@ -857,7 +840,7 @@ cpus: 0.3               # 30% of one CPU core
 </code></pre>
           <p>With three application instances and a database, I'm using about 1.5GB of my 2GB RAM, leaving room for
             system processes and spikes.</p>
-          <img loading="lazy" src="../assets/img/1/docker-stats.png" alt="Docker Stats" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/docker/docker-stats.webp" alt="Docker Stats" />
           <p><em>Real-time Docker container resource usage showing memory and CPU limits in action</em></p>
           <hr />
           <h2 id="ssltls-configuration-the-dns-01-challenge-story">SSL/TLS Configuration: The DNS-01 Challenge Story
@@ -912,7 +895,7 @@ sudo systemctl enable snap.certbot.renew.timer
 
 # Test renewal
 sudo certbot renew --dry-run</code></pre>
-          <img loading="lazy" src="../assets/img/1/certbot-certificates.png" alt="Certbot Certificates" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/security/ssl/certbot-certificates.webp" alt="Certbot Certificates" />
           <p><em>Certbot SSL certificates showing wildcard coverage for all subdomains</em></p>
           <p>Auto-renewal is handled by a snap timer. The certificate renews automatically 30 days before expiration.
           </p>
@@ -920,7 +903,7 @@ sudo certbot renew --dry-run</code></pre>
               target="_blank" rel="noopener noreferrer">Official Certbot Documentation</a>.</p>
           <h3 id="achieving-a-security-rating">Achieving A+ Security Rating</h3>
           <p>Getting an A+ on SSL Labs required proper SSL configuration. Here's what matters:</p>
-          <img loading="lazy" src="../assets/img/1/ssl-lab-test-score.png" alt="SSL Lab Test Score" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/security/ssl/ssl-lab-test-score.webp" alt="SSL Lab Test Score" />
           <p><em>SSL Labs test showing A rating for production-grade TLS configuration</em></p>
           <pre><code class="language-nginx"># Modern TLS only (no outdated protocols)
 ssl_protocols TLSv1.3;
@@ -941,7 +924,7 @@ add_header Referrer-Policy "strict-origin-when-cross-origin" always;
 
 # Content Security Policy - start strict, loosen as needed
 add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' data: blob:; font-src 'self' data:;" always;</code></pre>
-          <img loading="lazy" src="../assets/img/1/security-headers-score.png" alt="Security Headers Score" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/security/security-headers/security-headers-score.webp" alt="Security Headers Score" />
           <p><em>Security Headers test showing A+ rating with comprehensive HTTP security headers</em></p>
           <p><strong>Honest note about CSP:</strong> Content Security Policy is powerful but can break your site if too
             strict. I started with a permissive policy and gradually tightened it by checking browser console errors.
@@ -950,7 +933,7 @@ add_header Content-Security-Policy "default-src 'self' data:; img-src 'self' dat
               href="https://nginx.org/en/docs/http/configuring_https_servers.html" target="_blank"
               rel="noopener noreferrer">Nginx's Https Configuration Guide</a> and test your config at <a
               href="https://www.ssllabs.com/ssltest/" target="_blank" rel="noopener noreferrer">SSL LABS</a>.</p>
-          <img loading="lazy" src="../assets/img/1/http-observatory-score.webp" alt="HTTP Observatory Score" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/security/http-observatory/http-observatory-score.webp" alt="HTTP Observatory Score" />
           <p><em>Mozilla HTTP Observatory showing A+ overall security score</em></p>
           <hr />
           <h2 id="deployment-workflow-the-practical-reality">Deployment Workflow: The Practical Reality</h2>
@@ -1015,7 +998,7 @@ docker-compose up -d</code></pre>
             <li>Review and rotate old logs</li>
             <li>Audit user access and SSH keys</li>
           </ul>
-          <img loading="lazy" src="../assets/img/1/docker-ps.png" alt="Docker PS Command Output" />
+          <img loading="lazy" src="../../assets/img/portfolio/server-setup/docker/docker-ps.webp" alt="Docker PS Command Output" />
           <p><em>Docker containers running in production showing uptime and health status</em></p>
           <h3 id="automated-updates">Automated Updates</h3>
           <p>I use unattended-upgrades for security updates:</p>
@@ -1176,7 +1159,7 @@ SQLALCHEMY_ENGINE_OPTIONS = {
 
         <!-- Author Bio -->
         <section class="author-bio">
-          <img class="author-photo" loading="lazy" src="../assets/img/logo/brand-logo.png" width="1200" height="630"
+          <img class="author-photo" loading="lazy" src="../../assets/img/brand-logo.png" width="1200" height="630"
             alt="Vlad Bortnik - Software Engineer | Frontend (React) → Backend (Flask, PostgreSQL) → Infrastructure (Docker, Nginx, Cloud)" />
           <div class="author-info">
             <h3>About the Author</h3>

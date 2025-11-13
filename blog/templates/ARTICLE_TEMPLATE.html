@@ -163,23 +163,6 @@
         }
     </script>
 
-    <!-- Cloudflare Web Analytics - Production Only -->
-    <script>
-        // Only load Cloudflare Web Analytics on production domain
-        if (window.location.hostname === 'vladbortnik.dev' ||
-            (window.location.hostname !== 'localhost' &&
-             window.location.hostname !== '127.0.0.1' &&
-             window.location.protocol === 'https:')) {
-            const cfScript = document.createElement('script');
-            cfScript.defer = true;
-            cfScript.src = 'https://static.cloudflareinsights.com/beacon.min.js';
-            cfScript.setAttribute('data-cf-beacon', '{"token": "f6413ab81d184d10a5a833134568ab89"}');
-            document.head.appendChild(cfScript);
-        } else {
-            console.log('🚫 [Dev Mode] Cloudflare Web Analytics disabled on localhost');
-        }
-    </script>
-    <!-- End Cloudflare Web Analytics -->
 </head>
 
 <body>

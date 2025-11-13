@@ -4,6 +4,7 @@ archive/
 blog/temp/
 DEPLOYMENT/nginx-config/
 PLAN/
+.playwright-mcp/
 TO-DO.md
 PHASE-*.md
 vladbortnik.dev
