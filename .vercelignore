@@ -46,3 +46,5 @@ build/
 # Nginx config (DigitalOcean specific)
 vladbortnik.dev
 vladbortnik.dev.backup
+
+# Deployment trigger: 2025-12-01
