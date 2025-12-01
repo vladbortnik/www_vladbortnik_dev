@@ -7,7 +7,7 @@
   <!-- Homepage -->
   <url>
     <loc>https://vladbortnik.dev/</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
@@ -15,7 +15,7 @@
   <!-- Contact Page -->
   <url>
     <loc>https://vladbortnik.dev/contact.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -23,7 +23,7 @@
   <!-- Server Setup Project -->
   <url>
     <loc>https://vladbortnik.dev/server-setup.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -31,7 +31,7 @@
   <!-- Blog Homepage -->
   <url>
     <loc>https://vladbortnik.dev/blog/</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -39,7 +39,7 @@
   <!-- Blog Post - Production-Grade Multi-App Server -->
   <url>
     <loc>https://vladbortnik.dev/blog/posts/1-production-grade-multi-app-server-12-dollar-month.html</loc>
-    <lastmod>2025-11-10</lastmod>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

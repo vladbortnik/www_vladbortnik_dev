@@ -1,0 +1,54 @@
+/*!
+ * Bootstrap Icons v1.11.3 - Minimal Subset (19 icons only)
+ * Original: https://icons.getbootstrap.com/
+ * Copyright 2019-2024 The Bootstrap Authors
+ * Licensed under MIT (https://github.com/twbs/icons/blob/main/LICENSE)
+ *
+ * This is a custom subset containing only the icons used in this project:
+ * chevron-down, chevron-right, clock-history, code-slash, envelope, envelope-fill,
+ * folder-fill, geo-alt, geo-alt-fill, github, globe, globe2, linkedin, list, plus,
+ * rss-fill, tools, twitter, twitter-x
+ */
+
+@font-face {
+  font-display: block;
+  font-family: "bootstrap-icons";
+  src: url("./fonts/bootstrap-icons.woff2?dd67030699838ea613ee6dbda90effa6") format("woff2"),
+url("./fonts/bootstrap-icons.woff?dd67030699838ea613ee6dbda90effa6") format("woff");
+}
+
+.bi::before,
+[class^="bi-"]::before,
+[class*=" bi-"]::before {
+  display: inline-block;
+  font-family: bootstrap-icons !important;
+  font-style: normal;
+  font-weight: normal !important;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  vertical-align: -.125em;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Icon definitions - only 19 icons used in this project */
+.bi-chevron-down::before { content: "\f282"; }
+.bi-chevron-right::before { content: "\f285"; }
+.bi-clock-history::before { content: "\f292"; }
+.bi-code-slash::before { content: "\f2c6"; }
+.bi-envelope-fill::before { content: "\f32c"; }
+.bi-envelope::before { content: "\f32f"; }
+.bi-folder-fill::before { content: "\f3d1"; }
+.bi-geo-alt-fill::before { content: "\f3e7"; }
+.bi-geo-alt::before { content: "\f3e8"; }
+.bi-github::before { content: "\f3ed"; }
+.bi-globe::before { content: "\f3ee"; }
+.bi-globe2::before { content: "\f3ef"; }
+.bi-linkedin::before { content: "\f472"; }
+.bi-list::before { content: "\f479"; }
+.bi-plus::before { content: "\f4fe"; }
+.bi-rss-fill::before { content: "\f521"; }
+.bi-tools::before { content: "\f5db"; }
+.bi-twitter::before { content: "\f5ef"; }
+.bi-twitter-x::before { content: "\f8db"; }
