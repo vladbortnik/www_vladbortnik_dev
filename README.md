@@ -266,6 +266,6 @@ I'm always interested in discussing new opportunities, collaborating on projects
 
 ---
 
-*Last updated: November 2025*
+*Last updated: December 2025*
 
 </div>
