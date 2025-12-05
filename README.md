@@ -260,7 +260,7 @@ I'm always interested in discussing new opportunities, collaborating on projects
 
 ### 🌟 **Built with a passion for clean code, robust architecture, and scalable solutions**
 
-*Software Engineer | Frontend (React 19) → Backend (Flask, PostgreSQL) → Infrastructure (Docker, Nginx, Cloud)*
+*Software Engineer | Frontend (React) → Backend (Flask, PostgreSQL) → Infrastructure (Docker, Nginx, Cloud)*
 
 **[vladbortnik.dev](https://vladbortnik.dev)** • **[Contact](https://vladbortnik.dev/contact.html)** • **CS degree** • **NYC 🗽**
 
